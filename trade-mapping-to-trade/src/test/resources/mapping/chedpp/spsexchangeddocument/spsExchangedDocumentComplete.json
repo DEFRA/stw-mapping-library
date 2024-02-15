@@ -1,0 +1,309 @@
+{
+  "id" : {
+    "value" : "CHEDPP.GB.2020.1029356"
+  },
+  "includedSpsNote" : [ {
+    "content" : [ {
+      "value" : "1"
+    } ],
+    "subjectCode" : {
+      "value" : "VERSION"
+    }
+  }, {
+    "content" : [ {
+      "value" : "2020-08-12T12:20:45Z"
+    } ],
+    "subjectCode" : {
+      "value" : "LAST_UPDATE_DATETIME"
+    }
+  }, {
+    "content" : [ {
+      "value" : "Percy Inspector-Tester"
+    } ],
+    "subjectCode" : {
+      "value" : "LAST_UPDATE_BY"
+    }
+  }, {
+    "contentCode" : [ {
+      "value" : "PP"
+    } ],
+    "subjectCode" : {
+      "value" : "CHED_TYPE"
+    }
+  }, {
+    "content" : [ {
+      "value" : "NO"
+    } ],
+    "subjectCode" : {
+      "value" : "CHILD_NOTIFICATION"
+    }
+  }, {
+    "content" : [ {
+      "value" : "{contentValue}"
+    } ],
+    "subjectCode" : {
+      "value" : "RISK_ASSESSMENT"
+    }
+  }, {
+    "content" : [ {
+      "value" : "NO"
+    } ],
+    "subjectCode" : {
+      "value" : "CONSIGNMENT_ARRIVED"
+    }
+  }, {
+    "content" : [ {
+      "value" : "NO"
+    } ],
+    "subjectCode" : {
+      "value" : "CONTAINS_WOOD_PACKAGING"
+    }
+  }, {
+    "content" : [ {
+      "value" : "2020-06-15T21:30:00Z"
+    } ],
+    "subjectCode" : {
+      "value" : "DEPARTURE_FROM_BCP_DATETIME"
+    }
+  }, {
+    "content" : [ {
+      "value" : "Percy Inspector-Tester"
+    } ],
+    "subjectCode" : {
+      "value" : "CONTACT_DETAILS_NAME"
+    }
+  }, {
+    "content" : [ {
+      "value" : "020 8225 7295"
+    } ],
+    "subjectCode" : {
+      "value" : "CONTACT_DETAILS_TELEPHONE"
+    }
+  }, {
+    "content" : [ {
+      "value" : "DefraTestBIP@anthunt3.33mail.com"
+    } ],
+    "subjectCode" : {
+      "value" : "CONTACT_DETAILS_EMAIL"
+    }
+  }, {
+    "content" : [ {
+      "value" : "ContactAgent"
+    } ],
+    "subjectCode" : {
+      "value" : "CONTACT_DETAILS_AGENT"
+    }
+  }, {
+    "content" : [ {
+      "value" : "IPAFFS-17A-1.0.0-alpha"
+    } ],
+    "subjectCode" : {
+      "value" : "TradePlatform UN/CEFACT Mapping Version"
+    }
+  } ],
+  "issueDateTime" : {
+    "dateTime" : {
+      "value" : "2019-11-29T11:02:28Z"
+    }
+  },
+  "issuerSpsParty" : {
+    "id" : {
+      "value" : "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    },
+    "name" : {
+      "value" : "Defra Test BIP"
+    },
+    "roleCode" : {
+      "value" : "VJ"
+    },
+    "specifiedSpsAddress" : {
+      "cityName" : {
+        "value" : "Surrey"
+      },
+      "countryID" : {
+        "value" : "GB"
+      },
+      "lineOne" : {
+        "value" : "Animal and Plant Health Agency, Woodham Lane, New Haw, Addlestone, Surrey, KT15 3NB, GB"
+      }
+    },
+    "specifiedSpsPerson" : {
+      "name" : {
+        "value" : "Percy Inspector-Tester"
+      }
+    },
+    "typeCode" : [ {
+      "value" : "OPERATOR"
+    } ]
+  },
+  "referenceSpsReferencedDocument" : [ {
+    "attachmentBinaryObject" : [ {
+      "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+      "mimeCode" : "application/pdf"
+    } ],
+    "id" : {
+      "schemeAgencyID" : "AF",
+      "value" : "1234"
+    },
+    "issueDateTime" : "2020-01-01",
+    "relationshipTypeCode" : {
+      "name" : "Mutually defined reference number (Supporting document)",
+      "value" : "ZZZ"
+    },
+    "typeCode" : {
+      "name" : "Air waybill",
+      "value" : "740"
+    }
+  }, {
+    "id" : {
+      "value" : "Importer reference number"
+    },
+    "relationshipTypeCode" : {
+      "name" : "Local Reference Number (Local reference)",
+      "value" : "AVZ"
+    },
+    "typeCode" : {
+      "name" : "Related document",
+      "value" : "916"
+    }
+  }, {
+    "id" : {
+      "value" : "CHEDPP.GB.2020.1029356V"
+    },
+    "relationshipTypeCode" : {
+      "name" : "Related document number (Related document number)",
+      "value" : "ACE"
+    },
+    "typeCode" : {
+      "name" : "Call-off delivery (Partially validated in >>)",
+      "value" : "76"
+    }
+  }, {
+    "id" : {
+      "value" : "CHEDPP.GB.2020.1029356R"
+    },
+    "relationshipTypeCode" : {
+      "name" : "Related document number (Related document number)",
+      "value" : "ACE"
+    },
+    "typeCode" : {
+      "name" : "Call-off delivery (Partially rejected in >>)",
+      "value" : "76"
+    }
+  }, {
+    "attachmentBinaryObject" : [ {
+      "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+      "mimeCode" : "application/pdf"
+    } ],
+    "id" : {
+      "schemeAgencyID" : "AF",
+      "schemeID" : "AT_INSPECTION",
+      "value" : "1234"
+    },
+    "issueDateTime" : "2020-01-01",
+    "relationshipTypeCode" : {
+      "name" : "Mutually defined reference number (Supporting document)",
+      "value" : "ZZZ"
+    },
+    "typeCode" : {
+      "name" : "Air waybill",
+      "value" : "740"
+    }
+  } ],
+  "signatorySpsAuthentication" : [ {
+    "actualDateTime" : {
+      "dateTime" : {
+        "value" : "2019-11-29T11:02:28Z"
+      }
+    },
+    "includedSpsClause" : [ {
+      "content" : [ {
+        "value" : "DIRECT_TRANSIT"
+      } ],
+      "id" : {
+        "value" : "PURPOSE"
+      }
+    }, {
+      "content" : [ {
+        "value" : "DefraTestBIP@anthunt3.33mail.com"
+      } ],
+      "id" : {
+        "value" : "SIGNATORY_PERSON_EMAIL"
+      }
+    } ],
+    "providerSpsParty" : {
+      "id" : {
+        "value" : "79f6dc68-2144-e911-a96a-000d3a29ba60"
+      },
+      "name" : {
+        "value" : "Defra Test BIP"
+      },
+      "roleCode" : {
+        "value" : "VJ"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "Surrey"
+        },
+        "countryID" : {
+          "value" : "GB"
+        },
+        "lineOne" : {
+          "value" : "Animal and Plant Health Agency, Woodham Lane, New Haw, Addlestone, Surrey, KT15 3NB, GB"
+        }
+      },
+      "specifiedSpsPerson" : {
+        "name" : {
+          "value" : "Percy Inspector-Tester"
+        }
+      },
+      "typeCode" : [ {
+        "value" : "OPERATOR"
+      } ]
+    },
+    "typeCode" : {
+      "value" : "4"
+    }
+  }, {
+    "actualDateTime" : {
+      "dateTime" : {
+        "value" : "2020-08-12T12:20:46Z"
+      }
+    },
+    "includedSpsClause" : [ {
+      "content" : [ {
+        "value" : "DefraTestBIP@anthunt3.33mail.com"
+      } ],
+      "id" : {
+        "value" : "SIGNATORY_PERSON_EMAIL"
+      }
+    } ],
+    "providerSpsParty" : {
+      "roleCode" : {
+        "value" : "AM"
+      },
+      "specifiedSpsPerson" : {
+        "name" : {
+          "value" : "Percy Inspector-Tester"
+        }
+      },
+      "typeCode" : [ {
+        "value" : "AUTHORITY"
+      } ]
+    },
+    "typeCode" : {
+      "value" : "1"
+    }
+  } ],
+  "statusCode" : {
+    "value" : "70"
+  },
+  "typeCode" : {
+    "name" : "Health certificate (Common Health Entry Document)",
+    "value" : "636"
+  },
+  "submittedBy" : {
+    "displayName" : "John Smith",
+    "userId" : "085be443-7d85-ee11-8179-000d3a2004d7"
+  }
+}

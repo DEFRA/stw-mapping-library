@@ -1,0 +1,16 @@
+{
+  "status" : "nonapproved",
+  "type" : "exporter",
+  "companyName" : "Oakfield (Foods) Ltd",
+  "otherIdentifier" : "GB00092121",
+  "address" : {
+    "addressLine1" : "5953 Francisco Plain",
+    "addressLine2" : "Suite 175",
+    "addressLine3" : "Vermont",
+    "city" : "Lake Marcellus",
+    "postalZipCode" : "43348",
+    "countryISOCode" : "BR",
+    "telephone" : "Not specified",
+    "email" : "not@specified.com"
+  }
+}

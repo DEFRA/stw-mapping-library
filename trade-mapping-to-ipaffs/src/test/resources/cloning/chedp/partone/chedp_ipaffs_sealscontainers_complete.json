@@ -1,0 +1,13 @@
+[ {
+  "sealNumber" : "S12345",
+  "containerNumber" : "C12345",
+  "officialSeal" : false
+}, {
+  "sealNumber" : "S123456",
+  "containerNumber" : "C123456",
+  "officialSeal" : false
+}, {
+  "sealNumber" : "S54321",
+  "containerNumber" : "C54321",
+  "officialSeal" : false
+} ]

@@ -1,0 +1,8 @@
+{
+  "content" : [ {
+    "value" : "#{contentValue}"
+  } ],
+  "subjectCode" : {
+    "value" : "CHILD_NOTIFICATION"
+  }
+}

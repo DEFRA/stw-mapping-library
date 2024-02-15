@@ -1,0 +1,290 @@
+{
+  "id": 617,
+  "referenceNumber": "CHEDP.GB.2020.1000409",
+  "externalReferences": [ {
+    "system": "E-CERT",
+    "reference": "NZL20/AGL4/1004"
+  } ],
+  "version": 2,
+  "lastUpdated": "2020-11-25T09:43:06.01Z",
+  "lastUpdatedBy": {
+    "displayName": "Gary Admin-Tester",
+    "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+  },
+  "type": "CVEDP",
+  "status": "VALIDATED",
+  "partOne": {
+    "personResponsible": {
+      "name": "JamesFranco",
+      "companyId": "767ceb6a-2144-e911-a96c-000d3a29b5de",
+      "companyName": "Acme Importers Limited",
+      "address": [
+        "23 High Street, Newcastle, ABC123"
+      ],
+      "country": "GB",
+      "city": "Newcastle",
+      "tracesID": 1,
+      "contactId": "4RJYJCUOesUxS12tnO4lRUm86Xntz-1gB4nkjdrXN5A"
+    },
+    "consignor": {
+      "type": "exporter",
+      "status": "approved",
+      "companyName": "MARCH SEGARRA,SA",
+      "individualName": "MARCH SEGARRA,SA",
+      "address": {
+        "addressLine1": "CTRA LA COMELLA,45",
+        "city": "Andorra",
+        "postalZipCode": "AD500",
+        "countryISOCode": "AD"
+      }
+    },
+    "consignee": {
+      "type": "consignee",
+      "status": "approved",
+      "companyName": "Acme Importers Limited",
+      "individualName": "Acme Importers Limited",
+      "address": {
+        "addressLine1": "23 High Street, Newcastle, ABC123",
+        "city": "Newcastle",
+        "postalZipCode": "CB3",
+        "countryISOCode": "GB"
+      }
+    },
+    "importer": {
+      "type": "importer",
+      "status": "approved",
+      "companyName": "JONES AS & JT",
+      "individualName": "JONES AS & JT",
+      "address": {
+        "addressLine1": "66 RICKAMORE ROAD UPPER TEMPLEPATRICK BALLYCLARE",
+        "city": "BALLYCLARE",
+        "postalZipCode": "BT39",
+        "countryISOCode": "GB"
+      }
+    },
+    "placeOfDestination": {
+      "type": "destination",
+      "status": "approved",
+      "companyName": "Five Sisters Zoo Park",
+      "address": {
+        "addressLine1": "Gavieside",
+        "city": "Gavieside",
+        "postalZipCode": "EH55",
+        "countryISOCode": "GB"
+      }
+    },
+    "commodities": {
+      "totalGrossWeight": 8678,
+      "totalNetWeight": 101,
+      "numberOfPackages": 5,
+      "temperature": "Chilled",
+      "numberOfAnimals": 0,
+      "commodityComplement": [
+        {
+          "commodityID": "02042210",
+          "commodityDescription": "Short forequarters",
+          "complementID": 131906,
+          "speciesID": "8944427",
+          "speciesName": "Ovis aries",
+          "speciesTypeName": "Domestic",
+          "speciesType": "131906",
+          "speciesClass": "131906",
+          "speciesFamily": "131906",
+          "speciesNomination": "Ovis aries"
+        },
+        {
+          "commodityID": "02032110",
+          "commodityDescription": "Of domestic swine",
+          "complementID": 131711,
+          "speciesID": "8943591",
+          "speciesName": "Sus scrofa domesticus",
+          "speciesType": "131711",
+          "speciesClass": "131711",
+          "speciesFamily": "131711",
+          "speciesNomination": "Sus scrofa domesticus"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "complementID": 131906,
+          "speciesID": "8944427",
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "41"
+            },
+            {
+              "key": "number_package",
+              "data": "2"
+            },
+            {
+              "key": "type_package",
+              "data": "Box"
+            },
+            {
+              "key": "quantity",
+              "data": "41"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Kilograms"
+            }
+          ]
+        },
+        {
+          "complementID": 131711,
+          "speciesID": "8943591",
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "60"
+            },
+            {
+              "key": "number_package",
+              "data": "3"
+            },
+            {
+              "key": "type_package",
+              "data": "Crate"
+            },
+            {
+              "key": "quantity",
+              "data": "60"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Kilograms"
+            }
+          ]
+        }
+      ],
+      "includeNonAblactedAnimals": false,
+      "countryOfOrigin": "FJ",
+      "consignedCountry": "IS",
+      "totalGrossVolume": 91838,
+      "totalGrossVolumeUnit": "litres"
+    },
+    "purpose": {
+      "conformsToEU": true,
+      "internalMarketPurpose": "Human Consumption",
+      "thirdCountryTranshipment": "NU",
+      "exitBIP": "GBBEL1",
+      "thirdCountry": "TH",
+      "transitThirdCountries": [
+        "GB"
+      ],
+      "finalBIP": "GBPHD1",
+      "purposeGroup": "For Transhipment to"
+    },
+    "pointOfEntry": "GBBEL1",
+    "arrivalDate": "2019-04-24",
+    "arrivalTime": "11:40:00",
+    "transporter": {
+      "type": "private transporter",
+      "status": "approved",
+      "companyName": "Chris+Nichol",
+      "individualName": "Chris+Nichol",
+      "approvalNumber": "GB00113999",
+      "address": {
+        "addressLine1": "The Grove Cartwright street Cleckheaton bd19 5lx",
+        "city": "Cleckheaton",
+        "postalZipCode": "BD19",
+        "countryISOCode": "GB"
+      }
+    },
+    "transporterDetailsRequired": true,
+    "meansOfTransport": {
+      "id": "CVEDPTRANSPORT_ID.582393",
+      "type": "Ship",
+      "document": "CVEDP_TRANSPORT_DOC.159447"
+    },
+    "meansOfTransportFromEntryPoint": {
+      "id": "CVEDP_VET_ID.700",
+      "type": "Aeroplane",
+      "document": "CVEDP_VET_DOC.023"
+    },
+    "departureDate": "2019-07-16",
+    "departureTime": "06:28:00",
+    "veterinaryInformation": {
+      "establishmentsOfOrigin": [
+        {
+          "id": "ad2259f0-6988-49ee-6c43-6fa7f9c95733",
+          "name": "Saha Farms Co. Ltd",
+          "country": "TH",
+          "types": [
+            "Processing Plant"
+          ],
+          "approvalNumber": "99"
+        }
+      ],
+      "accompanyingDocuments": [
+        {
+          "documentType": "veterinaryHealthCertificate",
+          "documentReference": "CVEDP_VET.228773",
+          "documentIssueDate": "2018-03-15"
+        }
+      ]
+    },
+    "importerLocalReferenceNumber": "CVEDP.550447",
+    "route": {},
+    "sealsContainers": [
+      {
+        "sealNumber": "3191",
+        "containerNumber": "5089",
+        "officialSeal": false
+      },
+      {
+        "sealNumber": "3192",
+        "containerNumber": "5090",
+        "officialSeal": false
+      }
+    ],
+    "submissionDate": "2018-06-05T10:59:55.689Z",
+    "submittedBy": {
+      "displayName": "Percy Inspector-Tester",
+      "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    }
+  },
+  "decisionBy": {
+    "displayName": "4RJYJCUOesUxS12tnO4lRUm86Xntz-1gB4nkjdrXN5A",
+    "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+  },
+  "decisionDate": "2020-11-25T09:43:05.915576Z",
+  "partTwo": {
+    "decision": {
+      "consignmentAcceptable": true,
+      "decision": "Acceptable for Transhipment",
+      "transhipmentBip": "GBPHD1",
+      "transhipmentThirdCountry": "NU"
+    },
+    "consignmentCheck": {
+      "documentCheckResult": "Satisfactory",
+      "identityCheckType": "Seal Check",
+      "identityCheckResult": "Satisfactory",
+      "physicalCheckResult": "Not Done",
+      "physicalCheckNotDoneReason": "Reduced checks regime"
+    },
+    "impactOfTransportOnAnimals": {},
+    "laboratoryTestsRequired": false,
+    "resealedContainersIncluded": false,
+    "resealedContainersMapping": [
+      {
+        "sealNumber": "3191",
+        "containerNumber": "5089",
+        "officialSeal": false
+      }
+    ],
+    "controlAuthority": {
+      "officialVeterinarian": {
+        "firstName": "Percy",
+        "lastName": "Inspector-Tester",
+        "email": "DefraTestBIP@anthunt3.33mail.com",
+        "phone": "020 8225 7295",
+        "signed": "2020-11-25T09:43:05.987892"
+      },
+      "iuuCheckRequired": false
+    },
+    "bipLocalReferenceNumber": "123",
+    "checkDate": "2020-12-01T01:01:00Z"
+  }
+}

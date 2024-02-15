@@ -1,0 +1,333 @@
+{
+  "lastUpdated": "2021-02-03T17:15:01.293Z",
+  "lastUpdatedBy": {
+    "displayName": "Percy Inspector-Tester",
+    "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+  },
+  "type": "CHEDPP",
+  "status": "SUBMITTED",
+  "partOne": {
+    "consignmentArrived": true,
+    "personResponsible": {
+      "name": "Percy Inspector-Tester",
+      "companyId": "767ceb6a-2144-e911-a96c-000d3a29b5de",
+      "companyName": "Defra Test BIP",
+      "address": [
+        "Animal and Plant Health Agency",
+        "Woodham Lane",
+        "New Haw",
+        "Addlestone",
+        "Surrey",
+        "KT15 3NB"
+      ],
+      "country": "GB",
+      "tracesID": 1001,
+      "phone": "020 8225 7295",
+      "email": "DefraTestBIP@anthunt3.33mail.com",
+      "contactId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    },
+    "customsReferenceNumber": "1234",
+    "containsWoodPackaging": false,
+    "consignor": {
+      "id": "ef5416df-38b6-4e76-abda-71e2134dc638",
+      "type": "exporter",
+      "status": "nonapproved",
+      "companyName": "ea408abf727a41b28df455e967839325",
+      "address": {
+        "addressLine1": "1163 Eladio Stravenue",
+        "addressLine2": "Apt. 766",
+        "addressLine3": "Montana",
+        "city": "Kihnchester",
+        "postalZipCode": "02036-6",
+        "countryISOCode": "DE",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "consignee": {
+      "id": "42926f4f-69f7-4e57-bbe4-082719d34190",
+      "type": "importer",
+      "status": "nonapproved",
+      "companyName": "4a8596a0952e434bbd9ee1c1fc108618",
+      "address": {
+        "addressLine1": "7144 Celestine Cove",
+        "addressLine2": "Apt. 928",
+        "addressLine3": "Connecticut",
+        "city": "Lubowitzport",
+        "postalZipCode": "59801",
+        "countryISOCode": "GB",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "importer": {
+      "id": "c42af817-d4be-4c92-82b4-ac4149139d6d",
+      "type": "consignee",
+      "status": "nonapproved",
+      "companyName": "asdasd",
+      "address": {
+        "addressLine1": "asdasd",
+        "city": "asdasd",
+        "postalZipCode": "asdasd",
+        "countryISOCode": "GB",
+        "telephone": "123123",
+        "email": "tst@test.com"
+      }
+    },
+    "placeOfDestination": {
+      "id": "42926f4f-69f7-4e57-bbe4-082719d34190",
+      "type": "importer",
+      "status": "nonapproved",
+      "companyName": "4a8596a0952e434bbd9ee1c1fc108618",
+      "address": {
+        "addressLine1": "7144 Celestine Cove",
+        "addressLine2": "Apt. 928",
+        "addressLine3": "Connecticut",
+        "city": "Lubowitzport",
+        "postalZipCode": "59801",
+        "countryISOCode": "GB",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "commodities": {
+      "totalGrossWeight": 54,
+      "totalNetWeight": 40,
+      "numberOfPackages": 5,
+      "commodityComplement": [
+        {
+          "commodityID": "08051022",
+          "commodityDescription": "Navel oranges",
+          "complementID": 50376,
+          "complementName": "Citrus sinensis",
+          "eppoCode": "CIDSI",
+          "speciesID": "57772",
+          "speciesName": "Citrus sinensis",
+          "speciesNomination": "Citrus sinensis"
+        },
+        {
+          "commodityID": "08061010",
+          "commodityDescription": "Table grapes",
+          "complementID": 3160,
+          "complementName": "Vitis vinifera",
+          "eppoCode": "VITVI",
+          "speciesID": "3160",
+          "speciesName": "Vitis vinifera",
+          "speciesClass": "3160",
+          "speciesNomination": "Vitis vinifera"
+        },
+        {
+          "commodityID": "08081080",
+          "commodityDescription": "Other",
+          "complementID": 62685,
+          "complementName": "Malus domestica",
+          "eppoCode": "MABSD",
+          "speciesID": "83672",
+          "speciesName": "Malus domestica",
+          "speciesClass": "62685",
+          "speciesNomination": "Malus domestica"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "uniqueComplementID": "eb0b2c08-7b6a-46b3-83f9-d0f71fe5436c",
+          "complementID": 50376,
+          "speciesID": "57772",
+          "keyDataPair": [
+            {
+              "key": "variety",
+              "data": "LATE NAVEL"
+            },
+            {
+              "key": "class",
+              "data": "CLASSI"
+            },
+            {
+              "key": "regulatory_authority",
+              "data": "JOINT"
+            },
+            {
+              "key": "validity_period",
+              "data": "2"
+            },
+            {
+              "key": "type_product",
+              "data": "Intended for planting: underground organs"
+            },
+            {
+              "key": "type_package",
+              "data": "Lug"
+            },
+            {
+              "key": "netweight",
+              "data": "10"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "8ea2e28f-99fb-44e8-a414-bdd2b512ef9d",
+          "complementID": 50376,
+          "speciesID": "57772",
+          "keyDataPair": [
+            {
+              "key": "variety",
+              "data": "MIDNIGHT"
+            },
+            {
+              "key": "class",
+              "data": "CLASSII"
+            },
+            {
+              "key": "regulatory_authority",
+              "data": "JOINT"
+            },
+            {
+              "key": "validity_period",
+              "data": "2"
+            },
+            {
+              "key": "type_product",
+              "data": "Other living plants: cut flowers and branches with foliage"
+            },
+            {
+              "key": "type_package",
+              "data": "Natural wood box with sift proof walls"
+            },
+            {
+              "key": "netweight",
+              "data": "10"
+            },
+            {
+              "key": "number_package",
+              "data": "2"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "e583956a-6bc7-45e0-8638-66f5ac6dd39b",
+          "complementID": 3160,
+          "speciesID": "3160",
+          "keyDataPair": [
+            {
+              "key": "variety",
+              "data": "AUTUMN KING"
+            },
+            {
+              "key": "class",
+              "data": "CLASSA"
+            },
+            {
+              "key": "regulatory_authority",
+              "data": "JOINT"
+            },
+            {
+              "key": "validity_period",
+              "data": "2"
+            },
+            {
+              "key": "netweight",
+              "data": "10"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "type_product",
+              "data": "Other living plants: cut trees retaining foliage"
+            },
+            {
+              "key": "type_package",
+              "data": "Lug"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "ffa00137-bb50-42c6-aa9e-b7f3c8fadb2f",
+          "complementID": 62685,
+          "speciesID": "83672",
+          "keyDataPair": [
+            {
+              "key": "variety",
+              "data": "Braeburn"
+            },
+            {
+              "key": "class",
+              "data": "CLASSI"
+            },
+            {
+              "key": "regulatory_authority",
+              "data": "JOINT"
+            },
+            {
+              "key": "validity_period",
+              "data": "10"
+            },
+            {
+              "key": "type_product",
+              "data": "Other living plants: cut flowers and branches with foliage"
+            },
+            {
+              "key": "type_package",
+              "data": "Logs"
+            },
+            {
+              "key": "netweight",
+              "data": "10"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "finished_or_propagated",
+              "data": "Finished"
+            }
+          ]
+        }
+      ],
+      "includeNonAblactedAnimals": false,
+      "countryOfOrigin": "NIR",
+      "consignedCountry": "NIR",
+      "totalGrossVolume": 12,
+      "totalGrossVolumeUnit": "litres"
+    },
+    "purpose": {
+      "purposeGroup": "For Import"
+    },
+    "pointOfEntry": "GBBXH4",
+    "pointOfEntryControlPoint": "INSPBHX1",
+    "arrivalDate": "2021-05-01",
+    "arrivalTime": "12:12:00",
+    "transporterDetailsRequired": false,
+    "meansOfTransport": {},
+    "meansOfTransportFromEntryPoint": {
+      "id": "1234",
+      "type": "Aeroplane",
+      "document": "23"
+    },
+    "submissionDate": "2021-02-03T17:10:36.782871Z",
+    "submittedBy": {
+      "displayName": "Percy Inspector-Tester",
+      "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    },
+    "complexCommoditySelected": true,
+    "contactDetails": {}
+  },
+  "partTwo": {
+    "decision": {},
+    "controlAuthority": {
+      "officialVeterinarian": {
+        "firstName": "Percy",
+        "lastName": "Inspector-Tester",
+        "email": "DefraTestBIP@anthunt3.33mail.com",
+        "phone": "020 8225 7295",
+        "signed": "2021-02-03T17:15:01.294677"
+      }
+    }
+  }
+}

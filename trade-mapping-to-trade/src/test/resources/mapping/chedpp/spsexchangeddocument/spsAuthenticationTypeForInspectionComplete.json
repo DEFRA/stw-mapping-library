@@ -1,0 +1,55 @@
+{
+  "actualDateTime" : {
+    "dateTime" : {
+      "value" : "2019-11-29T11:02:28Z"
+    }
+  },
+  "includedSpsClause" : [ {
+    "content" : [ {
+      "value" : "#{contentType}"
+    } ],
+    "id" : {
+      "value" : "PURPOSE"
+    }
+  }, {
+    "content" : [ {
+      "value" : "DefraTestBIP@anthunt3.33mail.com"
+    } ],
+    "id" : {
+      "value" : "SIGNATORY_PERSON_EMAIL"
+    }
+  } ],
+  "providerSpsParty" : {
+    "id" : {
+      "value" : "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    },
+    "name" : {
+      "value" : "Defra Test BIP"
+    },
+    "roleCode" : {
+      "value" : "VJ"
+    },
+    "specifiedSpsAddress" : {
+      "cityName" : {
+        "value" : "Surrey"
+      },
+      "countryID" : {
+        "value" : "GB"
+      },
+      "lineOne" : {
+        "value" : "Animal and Plant Health Agency, Woodham Lane, New Haw, Addlestone, Surrey, KT15 3NB, GB"
+      }
+    },
+    "specifiedSpsPerson" : {
+      "name" : {
+        "value" : "Percy Inspector-Tester"
+      }
+    },
+    "typeCode" : [ {
+      "value" : "OPERATOR"
+    } ]
+  },
+  "typeCode" : {
+    "value" : "4"
+  }
+}

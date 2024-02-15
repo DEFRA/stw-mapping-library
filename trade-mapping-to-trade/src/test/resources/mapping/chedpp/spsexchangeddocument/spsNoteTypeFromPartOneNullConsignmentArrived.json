@@ -1,0 +1,22 @@
+[ {
+  "content" : [ {
+    "value" : "NO"
+  } ],
+  "subjectCode" : {
+    "value" : "CONTAINS_WOOD_PACKAGING"
+  }
+}, {
+  "content" : [ {
+    "value" : "2020-06-15T21:30:00Z"
+  } ],
+  "subjectCode" : {
+    "value" : "DEPARTURE_FROM_BCP_DATETIME"
+  }
+}, {
+  "content" : [ {
+    "value" : "IPAFFS-17A-1.0.0-alpha"
+  } ],
+  "subjectCode" : {
+    "value" : "TradePlatform UN/CEFACT Mapping Version"
+  }
+} ]

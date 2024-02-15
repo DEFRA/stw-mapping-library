@@ -1,0 +1,488 @@
+{
+  "id": 29356,
+  "referenceNumber": "CHEDPP.GB.2020.1029356",
+  "version": 1,
+  "lastUpdated": "2020-08-12T12:20:45.883Z",
+  "lastUpdatedBy": {
+    "displayName": "Percy Inspector-Tester",
+    "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+  },
+  "type": "CHEDPP",
+  "status": "VALIDATED",
+  "riskAssessment": {
+    "commodityResults": [
+      {
+        "hmiDecision": "NOTREQUIRED",
+        "phsiDecision": "REQUIRED",
+        "phsiClassification": "Mandatory",
+        "uniqueId": "f54bb9ff-1e89-4d66-9d1f-d8201f1f2382",
+        "eppoCode": "ABICH"
+      },
+      {
+        "hmiDecision": "NOTREQUIRED",
+        "phsiDecision": "REQUIRED",
+        "phsiClassification": "Mandatory",
+        "uniqueId": "fd8cf75f-7ff3-43a1-9ec1-69013f11346f",
+        "eppoCode": "2DTRE"
+      },
+      {
+        "hmiDecision": "NOTREQUIRED",
+        "phsiDecision": "REQUIRED",
+        "phsiClassification": "Mandatory",
+        "uniqueId": "2e58e413-d87f-46b1-b01c-754bcc104644",
+        "eppoCode": "1NARG"
+      }
+    ],
+    "assessmentDateTime": "2022-05-25T11:09:30.572139"
+  },
+  "childNotification": false,
+  "splitConsignment": {
+    "rejectedReferenceNumber": "CHEDPP.GB.2020.1029356R",
+    "validReferenceNumber": "CHEDPP.GB.2020.1029356V"
+  },
+  "partOne": {
+    "importerLocalReferenceNumber": "Importer reference number",
+    "customsReferenceNumber": "Customs reference number",
+    "personResponsible": {
+      "name": "Percy Inspector-Tester",
+      "companyId": "767ceb6a-2144-e911-a96c-000d3a29b5de",
+      "companyName": "Defra Test BIP",
+      "address": [
+        "Animal and Plant Health Agency",
+        "Woodham Lane",
+        "New Haw",
+        "Addlestone",
+        "Surrey",
+        "KT15 3NB",
+        "GB"
+      ],
+      "city": "Surrey",
+      "country": "GB",
+      "tracesID": 1001,
+      "phone": "020 8225 7295",
+      "email": "DefraTestBIP@anthunt3.33mail.com",
+      "contactId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    },
+    "containsWoodPackaging": false,
+    "consignmentArrived": false,
+    "consignor": {
+      "id": "02a23823-7009-4e32-b494-054f0d4e4be7",
+      "type": "exporter",
+      "status": "nonapproved",
+      "companyName": "Zieme Zieme and Zieme",
+      "address": {
+        "addressLine1": "6489 Pansy",
+        "addressLine2": "06982 Larkin Ranch",
+        "addressLine3": "Oklahoma",
+        "city": "East Sigridville",
+        "postalZipCode": "89039",
+        "countryISOCode": "FR",
+        "internationalTelephone": {
+          "countryCode": "32",
+          "subscriberNumber": "1617777777"
+        },
+        "telephone": "321617777777",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "packer": {
+      "id": "81f9a1b2-8ed0-4a2a-a823-3444d6912400",
+      "type": "packer",
+      "status": "nonapproved",
+      "companyName": "Goldner Goldner and Goldner",
+      "address": {
+        "addressLine1": "2357 Rogers",
+        "addressLine2": "90771 Patience Cove",
+        "addressLine3": "Rhode Island",
+        "city": "Ricoshire",
+        "postalZipCode": "g4t 3RH",
+        "countryISOCode": "GB",
+        "ukTelephone": "01615555555",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "consignee": {
+      "id": "81f9a1b2-8ed0-4a2a-a823-3444d6912400",
+      "type": "consignee",
+      "status": "nonapproved",
+      "companyName": "Goldner Goldner and Goldner",
+      "address": {
+        "addressLine1": "2357 Rogers",
+        "addressLine2": "90771 Patience Cove",
+        "addressLine3": "Rhode Island",
+        "city": "Ricoshire",
+        "postalZipCode": "g4t 3RH",
+        "countryISOCode": "GB",
+        "ukTelephone": "01615555555",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "departureDate": "2020-06-15",
+    "departureTime": "21:30",
+    "importer": {
+      "id": "81f9a1b2-8ed0-4a2a-a823-3444d6912400",
+      "type": "consignee",
+      "status": "nonapproved",
+      "companyName": "Goldner Goldner and Goldner",
+      "address": {
+        "addressLine1": "2357 Rogers",
+        "addressLine2": "90771 Patience Cove",
+        "addressLine3": "Rhode Island",
+        "city": "Ricoshire",
+        "postalZipCode": "g4t 3RH",
+        "countryISOCode": "GB",
+        "ukTelephone": "01615555555",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "pod": {
+      "id": "6cbee223-fcaa-4b13-9836-4c72d508a408",
+      "type": "pod",
+      "status": "approved",
+      "approvalNumber": "59844",
+      "companyName": "GROWFORTH LTD",
+      "address": {
+        "addressLine1": "SOUTH PARGILLIS",
+        "addressLine3": "DUNFERMLINE",
+        "postalZipCode": "KY11 7HS",
+        "countryISOCode": "GB"
+      }
+    },
+    "placeOfDestination": {
+      "id": "81f9a1b2-8ed0-4a2a-a823-3444d6912400",
+      "type": "consignee",
+      "status": "nonapproved",
+      "companyName": "Goldner Goldner and Goldner",
+      "address": {
+        "addressLine1": "2357 Rogers",
+        "addressLine2": "90771 Patience Cove",
+        "addressLine3": "Rhode Island",
+        "city": "Ricoshire",
+        "postalZipCode": "g4t 3RH",
+        "countryISOCode": "GB",
+        "ukTelephone": "01615555555",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "pointOfEntryControlPoint": "GTSH123",
+    "transporter": {
+      "id": "81f9a1b2-8ed0-4a2a-a823-3444d6912400",
+      "type": "commercial transporter",
+      "status": "nonapproved",
+      "companyName": "Goldner Goldner and Goldner",
+      "address": {
+        "addressLine1": "2357 Rogers",
+        "addressLine2": "90771 Patience Cove",
+        "addressLine3": "Rhode Island",
+        "city": "Ricoshire",
+        "postalZipCode": "g4t 3RH",
+        "countryISOCode": "GB",
+        "ukTelephone": "01615555555",
+        "telephone": "01615555555",
+        "email": "ukoperator@email.com"
+      }
+    },
+    "commodities": {
+      "totalGrossWeight": 10,
+      "totalNetWeight": 1,
+      "numberOfPackages": 1,
+      "commodityComplement": [
+        {
+          "commodityID": "06029045",
+          "commodityDescription": "Rooted cuttings and young plants",
+          "complementID": 90000,
+          "complementName": "Abies chensiensis",
+          "eppoCode": "ABICH",
+          "isWoodPackaging": false,
+          "speciesID": "250000",
+          "speciesName": "Abies chensiensis",
+          "speciesType": "90",
+          "speciesClass": "90000",
+          "speciesNomination": "Abies chensiensis"
+        },
+        {
+          "commodityID": "44151010",
+          "commodityDescription": "Cases, boxes, crates, drums and similar packings",
+          "complementID": 44151010,
+          "eppoCode": "2DTRE",
+          "isWoodPackaging": true,
+          "speciesID": "1",
+          "speciesName": "2DTRE - Deciduous trees",
+          "speciesNomination": "2DTRE - Deciduous trees"
+        },
+        {
+          "commodityID": "06011020",
+          "commodityDescription": "Narcissi",
+          "complementID": 32387,
+          "complementName": "Narcissus",
+          "eppoCode": "1NARG",
+          "speciesID": "46982",
+          "speciesName": "Narcissus",
+          "speciesNomination": "Narcissus"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "uniqueComplementID": "f54bb9ff-1e89-4d66-9d1f-d8201f1f2382",
+          "complementID": 90000,
+          "speciesID": "250000",
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "1"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "type_package",
+              "data": "Wooden case with pallet base"
+            },
+            {
+              "key": "container",
+              "data": "250000"
+            },
+            {
+              "key":"variety",
+              "data":"LATE NAVELS"
+            },
+            {
+              "key":"class",
+              "data":"CLASSII"
+            },
+            {
+              "key":"regulatory_authority",
+              "data":"JOINT"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Stems"
+            },
+            {
+              "key": "quantity",
+              "data": "200"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "fd8cf75f-7ff3-43a1-9ec1-69013f11346f",
+          "complementID": 44151010,
+          "speciesID": "1",
+          "keyDataPair": [
+            {
+              "key": "units-quantity",
+              "data": "2"
+            },
+            {
+              "key": "units-type",
+              "data": "Natural wood ordinary box"
+            },
+            {
+              "key": "country-of-origin",
+              "data": "GB"
+            },
+            {
+              "key": "regulatory_authority",
+              "data": "HMI"
+            },
+            {
+              "key":"other_variety",
+              "data":"OTHER"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "2e58e413-d87f-46b1-b01c-754bcc104644",
+          "complementID": 32387,
+          "speciesID": "46982",
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "1"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "type_package",
+              "data": "Bag"
+            },
+            {
+              "key": "container",
+              "data": "46982"
+            },
+            {
+              "key": "regulatory_authority",
+              "data": "PHSI"
+            },
+            {
+              "key": "other_variety",
+              "data": "OTHER VARIETY NAVELS"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Kilograms"
+            },
+            {
+              "key": "quantity",
+              "data": "10.372"
+            },
+            {
+              "key": "low_risk_article72_commodity",
+              "data": "true"
+            }
+          ]
+        }
+      ],
+      "includeNonAblactedAnimals": false,
+      "countryOfOrigin": "AF",
+      "consignedCountry": "AF",
+      "regionOfOrigin": "IT",
+      "totalGrossVolume": 1,
+      "totalGrossVolumeUnit": "metres cubed"
+    },
+    "purpose": {
+      "exitBIP": "GBLGW1",
+      "thirdCountry": "AL",
+      "transitThirdCountries": [
+        "BH",
+        "CM"
+      ],
+      "purposeGroup": "For Transit to 3rd Country"
+    },
+    "pointOfEntry": "123-456",
+    "arrivalDate": "2020-01-01",
+    "arrivalTime": "09:00:00",
+    "transporterDetailsRequired": false,
+    "meansOfTransport": {
+      "id": "8181881",
+      "type": "Railway Wagon",
+      "document": "hshshshs"
+    },
+    "meansOfTransportFromEntryPoint": {
+      "id": "AB123",
+      "type": "Aeroplane",
+      "document": "Document"
+    },
+    "veterinaryInformation": {
+      "accompanyingDocuments": [
+        {
+          "documentType": "airWaybill",
+          "documentReference": "1234",
+          "documentIssueDate": "2020-01-01",
+          "attachmentId" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+          "attachmentContentType" : "application/pdf"
+        }
+      ]
+    },
+    "sealsContainers": [
+      {
+        "sealNumber": "6666",
+        "containerNumber": "5678",
+        "officialSeal": false
+      },
+      {
+        "sealNumber": "6667",
+        "containerNumber": "5679",
+        "officialSeal": true
+      }
+    ],
+    "submissionDate": "2019-11-29T11:02:28.76883Z",
+    "submittedBy": {
+      "displayName": "Percy Inspector-Tester",
+      "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+    },
+    "complexCommoditySelected": true,
+    "contactDetails" : {
+      "name" : "Percy Inspector-Tester",
+      "telephone" : "020 8225 7295",
+      "email" : "DefraTestBIP@anthunt3.33mail.com",
+      "agent" : "ContactAgent"
+    }
+  },
+  "decisionBy": {
+    "displayName": "s_RcwY29955gH7DEKLupAA-FPA4U8xbltyAGMuJ3uto",
+    "userId": "79f6dc68-2144-e911-a96a-000d3a29ba60"
+  },
+  "decisionDate": "2020-08-12T12:20:45.8277Z",
+  "partTwo": {
+    "commodityChecks": [
+      {
+        "uniqueComplementId":"b9573540-8fff-4fe6-a3fd-acebd99b3923",
+        "checks": [
+          {
+            "type": "HMI",
+            "status": "Compliant"
+          }
+        ]
+      },
+      {
+        "uniqueComplementId":"c5c972a7-289f-4b03-bd1b-617560754830",
+        "checks": [
+          {
+            "type": "PHSI_DOCUMENT",
+            "status": "Compliant"
+          },
+          {
+            "type": "PHSI_IDENTITY",
+            "status": "Non compliant",
+            "reason": "Entered text."
+          },
+          {
+            "type": "PHSI_PHYSICAL",
+            "status": "Not inspected",
+            "reason": "Other",
+            "otherReason": "Entered text."
+          }
+        ]
+      },
+      {
+        "uniqueComplementId":"c5c972a7-289f-4b03-bd1b-617560754501",
+        "checks": [
+          {
+            "type": "PHSI_DOCUMENT",
+            "status": "Non compliant",
+            "reason": "Incorrect Information: Number of Packages"
+          },
+          {
+            "type": "PHSI_IDENTITY",
+            "status": "Hold",
+            "otherReason": "Hold reason."
+          },
+          {
+            "type": "PHSI_PHYSICAL",
+            "status": "Hold",
+            "reason": "No Show"
+          },
+          {
+            "type": "HMI",
+            "status": "Non compliant",
+            "reason": "Incorrect Information supplied on the Import application"
+          }
+        ]
+      }
+    ],
+    "controlAuthority": {
+      "officialVeterinarian": {
+        "firstName": "Percy",
+        "lastName": "Inspector-Tester",
+        "email": "DefraTestBIP@anthunt3.33mail.com",
+        "phone": "020 8225 7295",
+        "signed": "2020-08-12T12:20:46.876536"
+      }
+    },
+    "accompanyingDocuments" : [ {
+      "documentType" : "airWaybill",
+      "documentReference" : "1234",
+      "documentIssueDate" : "2020-01-01",
+      "attachmentId" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+      "attachmentContentType" : "application/pdf"
+    } ]
+  }
+}

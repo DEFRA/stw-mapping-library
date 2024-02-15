@@ -1,0 +1,23 @@
+[ {
+  "affixedSpsSeal" : [ {
+    "id" : {
+      "schemeID" : "seal_number",
+      "value" : "6666"
+    }
+  } ],
+  "id" : {
+    "schemeID" : "container_number",
+    "value" : "5678"
+  }
+}, {
+  "affixedSpsSeal" : [ {
+    "id" : {
+      "schemeID" : "official_seal_number",
+      "value" : "6667"
+    }
+  } ],
+  "id" : {
+    "schemeID" : "container_number",
+    "value" : "5679"
+  }
+} ]

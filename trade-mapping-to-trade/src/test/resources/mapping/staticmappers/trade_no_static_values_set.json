@@ -1,0 +1,1202 @@
+{
+  "spsConsignment" : {
+    "availabilityDueDateTime" : {
+      "dateTime" : {
+        "value" : "2020-01-01T09:00:00Z"
+      }
+    },
+    "carrierSpsParty" : {
+      "id" : {
+        "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+      },
+      "name" : {
+        "value" : "Goldner Goldner and Goldner"
+      },
+      "roleCode" : {
+        "name" : "Carrier (Transporter)",
+        "value" : "CA"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "Ricoshire"
+        },
+        "countryID" : {
+          "value" : "GB"
+        },
+        "lineOne" : {
+          "value" : "2357 Rogers"
+        },
+        "lineThree" : {
+          "value" : "Rhode Island"
+        },
+        "lineTwo" : {
+          "value" : "90771 Patience Cove"
+        },
+        "postcodeCode" : {
+          "value" : "g4t 3RH"
+        }
+      },
+      "typeCode" : [ {
+        "listID" : "operator_activity_type",
+        "value" : "COMMERCIAL_TRANSPORTER"
+      }, {
+        "listID" : "classification_section_code",
+        "value" : "TRANSPORTER"
+      } ]
+    },
+    "consigneeSpsParty" : {
+      "id" : {
+        "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+      },
+      "name" : {
+        "value" : "Goldner Goldner and Goldner"
+      },
+      "roleCode" : {
+        "name" : "Consignee (Importer)",
+        "value" : "CN"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "Ricoshire"
+        },
+        "countryID" : {
+          "value" : "GB"
+        },
+        "lineOne" : {
+          "value" : "2357 Rogers"
+        },
+        "lineThree" : {
+          "value" : "Rhode Island"
+        },
+        "lineTwo" : {
+          "value" : "90771 Patience Cove"
+        },
+        "postcodeCode" : {
+          "value" : "g4t 3RH"
+        }
+      },
+      "typeCode" : [ {
+        "listID" : "operator_activity_type",
+        "value" : "PLANT_ESTABLISHMENT"
+      }, {
+        "listID" : "classification_section_code",
+        "value" : "PLANTS"
+      } ]
+    },
+    "consignorSpsParty" : {
+      "id" : {
+        "value" : "02a23823-7009-4e32-b494-054f0d4e4be7"
+      },
+      "name" : {
+        "value" : "Zieme Zieme and Zieme"
+      },
+      "roleCode" : {
+        "name" : "Exporter",
+        "value" : "EX"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "East Sigridville"
+        },
+        "countryID" : {
+          "value" : "FR"
+        },
+        "lineOne" : {
+          "value" : "6489 Pansy"
+        },
+        "lineThree" : {
+          "value" : "Oklahoma"
+        },
+        "lineTwo" : {
+          "value" : "06982 Larkin Ranch"
+        },
+        "postcodeCode" : {
+          "value" : "89039"
+        }
+      },
+      "typeCode" : [ {
+        "listID" : "operator_activity_type",
+        "value" : "EXPORTER"
+      }, {
+        "listID" : "classification_section_code",
+        "value" : "NON_ANIMAL_ORIGIN_FOOD_AND_FEED"
+      } ]
+    },
+    "customsTransitAgentSpsParty" : {
+      "id" : {
+        "schemeID" : "operator_activity_id",
+        "value" : "79f6dc68-2144-e911-a96a-000d3a29ba60"
+      },
+      "name" : {
+        "value" : "Percy Inspector-Tester"
+      },
+      "roleCode" : {
+        "name" : "Customs broker",
+        "value" : "CB"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "Surrey"
+        },
+        "countryID" : {
+          "value" : "GB"
+        },
+        "lineOne" : {
+          "value" : "Animal and Plant Health Agency, Woodham Lane, New Haw, Addlestone, Surrey, KT15 3NB, GB"
+        }
+      },
+      "typeCode" : [ {
+        "listID" : "operator_activity_type",
+        "name" : "Responsible for the load",
+        "value" : "RESPONSIBLE_FOR_THE_LOAD"
+      }, {
+        "listID" : "classification_section_code",
+        "name" : "Responsible for the load (Freight Forwarder)",
+        "value" : "RFL"
+      } ]
+    },
+    "deliverySpsParty" : {
+      "id" : {
+        "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+      },
+      "name" : {
+        "value" : "Goldner Goldner and Goldner"
+      },
+      "roleCode" : {
+        "name" : "Delivery party (Place of destination)",
+        "value" : "DP"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "Ricoshire"
+        },
+        "countryID" : {
+          "value" : "GB"
+        },
+        "lineOne" : {
+          "value" : "2357 Rogers"
+        },
+        "lineThree" : {
+          "value" : "Rhode Island"
+        },
+        "lineTwo" : {
+          "value" : "90771 Patience Cove"
+        },
+        "postcodeCode" : {
+          "value" : "g4t 3RH"
+        }
+      },
+      "typeCode" : [ {
+        "listID" : "operator_activity_type",
+        "value" : "PLANT_ESTABLISHMENT"
+      }, {
+        "listID" : "classification_section_code",
+        "value" : "PLANTS"
+      } ]
+    },
+    "exportSpsCountry" : {
+      "id" : {
+        "value" : "FJ"
+      }
+    },
+    "includedSpsConsignmentItem" : [ {
+      "includedSpsTradeLineItem" : [ {
+        "grossVolumeMeasure" : {
+          "unitCode" : "MTQ",
+          "value" : 1.0
+        },
+        "grossWeightMeasure" : {
+          "unitCode" : "KGM",
+          "value" : 10.0
+        },
+        "netWeightMeasure" : {
+          "unitCode" : "KGM",
+          "value" : 1.0
+        },
+        "sequenceNumeric" : {
+          "value" : 0
+        }
+      }, {
+        "additionalInformationSpsNote" : [ {
+          "content" : [ {
+            "value" : "Abies chensiensis"
+          } ],
+          "subjectCode" : {
+            "value" : "CONTROLLED_ATMOSPHERE_CONTAINER"
+          }
+        }, {
+          "content" : [ {
+            "value" : "LATE NAVELS"
+          } ],
+          "subjectCode" : {
+            "value" : "VARIETY"
+          }
+        }, {
+          "content" : [ {
+            "value" : "CLASSII"
+          } ],
+          "subjectCode" : {
+            "value" : "CLASS"
+          }
+        }, {
+          "content" : [ {
+            "value" : "JOINT"
+          } ],
+          "subjectCode" : {
+            "value" : "REGULATORY_AUTHORITY"
+          }
+        }, {
+          "content" : [ {
+            "value" : "NO"
+          } ],
+          "subjectCode" : {
+            "value" : "IS_WOOD_PACKAGING"
+          }
+        }, {
+          "content" : [ {
+            "value" : "c5c972a7-289f-4b03-bd1b-617560754501"
+          } ],
+          "subjectCode" : {
+            "value" : "UNIQUE_ID"
+          }
+        } ],
+        "applicableSpsClassification" : [ {
+          "classCode" : {
+            "value" : "ABICH"
+          },
+          "className" : [ {
+            "value" : "Abies chensiensis"
+          } ],
+          "systemID" : {
+            "value" : "EPPT"
+          },
+          "systemName" : [ {
+            "value" : "EPPO Plant Protection Thesaurus"
+          } ]
+        }, {
+          "classCode" : {
+            "value" : "06029045"
+          },
+          "className" : [ {
+            "value" : "Rooted cuttings and young plants"
+          } ],
+          "systemID" : {
+            "value" : "CN"
+          },
+          "systemName" : [ {
+            "value" : "CN Code (Combined Nomenclature)"
+          } ]
+        }, {
+          "classCode" : {
+            "value" : "BUDWOOD_SCIONS"
+          },
+          "className" : [ {
+            "value" : "Budwood/scions"
+          } ],
+          "systemID" : {
+            "value" : "PRODUCT_TYPE"
+          },
+          "systemName" : [ {
+            "value" : "Product type"
+          } ]
+        } ],
+        "appliedSpsProcess" : [ {
+          "operatorSpsParty" : {
+            "id" : {
+              "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+            },
+            "name" : {
+              "value" : "Goldner Goldner and Goldner"
+            },
+            "specifiedSpsAddress" : {
+              "cityName" : {
+                "value" : "Ricoshire"
+              },
+              "countryID" : {
+                "value" : "GB"
+              },
+              "lineOne" : {
+                "value" : "2357 Rogers"
+              },
+              "lineThree" : {
+                "value" : "Rhode Island"
+              },
+              "lineTwo" : {
+                "value" : "90771 Patience Cove"
+              },
+              "postcodeCode" : {
+                "value" : "g4t 3RH"
+              }
+            }
+          },
+          "typeCode" : {
+            "value" : "13"
+          }
+        } ],
+        "assertedSpsAuthentication" : [ {
+          "actualDateTime" : {
+            "dateTime" : {
+              "value" : "2020-08-12T12:20:46Z"
+            }
+          },
+          "includedSpsClause" : [ {
+            "content" : [ {
+              "value" : "Non compliant"
+            } ],
+            "id" : {
+              "value" : "PHSI_DOCUMENT_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Incorrect Information: Number of Packages"
+            } ],
+            "id" : {
+              "value" : "PHSI_DOCUMENT_REASON"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Hold"
+            } ],
+            "id" : {
+              "value" : "PHSI_IDENTITY_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Hold reason."
+            } ],
+            "id" : {
+              "value" : "PHSI_IDENTITY_OTHER_REASON"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Hold"
+            } ],
+            "id" : {
+              "value" : "PHSI_PHYSICAL_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "No Show"
+            } ],
+            "id" : {
+              "value" : "PHSI_PHYSICAL_REASON"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Non compliant"
+            } ],
+            "id" : {
+              "value" : "HMI_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Incorrect Information supplied on the Import application"
+            } ],
+            "id" : {
+              "value" : "HMI_REASON"
+            }
+          } ],
+          "providerSpsParty" : {
+            "roleCode" : {
+              "value" : "AM"
+            },
+            "specifiedSpsPerson" : {
+              "name" : {
+                "value" : "Percy Inspector-Tester"
+              }
+            },
+            "typeCode" : [ {
+              "value" : "AUTHORITY"
+            } ]
+          },
+          "typeCode" : {
+            "value" : "1"
+          }
+        } ],
+        "netWeightMeasure" : {
+          "unitCode" : "KGM",
+          "value" : 1.0
+        },
+        "originSpsCountry" : [ {
+          "id" : {
+            "value" : "AF"
+          },
+          "name" : [ {
+            "value" : "AF"
+          } ],
+          "subordinateSpsCountrySubDivision" : [ {
+            "functionTypeCode" : {
+              "value" : "106"
+            },
+            "hierarchicalLevelCode" : {
+              "name" : "Region",
+              "value" : "1"
+            },
+            "name" : [ {
+              "value" : "IT"
+            } ]
+          } ]
+        } ],
+        "physicalSpsPackage" : [ {
+          "itemQuantity" : {
+            "value" : 1.0
+          },
+          "levelCode" : {
+            "value" : "4"
+          },
+          "typeCode" : {
+            "value" : "EE"
+          }
+        } ],
+        "scientificName" : [ {
+          "value" : "Abies chensiensis"
+        } ],
+        "sequenceNumeric" : {
+          "value" : 1
+        }
+      }, {
+        "additionalInformationSpsNote" : [ {
+          "content" : [ {
+            "value" : "OTHER"
+          } ],
+          "subjectCode" : {
+            "value" : "OTHER_VARIETY"
+          }
+        }, {
+          "content" : [ {
+            "value" : "HMI"
+          } ],
+          "subjectCode" : {
+            "value" : "REGULATORY_AUTHORITY"
+          }
+        }, {
+          "content" : [ {
+            "value" : "YES"
+          } ],
+          "subjectCode" : {
+            "value" : "IS_WOOD_PACKAGING"
+          }
+        }, {
+          "content" : [ {
+            "value" : "b9573540-8fff-4fe6-a3fd-acebd99b3923"
+          } ],
+          "subjectCode" : {
+            "value" : "UNIQUE_ID"
+          }
+        } ],
+        "applicableSpsClassification" : [ {
+          "classCode" : {
+            "value" : "2DTRE"
+          },
+          "className" : [ {
+            "value" : "2DTRE - Deciduous trees"
+          } ],
+          "systemID" : {
+            "value" : "EPPT"
+          },
+          "systemName" : [ {
+            "value" : "EPPO Plant Protection Thesaurus"
+          } ]
+        }, {
+          "classCode" : {
+            "value" : "44151010"
+          },
+          "className" : [ {
+            "value" : "Cases, boxes, crates, drums and similar packings"
+          } ],
+          "systemID" : {
+            "value" : "CN"
+          },
+          "systemName" : [ {
+            "value" : "CN Code (Combined Nomenclature)"
+          } ]
+        } ],
+        "appliedSpsProcess" : [ {
+          "operatorSpsParty" : {
+            "id" : {
+              "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+            },
+            "name" : {
+              "value" : "Goldner Goldner and Goldner"
+            },
+            "specifiedSpsAddress" : {
+              "cityName" : {
+                "value" : "Ricoshire"
+              },
+              "countryID" : {
+                "value" : "GB"
+              },
+              "lineOne" : {
+                "value" : "2357 Rogers"
+              },
+              "lineThree" : {
+                "value" : "Rhode Island"
+              },
+              "lineTwo" : {
+                "value" : "90771 Patience Cove"
+              },
+              "postcodeCode" : {
+                "value" : "g4t 3RH"
+              }
+            }
+          },
+          "typeCode" : {
+            "value" : "13"
+          }
+        } ],
+        "assertedSpsAuthentication" : [ {
+          "actualDateTime" : {
+            "dateTime" : {
+              "value" : "2020-08-12T12:20:46Z"
+            }
+          },
+          "includedSpsClause" : [ {
+            "content" : [ {
+              "value" : "Compliant"
+            } ],
+            "id" : {
+              "value" : "HMI_STATUS"
+            }
+          } ],
+          "providerSpsParty" : {
+            "roleCode" : {
+              "value" : "AM"
+            },
+            "specifiedSpsPerson" : {
+              "name" : {
+                "value" : "Percy Inspector-Tester"
+              }
+            },
+            "typeCode" : [ {
+              "value" : "AUTHORITY"
+            } ]
+          },
+          "typeCode" : {
+            "value" : "1"
+          }
+        } ],
+        "originSpsCountry" : [ {
+          "id" : {
+            "value" : "GB"
+          },
+          "name" : [ {
+            "value" : "GB"
+          } ]
+        } ],
+        "physicalSpsPackage" : [ {
+          "itemQuantity" : {
+            "value" : 2.0
+          },
+          "levelCode" : {
+            "value" : "4"
+          },
+          "typeCode" : {
+            "value" : "QP"
+          }
+        } ],
+        "scientificName" : [ {
+          "value" : "2DTRE - Deciduous trees"
+        } ],
+        "sequenceNumeric" : {
+          "value" : 2
+        }
+      }, {
+        "additionalInformationSpsNote" : [ {
+          "content" : [ {
+            "value" : "Narcissus"
+          } ],
+          "subjectCode" : {
+            "value" : "CONTROLLED_ATMOSPHERE_CONTAINER"
+          }
+        }, {
+          "content" : [ {
+            "value" : "OTHER VARIETY NAVELS"
+          } ],
+          "subjectCode" : {
+            "value" : "OTHER_VARIETY"
+          }
+        }, {
+          "content" : [ {
+            "value" : "PHSI"
+          } ],
+          "subjectCode" : {
+            "value" : "REGULATORY_AUTHORITY"
+          }
+        }, {
+          "content" : [ {
+            "value" : "c5c972a7-289f-4b03-bd1b-617560754830"
+          } ],
+          "subjectCode" : {
+            "value" : "UNIQUE_ID"
+          }
+        } ],
+        "applicableSpsClassification" : [ {
+          "classCode" : {
+            "value" : "1NARG"
+          },
+          "className" : [ {
+            "value" : "Narcissus"
+          } ],
+          "systemID" : {
+            "value" : "EPPT"
+          },
+          "systemName" : [ {
+            "value" : "EPPO Plant Protection Thesaurus"
+          } ]
+        }, {
+          "classCode" : {
+            "value" : "06011020"
+          },
+          "className" : [ {
+            "value" : "Narcissi"
+          } ],
+          "systemID" : {
+            "value" : "CN"
+          },
+          "systemName" : [ {
+            "value" : "CN Code (Combined Nomenclature)"
+          } ]
+        }, {
+          "classCode" : {
+            "value" : "BUDWOOD_SCIONS"
+          },
+          "className" : [ {
+            "value" : "Budwood/scions"
+          } ],
+          "systemID" : {
+            "value" : "PRODUCT_TYPE"
+          },
+          "systemName" : [ {
+            "value" : "Product type"
+          } ]
+        } ],
+        "appliedSpsProcess" : [ {
+          "operatorSpsParty" : {
+            "id" : {
+              "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+            },
+            "name" : {
+              "value" : "Goldner Goldner and Goldner"
+            },
+            "specifiedSpsAddress" : {
+              "cityName" : {
+                "value" : "Ricoshire"
+              },
+              "countryID" : {
+                "value" : "GB"
+              },
+              "lineOne" : {
+                "value" : "2357 Rogers"
+              },
+              "lineThree" : {
+                "value" : "Rhode Island"
+              },
+              "lineTwo" : {
+                "value" : "90771 Patience Cove"
+              },
+              "postcodeCode" : {
+                "value" : "g4t 3RH"
+              }
+            }
+          },
+          "typeCode" : {
+            "value" : "13"
+          }
+        } ],
+        "assertedSpsAuthentication" : [ {
+          "actualDateTime" : {
+            "dateTime" : {
+              "value" : "2020-08-12T12:20:46Z"
+            }
+          },
+          "includedSpsClause" : [ {
+            "content" : [ {
+              "value" : "Compliant"
+            } ],
+            "id" : {
+              "value" : "PHSI_DOCUMENT_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Non compliant"
+            } ],
+            "id" : {
+              "value" : "PHSI_IDENTITY_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Entered text."
+            } ],
+            "id" : {
+              "value" : "PHSI_IDENTITY_REASON"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Not inspected"
+            } ],
+            "id" : {
+              "value" : "PHSI_PHYSICAL_STATUS"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Other"
+            } ],
+            "id" : {
+              "value" : "PHSI_PHYSICAL_REASON"
+            }
+          }, {
+            "content" : [ {
+              "value" : "Entered text."
+            } ],
+            "id" : {
+              "value" : "PHSI_PHYSICAL_OTHER_REASON"
+            }
+          } ],
+          "providerSpsParty" : {
+            "roleCode" : {
+              "value" : "AM"
+            },
+            "specifiedSpsPerson" : {
+              "name" : {
+                "value" : "Percy Inspector-Tester"
+              }
+            },
+            "typeCode" : [ {
+              "value" : "AUTHORITY"
+            } ]
+          },
+          "typeCode" : {
+            "value" : "1"
+          }
+        } ],
+        "netWeightMeasure" : {
+          "unitCode" : "KGM",
+          "value" : 1.0
+        },
+        "originSpsCountry" : [ {
+          "id" : {
+            "value" : "AF"
+          },
+          "name" : [ {
+            "value" : "AF"
+          } ],
+          "subordinateSpsCountrySubDivision" : [ {
+            "functionTypeCode" : {
+              "value" : "106"
+            },
+            "hierarchicalLevelCode" : {
+              "name" : "Region",
+              "value" : "1"
+            },
+            "name" : [ {
+              "value" : "IT"
+            } ]
+          } ]
+        } ],
+        "physicalSpsPackage" : [ {
+          "itemQuantity" : {
+            "value" : 1.0
+          },
+          "levelCode" : {
+            "value" : "4"
+          },
+          "typeCode" : {
+            "value" : "BG"
+          }
+        } ],
+        "scientificName" : [ {
+          "value" : "Narcissus"
+        } ],
+        "sequenceNumeric" : {
+          "value" : 3
+        }
+      } ]
+    } ],
+    "mainCarriageSpsTransportMovement" : [ {
+      "id" : {
+        "schemeAgencyID" : "GB",
+        "schemeAgencyName" : "United Kingdom",
+        "schemeID" : "airplane_flight_number_before_bcp",
+        "value" : "AB123"
+      },
+      "modeCode" : {
+        "value" : "4"
+      },
+      "usedSpsTransportMeans" : {
+        "name" : {
+          "value" : "Document"
+        }
+      }
+    }, {
+      "id" : {
+        "schemeAgencyID" : "GB",
+        "schemeAgencyName" : "United Kingdom",
+        "schemeID" : "train_identifier_after_bcp",
+        "value" : "8181881"
+      },
+      "modeCode" : {
+        "value" : "2"
+      },
+      "usedSpsTransportMeans" : {
+        "name" : {
+          "value" : "hshshshs"
+        }
+      }
+    } ],
+    "transitSpsCountry" : [ {
+      "subordinateSpsCountrySubDivision" : [ {
+        "activityAuthorizedSpsParty" : [ {
+          "id" : {
+            "value" : "GBLGW1"
+          },
+          "roleCode" : {
+            "value" : "CM"
+          }
+        } ],
+        "functionTypeCode" : {
+          "value" : "42"
+        },
+        "hierarchicalLevelCode" : {
+          "value" : "0"
+        }
+      } ]
+    }, {
+      "id" : {
+        "value" : "CM"
+      },
+      "name" : [ {
+        "value" : ""
+      } ],
+      "subordinateSpsCountrySubDivision" : [ {
+        "activityAuthorizedSpsParty" : [ {
+          "id" : {
+            "value" : "GBLGW1"
+          },
+          "roleCode" : {
+            "value" : "CM"
+          }
+        } ],
+        "functionTypeCode" : {
+          "value" : "42"
+        },
+        "hierarchicalLevelCode" : {
+          "value" : "0"
+        }
+      } ]
+    } ],
+    "unloadingBaseportSpsLocation" : {
+      "id" : {
+        "schemeID" : "un_locode",
+        "value" : "123-456"
+      },
+      "name" : [ {
+        "value" : "12"
+      } ]
+    },
+    "utilizedSpsTransportEquipment" : [ {
+      "affixedSpsSeal" : [ {
+        "id" : {
+          "schemeID" : "seal_number",
+          "value" : "6666"
+        }
+      } ]
+    }, {
+      "affixedSpsSeal" : [ {
+        "id" : {
+          "schemeID" : "official_seal_number",
+          "value" : "6667"
+        }
+      } ],
+      "id" : {
+        "schemeID" : "container_number",
+        "value" : "5679"
+      }
+    } ]
+  },
+  "spsExchangedDocument" : {
+    "id" : {
+      "value" : "CHEDPP.GB.2020.1029356"
+    },
+    "includedSpsNote" : [ {
+      "content" : [ {
+        "value" : "1"
+      } ],
+      "subjectCode" : {
+        "value" : "VERSION"
+      }
+    }, {
+      "content" : [ {
+        "value" : "2020-08-12T12:20:45Z"
+      } ],
+      "subjectCode" : {
+        "value" : "LAST_UPDATE_DATETIME"
+      }
+    }, {
+      "content" : [ {
+        "value" : "Percy Inspector-Tester"
+      } ],
+      "subjectCode" : {
+        "value" : "LAST_UPDATE_BY"
+      }
+    }, {
+      "contentCode" : [ {
+        "value" : "PP"
+      } ],
+      "subjectCode" : {
+        "value" : "CHED_TYPE"
+      }
+    }, {
+      "content" : [ {
+        "value" : "NO"
+      } ],
+      "subjectCode" : {
+        "value" : "CHILD_NOTIFICATION"
+      }
+    }, {
+      "content" : [ {
+        "value" : "NO"
+      } ],
+      "subjectCode" : {
+        "value" : "CONSIGNMENT_ARRIVED"
+      }
+    }, {
+      "content" : [ {
+        "value" : "NO"
+      } ],
+      "subjectCode" : {
+        "value" : "CONTAINS_WOOD_PACKAGING"
+      }
+    }, {
+      "content" : [ {
+        "value" : "Percy Inspector-Tester"
+      } ],
+      "subjectCode" : {
+        "value" : "CONTACT_DETAILS_NAME"
+      }
+    }, {
+      "content" : [ {
+        "value" : "020 8225 7295"
+      } ],
+      "subjectCode" : {
+        "value" : "CONTACT_DETAILS_TELEPHONE"
+      }
+    }, {
+      "content" : [ {
+        "value" : "DefraTestBIP@anthunt3.33mail.com"
+      } ],
+      "subjectCode" : {
+        "value" : "CONTACT_DETAILS_EMAIL"
+      }
+    }, {
+      "content" : [ {
+        "value" : "ContactAgent"
+      } ],
+      "subjectCode" : {
+        "value" : "CONTACT_DETAILS_AGENT"
+      }
+    }, {
+      "content" : [ {
+        "value" : "IPAFFS-17A-1.0.0-alpha"
+      } ],
+      "subjectCode" : {
+        "value" : "TradePlatform UN/CEFACT Mapping Version"
+      }
+    } ],
+    "issueDateTime" : {
+      "dateTime" : {
+        "value" : "2019-11-29T11:02:28Z"
+      }
+    },
+    "issuerSpsParty" : {
+      "id" : {
+        "value" : "79f6dc68-2144-e911-a96a-000d3a29ba60"
+      },
+      "name" : {
+        "value" : "Defra Test BIP"
+      },
+      "roleCode" : {
+        "value" : "VJ"
+      },
+      "specifiedSpsAddress" : {
+        "cityName" : {
+          "value" : "Surrey"
+        },
+        "countryID" : {
+          "value" : "GB"
+        },
+        "lineOne" : {
+          "value" : "Animal and Plant Health Agency, Woodham Lane, New Haw, Addlestone, Surrey, KT15 3NB, GB"
+        }
+      },
+      "specifiedSpsPerson" : {
+        "name" : {
+          "value" : "Percy Inspector-Tester"
+        }
+      },
+      "typeCode" : [ {
+        "value" : "OPERATOR"
+      } ]
+    },
+    "referenceSpsReferencedDocument" : [ {
+      "id" : {
+        "value" : "Customs reference number"
+      },
+      "relationshipTypeCode" : {
+        "name" : "Related document number (Related document number)",
+        "value" : "ACE"
+      },
+      "typeCode" : {
+        "name" : "Single administrative document (Customs document reference)",
+        "value" : "960"
+      }
+    }, {
+      "attachmentBinaryObject" : [ {
+        "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+        "mimeCode" : "application/pdf"
+      } ],
+      "id" : {
+        "schemeAgencyID" : "AF",
+        "value" : "1234"
+      },
+      "issueDateTime" : "2020-01-01",
+      "relationshipTypeCode" : {
+        "name" : "Mutually defined reference number (Supporting document)",
+        "value" : "ZZZ"
+      },
+      "typeCode" : {
+        "name" : "Air waybill",
+        "value" : "740"
+      }
+    }, {
+      "id" : {
+        "value" : "Importer reference number"
+      },
+      "relationshipTypeCode" : {
+        "name" : "Local Reference Number (Local reference)",
+        "value" : "AVZ"
+      },
+      "typeCode" : {
+        "name" : "Related document",
+        "value" : "916"
+      }
+    }, {
+      "id" : {
+        "value" : "CHEDPP.GB.2020.1029356V"
+      },
+      "relationshipTypeCode" : {
+        "name" : "Related document number (Related document number)",
+        "value" : "ACE"
+      },
+      "typeCode" : {
+        "name" : "Call-off delivery (Partially validated in >>)",
+        "value" : "76"
+      }
+    }, {
+      "id" : {
+        "value" : "CHEDPP.GB.2020.1029356R"
+      },
+      "relationshipTypeCode" : {
+        "name" : "Related document number (Related document number)",
+        "value" : "ACE"
+      },
+      "typeCode" : {
+        "name" : "Call-off delivery (Partially rejected in >>)",
+        "value" : "76"
+      }
+    }, {
+      "attachmentBinaryObject" : [ {
+        "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+        "mimeCode" : "application/pdf"
+      } ],
+      "id" : {
+        "schemeAgencyID" : "AF",
+        "schemeID" : "AT_INSPECTION",
+        "value" : "1234"
+      },
+      "issueDateTime" : "2020-01-01",
+      "relationshipTypeCode" : {
+        "name" : "Mutually defined reference number (Supporting document)",
+        "value" : "ZZZ"
+      },
+      "typeCode" : {
+        "name" : "Air waybill",
+        "value" : "740"
+      }
+    } ],
+    "signatorySpsAuthentication" : [ {
+      "actualDateTime" : {
+        "dateTime" : {
+          "value" : "2019-11-29T11:02:28Z"
+        }
+      },
+      "includedSpsClause" : [ {
+        "content" : [ {
+          "value" : "DIRECT_TRANSIT"
+        } ],
+        "id" : {
+          "value" : "PURPOSE"
+        }
+      }, {
+        "content" : [ {
+          "value" : "DefraTestBIP@anthunt3.33mail.com"
+        } ],
+        "id" : {
+          "value" : "SIGNATORY_PERSON_EMAIL"
+        }
+      } ],
+      "providerSpsParty" : {
+        "roleCode" : {
+          "value" : "AM"
+        },
+        "specifiedSpsPerson" : {
+          "name" : {
+            "value" : "Percy Inspector-Tester"
+          }
+        },
+        "typeCode" : [ {
+          "value" : "AUTHORITY"
+        } ]
+      },
+      "typeCode" : {
+        "value" : "4"
+      }
+    }, {
+      "actualDateTime" : {
+        "dateTime" : {
+          "value" : "2020-08-12T12:20:46Z"
+        }
+      },
+      "includedSpsClause" : [ {
+        "content" : [ {
+          "value" : "DefraTestBIP@anthunt3.33mail.com"
+        } ],
+        "id" : {
+          "value" : "SIGNATORY_PERSON_EMAIL"
+        }
+      } ],
+      "providerSpsParty" : {
+        "roleCode" : {
+          "value" : "AM"
+        },
+        "specifiedSpsPerson" : {
+          "name" : {
+            "value" : "Percy Inspector-Tester"
+          }
+        },
+        "typeCode" : [ {
+          "value" : "AUTHORITY"
+        } ]
+      },
+      "typeCode" : {
+        "value" : "1"
+      }
+    } ],
+    "statusCode" : {
+      "value" : "70"
+    },
+    "typeCode" : {
+      "name" : "Health certificate (Common Health Entry Document)",
+      "value" : "636"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id" : {
+    "schemeID" : "operator_activity_id",
+    "value" : "79f6dc68-2144-e911-a96a-000d3a29ba60"
+  },
+  "name" : {
+    "value" : "Percy Inspector-Tester"
+  },
+  "roleCode" : {
+    "name" : "Customs broker",
+    "value" : "CB"
+  },
+  "specifiedSpsAddress" : {
+    "cityName" : {
+      "value" : "London"
+    },
+    "countryID" : {
+      "value" : "GB"
+    },
+    "lineOne" : {
+      "value" : "Animal and Plant Health Agency, Woodham Lane, New Haw, Addlestone, Surrey, KT15 3NB, GB"
+    }
+  },
+  "typeCode" : [ {
+    "listID" : "operator_activity_type",
+    "name" : "Responsible for the load",
+    "value" : "RESPONSIBLE_FOR_THE_LOAD"
+  }, {
+    "listID" : "classification_section_code",
+    "name" : "Responsible for the load (Freight Forwarder)",
+    "value" : "RFL"
+  } ]
+}

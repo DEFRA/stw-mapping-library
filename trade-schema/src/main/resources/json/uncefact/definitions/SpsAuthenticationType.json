@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "SpsAuthenticationType.json",
+  "SpsAuthenticationType": {
+    "type": "object",
+    "properties": {
+      "actualDateTime": {
+        "$ref": "DateTimeType.json#/DateTimeType"
+      },
+      "includedSpsClause": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  { "$ref": "TextType.json#/TextType"},
+                  { "required": [ "value" ] }
+                ]
+              }
+            },
+            "id": {
+              "$ref": "IDType.json#/IDType"
+            }
+          },
+          "required": [
+            "content"
+          ]
+        }
+      },
+      "issueSpsLocation": {
+        "$ref": "SpsLocationType.json#/SpsLocationType"
+      },
+      "locationProviderSpsParty": {
+        "$ref": "SpsPartyType.json#/SpsPartyType"
+      },
+      "providerSpsParty": {
+        "$ref": "SpsPartyType.json#/SpsPartyType"
+      },
+      "typeCode": {
+        "$ref": "GovernmentActionCodeType.json#/GovernmentActionCodeType"
+      }
+    },
+    "required": [
+      "actualDateTime",
+      "includedSpsClause",
+      "providerSpsParty"
+    ]
+  }
+}

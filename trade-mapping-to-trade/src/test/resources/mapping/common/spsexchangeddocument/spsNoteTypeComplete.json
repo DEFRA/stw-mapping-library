@@ -1,0 +1,22 @@
+[ {
+  "content" : [ {
+    "value" : "1"
+  } ],
+  "subjectCode" : {
+    "value" : "VERSION"
+  }
+}, {
+  "content" : [ {
+    "value" : "2020-08-12T12:20:45Z"
+  } ],
+  "subjectCode" : {
+    "value" : "LAST_UPDATE_DATETIME"
+  }
+}, {
+  "content" : [ {
+    "value" : "Percy Inspector-Tester"
+  } ],
+  "subjectCode" : {
+    "value" : "LAST_UPDATE_BY"
+  }
+} ]

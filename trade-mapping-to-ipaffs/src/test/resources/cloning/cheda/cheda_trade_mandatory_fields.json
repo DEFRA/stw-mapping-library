@@ -1,0 +1,419 @@
+{
+  "spsConsignment": {
+    "consigneeSpsParty": {
+      "id": {
+        "value": "ehc-identifier-consignee"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      },
+      "specifiedSpsAddress": {
+        "cityName": {
+          "value": "Vienna"
+        },
+        "countryID": {
+          "value": "AT"
+        },
+        "countryName": {
+          "value": "Austria"
+        },
+        "lineOne": {
+          "value": "Isle of Man Government Office of Human Resources"
+        },
+        "lineTwo": {
+          "value": "Learning Education and Development"
+        },
+        "lineThree": {
+          "value": "The Lodge Education and Training Centre"
+        },
+        "lineFour": {
+          "value": "Braddan Road"
+        },
+        "lineFive": {
+          "value": "Strang"
+        },
+        "postcodeCode": {
+          "value": "1030"
+        }
+      }
+    },
+    "consignorSpsParty": {
+      "id": {
+        "value": "ehc-identifier-consignor"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      },
+      "specifiedSpsAddress": {
+        "cityName": {
+          "value": "Vienna"
+        },
+        "countryID": {
+          "value": "AT"
+        },
+        "countryName": {
+          "value": "Austria"
+        },
+        "lineOne": {
+          "value": "Isle of Man Government Office of Human Resources"
+        },
+        "lineTwo": {
+          "value": "Learning Education and Development"
+        },
+        "lineThree": {
+          "value": "The Lodge Education and Training Centre"
+        },
+        "lineFour": {
+          "value": "Braddan Road"
+        },
+        "lineFive": {
+          "value": "Strang"
+        },
+        "postcodeCode": {
+          "value": "1030"
+        }
+      }
+    },
+    "examinationSpsEvent": {
+      "occurrenceSpsLocation": {
+        "name": [
+          {
+            "value": ""
+          }
+        ]
+      }
+    },
+    "importSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0103"
+                },
+                "className": [
+                  {
+                    "value": "Live swine"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CC"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "FR"
+                },
+                "name": [
+                  {
+                    "value": "France"
+                  }
+                ]
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Sus scrofa domesticus"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0101"
+                },
+                "className": [
+                  {
+                    "value": "Live horses, asses, mules and hinnies"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CC"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "FR"
+                },
+                "name": [
+                  {
+                    "value": "France"
+                  }
+                ]
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Equus caballus"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 2
+            }
+          }
+        ]
+      },
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0102"
+                },
+                "className": [
+                  {
+                    "value": "Live bovine animals"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CC"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "FR"
+                },
+                "name": [
+                  {
+                    "value": "France"
+                  }
+                ]
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Bison bison"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "010410"
+                },
+                "className": [
+                  {
+                    "value": "Sheep"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CC"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "FR"
+                },
+                "name": [
+                  {
+                    "value": "France"
+                  }
+                ]
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Ovis aries"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 4
+            }
+          }
+        ]
+      },
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "01051111"
+                },
+                "className": [
+                  {
+                    "value": "Weighing not more than 185 g:Fowls of the species Gallus domesticus, Grandparent and parent female chicks: Laying stocks"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CC"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "FR"
+                },
+                "name": [
+                  {
+                    "value": "France"
+                  }
+                ]
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Gallus gallus"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 5
+            }
+          }
+        ]
+      }
+    ],
+    "exportSpsCountry": {
+      "id": {
+        "value": "FR"
+      },
+      "name": [
+        {
+          "value": "France"
+        }
+      ]
+    }
+  },
+  "spsExchangedDocument": {
+    "name": [
+      {
+        "value": ""
+      }
+    ],
+    "typeCode": {
+      "value": "636"
+    },
+    "includedSpsNote": [
+      {
+        "content": [
+          {
+            "value": "TradePlatform-17A-1.0.0-alpha"
+          }
+        ],
+        "subjectCode": {
+          "value": "TradePlatform UN/CEFACT Mapping Version"
+        }
+      }
+    ],
+    "id": {
+      "value": "CHED-A/MANDATORY-FIELDS"
+    },
+    "issueDateTime": {
+      "dateTime": {
+        "value": "2020-10-11T21:20:46Z"
+      }
+    },
+    "signatorySpsAuthentication": [
+      {
+        "actualDateTime": {
+          "dateTime": {
+            "value": "2019-11-29T11:02:28Z"
+          }
+        },
+        "providerSpsParty": {
+          "name": {
+            "value": ""
+          }
+        },
+        "includedSpsClause": [
+          {
+            "content": [
+              {
+                "value": "INTERNAL_MARKET"
+              }
+            ],
+            "id": {
+              "value": "PURPOSE"
+            }
+          },
+          {
+            "content": [
+              {
+                "value": "APPROVED_BODIES"
+              }
+            ],
+            "id": {
+              "value": "GOODS_CERTIFIED_AS"
+            }
+          }
+        ]
+      }
+    ],
+    "statusCode": {
+      "name": "Draft",
+      "value": "47"
+    }
+  }
+}

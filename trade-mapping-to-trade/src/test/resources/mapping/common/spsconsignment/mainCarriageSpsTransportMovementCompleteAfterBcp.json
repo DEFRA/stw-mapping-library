@@ -1,0 +1,16 @@
+{
+  "id" : {
+    "schemeAgencyID" : "GB",
+    "schemeAgencyName" : "United Kingdom",
+    "schemeID" : "#{afterBcpSchemeIdValue}",
+    "value" : "8181881"
+  },
+  "modeCode" : {
+    "value" : "#{modeCodeValue}"
+  },
+  "usedSpsTransportMeans" : {
+    "name" : {
+      "value" : "hshshshs"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id" : {
+    "schemeAgencyID" : "GB",
+    "schemeAgencyName" : "United Kingdom",
+    "schemeID" : "#{beforeBcpSchemeIdValue}",
+    "value" : "AB123"
+  },
+  "modeCode" : {
+    "value" : "#{modeCodeValue}"
+  },
+  "usedSpsTransportMeans" : {
+    "name" : {
+      "value" : "Document"
+    }
+  }
+}

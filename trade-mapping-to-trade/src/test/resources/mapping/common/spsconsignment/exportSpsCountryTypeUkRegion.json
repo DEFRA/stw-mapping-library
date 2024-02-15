@@ -1,0 +1,16 @@
+{
+  "id" : {
+    "value" : "GB"
+  },
+  "subordinateSpsCountrySubDivision" : [ {
+    "functionTypeCode" : {
+      "value" : "106"
+    },
+    "hierarchicalLevelCode" : {
+      "value" : "1"
+    },
+    "name" : [ {
+      "value" : "GB-WLS"
+    } ]
+  } ]
+}

@@ -1,0 +1,41 @@
+[ {
+  "id" : {
+    "value" : "BH"
+  },
+  "subordinateSpsCountrySubDivision" : [ {
+    "activityAuthorizedSpsParty" : [ {
+      "id" : {
+        "value" : "GBFXT1"
+      },
+      "roleCode" : {
+        "value" : "CM"
+      }
+    } ],
+    "functionTypeCode" : {
+      "value" : "42"
+    },
+    "hierarchicalLevelCode" : {
+      "value" : "0"
+    }
+  } ]
+}, {
+  "id" : {
+    "value" : "CM"
+  },
+  "subordinateSpsCountrySubDivision" : [ {
+    "activityAuthorizedSpsParty" : [ {
+      "id" : {
+        "value" : "GBFXT1"
+      },
+      "roleCode" : {
+        "value" : "CM"
+      }
+    } ],
+    "functionTypeCode" : {
+      "value" : "42"
+    },
+    "hierarchicalLevelCode" : {
+      "value" : "0"
+    }
+  } ]
+} ]

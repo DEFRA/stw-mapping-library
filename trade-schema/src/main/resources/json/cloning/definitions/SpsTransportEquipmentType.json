@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "SpsTransportEquipmentType.json",
+  "SpsTransportEquipmentType": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "properties": {
+          "value": {
+            "maxLength": 32
+          }
+        }
+      },
+      "affixedSpsSeal": {
+        "items": {
+          "properties": {
+            "id": {
+              "properties": {
+                "value": {
+                  "maxLength": 32
+                }
+              }
+            }
+          }
+        },
+        "maxItems": 1
+      }
+    }
+  }
+}
