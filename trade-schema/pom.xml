@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <artifactId>Mapping-Library</artifactId>
-    <groupId>uk.gov.defra.tracesx</groupId>
+    <artifactId>mapping-library</artifactId>
+    <groupId>uk.gov.defra.stw</groupId>
     <version>4.0.1-SNAPSHOT</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
 
   <artifactId>trade-schema</artifactId>
   <version>4.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <properties>
-    <everit.json.schema.version>1.12.1</everit.json.schema.version>
-  </properties>
 
   <dependencies>
     <dependency>
@@ -21,19 +17,15 @@
       <artifactId>spring-context</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <scope>test</scope>
+      <groupId>com.github.erosb</groupId>
+      <artifactId>everit-json-schema</artifactId>
     </dependency>
+
+    <!-- Test -->
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.github.everit-org.json-schema</groupId>
-      <artifactId>org.everit.json.schema</artifactId>
-      <version>${everit.json.schema.version}</version>
     </dependency>
   </dependencies>
 

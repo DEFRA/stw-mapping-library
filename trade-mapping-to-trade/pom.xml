@@ -1,40 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <artifactId>Mapping-Library</artifactId>
-    <groupId>uk.gov.defra.tracesx</groupId>
+    <artifactId>mapping-library</artifactId>
+    <groupId>uk.gov.defra.stw</groupId>
     <version>4.0.1-SNAPSHOT</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
 
   <artifactId>trade-mapping-to-trade</artifactId>
   <version>4.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <scm>
-    <connection>${parent.scm.connection}</connection>
-    <tag>HEAD</tag>
-  </scm>
 
   <dependencies>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -50,18 +30,7 @@
       <artifactId>spring-context</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>com.vaadin.external.google</groupId>
-          <artifactId>android-json</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>uk.gov.defra.tracesx</groupId>
+      <groupId>uk.gov.defra.stw</groupId>
       <artifactId>trade-dtos</artifactId>
       <version>${project.version}</version>
     </dependency>
@@ -74,14 +43,21 @@
       <artifactId>notification-schema-java</artifactId>
     </dependency>
     <dependency>
-      <groupId>uk.gov.defra.tracesx</groupId>
+      <groupId>uk.gov.defra.stw</groupId>
       <artifactId>trade-validation</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>uk.gov.defra.tracesx</groupId>
+      <groupId>uk.gov.defra.stw</groupId>
       <artifactId>trade-schema</artifactId>
       <version>${project.version}</version>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
