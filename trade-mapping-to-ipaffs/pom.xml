@@ -44,47 +44,11 @@
   </dependencies>
 
   <build>
-    <!-- Keep filename static to avoid updating the Dockerfile -->
-    <finalName>trade-mapping-to-trade</finalName>
-
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>${maven.checkstyle.version}</version>
-          <dependencies>
-            <dependency>
-              <groupId>com.puppycrawl.tools</groupId>
-              <artifactId>checkstyle</artifactId>
-              <version>${checkstyle.version}</version>
-            </dependency>
-          </dependencies>
-          <configuration>
-            <configLocation>${project.build.directory}/maven-shared-archive-resources/google_checks_ipaffs.xml</configLocation>
-            <logViolationsToConsole>true</logViolationsToConsole>
-            <outputFile>${project.build.directory}/checkstyle-result.xml</outputFile>
-            <violationSeverity>warning</violationSeverity>
-            <failsOnError>true</failsOnError>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>check</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
       </plugin>
     </plugins>
-
   </build>
-
 </project>

@@ -119,11 +119,6 @@
           <version>${maven.jar.plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-help-plugin</artifactId>
-          <version>${maven.help.plugin.version}</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven.release.plugin.version}</version>
           <configuration>
@@ -239,6 +234,32 @@
               <id>configure-git-hooks</id>
               <goals>
                 <goal>configure</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${maven.checkstyle.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>${checkstyle.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <configLocation>${project.build.directory}/maven-shared-archive-resources/google_checks_ipaffs.xml</configLocation>
+            <logViolationsToConsole>true</logViolationsToConsole>
+            <outputFile>${project.build.directory}/checkstyle-result.xml</outputFile>
+            <violationSeverity>warning</violationSeverity>
+            <failsOnError>true</failsOnError>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
               </goals>
             </execution>
           </executions>
