@@ -3,7 +3,7 @@
 
   <groupId>uk.gov.defra.stw</groupId>
   <artifactId>mapping-library</artifactId>
-  <version>4.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <properties>
