@@ -5,11 +5,11 @@
   <parent>
     <artifactId>mapping-library</artifactId>
     <groupId>uk.gov.defra.stw</groupId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>trade-mapping-to-ipaffs</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
 
   <dependencies>
     <dependency>
