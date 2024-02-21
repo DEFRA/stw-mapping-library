@@ -1,0 +1,19 @@
+[ {
+  "attachmentBinaryObject" : [ {
+    "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+    "mimeCode" : "application/pdf"
+  } ],
+  "id" : {
+    "schemeAgencyID" : "AF",
+    "value" : "1234"
+  },
+  "issueDateTime" : "2020-01-01",
+  "relationshipTypeCode" : {
+    "name" : "Mutually defined reference number (Supporting document)",
+    "value" : "ZZZ"
+  },
+  "typeCode" : {
+    "name" : "#{typeCodeName}",
+    "value" : "#{typeCodeValue}"
+  }
+} ]

@@ -1,0 +1,37 @@
+{
+  "referenceNumber" : "NZL20/AGL4/1004",
+  "purpose" : "Human Consumption",
+  "commodities" : {
+    "countryOfOrigin" : "FJ",
+    "consignedCountry" : "IS",
+    "temperature" : "Chilled",
+    "commodityDescriptions" : [ {
+      "commodityCode" : "02042210",
+      "speciesName" : "Ovis aries",
+      "netWeight" : "41",
+      "packages" : "2",
+      "packageType" : "Box",
+      "quantity" : "41",
+      "quantityType" : "Kilograms",
+      "description" : "Short forequarters"
+    }, {
+      "commodityCode" : "02032110",
+      "speciesName" : "Sus scrofa domesticus",
+      "netWeight" : "60",
+      "packages" : "3",
+      "packageType" : "Crate",
+      "quantity" : "60",
+      "quantityType" : "Kilograms",
+      "description" : "Of domestic swine"
+    } ]
+  },
+  "pointOfEntry" : "GBBEL1",
+  "sealsContainers" : [ {
+    "sealNumber" : "3191",
+    "containerNumber" : "5089"
+  }, {
+    "sealNumber" : "3192",
+    "containerNumber" : "5090"
+  } ],
+  "consolidatedCommodities" : false
+}

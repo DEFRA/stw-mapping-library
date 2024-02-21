@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "SpsTransportEquipmentType.json",
+  "SpsTransportEquipmentType": {
+    "type": "object",
+    "properties": {
+      "affixedSpsSeal": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "allOf": [
+                { "$ref": "IDType.json#/IDType"},
+                { "required": [ "value" ] }
+              ]
+            },
+            "issuingSpsParty": {
+              "$ref": "SpsPartyType.json#/SpsPartyType"
+            },
+            "maximumID": {
+              "$ref": "IDType.json#/IDType"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        }
+      },
+      "id": {
+        "allOf": [
+          { "$ref": "IDType.json#/IDType"},
+          { "required": [ "value" ] }
+        ]
+      },
+      "settingSpsTemperature": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "maximumValueMeasure": {
+              "$ref": "MeasureType.json#/MeasureType"
+            },
+            "minimumValueMeasure": {
+              "$ref": "MeasureType.json#/MeasureType"
+            },
+            "typeCode": {
+              "$ref": "TemperatureTypeCodeType.json#/TemperatureTypeCodeType"
+            },
+            "valueMeasure": {
+              "$ref": "MeasureType.json#/MeasureType"
+            }
+          }
+        }
+      }
+    },
+    "required": [
+      "id"
+    ]
+  }
+}

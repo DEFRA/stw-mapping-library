@@ -1,0 +1,18 @@
+[ {
+  "subordinateSpsCountrySubDivision" : [ {
+    "activityAuthorizedSpsParty" : [ {
+      "id" : {
+        "value" : "GBFXT1"
+      },
+      "roleCode" : {
+        "value" : "CM"
+      }
+    } ],
+    "functionTypeCode" : {
+      "value" : "13"
+    },
+    "hierarchicalLevelCode" : {
+      "value" : "0"
+    }
+  } ]
+} ]

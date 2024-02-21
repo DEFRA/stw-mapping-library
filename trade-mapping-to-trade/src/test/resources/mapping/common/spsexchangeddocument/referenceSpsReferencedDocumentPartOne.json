@@ -1,0 +1,13 @@
+[ {
+  "id" : {
+    "value" : "Importer reference number"
+  },
+  "relationshipTypeCode" : {
+    "name" : "Local Reference Number (Local reference)",
+    "value" : "AVZ"
+  },
+  "typeCode" : {
+    "name" : "Related document",
+    "value" : "916"
+  }
+} ]

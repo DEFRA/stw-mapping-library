@@ -1,0 +1,478 @@
+{
+  "spsConsignment": {
+    "carrierSpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "consigneeSpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "consignorSpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "deliverySpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "unloadingBaseportSpsLocation": {
+      "id": {
+        "schemeID": "un_locode",
+        "value": "GBLHR1P"
+      },
+      "name": [
+        {
+          "value": "GB"
+        }
+      ]
+    },
+    "mainCarriageSpsTransportMovement":[
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_before_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        }
+      }
+    ],
+    "utilizedSpsTransportEquipment": [
+      {
+        "affixedSpsSeal": [
+          {
+            "id": {
+              "schemeID": "seal_number",
+              "value": "S12345"
+            }
+          }
+        ],
+        "id": {
+          "schemeID": "container_number",
+          "value": "C12345"
+        }
+      }
+    ],
+    "importSpsCountry": {
+      "id": {
+        "value": "FR"
+      },
+      "name": [
+        {
+          "value": "France"
+        }
+      ]
+    },
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "100"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "12345"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "CATCH_CERTIFICATE_WEIGHT_KG"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Arenareus spp"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "12345"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "CATCH_CERTIFICATE_SPECIES"
+                }
+              }
+            ],
+            "appliedSpsProcess": [
+              {
+                "operationSpsCountry": {
+                  "id": {
+                    "value": "NZ"
+                  },
+                  "name": [
+                    {
+                      "value": "New Zealand"
+                    }
+                  ]
+                },
+                "operatorSpsParty": {
+                  "id": {
+                    "value": "ME26"
+                  },
+                  "name": {
+                    "value": "Silver Fern Farms Limited - Pareora"
+                  },
+                  "roleCode": {
+                    "name": "Meat of domestic ungulates",
+                    "value": "ZZZ"
+                  }
+                },
+                "typeCode": {
+                  "name": "Slaughterhouses",
+                  "value": "SH"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "07099990"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "className": [
+                  {
+                    "value": "Farmed game  "
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CCT"
+                  }
+                ]
+              },
+              {
+                "className": [
+                  {
+                    "value": "Artiodactyla"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CCC"
+                  }
+                ]
+              },
+              {
+                "className": [
+                  {
+                    "value": "Camelidae"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CCF"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "NZ"
+                },
+                "name": [
+                  {
+                    "value": "New Zealand"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 2.0
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BG"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "07099991"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "className": [
+                  {
+                    "value": "Farmed game  "
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CCT"
+                  }
+                ]
+              },
+              {
+                "className": [
+                  {
+                    "value": "Artiodactyla"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CCC"
+                  }
+                ]
+              },
+              {
+                "className": [
+                  {
+                    "value": "Camelidae"
+                  }
+                ],
+                "systemName": [
+                  {
+                    "value": "IPAFFS_CCF"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 739.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 739.26
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "NZ"
+                },
+                "name": [
+                  {
+                    "value": "New Zealand"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 3.0
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "PK"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 2
+            }
+          }
+        ]
+      }
+    ],
+    "exportSpsCountry": {
+      "id": {
+        "value": "NZ"
+      },
+      "name": [
+        {
+          "value": "New Zealand"
+        }
+      ]
+    },
+    "transitSpsCountry" : [ {
+      "id" : {
+        "value" : "BH"
+      },
+      "subordinateSpsCountrySubDivision" : [ {
+        "activityAuthorizedSpsParty" : [ {
+          "id" : {
+            "value" : "BEBRU"
+          },
+          "roleCode" : {
+            "value" : "CM"
+          }
+        } ],
+        "functionTypeCode" : {
+          "value" : "42"
+        },
+        "hierarchicalLevelCode" : {
+          "value" : "0"
+        }
+      } ]
+    } ]
+  },
+  "spsExchangedDocument": {
+    "includedSpsNote": [
+      {
+        "content": [
+          {
+            "value": ""
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "AMBIENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "PRODUCT_TEMPERATURE"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ],
+        "subjectCode": {
+          "value": "CONFORMS_TO_EU"
+        }
+      }
+    ],
+    "id" : {
+      "value" : "NZL2020/PPCS2/121580"
+    },
+    "issueDateTime": {
+      "dateTime": {
+        "value": "2020-10-11T21:20:46Z"
+      }
+    },
+    "referenceSpsReferencedDocument": [
+      {
+        "attachmentBinaryObject": [
+          {
+            "filename": "sample.pdf",
+            "mimeCode": "application/pdf",
+            "value": [
+              "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ZW5kb2JqDQoyNiAwIG9iag0KPDwvVHlwZS9NZXRhZGF0YS9TdWJ0eXBlL1hNTC9MZW5ndGggMzAwNj4+DQpzdHJlYW0NCjw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+PHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iMy4xLTcwMSI+CjxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiICB4bWxuczpwZGY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8iPgo8L3JkZjpEZXNjcmlwdGlvbj4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+CjxkYzpjcmVhdG9yPjxyZGY6U2VxPjxyZGY6bGk+UGF1bCBCbGFrZWxleTwvcmRmOmxpPjwvcmRmOlNlcT48L2RjOmNyZWF0b3I+PC9yZGY6RGVzY3JpcHRpb24+CjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPgo8eG1wOkNyZWF0b3JUb29sPk1pY3Jvc29mdCBXb3JkPC94bXA6Q3JlYXRvclRvb2w+PHhtcDpDcmVhdGVEYXRlPjIwMjItMDctMjhUMTM6Mzc6MTcrMDA6MDA8L3htcDpDcmVhdGVEYXRlPjx4bXA6TW9kaWZ5RGF0ZT4yMDIyLTA3LTI4VDEzOjM3OjE3KzAwOjAwPC94bXA6TW9kaWZ5RGF0ZT48L3JkZjpEZXNjcmlwdGlvbj4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIj4KPHhtcE1NOkRvY3VtZW50SUQ+dXVpZDowQzJBOUY3Qy1BNTdDLTQwQjMtODJENC1GNDFGRkE1MUI1NEM8L3htcE1NOkRvY3VtZW50SUQ+PHhtcE1NOkluc3RhbmNlSUQ+dXVpZDowQzJBOUY3Qy1BNTdDLTQwQjMtODJENC1GNDFGRkE1MUI1NEM8L3htcE1NOkluc3RhbmNlSUQ+PC9yZGY6RGVzY3JpcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8L3JkZjpSREY+PC94OnhtcG1ldGE+PD94cGFja2V0IGVuZD0idyI/Pg0KZW5kc3RyZWFtDQplbmRvYmoNCjI3IDAgb2JqDQo8PC9EaXNwbGF5RG9jVGl0bGUgdHJ1ZT4+DQplbmRvYmoNCjI4IDAgb2JqDQo8PC9UeXBlL1hSZWYvU2l6ZSAyOC9XWyAxIDQgMl0gL1Jvb3QgMSAwIFIvSW5mbyA5IDAgUi9JRFs8N0M5RjJBMEM3Q0E1QjM0MDgyRDRGNDFGRkE1MUI1NEM+PDdDOUYyQTBDN0NBNUIzNDA4MkQ0RjQxRkZBNTFCNTRDPl0gL0ZpbHRlci9GbGF0ZURlY29kZS9MZW5ndGggMTA0Pj4NCnN0cmVhbQ0KeJxjYACC//8ZgaQgAwOI2gah3oEpxm9gimUtmGL1A1NsBhAqFULNAlPsWhAqk4GBCahdmIEdQnFAKE4IxQWh2CAUVCU3SN8RGI8RQjFBKGYIxQKhWIEqOTvBFnFNAVNiSxkYAHAyC5QNCmVuZHN0cmVhbQ0KZW5kb2JqDQp4cmVmDQowIDI5DQowMDAwMDAwMDEyIDY1NTM1IGYNCjAwMDAwMDAwMTcgMDAwMDAgbg0KMDAwMDAwMDE4MiAwMDAwMCBuDQowMDAwMDAwMjM4IDAwMDAwIG4NCjAwMDAwMDA1MDIgMDAwMDAgbg0KMDAwMDAwMTE5NyAwMDAwMCBuDQowMDAwMDAxMzU4IDAwMDAwIG4NCjAwMDAwMDE1ODQgMDAwMDAgbg0KMDAwMDAwMTYzNyAwMDAwMCBuDQowMDAwMDAxNjkwIDAwMDAwIG4NCjAwMDAwMDE4MzQgMDAwMDAgbg0KMDAwMDAwMTg5NyAwMDAwMCBuDQowMDAwMDAwMDEzIDY1NTM1IGYNCjAwMDAwMDAwMTQgNjU1MzUgZg0KMDAwMDAwMDAxNSA2NTUzNSBmDQowMDAwMDAwMDE2IDY1NTM1IGYNCjAwMDAwMDAwMTcgNjU1MzUgZg0KMDAwMDAwMDAxOCA2NTUzNSBmDQowMDAwMDAwMDE5IDY1NTM1IGYNCjAwMDAwMDAwMjAgNjU1MzUgZg0KMDAwMDAwMDAyMSA2NTUzNSBmDQowMDAwMDAwMDIyIDY1NTM1IGYNCjAwMDAwMDAwMjMgNjU1MzUgZg0KMDAwMDAwMDAyNCA2NTUzNSBmDQowMDAwMDAwMDAwIDY1NTM1IGYNCjAwMDAwMDI0NDEgMDAwMDAgbg0KMDAwMDAwMjcwOCAwMDAwMCBuDQowMDAwMDA1Nzk3IDAwMDAwIG4NCjAwMDAwMDU4NDIgMDAwMDAgbg0KdHJhaWxlcg0KPDwvU2l6ZSAyOS9Sb290IDEgMCBSL0luZm8gOSAwIFIvSURbPDdDOUYyQTBDN0NBNUIzNDA4MkQ0RjQxRkZBNTFCNTRDPjw3QzlGMkEwQzdDQTVCMzQwODJENEY0MUZGQTUxQjU0Qz5dID4+DQpzdGFydHhyZWYNCjYxNDYNCiUlRU9GDQp4cmVmDQowIDANCnRyYWlsZXINCjw8L1NpemUgMjkvUm9vdCAxIDAgUi9JbmZvIDkgMCBSL0lEWzw3QzlGMkEwQzdDQTVCMzQwODJENEY0MUZGQTUxQjU0Qz48N0M5RjJBMEM3Q0E1QjM0MDgyRDRGNDFGRkE1MUI1NEM+XSAvUHJldiA2MTQ2L1hSZWZTdG0gNTg0Mj4+DQpzdGFydHhyZWYNCjY4ODENCiUlRU9G"
+            ]
+          }
+        ],
+        "id": {
+          "value": "9022780365"
+        },
+        "issueDateTime": "2020-07-01T00:00:00.000+02:00",
+        "relationshipTypeCode": {
+          "name": "",
+          "value": "ZZZ"
+        },
+        "typeCode": {
+          "name": "Veterinary certificate",
+          "value": "853"
+        }
+      }
+    ],
+    "signatorySpsAuthentication": [
+      {
+        "includedSpsClause": [
+          {
+            "content": [
+              {
+                "value": "TRANSHIPMENT"
+              }
+            ],
+            "id": {
+              "value": "PURPOSE"
+            }
+          }
+        ]
+      }
+    ],
+    "statusCode": {
+      "name": "Draft",
+      "value": "47"
+    }
+  }
+}

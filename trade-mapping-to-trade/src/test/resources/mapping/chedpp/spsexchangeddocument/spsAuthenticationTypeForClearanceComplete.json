@@ -1,0 +1,31 @@
+{
+  "actualDateTime" : {
+    "dateTime" : {
+      "value" : "2020-08-12T12:20:46Z"
+    }
+  },
+  "includedSpsClause" : [ {
+    "content" : [ {
+      "value" : "DefraTestBIP@anthunt3.33mail.com"
+    } ],
+    "id" : {
+      "value" : "SIGNATORY_PERSON_EMAIL"
+    }
+  } ],
+  "providerSpsParty" : {
+    "roleCode" : {
+      "value" : "AM"
+    },
+    "specifiedSpsPerson" : {
+      "name" : {
+        "value" : "Percy Inspector-Tester"
+      }
+    },
+    "typeCode" : [ {
+      "value" : "AUTHORITY"
+    } ]
+  },
+  "typeCode" : {
+    "value" : "1"
+  }
+}

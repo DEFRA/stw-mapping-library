@@ -1,0 +1,12 @@
+[ {
+  "affixedSpsSeal" : [ {
+    "id" : {
+      "schemeID" : "seal_number",
+      "value" : "NA"
+    }
+  } ],
+  "id" : {
+    "schemeID" : "container_number",
+    "value" : "5678"
+  }
+} ]

@@ -1,0 +1,25 @@
+{
+  "id" : {
+    "value" : "02a23823-7009-4e32-b494-054f0d4e4be7"
+  },
+  "name" : {
+    "value" : "Zieme Zieme and Zieme"
+  },
+  "specifiedSpsAddress" : {
+    "cityName" : {
+      "value" : "East Sigridville"
+    },
+    "countryID" : {
+      "value" : "FR"
+    },
+    "lineOne" : {
+      "value" : "6489 Pansy"
+    },
+    "lineThree" : {
+      "value" : "Oklahoma"
+    },
+    "lineTwo" : {
+      "value" : "06982 Larkin Ranch"
+    }
+  }
+}

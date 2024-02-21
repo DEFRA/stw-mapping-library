@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "CodeType.json",
+  "CodeType": {
+    "type": "object",
+    "properties": {
+      "languageID": {
+        "type": "string"
+      },
+      "listAgencyID": {
+        "type": "string"
+      },
+      "listAgencyName": {
+        "type": "string"
+      },
+      "listID": {
+        "type": "string"
+      },
+      "listName": {
+        "type": "string"
+      },
+      "listSchemeURI": {
+        "type": "string"
+      },
+      "listURI": {
+        "type": "string"
+      },
+      "listVersionID": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      }
+    }
+  }
+}

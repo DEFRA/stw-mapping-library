@@ -1,0 +1,56 @@
+[
+  {
+    "classCode": {
+      "value": "07099990"
+    },
+    "className": [
+      {
+        "value": "Other"
+      }
+    ],
+    "systemID": {
+      "value": "CN"
+    },
+    "systemName": [
+      {
+        "value": "CN Code (Combined Nomenclature)"
+      }
+    ]
+  },
+  {
+    "className": [
+      {
+        "value": "Farmed game  "
+      }
+    ],
+    "systemName": [
+      {
+        "value": "IPAFFS_CCT"
+      }
+    ]
+  },
+  {
+    "className": [
+      {
+        "value": "Artiodactyla"
+      }
+    ],
+    "systemName": [
+      {
+        "value": "IPAFFS_CCC"
+      }
+    ]
+  },
+  {
+    "className": [
+      {
+        "value": "Camelidae"
+      }
+    ],
+    "systemName": [
+      {
+        "value": "IPAFFS_CCF"
+      }
+    ]
+  }
+]

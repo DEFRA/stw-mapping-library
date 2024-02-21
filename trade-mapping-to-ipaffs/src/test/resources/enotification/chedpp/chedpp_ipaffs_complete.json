@@ -1,0 +1,94 @@
+{
+  "id" : 0,
+  "externalReferences" : [ {
+    "system" : "E-NOTIFICATION",
+    "reference" : "188044499"
+  } ],
+  "version" : 0,
+  "type" : "CHEDPP",
+  "status" : "DRAFT",
+  "partOne" : {
+    "consignor" : {
+      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "type" : "exporter"
+    },
+    "placeOfDestination" : {
+      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "type" : "exporter"
+    },
+    "commodities" : {
+      "commodityComplement" : [ {
+        "commodityID" : "1209918010",
+        "commodityDescription" : "Seeds",
+        "complementID" : 1,
+        "complementName" : "Chamaecrista comosa var. capricorna",
+        "eppoCode" : "MABSD",
+        "speciesName" : "Chamaecrista comosa var. capricorna",
+        "speciesNomination" : "Chamaecrista comosa var. capricorna"
+      } ],
+      "complementParameterSet" : [ {
+        "uniqueComplementID" : "3f8bd1d2-199c-447f-955e-c5a5a9160c95",
+        "complementID" : 1,
+        "keyDataPair" : [ {
+          "key" : "netweight",
+          "data" : "929.26"
+        }, {
+          "key" : "number_package",
+          "data" : "2"
+        }, {
+          "key" : "type_package",
+          "data" : "Bag"
+        }, {
+          "key" : "quantity",
+          "data" : "20.0"
+        }, {
+          "key" : "type_quantity",
+          "data" : "Stems"
+        }, {
+          "key" : "container",
+          "data" : "true"
+        }, {
+          "key" : "finished_or_propagated",
+          "data" : "Finished"
+        }, {
+          "key" : "variety",
+          "data" : "Pink Lady"
+        }, {
+          "key" : "class",
+          "data" : "Class I"
+        }, {
+          "key" : "sequence_numeric",
+          "data" : "1"
+        } ]
+      } ],
+      "countryOfOrigin" : "NL",
+      "regionOfOrigin" : "GE",
+      "consignedCountry" : "NL"
+    },
+    "purpose" : {
+      "purposeGroup" : "For Import"
+    },
+    "pointOfEntry" : "GBFXT1PP",
+    "transporterDetailsRequired" : false,
+    "meansOfTransportFromEntryPoint" : {
+      "id" : "Voyage N° 1, Ocean Vessel: Green Opal",
+      "type" : "Ship"
+    },
+    "veterinaryInformation" : {
+      "accompanyingDocuments" : [ {
+        "documentType" : "airWaybill",
+        "documentReference" : "9022780365",
+        "documentIssueDate" : "2020-07-01"
+      }, {
+        "documentType" : "phytosanitaryCertificate",
+        "documentReference" : "9022780366",
+        "documentIssueDate" : "2020-07-02"
+      } ]
+    },
+    "sealsContainers" : [ {
+      "sealNumber" : "S12345",
+      "containerNumber" : "C12345",
+      "officialSeal" : false
+    } ]
+  }
+}

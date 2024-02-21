@@ -1,0 +1,72 @@
+{
+  "commodities" : {
+    "temperature" : "Ambient",
+    "commodityComplement" : [ {
+      "commodityID" : "07099990",
+      "commodityDescription" : "Other",
+      "complementID" : 1,
+      "complementName" : "Aegle",
+      "speciesName" : "Aegle",
+      "speciesNomination" : "Aegle"
+    }, {
+      "commodityID" : "07099991",
+      "commodityDescription" : "Other",
+      "complementID" : 2,
+      "complementName" : "Aegle",
+      "speciesName" : "Aegle",
+      "speciesNomination" : "Aegle"
+    } ],
+    "complementParameterSet" : [ {
+      "uniqueComplementID" : "0d1be0bc-a7c9-430e-8b8c-5f18d83f687d",
+      "complementID" : 1,
+      "keyDataPair" : [ {
+        "key" : "netweight",
+        "data" : "939.26"
+      }, {
+        "key" : "number_package",
+        "data" : "2"
+      }, {
+        "key" : "type_package",
+        "data" : "Bag"
+      } ]
+    }, {
+      "uniqueComplementID" : "1e364d17-5ba6-49e7-953f-338b9792557b",
+      "complementID" : 2,
+      "keyDataPair" : [ {
+        "key" : "netweight",
+        "data" : "739.26"
+      }, {
+        "key" : "number_package",
+        "data" : "3"
+      }, {
+        "key" : "type_package",
+        "data" : "Package"
+      } ]
+    } ],
+    "includeNonAblactedAnimals" : false,
+    "countryOfOrigin" : "NZ",
+    "consignedCountry" : "NZ"
+  },
+  "purpose" : {
+    "conformsToEU" : true,
+    "internalMarketPurpose" : "Human Consumption",
+    "purposeGroup" : "For Import"
+  },
+  "pointOfEntry" : "GBLHR1P",
+  "meansOfTransportFromEntryPoint" : {
+    "id" : "035N",
+    "type" : "Ship"
+  },
+  "veterinaryInformation" : {
+    "accompanyingDocuments" : [ {
+      "documentType" : "veterinaryHealthCertificate",
+      "documentReference" : "9022780365",
+      "documentIssueDate" : "2020-07-01"
+    } ]
+  },
+  "sealsContainers" : [ {
+    "sealNumber" : "S12345",
+    "containerNumber" : "C12345",
+    "officialSeal" : false
+  } ]
+}

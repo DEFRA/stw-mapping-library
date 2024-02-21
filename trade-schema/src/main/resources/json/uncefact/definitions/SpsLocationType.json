@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "SpsLocationType.json",
+  "SpsLocationType": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "IDType.json#/IDType"
+      },
+      "name": {
+        "type": "array",
+        "items": {
+          "allOf": [
+            { "$ref": "TextType.json#/TextType"},
+            { "required": [ "value" ] }
+          ]
+        }
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
+}

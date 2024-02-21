@@ -1,0 +1,99 @@
+[ {
+  "content" : [ {
+    "value" : "1"
+  } ],
+  "subjectCode" : {
+    "value" : "VERSION"
+  }
+}, {
+  "content" : [ {
+    "value" : "2020-08-12T12:20:45Z"
+  } ],
+  "subjectCode" : {
+    "value" : "LAST_UPDATE_DATETIME"
+  }
+}, {
+  "content" : [ {
+    "value" : "Percy Inspector-Tester"
+  } ],
+  "subjectCode" : {
+    "value" : "LAST_UPDATE_BY"
+  }
+}, {
+  "contentCode" : [ {
+    "value" : "PP"
+  } ],
+  "subjectCode" : {
+    "value" : "CHED_TYPE"
+  }
+}, {
+  "content" : [ {
+    "value" : "NO"
+  } ],
+  "subjectCode" : {
+    "value" : "CHILD_NOTIFICATION"
+  }
+}, {
+  "content" : [ {
+    "value" : "{contentValue}"
+  } ],
+  "subjectCode" : {
+    "value" : "RISK_ASSESSMENT"
+  }
+}, {
+  "content" : [ {
+    "value" : "NO"
+  } ],
+  "subjectCode" : {
+    "value" : "CONSIGNMENT_ARRIVED"
+  }
+}, {
+  "content" : [ {
+    "value" : "NO"
+  } ],
+  "subjectCode" : {
+    "value" : "CONTAINS_WOOD_PACKAGING"
+  }
+}, {
+  "content" : [ {
+    "value" : "2020-06-15T21:30:00Z"
+  } ],
+  "subjectCode" : {
+    "value" : "DEPARTURE_FROM_BCP_DATETIME"
+  }
+}, {
+  "content" : [ {
+    "value" : "Percy Inspector-Tester"
+  } ],
+  "subjectCode" : {
+    "value" : "CONTACT_DETAILS_NAME"
+  }
+}, {
+  "content" : [ {
+    "value" : "020 8225 7295"
+  } ],
+  "subjectCode" : {
+    "value" : "CONTACT_DETAILS_TELEPHONE"
+  }
+}, {
+  "content" : [ {
+    "value" : "DefraTestBIP@anthunt3.33mail.com"
+  } ],
+  "subjectCode" : {
+    "value" : "CONTACT_DETAILS_EMAIL"
+  }
+}, {
+  "content" : [ {
+    "value" : "ContactAgent"
+  } ],
+  "subjectCode" : {
+    "value" : "CONTACT_DETAILS_AGENT"
+  }
+}, {
+  "content" : [ {
+    "value" : "IPAFFS-17A-1.0.0-alpha"
+  } ],
+  "subjectCode" : {
+    "value" : "TradePlatform UN/CEFACT Mapping Version"
+  }
+} ]

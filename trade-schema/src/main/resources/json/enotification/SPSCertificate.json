@@ -1,0 +1,433 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "spsConsignment": {
+      "allOf": [
+        { "$ref": "../uncefact/SPSCertificate.json#/properties/spsConsignment"},
+        {
+          "properties": {
+            "availabilityDueDateTime": {
+              "properties": {
+                "dateTime": {
+                  "required": [
+                    "value"
+                  ]
+                }
+              },
+              "required": [
+                "dateTime"
+              ]
+            },
+            "carrierSpsParty": {
+              "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+            },
+            "consignorSpsParty": {
+              "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+            },
+            "consigneeSpsParty": {
+              "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+            },
+            "exportSpsCountry": {
+              "properties": {
+                "id": {
+                  "properties": {
+                    "value": {
+                      "minLength": 2,
+                      "maxLength": 2
+                    }
+                  }
+                }
+              }
+            },
+            "includedSpsConsignmentItem": {
+              "items": {
+                "properties": {
+                  "includedSpsTradeLineItem": {
+                    "items": {
+                      "properties": {
+                        "additionalInformationSpsNote": {
+                          "items": {
+                            "$ref": "definitions/AdditionalInformationSpsNote.json#/AdditionalInformationSpsNote"
+                          }
+                        },
+                        "applicableSpsClassification": {
+                          "items": {
+                            "properties": {
+                              "classCode": {
+                                "required": [
+                                  "value"
+                                ]
+                              },
+                              "systemID": {
+                                "properties": {
+                                  "value": {
+                                    "enum": [
+                                      "CN",
+                                      "EPPO"
+                                    ]
+                                  }
+                                }
+                              },
+                              "systemName": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "languageID": {
+                                      "type": "string"
+                                    },
+                                    "languageLocaleID": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "type": "string",
+                                      "enum": [
+                                        "CN Code (Combined Nomenclature)",
+                                        "European and Mediterranean Plant Protection Organization",
+                                        "IPAFFS_CCC",
+                                        "IPAFFS_CCF",
+                                        "IPAFFS_CCT"
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "required": [
+                              "className",
+                              "systemName"
+                            ]
+                          }
+                        },
+                        "appliedSpsProcess": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "operationSpsCountry": {
+                                "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                              },
+                              "operatorSpsParty": {
+                                "$ref": "../uncefact/definitions/SpsPartyType.json#/SpsPartyType"
+                              },
+                              "typeCode": {
+                                "allOf": [
+                                  { "$ref": "../uncefact/definitions/ProcessTypeCodeType.json#/ProcessTypeCodeType"},
+                                  { "required": [ "value" ] }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "typeCode"
+                            ]
+                          }
+                        },
+                        "grossWeightMeasure": {
+                          "required": [
+                            "unitCode",
+                            "value"
+                          ]
+                        },
+                        "netWeightMeasure": {
+                          "required": [
+                            "unitCode",
+                            "value"
+                          ]
+                        },
+                        "originSpsCountry": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                          }
+                        },
+                        "physicalSpsPackage": {
+                          "items": {
+                            "properties": {
+                              "levelCode": {
+                                "properties": {
+                                  "value": {
+                                    "enum": [
+                                      "4"
+                                    ]
+                                  }
+                                }
+                              },
+                              "typeCode": {
+                                "properties": {
+                                  "value": {
+                                    "maxLength": 2
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "scientificName": {
+                          "items": {
+                            "required": [
+                              "value"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "applicableSpsClassification",
+                        "originSpsCountry",
+                        "physicalSpsPackage",
+                        "scientificName",
+                        "netWeightMeasure"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "mainCarriageSpsTransportMovement": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "properties": {
+                      "schemeAgencyID": {
+                        "enum": [
+                          "GB"
+                        ]
+                      },
+                      "schemeID": {
+                        "enum": [
+                          "ship_imo_number_before_bcp",
+                          "train_identifier_before_bcp",
+                          "road_vehicle_registration_before_bcp",
+                          "airplane_flight_number_before_bcp",
+                          "ship_imo_number_after_bcp",
+                          "train_identifier_after_bcp",
+                          "road_vehicle_registration_after_bcp",
+                          "airplane_flight_number_after_bcp"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "schemeAgencyID",
+                      "schemeID"
+                    ]
+                  },
+                  "modeCode": {
+                    "properties": {
+                      "value": {
+                        "enum": [
+                          "0",
+                          "1",
+                          "2",
+                          "3",
+                          "4",
+                          "5"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            },
+            "unloadingBaseportSpsLocation": {
+              "properties": {
+                "id": {
+                  "properties": {
+                    "schemeID": {
+                      "enum": [
+                        "un_locode"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "schemeID",
+                    "value"
+                  ]
+                },
+                "name": {
+                  "items": {
+                    "properties": {
+                      "value": {
+                        "enum": [
+                          "GB"
+                        ]
+                      }
+                    }
+                  },
+                  "minItems": 1,
+                  "maxItems": 1
+                }
+              },
+              "required": [
+                "id",
+                "name"
+              ]
+            },
+            "utilizedSpsTransportEquipment": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "properties": {
+                      "value": {
+                        "minLength": 1,
+                        "maxLength": 32
+                      }
+                    },
+                    "required": [
+                      "schemeID"
+                    ]
+                  },
+                  "affixedSpsSeal": {
+                    "items": {
+                      "properties": {
+                        "id": {
+                          "properties": {
+                            "value": {
+                              "minLength": 1,
+                              "maxLength": 32
+                            }
+                          },
+                          "required": [
+                            "schemeID"
+                          ]
+                        }
+                      }
+                    },
+                    "minItems": 1,
+                    "maxItems": 2
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "exportSpsCountry",
+            "unloadingBaseportSpsLocation"
+          ]
+        }
+      ]
+    },
+    "spsExchangedDocument": {
+      "allOf": [
+        { "$ref": "../uncefact/SPSCertificate.json#/properties/spsExchangedDocument"},
+        {
+          "properties": {
+            "id": {
+              "properties": {
+                "value": {
+                  "minLength": 1,
+                  "maxLength": 90
+                }
+              }
+            },
+            "includedSpsNote": {
+              "items": {
+                "if": {
+                  "properties": {
+                    "content": {
+                      "items": {
+                        "properties": {
+                          "value": {
+                            "const": ""
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "contentCode": {
+                      "items": {
+                        "properties": {
+                          "value": {
+                            "enum": [
+                              "AMBIENT",
+                              "CHILLED",
+                              "FROZEN"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    "subjectCode": {
+                      "properties": {
+                        "value": {
+                          "enum": [
+                            "PRODUCT_TEMPERATURE"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "contentCode"
+                  ]
+                },
+                "properties": {
+                  "subjectCode": {
+                    "required": [
+                      "value"
+                    ]
+                  }
+                },
+                "required": [
+                  "subjectCode"
+                ]
+              }
+            },
+            "signatorySpsAuthentication": {
+              "items": {
+                "properties": {
+                  "includedSpsClause": {
+                    "items":{
+                      "properties": {
+                        "id": {
+                          "properties": {
+                            "value": {
+                              "enum": [
+                                "PURPOSE",
+                                "GOODS_CERTIFIED_AS"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "statusCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "47"
+                  ]
+                }
+              }
+            },
+            "typeCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "636"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "spsConsignment",
+    "spsExchangedDocument"
+  ]
+}

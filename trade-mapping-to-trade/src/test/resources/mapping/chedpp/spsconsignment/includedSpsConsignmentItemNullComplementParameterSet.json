@@ -1,0 +1,284 @@
+{
+  "includedSpsTradeLineItem" : [ {
+    "grossVolumeMeasure" : {
+      "unitCode" : "MTQ",
+      "value" : 1.0
+    },
+    "grossWeightMeasure" : {
+      "unitCode" : "KGM",
+      "value" : 10.0
+    },
+    "netWeightMeasure" : {
+      "unitCode" : "KGM",
+      "value" : 1.0
+    },
+    "sequenceNumeric" : {
+      "value" : 0
+    }
+  }, {
+    "additionalInformationSpsNote" : [ {
+      "content" : [ {
+        "value" : "NO"
+      } ],
+      "subjectCode" : {
+        "value" : "IS_WOOD_PACKAGING"
+      }
+    } ],
+    "applicableSpsClassification" : [ {
+      "classCode" : {
+        "value" : "ABICH"
+      },
+      "className" : [ {
+        "value" : "Abies chensiensis"
+      } ],
+      "systemID" : {
+        "value" : "EPPT"
+      },
+      "systemName" : [ {
+        "value" : "EPPO Plant Protection Thesaurus"
+      } ]
+    }, {
+      "classCode" : {
+        "value" : "06029045"
+      },
+      "className" : [ {
+        "value" : "Rooted cuttings and young plants"
+      } ],
+      "systemID" : {
+        "value" : "CN"
+      },
+      "systemName" : [ {
+        "value" : "CN Code (Combined Nomenclature)"
+      } ]
+    } ],
+    "appliedSpsProcess" : [ {
+      "operatorSpsParty" : {
+        "id" : {
+          "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+        },
+        "name" : {
+          "value" : "Goldner Goldner and Goldner"
+        },
+        "specifiedSpsAddress" : {
+          "cityName" : {
+            "value" : "Ricoshire"
+          },
+          "countryID" : {
+            "value" : "GB"
+          },
+          "lineOne" : {
+            "value" : "2357 Rogers"
+          },
+          "lineThree" : {
+            "value" : "Rhode Island"
+          },
+          "lineTwo" : {
+            "value" : "90771 Patience Cove"
+          },
+          "postcodeCode" : {
+            "value" : "g4t 3RH"
+          }
+        }
+      },
+      "typeCode" : {
+        "value" : "13"
+      }
+    } ],
+    "originSpsCountry" : [ {
+      "id" : {
+        "value" : "AF"
+      },
+      "subordinateSpsCountrySubDivision" : [ {
+        "functionTypeCode" : {
+          "value" : "106"
+        },
+        "hierarchicalLevelCode" : {
+          "value" : "1"
+        },
+        "name" : [ {
+          "value" : "IT"
+        } ]
+      } ]
+    } ],
+    "scientificName" : [ {
+      "value" : "Abies chensiensis"
+    } ],
+    "sequenceNumeric" : {
+      "value" : 1
+    }
+  }, {
+    "additionalInformationSpsNote" : [ {
+      "content" : [ {
+        "value" : "YES"
+      } ],
+      "subjectCode" : {
+        "value" : "IS_WOOD_PACKAGING"
+      }
+    } ],
+    "applicableSpsClassification" : [ {
+      "classCode" : {
+        "value" : "2DTRE"
+      },
+      "className" : [ {
+        "value" : "2DTRE - Deciduous trees"
+      } ],
+      "systemID" : {
+        "value" : "EPPT"
+      },
+      "systemName" : [ {
+        "value" : "EPPO Plant Protection Thesaurus"
+      } ]
+    }, {
+      "classCode" : {
+        "value" : "44151010"
+      },
+      "className" : [ {
+        "value" : "Cases, boxes, crates, drums and similar packings"
+      } ],
+      "systemID" : {
+        "value" : "CN"
+      },
+      "systemName" : [ {
+        "value" : "CN Code (Combined Nomenclature)"
+      } ]
+    } ],
+    "appliedSpsProcess" : [ {
+      "operatorSpsParty" : {
+        "id" : {
+          "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+        },
+        "name" : {
+          "value" : "Goldner Goldner and Goldner"
+        },
+        "specifiedSpsAddress" : {
+          "cityName" : {
+            "value" : "Ricoshire"
+          },
+          "countryID" : {
+            "value" : "GB"
+          },
+          "lineOne" : {
+            "value" : "2357 Rogers"
+          },
+          "lineThree" : {
+            "value" : "Rhode Island"
+          },
+          "lineTwo" : {
+            "value" : "90771 Patience Cove"
+          },
+          "postcodeCode" : {
+            "value" : "g4t 3RH"
+          }
+        }
+      },
+      "typeCode" : {
+        "value" : "13"
+      }
+    } ],
+    "originSpsCountry" : [ {
+      "id" : {
+        "value" : "AF"
+      },
+      "subordinateSpsCountrySubDivision" : [ {
+        "functionTypeCode" : {
+          "value" : "106"
+        },
+        "hierarchicalLevelCode" : {
+          "value" : "1"
+        },
+        "name" : [ {
+          "value" : "IT"
+        } ]
+      } ]
+    } ],
+    "scientificName" : [ {
+      "value" : "2DTRE - Deciduous trees"
+    } ],
+    "sequenceNumeric" : {
+      "value" : 2
+    }
+  }, {
+    "applicableSpsClassification" : [ {
+      "classCode" : {
+        "value" : "1NARG"
+      },
+      "className" : [ {
+        "value" : "Narcissus"
+      } ],
+      "systemID" : {
+        "value" : "EPPT"
+      },
+      "systemName" : [ {
+        "value" : "EPPO Plant Protection Thesaurus"
+      } ]
+    }, {
+      "classCode" : {
+        "value" : "06011020"
+      },
+      "className" : [ {
+        "value" : "Narcissi"
+      } ],
+      "systemID" : {
+        "value" : "CN"
+      },
+      "systemName" : [ {
+        "value" : "CN Code (Combined Nomenclature)"
+      } ]
+    } ],
+    "appliedSpsProcess" : [ {
+      "operatorSpsParty" : {
+        "id" : {
+          "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
+        },
+        "name" : {
+          "value" : "Goldner Goldner and Goldner"
+        },
+        "specifiedSpsAddress" : {
+          "cityName" : {
+            "value" : "Ricoshire"
+          },
+          "countryID" : {
+            "value" : "GB"
+          },
+          "lineOne" : {
+            "value" : "2357 Rogers"
+          },
+          "lineThree" : {
+            "value" : "Rhode Island"
+          },
+          "lineTwo" : {
+            "value" : "90771 Patience Cove"
+          },
+          "postcodeCode" : {
+            "value" : "g4t 3RH"
+          }
+        }
+      },
+      "typeCode" : {
+        "value" : "13"
+      }
+    } ],
+    "originSpsCountry" : [ {
+      "id" : {
+        "value" : "AF"
+      },
+      "subordinateSpsCountrySubDivision" : [ {
+        "functionTypeCode" : {
+          "value" : "106"
+        },
+        "hierarchicalLevelCode" : {
+          "value" : "1"
+        },
+        "name" : [ {
+          "value" : "IT"
+        } ]
+      } ]
+    } ],
+    "scientificName" : [ {
+      "value" : "Narcissus"
+    } ],
+    "sequenceNumeric" : {
+      "value" : 3
+    }
+  } ]
+}

@@ -1,0 +1,568 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "spsConsignment": {
+      "type": "object",
+      "properties": {
+        "availabilityDueDateTime": {
+          "$ref": "definitions/DateTimeType.json#/DateTimeType"
+        },
+        "carrierSpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "consigneeReceiptSpsLocation": {
+          "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+        },
+        "consigneeSpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "consignorSpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "customsTransitAgentSpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "deliverySpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "despatchSpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "examinationSpsEvent": {
+          "$ref": "definitions/SpsEventType.json#/SpsEventType"
+        },
+        "exportExitDateTime": {
+          "$ref": "definitions/DateTimeType.json#/DateTimeType"
+        },
+        "exportSpsCountry": {
+          "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+        },
+        "id": {
+          "$ref": "definitions/IDType.json#/IDType"
+        },
+        "importSpsCountry": {
+          "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+        },
+        "includedSpsConsignmentItem": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "includedSpsTradeLineItem": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "additionalInformationSpsNote": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/SpsNoteType.json#/SpsNoteType"
+                      }
+                    },
+                    "applicableSpsClassification": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "classCode": {
+                            "$ref": "definitions/CodeType.json#/CodeType"
+                          },
+                          "className": {
+                            "type": "array",
+                            "items": {
+                              "allOf": [
+                                { "$ref": "definitions/TextType.json#/TextType"},
+                                { "required": [ "value" ] }
+                              ]
+                            }
+                          },
+                          "systemID": {
+                            "$ref": "definitions/IDType.json#/IDType"
+                          },
+                          "systemName": {
+                            "type": "array",
+                            "items": {
+                              "allOf": [
+                                { "$ref": "definitions/TextType.json#/TextType"},
+                                { "required": [ "value" ] }
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "className",
+                          "systemName"
+                        ]
+                      }
+                    },
+                    "appliedSpsProcess": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "applicableSpsProcessCharacteristic": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "description": {
+                                  "type": "array",
+                                  "items": {
+                                    "allOf": [
+                                      { "$ref": "definitions/TextType.json#/TextType"},
+                                      { "required": [ "value" ] }
+                                    ]
+                                  }
+                                },
+                                "maximumValueMeasure": {
+                                  "$ref": "definitions/MeasureType.json#/MeasureType"
+                                },
+                                "minimumValueMeasure": {
+                                  "$ref": "definitions/MeasureType.json#/MeasureType"
+                                },
+                                "typeCode": {
+                                  "$ref": "definitions/MeasuredAttributeCodeType.json#/MeasuredAttributeCodeType"
+                                },
+                                "valueMeasure": {
+                                  "$ref": "definitions/MeasureType.json#/MeasureType"
+                                }
+                              },
+                              "required": [
+                                "description"
+                              ]
+                            }
+                          },
+                          "completionSpsPeriod": {
+                            "type": "object",
+                            "properties": {
+                              "durationMeasure": {
+                                "$ref": "definitions/MeasureType.json#/MeasureType"
+                              },
+                              "endDateTime": {
+                                "$ref": "definitions/DateTimeType.json#/DateTimeType"
+                              },
+                              "startDateTime": {
+                                "$ref": "definitions/DateTimeType.json#/DateTimeType"
+                              }
+                            },
+                            "required": [
+                              "startDateTime"
+                            ]
+                          },
+                          "operationSpsCountry": {
+                            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                          },
+                          "operatorSpsParty": {
+                            "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+                          },
+                          "typeCode": {
+                            "allOf": [
+                              { "$ref": "definitions/ProcessTypeCodeType.json#/ProcessTypeCodeType"},
+                              { "required": [ "value" ] }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "typeCode"
+                        ]
+                      }
+                    },
+                    "assertedSpsAuthentication": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/SpsAuthenticationType.json#/SpsAuthenticationType"
+                      }
+                    },
+                    "associatedSpsTransportEquipment": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/SpsTransportEquipmentType.json#/SpsTransportEquipmentType"
+                      }
+                    },
+                    "commonName": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/TextType.json#/TextType"
+                      }
+                    },
+                    "description": {
+                      "type": "array",
+                      "items": {
+                        "allOf": [
+                          { "$ref": "definitions/TextType.json#/TextType"},
+                          { "required": [ "value" ] }
+                        ]
+                      }
+                    },
+                    "expiryDateTime": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/DateTimeType.json#/DateTimeType"
+                      }
+                    },
+                    "grossVolumeMeasure": {
+                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                    },
+                    "grossWeightMeasure": {
+                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                    },
+                    "intendedUse": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/TextType.json#/TextType"
+                      }
+                    },
+                    "netVolumeMeasure": {
+                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                    },
+                    "netWeightMeasure": {
+                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                    },
+                    "originSpsCountry": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                      }
+                    },
+                    "originSpsLocation": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+                      }
+                    },
+                    "physicalSpsPackage": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "itemQuantity": {
+                            "type": "object",
+                            "properties": {
+                              "unitCode": {
+                                "type": "string"
+                              },
+                              "unitCodeListAgencyID": {
+                                "type": "string"
+                              },
+                              "unitCodeListAgencyName": {
+                                "type": "string"
+                              },
+                              "unitCodeListID": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "value"
+                            ]
+                          },
+                          "levelCode": {
+                            "allOf": [
+                              { "$ref": "definitions/CodeType.json#/CodeType"},
+                              { "required": [ "value" ] }
+                            ]
+                          },
+                          "nominalGrossVolumeMeasure": {
+                            "$ref": "definitions/MeasureType.json#/MeasureType"
+                          },
+                          "nominalGrossWeightMeasure": {
+                            "$ref": "definitions/MeasureType.json#/MeasureType"
+                          },
+                          "physicalSpsShippingMarks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "marking": {
+                                  "allOf": [
+                                    { "$ref": "definitions/TextType.json#/TextType"},
+                                    { "required": [ "value" ] }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "marking"
+                              ]
+                            }
+                          },
+                          "typeCode": {
+                            "allOf": [
+                              { "$ref": "definitions/PackageTypeCodeType.json#/PackageTypeCodeType"},
+                              { "required": [ "value" ] }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "itemQuantity",
+                          "levelCode",
+                          "typeCode"
+                        ]
+                      }
+                    },
+                    "productionBatchID": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/IDType.json#/IDType"
+                      }
+                    },
+                    "referenceSpsReferencedDocument": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/SpsReferencedDocumentType.json#/SpsReferencedDocumentType"
+                      }
+                    },
+                    "scientificName": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "definitions/TextType.json#/TextType"
+                      }
+                    },
+                    "sequenceNumeric": {
+                      "type": "object",
+                      "properties": {
+                        "format": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "value"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "sequenceNumeric"
+                  ]
+                }
+              },
+              "natureIdentificationSpsCargo": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "typeCode": {
+                      "$ref": "definitions/CargoTypeClassificationCodeType.json#/CargoTypeClassificationCodeType"
+                    }
+                  },
+                  "required": [
+                    "typeCode"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "includedSpsTradeLineItem"
+            ]
+          }
+        },
+        "loadingBaseportSpsLocation": {
+          "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+        },
+        "mainCarriageSpsTransportMovement": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "definitions/IDType.json#/IDType"
+              },
+              "modeCode": {
+                "type": "object",
+                "properties": {
+                  "listAgencyID": {
+                    "type": "string"
+                  },
+                  "listID": {
+                    "type": "string"
+                  },
+                  "listVersionID": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value"
+                ]
+              },
+              "usedSpsTransportMeans": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "allOf": [
+                      { "$ref": "definitions/TextType.json#/TextType"},
+                      { "required": [ "value" ] }
+                    ]
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            },
+            "required": [
+              "modeCode"
+            ]
+          }
+        },
+        "reExportSpsCountry": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+          }
+        },
+        "shipStoresIndicator": {
+          "$ref": "definitions/IndicatorType.json#/IndicatorType"
+        },
+        "storageSpsEvent": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsEventType.json#/SpsEventType"
+          }
+        },
+        "transitSpsCountry": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+          }
+        },
+        "transitSpsLocation": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+          }
+        },
+        "unloadingBaseportSpsLocation": {
+          "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+        },
+        "utilizedSpsTransportEquipment": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsTransportEquipmentType.json#/SpsTransportEquipmentType"
+          }
+        }
+      },
+      "required": [
+        "consignorSpsParty",
+        "consigneeSpsParty",
+        "importSpsCountry",
+        "includedSpsConsignmentItem",
+        "examinationSpsEvent",
+        "exportSpsCountry"
+      ]
+    },
+    "spsExchangedDocument": {
+      "type": "object",
+      "properties": {
+        "copyIndicator": {
+          "$ref": "definitions/IndicatorType.json#/IndicatorType"
+        },
+        "description": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/TextType.json#/TextType"
+          }
+        },
+        "id": {
+          "allOf": [
+            { "$ref": "definitions/IDType.json#/IDType"},
+            { "required": [ "value" ] }
+          ]
+        },
+        "includedSpsNote": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsNoteType.json#/SpsNoteType"
+          }
+        },
+        "issueDateTime": {
+          "$ref": "definitions/DateTimeType.json#/DateTimeType"
+        },
+        "issuerSpsParty": {
+          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+        },
+        "name": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              { "$ref": "definitions/TextType.json#/TextType"},
+              { "required": [ "value" ] }
+            ]
+          }
+        },
+        "recipientSpsParty": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          }
+        },
+        "referenceSpsReferencedDocument": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsReferencedDocumentType.json#/SpsReferencedDocumentType"
+          }
+        },
+        "signatorySpsAuthentication": {
+          "type": "array",
+          "items": {
+            "$ref": "definitions/SpsAuthenticationType.json#/SpsAuthenticationType"
+          }
+        },
+        "statusCode": {
+          "type": "object",
+          "properties": {
+            "listAgencyID": {
+              "type": "string"
+            },
+            "listID": {
+              "type": "string"
+            },
+            "listURI": {
+              "type": "string"
+            },
+            "listVersionID": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ]
+        },
+        "typeCode": {
+          "allOf": [
+            { "$ref": "definitions/DocumentCodeType.json"},
+            { "required": [ "value"] }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "issueDateTime",
+        "name",
+        "signatorySpsAuthentication",
+        "statusCode",
+        "typeCode"
+      ]
+    }
+  },
+  "required": [
+    "spsConsignment",
+    "spsExchangedDocument"
+  ]
+}

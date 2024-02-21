@@ -1,0 +1,74 @@
+[ {
+  "attachmentBinaryObject" : [ {
+    "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+    "mimeCode" : "application/pdf"
+  } ],
+  "id" : {
+    "schemeAgencyID" : "AF",
+    "value" : "1234"
+  },
+  "issueDateTime" : "2020-01-01",
+  "relationshipTypeCode" : {
+    "name" : "Mutually defined reference number (Supporting document)",
+    "value" : "ZZZ"
+  },
+  "typeCode" : {
+    "name" : "Air waybill",
+    "value" : "740"
+  }
+}, {
+  "id" : {
+    "value" : "Importer reference number"
+  },
+  "relationshipTypeCode" : {
+    "name" : "Local Reference Number (Local reference)",
+    "value" : "AVZ"
+  },
+  "typeCode" : {
+    "name" : "Related document",
+    "value" : "916"
+  }
+}, {
+  "id" : {
+    "value" : "CHEDPP.GB.2020.1029356V"
+  },
+  "relationshipTypeCode" : {
+    "name" : "Related document number (Related document number)",
+    "value" : "ACE"
+  },
+  "typeCode" : {
+    "name" : "Call-off delivery (Partially validated in >>)",
+    "value" : "76"
+  }
+}, {
+  "id" : {
+    "value" : "CHEDPP.GB.2020.1029356R"
+  },
+  "relationshipTypeCode" : {
+    "name" : "Related document number (Related document number)",
+    "value" : "ACE"
+  },
+  "typeCode" : {
+    "name" : "Call-off delivery (Partially rejected in >>)",
+    "value" : "76"
+  }
+}, {
+  "attachmentBinaryObject" : [ {
+    "filename" : "eb061826-afaf-4225-be95-81ed8f3d5036",
+    "mimeCode" : "application/pdf"
+  } ],
+  "id" : {
+    "schemeAgencyID" : "AF",
+    "schemeID" : "AT_INSPECTION",
+    "value" : "1234"
+  },
+  "issueDateTime" : "2020-01-01",
+  "relationshipTypeCode" : {
+    "name" : "Mutually defined reference number (Supporting document)",
+    "value" : "ZZZ"
+  },
+  "typeCode" : {
+    "name" : "Air waybill",
+    "value" : "740"
+  }
+} ]

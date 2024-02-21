@@ -1,0 +1,11 @@
+{
+  "accompanyingDocuments" : [ {
+    "documentType" : "veterinaryHealthCertificate",
+    "documentReference" : "NZL2020/PPCS2/121580",
+    "documentIssueDate" : "2020-10-11"
+  }, {
+    "documentType" : "other",
+    "documentReference" : "9022780365",
+    "documentIssueDate" : "2020-07-01"
+  } ]
+}
