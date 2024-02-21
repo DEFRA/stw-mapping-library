@@ -1,6 +1,7 @@
 # STW Mapping Library
 
-The STW Mapping Library provides mappers between Trade UN/CEFACT JSON and IPAFFS Notification JSON.
+The Single Trade Window (STW) Mapping Library provides mappers between Trade UN/CEFACT JSON and
+IPAFFS Notification JSON.
 
 ## Setup
 
