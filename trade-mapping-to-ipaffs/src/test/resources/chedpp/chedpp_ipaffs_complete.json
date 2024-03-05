@@ -1,31 +1,67 @@
 {
-  "externalReferences": [
-    {
-      "system": "E-NOTIFICATION",
-      "reference": "188044499"
-    }
-  ],
   "type": "CHEDPP",
-  "status": "DRAFT",
+  "status": "SUBMITTED",
   "partOne": {
+    "submissionDate": "2030-01-01T09:13:50Z",
+    "submittedBy": {
+      "displayName": "Isabel Irwin",
+      "userId": "b40ca011-bc72-eb11-a812-000d3a274b26"
+    },
     "consignor": {
-      "id": "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "id": "00000000-0000-0000-0000-000000000001",
       "type": "exporter"
     },
+    "packer": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "packer"
+    },
+    "consignee": {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "consignee"
+    },
+    "importer": {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "type": "importer"
+    },
     "placeOfDestination": {
-      "id": "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "id": "00000000-0000-0000-0000-000000000005",
       "type": "exporter"
     },
     "commodities": {
+      "totalGrossWeight": 40,
+      "totalNetWeight": 24.7,
+      "numberOfPackages": 7,
+      "countryOfOrigin": "AF",
+      "consignedCountry": "DZ",
+      "totalGrossVolume": 50,
+      "totalGrossVolumeUnit": "LTR",
       "commodityComplement": [
         {
-          "commodityID": "1209918010",
-          "commodityDescription": "Seeds",
+          "commodityID": "0808108090",
+          "commodityDescription": "Other",
           "complementID": 1,
-          "complementName": "Chamaecrista comosa var. capricorna",
+          "complementName": "Malus angustifolia",
+          "eppoCode": "MABAN",
+          "speciesName": "Malus angustifolia",
+          "speciesNomination": "Malus angustifolia"
+        },
+        {
+          "commodityID": "0808108090",
+          "commodityDescription": "Other",
+          "complementID": 2,
+          "complementName": "Malus domestica",
           "eppoCode": "MABSD",
-          "speciesName": "Chamaecrista comosa var. capricorna",
-          "speciesNomination": "Chamaecrista comosa var. capricorna"
+          "speciesName": "Malus domestica",
+          "speciesNomination": "Malus domestica"
+        },
+        {
+          "commodityID": "06022030",
+          "commodityDescription": "Citrus",
+          "complementID": 3,
+          "complementName": "Aegle sp.",
+          "eppoCode": "AELSS",
+          "speciesName": "Aegle sp.",
+          "speciesNomination": "Aegle sp."
         }
       ],
       "complementParameterSet": [
@@ -34,71 +70,171 @@
           "complementID": 1,
           "keyDataPair": [
             {
-              "key": "netweight",
-              "data": "929.26"
-            },
-            {
-              "key": "number_package",
-              "data": "2"
-            },
-            {
               "key": "type_package",
               "data": "Bag"
             },
             {
+              "key": "netweight",
+              "data": "0.7"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
               "key": "quantity",
-              "data": "20.0"
+              "data": "10"
             },
             {
               "key": "type_quantity",
-              "data": "Stems"
+              "data": "Pieces"
             },
             {
-              "key": "container",
-              "data": "true"
-            },
-            {
-              "key": "finished_or_propagated",
-              "data": "Finished"
-            },
+              "key": "commodity_group",
+              "data": "Fruit and nuts"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 2,
+          "keyDataPair": [
             {
               "key": "variety",
-              "data": "Pink Lady"
+              "data": "Altess"
             },
             {
               "key": "class",
               "data": "Class I"
             },
             {
-              "key": "sequence_numeric",
-              "data": "1"
+              "key": "type_package",
+              "data": "Box"
+            },
+            {
+              "key": "netweight",
+              "data": "20"
+            },
+            {
+              "key": "number_package",
+              "data": "4"
+            },
+            {
+              "key": "quantity",
+              "data": "20"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Kilograms"
+            },
+            {
+              "key": "container",
+              "data": "1391442"
+            },
+            {
+              "key": "commodity_group",
+              "data": "Fruit and nuts"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 2,
+          "keyDataPair": [
+            {
+              "key": "variety",
+              "data": "Cameo"
+            },
+            {
+              "key": "class",
+              "data": "Extra Class"
+            },
+            {
+              "key": "type_package",
+              "data": "Crate"
+            },
+            {
+              "key": "netweight",
+              "data": "4"
+            },
+            {
+              "key": "number_package",
+              "data": "2"
+            },
+            {
+              "key": "quantity",
+              "data": "5"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Stems"
+            },
+            {
+              "key": "commodity_group",
+              "data": "Fruit and nuts"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 3,
+          "keyDataPair": [
+            {
+              "key": "type_package",
+              "data": "Container"
+            },
+            {
+              "key": "netweight",
+              "data": "15.4"
+            },
+            {
+              "key": "number_package",
+              "data": "3"
+            },
+            {
+              "key": "quantity",
+              "data": "15.4"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Kilograms"
+            },
+            {
+              "key": "container",
+              "data": "1330875"
+            },
+            {
+              "key": "commodity_group",
+              "data": "Plants for Planting"
+            },
+            {
+              "key": "finished_or_propagated",
+              "data": "Propagated"
             }
           ]
         }
-      ],
-      "countryOfOrigin": "NL",
-      "regionOfOrigin": "GE",
-      "consignedCountry": "NL"
+      ]
     },
     "purpose": {
       "purposeGroup": "For Import"
     },
-    "pointOfEntry": "GBFXT1PP",
-    "transporterDetailsRequired": true,
-    "meansOfTransport": {
-      "id": "Voyage N° 1, Ocean Vessel: Green Opal",
-      "type": "Ship"
-    },
+    "pointOfEntry": "GBBXH4PP",
+    "pointOfEntryControlPoint": "INSPBHX1",
+    "arrivalDate": "2030-01-01",
+    "arrivalTime": "10:30:00",
     "meansOfTransportFromEntryPoint": {
-      "id": "Voyage N° 1, Ocean Vessel: Green Opal",
-      "type": "Ship"
+      "id": "Identification",
+      "type": "Aeroplane",
+      "document": "Document"
     },
     "veterinaryInformation": {
       "accompanyingDocuments": [
         {
           "documentType": "phytosanitaryCertificate",
           "documentReference": "ADDDOC12345",
-          "documentIssueDate": "2020-10-11"
+          "documentIssueDate": "2020-10-11",
+          "attachmentFilename": "phytosanitarycert.jpg",
+          "attachmentContentType": "image/jpeg"
         }
       ]
     },
@@ -107,6 +243,11 @@
         "sealNumber": "S12345",
         "containerNumber": "C12345",
         "officialSeal": false
+      },
+      {
+        "sealNumber": "S6789",
+        "containerNumber": "C6789",
+        "officialSeal": true
       }
     ]
   }

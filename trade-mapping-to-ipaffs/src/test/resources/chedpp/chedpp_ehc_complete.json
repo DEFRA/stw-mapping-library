@@ -61,12 +61,12 @@
               {
                 "content": [
                   {
-                    "value": "20.0"
+                    "value": "10"
                   }
                 ],
                 "contentCode": [
                   {
-                    "value": "STM"
+                    "value": "PCS"
                   }
                 ],
                 "subjectCode": {
@@ -76,62 +76,22 @@
               {
                 "content": [
                   {
-                    "value": "Finished"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "finished_or_propagated"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Plants for Planting"
+                    "value": "Fruit and nuts"
                   }
                 ],
                 "subjectCode": {
                   "value": "commodity_group"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "true"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "container"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Pink Lady"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "variety"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Class I"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "class"
                 }
               }
             ],
             "applicableSpsClassification": [
               {
                 "classCode": {
-                  "value": "1209918010"
+                  "value": "0808108090"
                 },
                 "className": [
                   {
-                    "value": "Seeds"
+                    "value": "Other"
                   }
                 ],
                 "systemID": {
@@ -145,11 +105,11 @@
               },
               {
                 "classCode": {
-                  "value": "MABSD"
+                  "value": "MABAN"
                 },
                 "className": [
                   {
-                    "value": " "
+                    "value": ""
                   }
                 ],
                 "systemID": {
@@ -177,28 +137,16 @@
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 929.26
+              "value": 0.7
             },
             "originSpsCountry": [
               {
                 "id": {
-                  "value": "NL"
+                  "value": "AF"
                 },
                 "name": [
                   {
-                    "value": "The Netherlands"
-                  }
-                ],
-                "subordinateSpsCountrySubDivision": [
-                  {
-                    "name": [
-                      {
-                        "value": "GE"
-                      }
-                    ],
-                    "hierarchicalLevelCode": {
-                      "value": "0"
-                    }
+                    "value": "Afghanistan"
                   }
                 ]
               }
@@ -206,7 +154,7 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 2.0
+                  "value": 1
                 },
                 "levelCode": {
                   "value": "4"
@@ -218,11 +166,432 @@
             ],
             "scientificName": [
               {
-                "value": "Chamaecrista comosa var. capricorna"
+                "value": "Malus angustifolia"
               }
             ],
             "sequenceNumeric": {
               "value": 1
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "20"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "KGM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Fruit and nuts"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "commodity_group"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Altess"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "variety"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Class I"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "class"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "TRUE"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "container"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABSD"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 5.1
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 20
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 20
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BX"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus angustifolia"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 2
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "5"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "STM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Fruit and nuts"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "commodity_group"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Cameo"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "variety"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Extra Class"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "class"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABSD"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 5.1
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 4
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 2
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "CR"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus angustifolia"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 3
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "15.4"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "KGM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Plants for Planting"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "commodity_group"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "PROPAGATED"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "finished_or_propagated"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "TRUE"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "container"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "06022030"
+                },
+                "className": [
+                  {
+                    "value": "Citrus"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "AELSS"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 5.1
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 15.4
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 3
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "CN"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle sp."
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 4
             }
           }
         ]
@@ -232,16 +601,11 @@
       {
         "id": {
           "schemeAgencyID": "GB",
-          "schemeID": "ship_imo_number_before_bcp",
-          "value": "Voyage N° 1"
+          "schemeID": "airplane_flight_number_before_bcp",
+          "value": "Identification"
         },
         "modeCode": {
-          "value": "1"
-        },
-        "usedSpsTransportMeans": {
-          "name": {
-            "value": "Ocean Vessel: Green Opal"
-          }
+          "value": "4"
         }
       },
       {
@@ -263,11 +627,11 @@
     "unloadingBaseportSpsLocation": {
       "id": {
         "schemeID": "un_locode",
-        "value": "GBFXT1PP"
+        "value": "GBBXH4PP"
       },
       "name": [
         {
-          "value": "GB"
+          "value": "INSPBHX1"
         }
       ]
     },
@@ -285,20 +649,39 @@
           "schemeID": "container_number",
           "value": "C12345"
         }
+      },
+      {
+        "affixedSpsSeal": [
+          {
+            "id": {
+              "schemeID": "official_seal_number",
+              "value": "S6789"
+            }
+          }
+        ],
+        "id": {
+          "schemeID": "container_number",
+          "value": "C6789"
+        }
       }
-    ]
+    ],
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2030-01-01T10:30:00Z"
+      }
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
       {
+        "subjectCode": {
+          "value": "transport_to_bcp_document"
+        },
         "content": [
           {
-            "value": "TradePlatform-17A-1.0.0-alpha"
+            "value": "Document"
           }
-        ],
-        "subjectCode": {
-          "value": "TradePlatform UN/CEFACT Mapping Version"
-        }
+        ]
       }
     ],
     "id": {
