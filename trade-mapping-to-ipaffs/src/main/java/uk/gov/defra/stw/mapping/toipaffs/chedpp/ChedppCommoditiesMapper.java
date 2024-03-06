@@ -46,7 +46,6 @@ public class ChedppCommoditiesMapper implements Mapper<SpsCertificate, Commoditi
           .regionOfOrigin(regionOfOriginMapper.map(spsCertificate))
           .consignedCountry(
               spsCertificate.getSpsConsignment().getExportSpsCountry().getId().getValue())
-          // TODO: Don't rely on processing rule?
           .totalGrossWeight(totalGrossWeightMapper.map(spsCertificate))
           // TODO: totalNetWeight, totalGrossVolume, totalGrossVolumeUnit
           .build();
