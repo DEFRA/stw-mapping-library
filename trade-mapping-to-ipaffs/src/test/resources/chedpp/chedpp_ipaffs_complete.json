@@ -20,11 +20,11 @@
       "type": "consignee"
     },
     "importer": {
-      "id": "00000000-0000-0000-0000-000000000004",
+      "id": "00000000-0000-0000-0000-000000000003",
       "type": "importer"
     },
     "placeOfDestination": {
-      "id": "00000000-0000-0000-0000-000000000005",
+      "id": "00000000-0000-0000-0000-000000000004",
       "type": "exporter"
     },
     "commodities": {
@@ -70,16 +70,16 @@
           "complementID": 1,
           "keyDataPair": [
             {
-              "key": "type_package",
-              "data": "Bag"
-            },
-            {
               "key": "netweight",
               "data": "0.7"
             },
             {
               "key": "number_package",
               "data": "1"
+            },
+            {
+              "key": "type_package",
+              "data": "Bag"
             },
             {
               "key": "quantity",
@@ -90,8 +90,8 @@
               "data": "Pieces"
             },
             {
-              "key": "commodity_group",
-              "data": "Fruit and nuts"
+              "key": "sequence_numeric",
+              "data": "1"
             }
           ]
         },
@@ -100,24 +100,16 @@
           "complementID": 2,
           "keyDataPair": [
             {
-              "key": "variety",
-              "data": "Altess"
-            },
-            {
-              "key": "class",
-              "data": "Class I"
-            },
-            {
-              "key": "type_package",
-              "data": "Box"
-            },
-            {
               "key": "netweight",
-              "data": "20"
+              "data": "20.0"
             },
             {
               "key": "number_package",
               "data": "4"
+            },
+            {
+              "key": "type_package",
+              "data": "Box"
             },
             {
               "key": "quantity",
@@ -129,11 +121,19 @@
             },
             {
               "key": "container",
-              "data": "1391442"
+              "data": "TRUE"
             },
             {
-              "key": "commodity_group",
-              "data": "Fruit and nuts"
+              "key": "variety",
+              "data": "Altess"
+            },
+            {
+              "key": "class",
+              "data": "Class I"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "2"
             }
           ]
         },
@@ -142,24 +142,16 @@
           "complementID": 2,
           "keyDataPair": [
             {
-              "key": "variety",
-              "data": "Cameo"
-            },
-            {
-              "key": "class",
-              "data": "Extra Class"
-            },
-            {
-              "key": "type_package",
-              "data": "Crate"
-            },
-            {
               "key": "netweight",
-              "data": "4"
+              "data": "4.0"
             },
             {
               "key": "number_package",
               "data": "2"
+            },
+            {
+              "key": "type_package",
+              "data": "Crate"
             },
             {
               "key": "quantity",
@@ -170,8 +162,16 @@
               "data": "Stems"
             },
             {
-              "key": "commodity_group",
-              "data": "Fruit and nuts"
+              "key": "variety",
+              "data": "Cameo"
+            },
+            {
+              "key": "class",
+              "data": "Extra Class"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "3"
             }
           ]
         },
@@ -180,16 +180,16 @@
           "complementID": 3,
           "keyDataPair": [
             {
-              "key": "type_package",
-              "data": "Container"
-            },
-            {
               "key": "netweight",
               "data": "15.4"
             },
             {
               "key": "number_package",
               "data": "3"
+            },
+            {
+              "key": "type_package",
+              "data": "Container"
             },
             {
               "key": "quantity",
@@ -201,15 +201,15 @@
             },
             {
               "key": "container",
-              "data": "1330875"
-            },
-            {
-              "key": "commodity_group",
-              "data": "Plants for Planting"
+              "data": "TRUE"
             },
             {
               "key": "finished_or_propagated",
               "data": "Propagated"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "4"
             }
           ]
         }

@@ -2,7 +2,7 @@
   "spsConsignment": {
     "consigneeSpsParty": {
       "id": {
-        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+        "value": "00000000-0000-0000-0000-000000000003"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
@@ -10,7 +10,7 @@
     },
     "consignorSpsParty": {
       "id": {
-        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+        "value": "00000000-0000-0000-0000-000000000001"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
@@ -18,7 +18,7 @@
     },
     "deliverySpsParty": {
       "id": {
-        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+        "value": "00000000-0000-0000-0000-000000000004"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
@@ -35,11 +35,11 @@
     },
     "exportSpsCountry": {
       "id": {
-        "value": "NL"
+        "value": "DZ"
       },
       "name": [
         {
-          "value": "The Netherlands"
+          "value": "Algeria"
         }
       ]
     },
@@ -71,16 +71,6 @@
                 ],
                 "subjectCode": {
                   "value": "quantity"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Fruit and nuts"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "commodity_group"
                 }
               }
             ],
@@ -193,16 +183,6 @@
               {
                 "content": [
                   {
-                    "value": "Fruit and nuts"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "commodity_group"
-                }
-              },
-              {
-                "content": [
-                  {
                     "value": "Altess"
                   }
                 ],
@@ -301,7 +281,7 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 20
+                  "value": 4
                 },
                 "levelCode": {
                   "value": "4"
@@ -335,16 +315,6 @@
                 ],
                 "subjectCode": {
                   "value": "quantity"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Fruit and nuts"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "commodity_group"
                 }
               },
               {
@@ -477,16 +447,6 @@
               {
                 "content": [
                   {
-                    "value": "Plants for Planting"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "commodity_group"
-                }
-              },
-              {
-                "content": [
-                  {
                     "value": "PROPAGATED"
                   }
                 ],
@@ -606,21 +566,6 @@
         },
         "modeCode": {
           "value": "4"
-        }
-      },
-      {
-        "id": {
-          "schemeAgencyID": "GB",
-          "schemeID": "ship_imo_number_after_bcp",
-          "value": "Voyage N° 1"
-        },
-        "modeCode": {
-          "value": "1"
-        },
-        "usedSpsTransportMeans": {
-          "name": {
-            "value": "Ocean Vessel: Green Opal"
-          }
         }
       }
     ],

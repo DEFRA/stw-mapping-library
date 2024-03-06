@@ -11,7 +11,7 @@ public class ChedppControlledAtmosphereContainerMapper implements
     Mapper<IncludedSpsTradeLineItem, ComplementParameterSetKeyDataPair> {
 
   private static final String CONTAINER_KEY = "container";
-  private static final String TRUE = "true";
+  private static final String TRUE = "TRUE";
 
   @Override
   public ComplementParameterSetKeyDataPair map(IncludedSpsTradeLineItem data) {
@@ -22,7 +22,7 @@ public class ChedppControlledAtmosphereContainerMapper implements
         .filter(note -> TRUE.equals(note.getContent().get(0).getValue()))
         .map(note -> ComplementParameterSetKeyDataPair.builder()
             .key(CONTAINER_KEY)
-            .data(note.getContent().get(0).getValue())
+            .data(TRUE)
             .build())
         .orElse(null);
   }

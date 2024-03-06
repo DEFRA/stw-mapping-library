@@ -1,6 +1,8 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp;
 
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.CONSIGNEE;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.EXPORTER;
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.IMPORTER;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,6 +29,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final ChedppMeansOfTransportMapper chedppMeansOfTransportMapper;
   private final ChedppCommoditiesMapper chedppCommoditiesMapper;
   private final TransportToBcpQuestionMapper transportToBcpQuestionMapper;
+  private final ChedppPointOfEntryControlPointMapper chedppPointOfEntryControlPointMapper;
 
   @Autowired
   public ChedppPartOneMapper(ChedppPurposeMapper chedppPurposeMapper,
@@ -37,7 +40,8 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       ChedppVeterinaryInformationMapper chedppVeterinaryInformationMapper,
       SealsContainersMapper chedppSealsContainersMapper,
       ChedppCommoditiesMapper chedppCommoditiesMapper,
-      TransportToBcpQuestionMapper transportToBcpQuestionMapper) {
+      TransportToBcpQuestionMapper transportToBcpQuestionMapper,
+      ChedppPointOfEntryControlPointMapper chedppPointOfEntryControlPointMapper) {
     this.chedppPurposeMapper = chedppPurposeMapper;
     this.economicOperatorMapper = economicOperatorMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
@@ -47,6 +51,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.chedppSealsContainersMapper = chedppSealsContainersMapper;
     this.chedppCommoditiesMapper = chedppCommoditiesMapper;
     this.transportToBcpQuestionMapper = transportToBcpQuestionMapper;
+    this.chedppPointOfEntryControlPointMapper = chedppPointOfEntryControlPointMapper;
   }
 
   @Override
@@ -58,9 +63,15 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .purpose(chedppPurposeMapper.map(spsExchangedDocument.getSignatorySpsAuthentication()))
         .consignor(economicOperatorMapper.setEconomicOperatorType(
             economicOperatorMapper.map(spsConsignment.getConsignorSpsParty()), EXPORTER))
+        .consignee(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsConsignment.getConsigneeSpsParty()), CONSIGNEE))
+        .importer(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsConsignment.getConsigneeSpsParty()), IMPORTER))
         .placeOfDestination(economicOperatorMapper.setEconomicOperatorType(
             economicOperatorMapper.map(spsConsignment.getDeliverySpsParty()), EXPORTER))
         .pointOfEntry(pointOfEntryMapper.map(spsConsignment.getUnloadingBaseportSpsLocation()))
+        .pointOfEntryControlPoint(chedppPointOfEntryControlPointMapper.map(
+            spsConsignment.getUnloadingBaseportSpsLocation()))
         .meansOfTransportFromEntryPoint(
             meansOfTransportFromEntryPointMapper.map(
                 spsConsignment.getMainCarriageSpsTransportMovement()))
@@ -73,6 +84,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
             chedppSealsContainersMapper.map(spsConsignment.getUtilizedSpsTransportEquipment()))
         .commodities(chedppCommoditiesMapper.map(spsCertificate))
         .transporterDetailsRequired(transportToBcpQuestionMapper.map(spsConsignment))
+        // TODO: arrivalDate, arrivalTime, submissionDate, submittedBy, departureDate, departureTime
         .build();
   }
 }

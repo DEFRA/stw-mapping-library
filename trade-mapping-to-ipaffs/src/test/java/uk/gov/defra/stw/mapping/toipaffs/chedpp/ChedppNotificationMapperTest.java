@@ -23,16 +23,13 @@ class ChedppNotificationMapperTest {
   @Mock
   private ChedppPartOneMapper chedppPartOneMapper;
 
-  @Mock
-  private ReferenceNumberMapper referenceNumberMapper;
-
   private ObjectMapper objectMapper;
   private ChedppNotificationMapper chedppNotificationMapper;
   private SpsCertificate spsCertificate;
 
   @BeforeEach
   void setup() throws Exception {
-    chedppNotificationMapper = new ChedppNotificationMapper(chedppPartOneMapper, referenceNumberMapper);
+    chedppNotificationMapper = new ChedppNotificationMapper(chedppPartOneMapper);
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer

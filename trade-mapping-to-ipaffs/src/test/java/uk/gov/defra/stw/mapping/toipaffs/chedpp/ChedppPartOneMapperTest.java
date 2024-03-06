@@ -60,16 +60,26 @@ class ChedppPartOneMapperTest {
   @Mock
   private TransportToBcpQuestionMapper transportToBcpQuestionMapper;
 
+  @Mock
+  private ChedppPointOfEntryControlPointMapper chedppPointOfEntryControlPointMapper;
+
   private ObjectMapper objectMapper;
   private ChedppPartOneMapper mapper;
   private SpsCertificate spsCertificate;
 
   @BeforeEach
   void setup() throws JsonProcessingException, NotificationMapperException {
-    mapper = new ChedppPartOneMapper(chedppPurposeMapper, economicOperatorMapper,
-        chedppMeansOfTransportFromEntryPointMapper, chedppMeansOfTransportMapper,
-        pointOfEntryMapper, chedppVeterinaryInformationMapper, chedppSealsContainersMapper,
-        chedppCommoditiesMapper, transportToBcpQuestionMapper);
+    mapper = new ChedppPartOneMapper(
+        chedppPurposeMapper,
+        economicOperatorMapper,
+        chedppMeansOfTransportFromEntryPointMapper,
+        chedppMeansOfTransportMapper,
+        pointOfEntryMapper,
+        chedppVeterinaryInformationMapper,
+        chedppSealsContainersMapper,
+        chedppCommoditiesMapper,
+        transportToBcpQuestionMapper,
+        chedppPointOfEntryControlPointMapper);
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer
