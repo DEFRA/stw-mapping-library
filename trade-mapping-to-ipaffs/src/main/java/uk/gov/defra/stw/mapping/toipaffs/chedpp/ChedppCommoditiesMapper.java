@@ -6,9 +6,13 @@ import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
 import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.ChedppCommodityComplementMapper;
 import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.ChedppComplementParameterSetMapper;
+import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.TotalGrossVolumeMapper;
+import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.TotalGrossVolumeUnitMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.ConsignedCountryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.Commodities;
@@ -21,6 +25,10 @@ public class ChedppCommoditiesMapper implements Mapper<SpsCertificate, Commoditi
   private final RegionOfOriginMapper regionOfOriginMapper;
   private final TotalGrossWeightMapper totalGrossWeightMapper;
   private final CountryOfOriginMapper countryOfOriginMapper;
+  private final TotalNetWeightMapper totalNetWeightMapper;
+  private final TotalGrossVolumeMapper totalGrossVolumeMapper;
+  private final TotalGrossVolumeUnitMapper totalGrossVolumeUnitMapper;
+  private final ConsignedCountryMapper consignedCountryMapper;
 
   @Autowired
   public ChedppCommoditiesMapper(
@@ -28,12 +36,20 @@ public class ChedppCommoditiesMapper implements Mapper<SpsCertificate, Commoditi
       ChedppComplementParameterSetMapper chedppComplementParameterSetMapper,
       RegionOfOriginMapper regionOfOriginMapper,
       TotalGrossWeightMapper totalGrossWeightMapper,
-      CountryOfOriginMapper countryOfOriginMapper) {
+      CountryOfOriginMapper countryOfOriginMapper,
+      TotalNetWeightMapper totalNetWeightMapper,
+      TotalGrossVolumeMapper totalGrossVolumeMapper,
+      TotalGrossVolumeUnitMapper totalGrossVolumeUnitMapper,
+      ConsignedCountryMapper consignedCountryMapper) {
     this.chedppCommodityComplementMapper = chedppCommodityComplementMapper;
     this.chedppComplementParameterSetMapper = chedppComplementParameterSetMapper;
     this.regionOfOriginMapper = regionOfOriginMapper;
     this.totalGrossWeightMapper = totalGrossWeightMapper;
     this.countryOfOriginMapper = countryOfOriginMapper;
+    this.totalNetWeightMapper = totalNetWeightMapper;
+    this.totalGrossVolumeMapper = totalGrossVolumeMapper;
+    this.totalGrossVolumeUnitMapper = totalGrossVolumeUnitMapper;
+    this.consignedCountryMapper = consignedCountryMapper;
   }
 
   @Override
@@ -44,13 +60,14 @@ public class ChedppCommoditiesMapper implements Mapper<SpsCertificate, Commoditi
           .complementParameterSet(chedppComplementParameterSetMapper.map(spsCertificate))
           .countryOfOrigin(countryOfOriginMapper.map(spsCertificate))
           .regionOfOrigin(regionOfOriginMapper.map(spsCertificate))
-          .consignedCountry(
-              spsCertificate.getSpsConsignment().getExportSpsCountry().getId().getValue())
+          .consignedCountry(consignedCountryMapper.map(spsCertificate))
           .totalGrossWeight(totalGrossWeightMapper.map(spsCertificate))
-          // TODO: totalNetWeight, totalGrossVolume, totalGrossVolumeUnit
+          .totalNetWeight(totalNetWeightMapper.map(spsCertificate))
+          .totalGrossVolume(totalGrossVolumeMapper.map(spsCertificate))
+          .totalGrossVolumeUnit(totalGrossVolumeUnitMapper.map(spsCertificate))
           .build();
     } catch (CommoditiesMapperException exception) {
-      throw new NotificationMapperException(exception.getMessage());
+      throw new NotificationMapperException(exception);
     }
   }
 }

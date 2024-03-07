@@ -98,7 +98,7 @@ public class ChedppComplementParameterSetMapper
         complementParameterSetKeyDataPairs.add(complementParameterSetKeyDataPair);
       }
     } catch (NotificationMapperException exception) {
-      throw new CommoditiesMapperException(exception.getMessage());
+      throw new CommoditiesMapperException(exception);
     }
   }
 }

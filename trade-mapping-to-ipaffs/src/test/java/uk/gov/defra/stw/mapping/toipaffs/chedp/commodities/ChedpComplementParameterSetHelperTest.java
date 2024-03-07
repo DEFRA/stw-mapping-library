@@ -37,7 +37,7 @@ class ChedpComplementParameterSetHelperTest {
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper);
+        .get("chedp/chedp_ehc_complete.json", SpsCertificate.class);
 
     UUID uuid1 = UUID.fromString("0d1be0bc-a7c9-430e-8b8c-5f18d83f687d");
     UUID uuid2 = UUID.fromString("1e364d17-5ba6-49e7-953f-338b9792557b");

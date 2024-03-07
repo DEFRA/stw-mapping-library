@@ -1,28 +1,29 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.math.BigDecimal;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
+import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.ChedppCommodityComplementMapper;
+import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.ChedppComplementParameterSetMapper;
+import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.TotalGrossVolumeMapper;
+import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.TotalGrossVolumeUnitMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.ConsignedCountryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
-import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.ChedppCommodityComplementMapper;
-import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.ChedppComplementParameterSetMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.ResourceUtils;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 import uk.gov.defra.tracesx.notificationschema.representation.Commodities;
 import uk.gov.defra.tracesx.notificationschema.representation.CommodityComplement;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet;
@@ -32,71 +33,71 @@ class ChedppCommoditiesMapperTest {
 
   @Mock
   private ChedppCommodityComplementMapper chedppCommodityComplementMapper;
-
   @Mock
   private ChedppComplementParameterSetMapper chedppComplementParameterSetMapper;
-
   @Mock
   private RegionOfOriginMapper regionOfOriginMapper;
-
   @Mock
   private TotalGrossWeightMapper totalGrossWeightMapper;
-
   @Mock
   private CountryOfOriginMapper countryOfOriginMapper;
+  @Mock
+  private TotalNetWeightMapper totalNetWeightMapper;
+  @Mock
+  private TotalGrossVolumeMapper totalGrossVolumeMapper;
+  @Mock
+  private TotalGrossVolumeUnitMapper totalGrossVolumeUnitMapper;
+  @Mock
+  private ConsignedCountryMapper consignedCountryMapper;
 
+  @InjectMocks
   private ChedppCommoditiesMapper mapper;
-  private ObjectMapper objectMapper;
+
   private SpsCertificate spsCertificate;
 
-  private List<CommodityComplement> commodityComplements;
-  private List<ComplementParameterSet> complementParameterSets;
-
   @BeforeEach
-  void setup() throws JsonProcessingException {
-    mapper = new ChedppCommoditiesMapper(
-        chedppCommodityComplementMapper,
-        chedppComplementParameterSetMapper,
-        regionOfOriginMapper,
-        totalGrossWeightMapper,
-        countryOfOriginMapper);
-    objectMapper = TestUtils.initObjectMapper();
-
-    spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper);
-
-    commodityComplements = JsonDeserializer.get(objectMapper.getTypeFactory().constructCollectionType(List.class, CommodityComplement.class),
-        "chedpp/partone/commodities/chedpp_ipaffs_commodityComplement_complete.json", objectMapper);
-    complementParameterSets = JsonDeserializer.get(objectMapper.getTypeFactory().constructCollectionType(List.class, ComplementParameterSet.class),
-        "chedpp/partone/commodities/chedpp_ipaffs_complementParameterSet_complete.json", objectMapper);
+  void setup() {
+    spsCertificate = new SpsCertificate();
   }
 
   @Test
-  void map_ReturnsCommodities_WhenComplete() throws NotificationMapperException, JsonProcessingException {
-    when(chedppCommodityComplementMapper.map(spsCertificate)).thenReturn(commodityComplements);
-    when(chedppComplementParameterSetMapper.map(spsCertificate)).thenReturn(complementParameterSets);
-    when(regionOfOriginMapper.map(spsCertificate)).thenReturn("GE");
-    when(countryOfOriginMapper.map(spsCertificate)).thenReturn("NL");
+  void map_ReturnsCommodities() throws NotificationMapperException {
+    CommodityComplement commodityComplement = new CommodityComplement();
+    ComplementParameterSet complementParameterSet = new ComplementParameterSet();
+    when(chedppCommodityComplementMapper.map(spsCertificate)).thenReturn(List.of(commodityComplement));
+    when(chedppComplementParameterSetMapper.map(spsCertificate)).thenReturn(List.of(complementParameterSet));
+    when(countryOfOriginMapper.map(spsCertificate)).thenReturn("Country of origin");
+    when(regionOfOriginMapper.map(spsCertificate)).thenReturn("Region of origin");
+    when(consignedCountryMapper.map(spsCertificate)).thenReturn("Consigned country");
+    when(totalGrossWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1.0));
+    when(totalNetWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(2.0));
+    when(totalGrossVolumeMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(3.0));
+    when(totalGrossVolumeUnitMapper.map(spsCertificate)).thenReturn("Total gross volume unit");
 
-    Commodities commodities = mapper.map(spsCertificate);
-    String actualCommodities = objectMapper.writeValueAsString(commodities);
+    Commodities actual = mapper.map(spsCertificate);
 
-    String expectedCommodities = ResourceUtils
-        .readFileToString("classpath:chedpp/partone/commodities/chedpp_ipaffs_commodities_complete.json");
-    assertThat(actualCommodities).isEqualTo(expectedCommodities);
+    assertThat(actual).isEqualTo(Commodities.builder()
+        .commodityComplement(List.of(commodityComplement))
+        .complementParameterSet(List.of(complementParameterSet))
+        .countryOfOrigin("Country of origin")
+        .regionOfOrigin("Region of origin")
+        .consignedCountry("Consigned country")
+        .totalGrossWeight(BigDecimal.valueOf(1.0))
+        .totalNetWeight(BigDecimal.valueOf(2.0))
+        .totalGrossVolume(BigDecimal.valueOf(3.0))
+        .totalGrossVolumeUnit("Total gross volume unit")
+        .build());
   }
 
   @Test
-  void map_ThrowsNotificationMapperException_WhenCommodityComplementMapperThrowsException() {
-    when(chedppCommodityComplementMapper.map(spsCertificate)).thenThrow(new CommoditiesMapperException(""));
+  void map_ThrowsNotificationMapperException_WhenMapperThrowsException() {
+    when(chedppCommodityComplementMapper.map(spsCertificate))
+        .thenThrow(new CommoditiesMapperException("Message"));
 
-    assertThrows(NotificationMapperException.class, () -> mapper.map(spsCertificate));
-  }
-
-  @Test
-  void map_ThrowsNotificationMapperException_WhenComplementParameterSetMapperThrowsException() {
-    when(chedppComplementParameterSetMapper.map(spsCertificate)).thenThrow(new CommoditiesMapperException(""));
-
-    assertThrows(NotificationMapperException.class, () -> mapper.map(spsCertificate));
+    assertThatThrownBy(() -> mapper.map(spsCertificate))
+        .isInstanceOf(NotificationMapperException.class)
+        .hasMessage("uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException: Message")
+        .hasRootCauseInstanceOf(CommoditiesMapperException.class)
+        .hasRootCauseMessage("Message");
   }
 }

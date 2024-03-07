@@ -5,13 +5,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
 public class JsonDeserializer {
-  public static <T> T get(CollectionType collectionType, String filename, ObjectMapper objectMapper)
+  private static final ObjectMapper objectMapper = TestUtils.initObjectMapper();
+
+  public static <T> T get(String filename, CollectionType collectionType)
       throws JsonProcessingException {
     String jsonString = ResourceUtils.readFileToString("classpath:" + filename);
     return objectMapper.readValue(jsonString, collectionType);
   }
 
-  public static <T> T get(Class<T> clazz, String filename, ObjectMapper objectMapper)
+  public static <T> T get(String filename, Class<T> clazz)
       throws JsonProcessingException {
     String jsonString = ResourceUtils.readFileToString("classpath:" + filename);
     return objectMapper.readValue(jsonString, clazz);

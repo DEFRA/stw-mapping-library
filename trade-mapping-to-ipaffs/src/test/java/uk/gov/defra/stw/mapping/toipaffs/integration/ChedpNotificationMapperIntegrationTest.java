@@ -31,9 +31,8 @@ class ChedpNotificationMapperIntegrationTest {
   void map_ReturnsChedpNotification_WhenCompleteEhcSpsCertificate() throws Exception {
     ObjectMapper objectMapper = TestUtils.initObjectMapper();
 
-    SpsCertificate spsCertificate =
-        JsonDeserializer.get(
-            SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper);
+    SpsCertificate spsCertificate = JsonDeserializer.get("chedp/chedp_ehc_complete.json",
+        SpsCertificate.class);
 
     String expectedNotification =
         ResourceUtils.readFileToString("classpath:chedp/chedp_ipaffs_complete.json");

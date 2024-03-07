@@ -15,7 +15,6 @@ import uk.gov.defra.stw.mapping.dto.SequenceNumeric;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.ResourceUtils;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 import uk.gov.defra.tracesx.notificationschema.representation.CommodityComplement;
 
@@ -30,21 +29,27 @@ class ChedppCommodityComplementMapperTest {
     mapper = new ChedppCommodityComplementMapper();
     objectMapper = TestUtils.initObjectMapper();
 
-    spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper);
+    spsCertificate = JsonDeserializer.get(
+        "chedpp/partone/commodities/chedpp_trade_commodity_complement.json", SpsCertificate.class);
   }
 
   @Test
   void map_ReturnsCommodityComplement_WhenComplete() throws JsonProcessingException {
-    // Given
-    String expectedCommodityComplement = ResourceUtils
-        .readFileToString("classpath:chedpp/partone/commodities/chedpp_ipaffs_commodityComplement_complete.json");
-    // When
-    List<CommodityComplement> commodityComplement = mapper.map(spsCertificate);
-    String actualCommodityComplement = objectMapper.writeValueAsString(commodityComplement);
+    List<CommodityComplement> actual = mapper.map(spsCertificate);
 
-    // Then
-    assertThat(actualCommodityComplement).isEqualTo(expectedCommodityComplement);
+    String expectedJson = """
+        {
+          "commodityID": "0808108090",
+          "commodityDescription": "Other",
+          "complementID": 1,
+          "complementName": "Malus angustifolia",
+          "eppoCode": "MABAN",
+          "speciesName": "Malus angustifolia",
+          "speciesNomination": "Malus angustifolia"
+        }
+        """;
+    CommodityComplement expected = objectMapper.readValue(expectedJson, CommodityComplement.class);
+    assertThat(actual).containsOnly(expected);
   }
 
   @Test
@@ -53,8 +58,7 @@ class ChedppCommodityComplementMapperTest {
     getFirstApplicableSpsClassification().getSystemName().get(0).setValue("Another CN Code");
 
     // When // Then
-    Assertions.assertThrows(CommoditiesMapperException.class, ()-> mapper.map(spsCertificate));
-
+    Assertions.assertThrows(CommoditiesMapperException.class, () -> mapper.map(spsCertificate));
   }
 
   @Test
@@ -63,7 +67,7 @@ class ChedppCommodityComplementMapperTest {
     getFirstApplicableSpsClassification().setClassCode(null);
 
     // When // Then
-    Assertions.assertThrows(CommoditiesMapperException.class, ()-> mapper.map(spsCertificate));
+    Assertions.assertThrows(CommoditiesMapperException.class, () -> mapper.map(spsCertificate));
   }
 
   @Test
@@ -119,7 +123,8 @@ class ChedppCommodityComplementMapperTest {
     // Given
     spsCertificate.getSpsConsignment()
         .getIncludedSpsConsignmentItem().get(0)
-        .getIncludedSpsTradeLineItem().get(0).setSequenceNumeric(new SequenceNumeric().withValue(0));
+        .getIncludedSpsTradeLineItem().get(0)
+        .setSequenceNumeric(new SequenceNumeric().withValue(0));
 
     // When
     List<CommodityComplement> actual = mapper.map(spsCertificate);

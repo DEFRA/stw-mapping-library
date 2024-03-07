@@ -3,23 +3,19 @@ package uk.gov.defra.stw.mapping.toipaffs.common;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 
 class MeansOfTransportMapperTest {
 
   private MeansOfTransportMapper meansOfTransportMapper;
-  private ObjectMapper objectMapper;
 
   @BeforeEach
   void setup() {
     meansOfTransportMapper = new MeansOfTransportMapper();
-    objectMapper = TestUtils.initObjectMapper();
   }
 
   @Test
@@ -27,7 +23,7 @@ class MeansOfTransportMapperTest {
     MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
 
     assertThat(meansOfTransportMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Voyage N° 1, Ocean Vessel: Green Opal");
+        .isEqualTo("Identification");
   }
 
   @Test
@@ -36,7 +32,7 @@ class MeansOfTransportMapperTest {
     firstMainCarriageSpsTransportMovement.setUsedSpsTransportMeans(null);
 
     assertThat(meansOfTransportMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Voyage N° 1");
+        .isEqualTo("Identification");
   }
 
 
@@ -60,7 +56,7 @@ class MeansOfTransportMapperTest {
 
   private MainCarriageSpsTransportMovement getFirstMainCarriageSpsTransportMovement() throws JsonProcessingException {
     return JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper)
+        .get("chedpp/chedpp_ehc_complete.json", SpsCertificate.class)
         .getSpsConsignment()
         .getMainCarriageSpsTransportMovement()
         .get(0);

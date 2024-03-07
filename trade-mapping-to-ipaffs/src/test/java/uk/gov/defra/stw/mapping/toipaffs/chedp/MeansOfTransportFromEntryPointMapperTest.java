@@ -82,7 +82,7 @@ class MeansOfTransportFromEntryPointMapperTest {
 
   private List<MainCarriageSpsTransportMovement> getMainCarriageSpsTransportMovements() throws JsonProcessingException {
     return JsonDeserializer
-        .get(SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper)
+        .get("chedp/chedp_ehc_complete.json", SpsCertificate.class)
         .getSpsConsignment()
         .getMainCarriageSpsTransportMovement();
   }

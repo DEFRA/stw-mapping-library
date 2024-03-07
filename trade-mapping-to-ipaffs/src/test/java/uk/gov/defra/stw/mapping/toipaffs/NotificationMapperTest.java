@@ -37,10 +37,10 @@ class NotificationMapperTest {
     notificationMapper = new NotificationMapper(notificationMapperFactory);
     spsCertificate =
         JsonDeserializer.get(
-            SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper);
+            "chedp/chedp_ehc_complete.json", SpsCertificate.class);
     ehcChedpNotification =
         JsonDeserializer.get(
-            Notification.class, "chedp/chedp_ipaffs_complete.json", objectMapper);
+            "chedp/chedp_ipaffs_complete.json", Notification.class);
   }
 
   @Test

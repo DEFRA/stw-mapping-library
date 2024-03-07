@@ -3,19 +3,17 @@ package uk.gov.defra.stw.mapping.toipaffs.chedpp;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.toipaffs.common.ReferenceNumberMapper;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.ResourceUtils;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
+import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.Notification;
 import uk.gov.defra.tracesx.notificationschema.representation.PartOne;
+import uk.gov.defra.tracesx.notificationschema.representation.enumeration.NotificationTypeEnum;
+import uk.gov.defra.tracesx.notificationschema.representation.enumeration.StatusEnum;
 
 @ExtendWith(MockitoExtension.class)
 class ChedppNotificationMapperTest {
@@ -23,31 +21,25 @@ class ChedppNotificationMapperTest {
   @Mock
   private ChedppPartOneMapper chedppPartOneMapper;
 
-  private ObjectMapper objectMapper;
   private ChedppNotificationMapper chedppNotificationMapper;
-  private SpsCertificate spsCertificate;
 
   @BeforeEach
-  void setup() throws Exception {
+  void setup() {
     chedppNotificationMapper = new ChedppNotificationMapper(chedppPartOneMapper);
-    objectMapper = TestUtils.initObjectMapper();
-
-    spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper);
-
-    PartOne partOne = JsonDeserializer.get(PartOne.class,
-        "chedpp/partone/chedpp_ipaffs_partone_complete.json", objectMapper);
-
-    when(chedppPartOneMapper.map(spsCertificate)).thenReturn(partOne);
   }
 
   @Test
-  void map_ReturnsChedppNotification_WhenCompleteEhcSpsCertificate() throws Exception {
-    String expectedNotification = ResourceUtils.readFileToString("classpath:chedpp/chedpp_ipaffs_complete.json");
+  void map_ReturnsChedppNotification() throws NotificationMapperException {
+    SpsCertificate spsCertificate = new SpsCertificate();
+    PartOne partOne = new PartOne();
+    when(chedppPartOneMapper.map(spsCertificate)).thenReturn(partOne);
 
-    Notification notification = chedppNotificationMapper.map(spsCertificate);
-    String actualNotification = objectMapper.writeValueAsString(notification);
+    Notification actual = chedppNotificationMapper.map(spsCertificate);
 
-    assertThat(actualNotification).isEqualTo(expectedNotification);
+    assertThat(actual).isEqualTo(Notification.builder()
+        .partOne(partOne)
+        .type(NotificationTypeEnum.CHEDPP)
+        .status(StatusEnum.SUBMITTED)
+        .build());
   }
 }

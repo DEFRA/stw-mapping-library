@@ -14,7 +14,6 @@ import uk.gov.defra.tracesx.notificationschema.representation.ComplementParamete
 
 class FinishedOrPropagatedMapperTest {
 
-  private static final String FINISHED = "Finished";
   private static final String FINISHED_OR_PROPAGATED = "finished_or_propagated";
   private static final String COMMODITY_GROUP = "commodity_group";
   private static final String OTHER = "Other";
@@ -92,7 +91,7 @@ class FinishedOrPropagatedMapperTest {
   @Test
   void map_ReturnsCorrectKeyDataPair_WhenFinishedPropagatingSpsNoteTypeIsPresent() {
     // Given
-    List<TextType> textTypes = Collections.singletonList(new TextType().withValue(FINISHED));
+    List<TextType> textTypes = Collections.singletonList(new TextType().withValue("FINISHED"));
     CodeType codeType = new CodeType().withValue(FINISHED_OR_PROPAGATED);
     SpsNoteType spsNoteType = new SpsNoteType().withSubjectCode(codeType).withContent(textTypes);
     IncludedSpsTradeLineItem tradeLineItem =
@@ -106,7 +105,7 @@ class FinishedOrPropagatedMapperTest {
     ComplementParameterSetKeyDataPair expected =
         ComplementParameterSetKeyDataPair.builder()
             .key(FINISHED_OR_PROPAGATED)
-            .data(FINISHED)
+            .data("Finished")
             .build();
 
     assertThat(actual).isEqualTo(expected);
@@ -115,7 +114,7 @@ class FinishedOrPropagatedMapperTest {
   @Test
   void map_ReturnsNull_WhenAdditionalInformationSubjectCodeIsNull() {
     // Given
-    List<TextType> textTypes = Collections.singletonList(new TextType().withValue(FINISHED));
+    List<TextType> textTypes = Collections.singletonList(new TextType().withValue("FINISHED"));
     SpsNoteType spsNoteType = new SpsNoteType().withSubjectCode(null).withContent(textTypes);
     IncludedSpsTradeLineItem tradeLineItem =
         new IncludedSpsTradeLineItem()

@@ -17,7 +17,7 @@ class TotalGrossWeightMapperTest {
   private TotalGrossWeightMapper totalGrossWeightMapper;
 
   @BeforeEach
-  void setup() throws JsonProcessingException {
+  void setup() {
     totalGrossWeightMapper = new TotalGrossWeightMapper();
   }
 

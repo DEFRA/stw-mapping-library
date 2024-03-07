@@ -34,10 +34,11 @@ class ChedpNotificationMapperTest {
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper);
+        .get("chedp/chedp_ehc_complete.json", SpsCertificate.class);
 
-    PartOne partOne = JsonDeserializer.get(PartOne.class,
-        "chedp/partone/chedp_ipaffs_partone_complete.json", objectMapper);
+    PartOne partOne = JsonDeserializer.get("chedp/partone/chedp_ipaffs_partone_complete.json",
+        PartOne.class
+    );
 
     when(chedpPartOneMapper.map(spsCertificate)).thenReturn(partOne);
   }

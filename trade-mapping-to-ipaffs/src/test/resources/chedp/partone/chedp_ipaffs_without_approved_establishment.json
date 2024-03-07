@@ -16,6 +16,7 @@
     "type" : "destination"
   },
   "commodities" : {
+    "totalGrossWeight" : 1678.52,
     "temperature" : "Ambient",
     "commodityComplement" : [ {
       "commodityID" : "07099990",

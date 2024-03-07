@@ -128,23 +128,30 @@ class VeterinaryInformationMapperTest {
   }
 
   private SpsExchangedDocument setUpSpsExchangedDocument() throws Exception{
-    return JsonDeserializer.get(SpsExchangedDocument.class,
+    return JsonDeserializer.get(
         "common/veterinaryinformation/common_ehc_veterinaryinformation_complete.json",
-        objectMapper);
+        SpsExchangedDocument.class
+    );
   }
 
   private VeterinaryInformation setUpExpectedVeterinaryInformation() throws Exception {
-    return JsonDeserializer.get(VeterinaryInformation.class,
-        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete.json", objectMapper);
+    return JsonDeserializer.get(
+        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete.json",
+        VeterinaryInformation.class
+    );
   }
 
   private VeterinaryInformation setUpExpectedVeterinaryInformationWithPlaceholder() throws Exception {
-    return JsonDeserializer.get(VeterinaryInformation.class,
-        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete_with_placeholder.json", objectMapper);
+    return JsonDeserializer.get(
+        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete_with_placeholder.json",
+        VeterinaryInformation.class
+    );
   }
 
   private VeterinaryInformation setUpExpectedVeterinaryInformationForPlaceholder() throws Exception {
-    return JsonDeserializer.get(VeterinaryInformation.class,
-        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_for_placeholder.json", objectMapper);
+    return JsonDeserializer.get(
+        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_for_placeholder.json",
+        VeterinaryInformation.class
+    );
   }
 }

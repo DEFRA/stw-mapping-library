@@ -2,85 +2,71 @@ package uk.gov.defra.stw.mapping.toipaffs.common;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uk.gov.defra.stw.mapping.dto.IDType;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
-import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
+import uk.gov.defra.stw.mapping.dto.ModeCode;
+import uk.gov.defra.stw.mapping.dto.TextType;
+import uk.gov.defra.stw.mapping.dto.UsedSpsTransportMeans;
 
 class MeansOfTransportFromEntryPointBaseMapperTest {
 
-  private MeansOfTransportFromEntryPointBaseMapper meansOfTransportFromEntryPointBaseMapper;
-  private ObjectMapper objectMapper;
+  private MeansOfTransportFromEntryPointBaseMapper mapper;
+
+  private MainCarriageSpsTransportMovement transportMovement;
 
   @BeforeEach
   void setup() {
-    meansOfTransportFromEntryPointBaseMapper = new MeansOfTransportFromEntryPointBaseMapper();
-    objectMapper = TestUtils.initObjectMapper();
+    mapper = new MeansOfTransportFromEntryPointBaseMapper();
+    transportMovement = new MainCarriageSpsTransportMovement()
+        .withId(new IDType()
+            .withValue("Identification")
+            .withSchemeID("ship_imo_number_before_bcp"))
+        .withModeCode(new ModeCode().withValue("1"))
+        .withUsedSpsTransportMeans(new UsedSpsTransportMeans()
+            .withName(new TextType()
+                .withValue("Transport means")));
   }
 
   @Test
-  void map_ReturnsConcatenatedIdentificationString_WhenIdAndUsedSpsTransportMeansNonNull() throws JsonProcessingException {
-    MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
-
-    assertThat(meansOfTransportFromEntryPointBaseMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Voyage N° 1, Ocean Vessel: Green Opal");
+  void map_ReturnsConcatenatedIdentificationString_WhenIdAndUsedSpsTransportMeansNonNull() {
+    assertThat(mapper.map(transportMovement).getId()).isEqualTo("Identification, Transport means");
   }
 
   @Test
-  void map_ReturnsIdValue_WhenNullUsedSpsTransportMeans() throws JsonProcessingException {
-    MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
-    firstMainCarriageSpsTransportMovement.setUsedSpsTransportMeans(null);
+  void map_ReturnsIdValue_WhenNullUsedSpsTransportMeans() {
+    transportMovement.setUsedSpsTransportMeans(null);
 
-    assertThat(meansOfTransportFromEntryPointBaseMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Voyage N° 1");
+    assertThat(mapper.map(transportMovement).getId()).isEqualTo("Identification");
   }
 
   @Test
-  void map_ReturnsIdValue_WhenBlankUsedSpsTransportMeans() throws JsonProcessingException {
-    MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
-    firstMainCarriageSpsTransportMovement.getUsedSpsTransportMeans().getName().setValue(" ");
+  void map_ReturnsIdValue_WhenBlankUsedSpsTransportMeans() {
+    transportMovement.getUsedSpsTransportMeans().getName().setValue(" ");
 
-    assertThat(meansOfTransportFromEntryPointBaseMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Voyage N° 1");
+    assertThat(mapper.map(transportMovement).getId()).isEqualTo("Identification");
   }
 
   @Test
-  void map_ReturnsUsedSpsTransportMeansName_WhenIdIsNullAndUsedSpsTransportMeansIsNotNull() throws JsonProcessingException {
-    MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
-    firstMainCarriageSpsTransportMovement.getId().setValue(null);
+  void map_ReturnsUsedSpsTransportMeansName_WhenIdIsNullAndUsedSpsTransportMeansIsNotNull() {
+    transportMovement.getId().setValue(null);
 
-    assertThat(meansOfTransportFromEntryPointBaseMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Ocean Vessel: Green Opal");
+    assertThat(mapper.map(transportMovement).getId()).isEqualTo("Transport means");
   }
 
   @Test
-  void map_ReturnsUsedSpsTransportMeansName_WhenIdIsBlankAndUsedSpsTransportMeansIsNotNull() throws JsonProcessingException {
-    MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
-    firstMainCarriageSpsTransportMovement.getId().setValue(" ");
+  void map_ReturnsUsedSpsTransportMeansName_WhenIdIsBlankAndUsedSpsTransportMeansIsNotNull() {
+    transportMovement.getId().setValue(" ");
 
-    assertThat(meansOfTransportFromEntryPointBaseMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isEqualTo("Ocean Vessel: Green Opal");
+    assertThat(mapper.map(transportMovement).getId()).isEqualTo("Transport means");
   }
 
   @Test
-  void map_ReturnsNull_WhenIdValueAndUsedSpsTransportMeansIsNull() throws JsonProcessingException {
-    MainCarriageSpsTransportMovement firstMainCarriageSpsTransportMovement = getFirstMainCarriageSpsTransportMovement();
-    firstMainCarriageSpsTransportMovement.getId().setValue(null);
-    firstMainCarriageSpsTransportMovement.setUsedSpsTransportMeans(null);
+  void map_ReturnsNull_WhenIdValueAndUsedSpsTransportMeansIsNull() {
+    transportMovement.getId().setValue(null);
+    transportMovement.setUsedSpsTransportMeans(null);
 
-    assertThat(meansOfTransportFromEntryPointBaseMapper.map(firstMainCarriageSpsTransportMovement).getId())
-        .isNull();
-  }
-
-  private MainCarriageSpsTransportMovement getFirstMainCarriageSpsTransportMovement() throws JsonProcessingException {
-    return JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper)
-        .getSpsConsignment()
-        .getMainCarriageSpsTransportMovement()
-        .get(0);
+    assertThat(mapper.map(transportMovement).getId()).isNull();
   }
 }
