@@ -2,17 +2,17 @@ package uk.gov.defra.stw.mapping.toipaffs.common.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uk.gov.defra.stw.mapping.dto.IncludedSpsConsignmentItem;
+import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
+import uk.gov.defra.stw.mapping.dto.MeasureType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
+import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 
 class TotalGrossWeightMapperTest {
-
-  private final ObjectMapper objectMapper = TestUtils.initObjectMapper();
 
   private TotalGrossWeightMapper totalGrossWeightMapper;
 
@@ -22,24 +22,12 @@ class TotalGrossWeightMapperTest {
   }
 
   @Test
-  void map_ReturnsTotalGrossWeight_WhenSingleGrossWeight() throws JsonProcessingException {
-    String json = """
-        {
-          "spsConsignment": {
-            "includedSpsConsignmentItem": [
-              {
-                "includedSpsTradeLineItem": [
-                  {
-                    "grossWeightMeasure": {
-                      "value": "1"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }""";
-    SpsCertificate spsCertificate = objectMapper.readValue(json, SpsCertificate.class);
+  void map_ReturnsTotalGrossWeight_WhenSingleGrossWeight() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsConsignment(new SpsConsignment()
+            .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
+                .withIncludedSpsTradeLineItem(List.of(new IncludedSpsTradeLineItem()
+                    .withGrossWeightMeasure(new MeasureType().withValue(1.0)))))));
 
     BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
 
@@ -47,29 +35,16 @@ class TotalGrossWeightMapperTest {
   }
 
   @Test
-  void map_ReturnsTotalGrossWeight_WhenMultipleGrossWeights() throws JsonProcessingException {
-    String json = """
-        {
-          "spsConsignment": {
-            "includedSpsConsignmentItem": [
-              {
-                "includedSpsTradeLineItem": [
-                  {
-                    "grossWeightMeasure": {
-                      "value": "1"
-                    }
-                  },
-                  {
-                    "grossWeightMeasure": {
-                      "value": "2"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }""";
-    SpsCertificate spsCertificate = objectMapper.readValue(json, SpsCertificate.class);
+  void map_ReturnsTotalGrossWeight_WhenMultipleGrossWeights() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsConsignment(new SpsConsignment()
+            .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
+                .withIncludedSpsTradeLineItem(List.of(
+                    new IncludedSpsTradeLineItem()
+                        .withGrossWeightMeasure(new MeasureType().withValue(1.0)),
+                    new IncludedSpsTradeLineItem()
+                        .withGrossWeightMeasure(new MeasureType().withValue(2.0))
+                )))));
 
     BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
 

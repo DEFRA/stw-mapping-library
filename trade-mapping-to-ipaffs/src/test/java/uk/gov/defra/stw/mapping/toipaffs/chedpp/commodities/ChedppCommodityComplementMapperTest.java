@@ -34,21 +34,18 @@ class ChedppCommodityComplementMapperTest {
   }
 
   @Test
-  void map_ReturnsCommodityComplement_WhenComplete() throws JsonProcessingException {
+  void map_ReturnsCommodityComplement_WhenComplete() {
     List<CommodityComplement> actual = mapper.map(spsCertificate);
 
-    String expectedJson = """
-        {
-          "commodityID": "0808108090",
-          "commodityDescription": "Other",
-          "complementID": 1,
-          "complementName": "Malus angustifolia",
-          "eppoCode": "MABAN",
-          "speciesName": "Malus angustifolia",
-          "speciesNomination": "Malus angustifolia"
-        }
-        """;
-    CommodityComplement expected = objectMapper.readValue(expectedJson, CommodityComplement.class);
+    CommodityComplement expected = CommodityComplement.builder()
+        .commodityID("0808108090")
+        .commodityDescription("Other")
+        .complementID(1)
+        .complementName("Malus angustifolia")
+        .eppoCode("MABAN")
+        .speciesName("Malus angustifolia")
+        .speciesNomination("Malus angustifolia")
+        .build();
     assertThat(actual).containsOnly(expected);
   }
 

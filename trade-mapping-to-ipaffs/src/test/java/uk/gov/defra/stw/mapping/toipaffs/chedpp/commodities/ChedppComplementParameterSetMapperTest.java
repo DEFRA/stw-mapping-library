@@ -147,20 +147,6 @@ class ChedppComplementParameterSetMapperTest {
     assertThat(actualParameterSet.getKeyDataPair()).isEmpty();
   }
 
-//  @Test
-//  void map_ThrowsException_WhenMapperThrowsException() {
-//    when(complementParameterSetMapper.create(
-//        netWeightMeasureKeyDataMapper,
-//        numberOfPackagesKeyDataMapper,
-//        chedppPackageTypeMapper,
-//        includedSpsTradeLineItem)
-//    ).thenReturn(new ArrayList<>());
-//    when(chedppQuantityMapper.map(includedSpsTradeLineItem)).thenThrow(new NotificationMapperException("Message"));
-//
-//    assertThatThrownBy(() -> mapper.map(spsCertificate))
-//        .isInstanceOf(CommoditiesMapperException.class);
-//  }
-
   private ComplementParameterSetKeyDataPair createPair(String prefix) {
     return ComplementParameterSetKeyDataPair.builder()
         .key(prefix + "_KEY")
