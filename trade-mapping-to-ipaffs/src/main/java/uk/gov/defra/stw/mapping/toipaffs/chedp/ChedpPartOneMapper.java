@@ -79,14 +79,12 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .purpose(chedpPurposeMapper.map(spsCertificate))
         .pointOfEntry(chedpPointOfEntryMapper
             .map(spsCertificate.getSpsConsignment().getUnloadingBaseportSpsLocation()))
-        .meansOfTransportFromEntryPoint(meansOfTransportFromEntryPointMapper
-            .map(spsCertificate))
+        .meansOfTransportFromEntryPoint(meansOfTransportFromEntryPointMapper.map(spsCertificate))
         .veterinaryInformation(veterinaryInformationMapper
             .map(spsCertificate.getSpsExchangedDocument()))
         .sealsContainers(chedpSealsContainersMapper
             .map(spsCertificate.getSpsConsignment().getUtilizedSpsTransportEquipment()))
-        .commodities(chedpCommoditiesMapper
-            .map(spsCertificate))
+        .commodities(chedpCommoditiesMapper.map(spsCertificate))
         .consignor(economicOperatorMapper.setEconomicOperatorType(
             economicOperatorMapper.map(spsCertificate.getSpsConsignment().getConsignorSpsParty()),
             EXPORTER))

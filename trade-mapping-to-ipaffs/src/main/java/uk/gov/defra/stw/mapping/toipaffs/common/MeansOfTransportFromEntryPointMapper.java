@@ -22,8 +22,7 @@ public class MeansOfTransportFromEntryPointMapper implements
   private static final String ROAD_VEHICLE = "3";
   private static final String AEROPLANE = "4";
 
-  private static final List<String> BEFORE_BCP_SCHEME_IDS =
-  List.of(
+  private static final List<String> BEFORE_BCP_SCHEME_IDS = List.of(
       "ship_imo_number_before_bcp",
       "train_identifier_before_bcp",
       "road_vehicle_registration_before_bcp",
@@ -32,8 +31,8 @@ public class MeansOfTransportFromEntryPointMapper implements
   private final MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper;
 
   @Autowired
-  public MeansOfTransportFromEntryPointMapper(MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper) {
-    this.meansOfTransportFromEntryPointHelper = meansOfTransportFromEntryPointHelper;
+  public MeansOfTransportFromEntryPointMapper(MeansOfTransportFromEntryPointHelper helper) {
+    this.meansOfTransportFromEntryPointHelper = helper;
     referenceTransportMethodMap = Map.of(
         SHIP, TransportMethod.SHIP,
         RAILWAY_WAGON, TransportMethod.RAILWAY_WAGON,
@@ -46,11 +45,12 @@ public class MeansOfTransportFromEntryPointMapper implements
       throws NotificationMapperException {
     List<MainCarriageSpsTransportMovement> mainCarriageSpsTransportMovement = 
         spsCertificate.getSpsConsignment()
-        .getMainCarriageSpsTransportMovement();
+            .getMainCarriageSpsTransportMovement();
     if (CollectionUtils.isEmpty(mainCarriageSpsTransportMovement)) {
       return null;
     }
-    MeansOfTransportBeforeBip meansOfTransportBeforeBip = meansOfTransportFromEntryPointHelper.map(mainCarriageSpsTransportMovement, BEFORE_BCP_SCHEME_IDS, referenceTransportMethodMap);
+    MeansOfTransportBeforeBip meansOfTransportBeforeBip = meansOfTransportFromEntryPointHelper.map(
+        mainCarriageSpsTransportMovement, BEFORE_BCP_SCHEME_IDS, referenceTransportMethodMap);
     meansOfTransportBeforeBip.setDocument(getTransportToBcpDocument(spsCertificate));
     return meansOfTransportBeforeBip;
   }

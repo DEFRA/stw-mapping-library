@@ -30,10 +30,12 @@ public class MeansOfTransportFromEntryPointHelper {
 
     return data.stream()
         .filter(
-            transportMovementRow -> beforeBcpSchemeIds.contains(transportMovementRow.getId().getSchemeID()))
+            transportMovementRow -> beforeBcpSchemeIds.contains(
+              transportMovementRow.getId().getSchemeID()))
         .findFirst()
         .map(
-            transportMovement -> createMeansOfTransportBeforeBip(transportMovement, referenceTransportMethodMap))
+            transportMovement -> createMeansOfTransportBeforeBip(
+              transportMovement, referenceTransportMethodMap))
         .orElse(null);
   }
 
