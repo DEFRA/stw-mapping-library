@@ -1,8 +1,9 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -26,8 +27,7 @@ import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.ComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NetWeightMeasureKeyDataMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesKeyDataMapper;
-import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
-import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
+import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;
 
@@ -145,6 +145,25 @@ class ChedppComplementParameterSetMapperTest {
     assertThat(actualParameterSet.getUniqueComplementID()).isEqualTo(TEST_UUID);
     assertThat(actualParameterSet.getComplementID()).isEqualTo(1);
     assertThat(actualParameterSet.getKeyDataPair()).isEmpty();
+  }
+
+  @Test
+  void map_ReturnsCorrectComplementIds_WhenMultipleSpeciesVarietyAndClass()
+      throws JsonProcessingException {
+    spsCertificate = JsonDeserializer.get(
+        "chedpp/partone/commodities/chedpp_trade_commodity_complement_multiple.json",
+        SpsCertificate.class);
+    when(complementParameterSetMapper.create(
+        eq(netWeightMeasureKeyDataMapper),
+        eq(numberOfPackagesKeyDataMapper),
+        eq(chedppPackageTypeMapper),
+        any())
+    ).thenReturn(new ArrayList<>());
+
+    List<ComplementParameterSet> actual = mapper.map(spsCertificate);
+
+    assertThat(actual).hasSize(3);
+    assertThat(actual).extracting("complementID").containsExactly(1, 2, 3);
   }
 
   private ComplementParameterSetKeyDataPair createPair(String prefix) {

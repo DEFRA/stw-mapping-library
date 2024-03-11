@@ -33,7 +33,6 @@ public class ChedppCommodityComplementMapper implements
     return CommodityComplement.builder()
         .commodityID(mapCommodityId(item.getApplicableSpsClassification()))
         .eppoCode(mapEppoCode(item.getApplicableSpsClassification()))
-        // TODO This needs to account for multiple species for same commodity code
         .complementID(item.getSequenceNumeric().getValue())
         .commodityDescription(mapDescription(item.getApplicableSpsClassification()))
         .complementName(mapScientificName(item.getScientificName()))

@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -15,19 +14,16 @@ import uk.gov.defra.stw.mapping.dto.SequenceNumeric;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 import uk.gov.defra.tracesx.notificationschema.representation.CommodityComplement;
 
 class ChedppCommodityComplementMapperTest {
 
   private ChedppCommodityComplementMapper mapper;
-  private ObjectMapper objectMapper;
   private SpsCertificate spsCertificate;
 
   @BeforeEach
   void setup() throws JsonProcessingException {
     mapper = new ChedppCommodityComplementMapper();
-    objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer.get(
         "chedpp/partone/commodities/chedpp_trade_commodity_complement.json", SpsCertificate.class);
@@ -37,16 +33,75 @@ class ChedppCommodityComplementMapperTest {
   void map_ReturnsCommodityComplement_WhenComplete() {
     List<CommodityComplement> actual = mapper.map(spsCertificate);
 
-    CommodityComplement expected = CommodityComplement.builder()
-        .commodityID("0808108090")
-        .commodityDescription("Other")
-        .complementID(1)
-        .complementName("Malus angustifolia")
-        .eppoCode("MABAN")
-        .speciesName("Malus angustifolia")
-        .speciesNomination("Malus angustifolia")
-        .build();
-    assertThat(actual).containsOnly(expected);
+    assertThat(actual).containsExactly(
+        CommodityComplement.builder()
+            .commodityID("0808108090")
+            .commodityDescription("Other")
+            .complementID(1)
+            .complementName("Malus angustifolia")
+            .eppoCode("MABAN")
+            .speciesName("Malus angustifolia")
+            .speciesNomination("Malus angustifolia")
+            .build());
+  }
+
+  @Test
+  void map_FiltersOutSequenceNumericZero() throws JsonProcessingException {
+    spsCertificate = JsonDeserializer.get(
+        "chedpp/partone/commodities/chedpp_trade_commodity_complement_sequence_zero.json",
+        SpsCertificate.class);
+
+    List<CommodityComplement> actual = mapper.map(spsCertificate);
+
+    assertThat(actual).containsExactly(
+        CommodityComplement.builder()
+            .commodityID("0808108090")
+            .commodityDescription("Other")
+            .complementID(1)
+            .complementName("Malus angustifolia")
+            .eppoCode("MABAN")
+            .speciesName("Malus angustifolia")
+            .speciesNomination("Malus angustifolia")
+            .build());
+  }
+
+  @Test
+  void map_ReturnsCommodityComplement_WhenMultipleSpeciesVarietyAndClass()
+      throws JsonProcessingException {
+    spsCertificate = JsonDeserializer.get(
+        "chedpp/partone/commodities/chedpp_trade_commodity_complement_multiple.json",
+        SpsCertificate.class);
+
+    List<CommodityComplement> actual = mapper.map(spsCertificate);
+
+    assertThat(actual).containsExactly(
+        CommodityComplement.builder()
+            .commodityID("0808108090")
+            .commodityDescription("Other")
+            .complementID(1)
+            .complementName("Malus angustifolia")
+            .eppoCode("MABAN")
+            .speciesName("Malus angustifolia")
+            .speciesNomination("Malus angustifolia")
+            .build(),
+        CommodityComplement.builder()
+            .commodityID("0808108090")
+            .commodityDescription("Other")
+            .complementID(2)
+            .complementName("Malus domestica")
+            .eppoCode("MABSD")
+            .speciesName("Malus domestica")
+            .speciesNomination("Malus domestica")
+            .build(),
+        CommodityComplement.builder()
+            .commodityID("0808108090")
+            .commodityDescription("Other")
+            .complementID(3)
+            .complementName("Malus domestica")
+            .eppoCode("MABSD")
+            .speciesName("Malus domestica")
+            .speciesNomination("Malus domestica")
+            .build());
   }
 
   @Test

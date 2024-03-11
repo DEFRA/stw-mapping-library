@@ -1,0 +1,98 @@
+{
+  "spsConsignment": {
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 5.1
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 0.7
+            },
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 1
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BG"
+                }
+              }
+            ],
+            "description": [
+              {
+                "value": "Consignment totals and summary"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 0
+            }
+          },
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABAN"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus angustifolia"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
