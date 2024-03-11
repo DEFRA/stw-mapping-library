@@ -3,6 +3,7 @@ package uk.gov.defra.stw.mapping.toipaffs.chedpp;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.CONSIGNEE;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.EXPORTER;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.IMPORTER;
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.PACKER;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -69,6 +70,8 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
             economicOperatorMapper.map(spsConsignment.getConsigneeSpsParty()), IMPORTER))
         .placeOfDestination(economicOperatorMapper.setEconomicOperatorType(
             economicOperatorMapper.map(spsConsignment.getDeliverySpsParty()), EXPORTER))
+        .packer(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsConsignment.getDespatchSpsParty()), PACKER))
         .pointOfEntry(pointOfEntryMapper.map(spsConsignment.getUnloadingBaseportSpsLocation()))
         .pointOfEntryControlPoint(chedppPointOfEntryControlPointMapper.map(
             spsConsignment.getUnloadingBaseportSpsLocation()))
