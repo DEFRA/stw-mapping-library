@@ -65,6 +65,7 @@ public class ChedppCommoditiesMapper implements Mapper<SpsCertificate, Commoditi
           .totalNetWeight(totalNetWeightMapper.map(spsCertificate))
           .totalGrossVolume(totalGrossVolumeMapper.map(spsCertificate))
           .totalGrossVolumeUnit(totalGrossVolumeUnitMapper.map(spsCertificate))
+          // TODO: numberOfPackages
           .build();
     } catch (CommoditiesMapperException exception) {
       throw new NotificationMapperException(exception);

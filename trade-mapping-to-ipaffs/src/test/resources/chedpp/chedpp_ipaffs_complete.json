@@ -28,13 +28,13 @@
       "type": "exporter"
     },
     "commodities": {
-      "totalGrossWeight": 40,
-      "totalNetWeight": 24.7,
-      "numberOfPackages": 7,
+      "totalGrossWeight": 550.5,
+      "totalNetWeight": 460.0,
+      "numberOfPackages": 10,
       "countryOfOrigin": "AF",
       "consignedCountry": "DZ",
-      "totalGrossVolume": 50,
-      "totalGrossVolumeUnit": "LTR",
+      "totalGrossVolume": 26.6,
+      "totalGrossVolumeUnit": "MTQ",
       "commodityComplement": [
         {
           "commodityID": "0808108090",
@@ -55,9 +55,18 @@
           "speciesNomination": "Malus domestica"
         },
         {
+          "commodityID": "0808108090",
+          "commodityDescription": "Other",
+          "complementID": 3,
+          "complementName": "Malus domestica",
+          "eppoCode": "MABSD",
+          "speciesName": "Malus domestica",
+          "speciesNomination": "Malus domestica"
+        },
+        {
           "commodityID": "06022030",
           "commodityDescription": "Citrus",
-          "complementID": 3,
+          "complementID": 4,
           "complementName": "Aegle sp.",
           "eppoCode": "AELSS",
           "speciesName": "Aegle sp.",
@@ -71,7 +80,7 @@
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "0.7"
+              "data": "250.0"
             },
             {
               "key": "number_package",
@@ -101,7 +110,7 @@
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "20.0"
+              "data": "40.0"
             },
             {
               "key": "number_package",
@@ -139,11 +148,11 @@
         },
         {
           "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
-          "complementID": 2,
+          "complementID": 3,
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "4.0"
+              "data": "100.0"
             },
             {
               "key": "number_package",
@@ -177,11 +186,11 @@
         },
         {
           "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
-          "complementID": 3,
+          "complementID": 4,
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "15.4"
+              "data": "70.0"
             },
             {
               "key": "number_package",
@@ -227,6 +236,7 @@
       "type": "Aeroplane",
       "document": "Document"
     },
+    "transporterDetailsRequired": false,
     "veterinaryInformation": {
       "accompanyingDocuments": [
         {

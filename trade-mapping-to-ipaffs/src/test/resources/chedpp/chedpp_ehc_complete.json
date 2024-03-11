@@ -119,15 +119,15 @@
             ],
             "grossVolumeMeasure": {
               "unitCode": "MTQ",
-              "value": 5.1
+              "value": 10
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 939.26
+              "value": 300
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 0.7
+              "value": 250
             },
             "originSpsCountry": [
               {
@@ -260,11 +260,11 @@
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 939.26
+              "value": 50.5
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 20
+              "value": 40
             },
             "originSpsCountry": [
               {
@@ -293,7 +293,7 @@
             ],
             "scientificName": [
               {
-                "value": "Malus angustifolia"
+                "value": "Malus domestica"
               }
             ],
             "sequenceNumeric": {
@@ -383,15 +383,15 @@
             ],
             "grossVolumeMeasure": {
               "unitCode": "MTQ",
-              "value": 5.1
+              "value": 3
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 939.26
+              "value": 120
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 4
+              "value": 100
             },
             "originSpsCountry": [
               {
@@ -420,7 +420,7 @@
             ],
             "scientificName": [
               {
-                "value": "Malus angustifolia"
+                "value": "Malus domestica"
               }
             ],
             "sequenceNumeric": {
@@ -510,15 +510,15 @@
             ],
             "grossVolumeMeasure": {
               "unitCode": "MTQ",
-              "value": 5.1
+              "value": 8.5
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 939.26
+              "value": 80
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 15.4
+              "value": 70
             },
             "originSpsCountry": [
               {
