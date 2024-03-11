@@ -9,9 +9,16 @@ import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
+import uk.gov.defra.stw.mapping.dto.SpsConsignment;
+import uk.gov.defra.stw.mapping.dto.SpsExchangedDocument;
+import uk.gov.defra.stw.mapping.dto.SpsNoteType;
+import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointBaseMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointHelper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
@@ -31,16 +38,28 @@ class MeansOfTransportFromEntryPointMapperTest {
       SHIP, TransportMethod.SHIP,
       RAILWAY_WAGON, TransportMethod.RAILWAY_WAGON,
       ROAD_VEHICLE, TransportMethod.ROAD_VEHICLE,
-      AEROPLANE, TransportMethod.AEROPLANE
-  );
+      AEROPLANE, TransportMethod.AEROPLANE);
 
-  private MeansOfTransportFromEntryPointMapper mapper;
+  private MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper;
+  private MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper;
+  private MeansOfTransportFromEntryPointBaseMapper meansOfTransportFromEntryPointBaseMapper;
   private ObjectMapper objectMapper;
+  private SpsCertificate spsCertificate;
 
   @BeforeEach
   void setup() {
-    mapper = new MeansOfTransportFromEntryPointMapper(new MeansOfTransportFromEntryPointBaseMapper());
+    meansOfTransportFromEntryPointBaseMapper = new MeansOfTransportFromEntryPointBaseMapper();
+    meansOfTransportFromEntryPointHelper = new MeansOfTransportFromEntryPointHelper(
+        meansOfTransportFromEntryPointBaseMapper);
+    meansOfTransportFromEntryPointMapper = new MeansOfTransportFromEntryPointMapper(
+        meansOfTransportFromEntryPointHelper);
     objectMapper = TestUtils.initObjectMapper();
+    spsCertificate = new SpsCertificate()
+        .withSpsExchangedDocument(new SpsExchangedDocument()
+            .withIncludedSpsNote(
+                List.of(new SpsNoteType().withSubjectCode(new CodeType()
+                    .withValue("transport_to_bcp_document"))
+                    .withContent(List.of(new TextType().withValue("TESTDOCUMENT"))))));
   }
 
   @Test
@@ -50,34 +69,35 @@ class MeansOfTransportFromEntryPointMapperTest {
     String expectedTransport = ResourceUtils
         .readFileToString("classpath:common/transport/common_ipaffs_meansOfTransportFromEntryPoint_complete.json");
 
-    // MeansOfTransportBeforeBip transport = mapper.map(mainCarriageSpsTransportMovements);
-    // String actualTransport = objectMapper.writeValueAsString(transport);
+    spsCertificate.setSpsConsignment(new SpsConsignment()
+        .withMainCarriageSpsTransportMovement(mainCarriageSpsTransportMovements));
+    MeansOfTransportBeforeBip transport = meansOfTransportFromEntryPointMapper.map(spsCertificate);
+    String actualTransport = objectMapper.writeValueAsString(transport);
 
-    // assertThat(actualTransport).isEqualTo(expectedTransport);
+    assertThat(actualTransport).isEqualTo(expectedTransport);
   }
 
   @Test
   void map_ReturnsMeansOfTransportBeforeBip_ForAllTypes()
       throws NotificationMapperException, JsonProcessingException {
     List<MainCarriageSpsTransportMovement> mainCarriageSpsTransportMovements = getMainCarriageSpsTransportMovements();
+    spsCertificate.setSpsConsignment(new SpsConsignment()
+        .withMainCarriageSpsTransportMovement(mainCarriageSpsTransportMovements));
 
     for (String type : referenceTransportMethodMap.keySet()) {
       mainCarriageSpsTransportMovements.get(0).getModeCode().setValue(type);
 
-      // MeansOfTransportBeforeBip transport = mapper.map(mainCarriageSpsTransportMovements);
+      MeansOfTransportBeforeBip transport = meansOfTransportFromEntryPointMapper.map(spsCertificate);
 
-      // assertThat(transport.getType()).isEqualTo(referenceTransportMethodMap.get(type));
+      assertThat(transport.getType()).isEqualTo(referenceTransportMethodMap.get(type));
     }
   }
 
-  // @Test
-  // void map_ReturnsNull_WhenNullMainCarriageSpsTransportMovement() throws NotificationMapperException {
-  //   assertThat(mapper.map(null)).isNull();
-  // }
-
   @Test
   void map_ReturnsNull_WhenEmptyMainCarriageSpsTransportMovement() throws NotificationMapperException {
-    // assertThat(mapper.map(new ArrayList<>())).isNull();
+    spsCertificate.setSpsConsignment(new SpsConsignment()
+        .withMainCarriageSpsTransportMovement(new ArrayList<>()));
+    assertThat(meansOfTransportFromEntryPointMapper.map(spsCertificate)).isNull();
   }
 
   private List<MainCarriageSpsTransportMovement> getMainCarriageSpsTransportMovements() throws JsonProcessingException {

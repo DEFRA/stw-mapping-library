@@ -22,13 +22,18 @@ public class MeansOfTransportFromEntryPointMapper implements
   private static final String ROAD_VEHICLE = "3";
   private static final String AEROPLANE = "4";
 
-  private final MeansOfTransportFromEntryPointBaseMapper meansOfTransportFromEntryPointBaseMapper;
+  private static final List<String> BEFORE_BCP_SCHEME_IDS =
+  List.of(
+      "ship_imo_number_before_bcp",
+      "train_identifier_before_bcp",
+      "road_vehicle_registration_before_bcp",
+      "airplane_flight_number_before_bcp");
+
+  private final MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper;
 
   @Autowired
-  public MeansOfTransportFromEntryPointMapper(
-      MeansOfTransportFromEntryPointBaseMapper meansOfTransportFromEntryPointBaseMapper) {
-    this.meansOfTransportFromEntryPointBaseMapper = meansOfTransportFromEntryPointBaseMapper;
-
+  public MeansOfTransportFromEntryPointMapper(MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper) {
+    this.meansOfTransportFromEntryPointHelper = meansOfTransportFromEntryPointHelper;
     referenceTransportMethodMap = Map.of(
         SHIP, TransportMethod.SHIP,
         RAILWAY_WAGON, TransportMethod.RAILWAY_WAGON,
@@ -45,12 +50,7 @@ public class MeansOfTransportFromEntryPointMapper implements
     if (CollectionUtils.isEmpty(mainCarriageSpsTransportMovement)) {
       return null;
     }
-
-    MainCarriageSpsTransportMovement transportMovement = mainCarriageSpsTransportMovement.get(0);
-    MeansOfTransportBeforeBip meansOfTransportBeforeBip = meansOfTransportFromEntryPointBaseMapper
-        .map(transportMovement);
-    meansOfTransportBeforeBip
-        .setType(referenceTransportMethodMap.get(transportMovement.getModeCode().getValue()));
+    MeansOfTransportBeforeBip meansOfTransportBeforeBip = meansOfTransportFromEntryPointHelper.map(mainCarriageSpsTransportMovement, BEFORE_BCP_SCHEME_IDS, referenceTransportMethodMap);
     meansOfTransportBeforeBip.setDocument(getTransportToBcpDocument(spsCertificate));
     return meansOfTransportBeforeBip;
   }

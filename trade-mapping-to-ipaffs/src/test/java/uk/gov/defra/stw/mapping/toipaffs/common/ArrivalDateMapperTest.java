@@ -10,14 +10,13 @@ import uk.gov.defra.stw.mapping.dto.DateTime;
 import uk.gov.defra.stw.mapping.dto.DateTimeType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsConsignment;
-import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 
 public class ArrivalDateMapperTest {
   private ArrivalDateMapper arrivalDateMapper;
   private SpsCertificate spsCertificate;
 
   @Test
-  void map_ReturnsArrivalDate_WhenProvided() throws NotificationMapperException {
+  void map_ReturnsArrivalDate_WhenProvided() {
     arrivalDateMapper = new ArrivalDateMapper(); 
     spsCertificate = new SpsCertificate();
     spsCertificate.withSpsConsignment(new SpsConsignment()
@@ -27,6 +26,20 @@ public class ArrivalDateMapperTest {
 
     LocalDate actualDate = arrivalDateMapper.map(spsCertificate);
 
-    assertThat(actualDate).isEqualTo(LocalDate.parse("2020-01-01"));
+    assertThat(actualDate).isEqualTo("2020-01-01");
+  }
+
+  @Test
+  void map_ReturnsArrivalDate_WhenDaylightSavings() {
+    arrivalDateMapper = new ArrivalDateMapper(); 
+    spsCertificate = new SpsCertificate();
+    spsCertificate.withSpsConsignment(new SpsConsignment()
+    .withAvailabilityDueDateTime(new DateTimeType()
+        .withDateTime(new DateTime()
+            .withValue("2024-03-31T23:59:00Z"))));
+
+    LocalDate actualDate = arrivalDateMapper.map(spsCertificate);
+
+    assertThat(actualDate).isEqualTo("2024-04-01");
   }
 }

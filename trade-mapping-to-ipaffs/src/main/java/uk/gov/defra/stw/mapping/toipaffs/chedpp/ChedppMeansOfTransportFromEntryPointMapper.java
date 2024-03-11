@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointHelper;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportBeforeBip;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
@@ -32,18 +33,18 @@ public class ChedppMeansOfTransportFromEntryPointMapper
           "road_vehicle_registration_before_bcp",
           "airplane_flight_number_before_bcp");
 
-  private final ChedppMeansOfTransportFromEntryPointHelper
-      chedppMeansOfTransportFromEntryPointHelper;
+  private final MeansOfTransportFromEntryPointHelper
+      meansOfTransportFromEntryPointHelper;
 
   @Autowired
   public ChedppMeansOfTransportFromEntryPointMapper(
-      ChedppMeansOfTransportFromEntryPointHelper chedppMeansOfTransportFromEntryPointHelper) {
-    this.chedppMeansOfTransportFromEntryPointHelper = chedppMeansOfTransportFromEntryPointHelper;
+      MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper) {
+    this.meansOfTransportFromEntryPointHelper = meansOfTransportFromEntryPointHelper;
   }
 
   @Override
   public MeansOfTransportBeforeBip map(List<MainCarriageSpsTransportMovement> data) {
-    return chedppMeansOfTransportFromEntryPointHelper.map(
+    return meansOfTransportFromEntryPointHelper.map(
         data, BEFORE_BCP_SCHEME_IDS, referenceTransportMethodMap);
   }
 }
