@@ -11,7 +11,11 @@ import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.dto.SpsExchangedDocument;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalDateMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ContactDetailsMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.NominatedContactsMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
@@ -35,6 +39,10 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final ChedppPointOfEntryControlPointMapper chedppPointOfEntryControlPointMapper;
   private final ContactDetailsMapper contactDetailsMapper;
   private final NominatedContactsMapper nominatedContactsMapper;
+  private final DepartureDateMapper departureDateMapper;
+  private final DepartureTimeMapper departureTimeMapper;
+  private final ArrivalDateMapper arrivalDateMapper;
+  private final ArrivalTimeMapper arrivalTimeMapper;
 
   @Autowired
   public ChedppPartOneMapper(ChedppPurposeMapper chedppPurposeMapper,
@@ -48,7 +56,11 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       TransportToBcpQuestionMapper transportToBcpQuestionMapper,
       ChedppPointOfEntryControlPointMapper chedppPointOfEntryControlPointMapper,
       ContactDetailsMapper contactDetailsMapper,
-      NominatedContactsMapper nominatedContactsMapper) {
+      NominatedContactsMapper nominatedContactsMapper,
+      DepartureDateMapper departureDateMapper,
+      DepartureTimeMapper departureTimeMapper,
+      ArrivalDateMapper arrivalDateMapper,
+      ArrivalTimeMapper arrivalTimeMapper) {
     this.chedppPurposeMapper = chedppPurposeMapper;
     this.economicOperatorMapper = economicOperatorMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
@@ -61,6 +73,10 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.chedppPointOfEntryControlPointMapper = chedppPointOfEntryControlPointMapper;
     this.contactDetailsMapper = contactDetailsMapper;
     this.nominatedContactsMapper = nominatedContactsMapper;
+    this.departureDateMapper = departureDateMapper;
+    this.departureTimeMapper = departureTimeMapper;
+    this.arrivalDateMapper = arrivalDateMapper;
+    this.arrivalTimeMapper = arrivalTimeMapper;
   }
 
   @Override
@@ -97,7 +113,11 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .transporterDetailsRequired(transportToBcpQuestionMapper.map(spsConsignment))
         .contactDetails(contactDetailsMapper.map(spsCertificate))
         .nominatedContacts(nominatedContactsMapper.map(spsCertificate))
-        // TODO: arrivalDate, arrivalTime, submissionDate, submittedBy, departureDate, departureTime
+        .arrivalDate(arrivalDateMapper.map(spsCertificate))
+        .arrivalTime(arrivalTimeMapper.map(spsCertificate))
+        .departureDate(departureDateMapper.map(spsCertificate))
+        .departureTime(departureTimeMapper.map(spsCertificate))
+        // TODO: submissionDate, submittedBy
         .build();
   }
 }

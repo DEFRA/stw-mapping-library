@@ -750,6 +750,16 @@
         "subjectCode": {
           "value": "NOMINATED_CONTACT_EMAIL"
         }
+      },
+      {
+        "content": [
+          {
+            "value": "Document"
+          }
+        ],
+        "subjectCode": {
+          "value": "transport_to_bcp_document"
+        }
       }
     ],
     "id": {
