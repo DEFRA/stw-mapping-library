@@ -1,4 +1,4 @@
-package uk.gov.defra.stw.mapping.toipaffs.chedpp;
+package uk.gov.defra.stw.mapping.toipaffs.common;
 
 import java.util.List;
 import java.util.Map;
@@ -6,17 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
-import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointBaseMapper;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportBeforeBip;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
 @Component
-public class ChedppMeansOfTransportFromEntryPointHelper {
-
+public class MeansOfTransportFromEntryPointHelper {
   private final MeansOfTransportFromEntryPointBaseMapper meansOfTransportFromEntryPointBaseMapper;
 
   @Autowired
-  public ChedppMeansOfTransportFromEntryPointHelper(
+  public MeansOfTransportFromEntryPointHelper(
       MeansOfTransportFromEntryPointBaseMapper meansOfTransportFromEntryPointBaseMapper) {
     this.meansOfTransportFromEntryPointBaseMapper = meansOfTransportFromEntryPointBaseMapper;
   }
@@ -32,12 +30,12 @@ public class ChedppMeansOfTransportFromEntryPointHelper {
 
     return data.stream()
         .filter(
-            transportMovementRow ->
-                beforeBcpSchemeIds.contains(transportMovementRow.getId().getSchemeID()))
+            transportMovementRow -> beforeBcpSchemeIds.contains(
+              transportMovementRow.getId().getSchemeID()))
         .findFirst()
         .map(
-            transportMovement ->
-                createMeansOfTransportBeforeBip(transportMovement, referenceTransportMethodMap))
+            transportMovement -> createMeansOfTransportBeforeBip(
+              transportMovement, referenceTransportMethodMap))
         .orElse(null);
   }
 
@@ -45,8 +43,8 @@ public class ChedppMeansOfTransportFromEntryPointHelper {
       MainCarriageSpsTransportMovement transportMovement,
       Map<String, TransportMethod> referenceTransportMethodMap) {
 
-    MeansOfTransportBeforeBip meansOfTransportBeforeBip =
-        meansOfTransportFromEntryPointBaseMapper.map(transportMovement);
+    MeansOfTransportBeforeBip meansOfTransportBeforeBip = meansOfTransportFromEntryPointBaseMapper
+        .map(transportMovement);
 
     meansOfTransportBeforeBip.setType(
         referenceTransportMethodMap.get(transportMovement.getModeCode().getValue()));

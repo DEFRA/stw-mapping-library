@@ -1,5 +1,10 @@
 {
   "spsConsignment": {
+    "availabilityDueDateTime" : {
+      "dateTime" : {
+        "value" : "2020-01-01T22:30:00Z"
+      }
+    },
     "carrierSpsParty": {
       "id": {
         "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
@@ -418,6 +423,24 @@
         ],
         "subjectCode": {
           "value": "CONFORMS_TO_EU"
+        }
+      },
+      {
+        "content": [
+          {
+          "value": "TESTDOCUMENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "transport_to_bcp_document"
+        }
+      },
+      {
+        "content" : [ {
+          "value" : "2020-06-15T21:30:00Z"
+        } ],
+        "subjectCode" : {
+          "value" : "DEPARTURE_FROM_BCP_DATETIME"
         }
       }
     ],

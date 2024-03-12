@@ -80,6 +80,8 @@
     "purposeGroup" : "For Transhipment to"
   },
   "pointOfEntry" : "GBLHR1P",
+  "arrivalDate" : "2020-01-01",
+  "arrivalTime" : "22:30:00",
   "transporter" : {
     "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
     "type" : "private transporter"
@@ -87,8 +89,11 @@
   "transporterDetailsRequired" : true,
   "meansOfTransportFromEntryPoint" : {
     "id" : "035N",
-    "type" : "Ship"
+    "type" : "Ship",
+    "document" : "TESTDOCUMENT"
   },
+  "departureDate" : "2020-06-15",
+  "departureTime" : "22:30:00",
   "sealsContainers" : [ {
     "sealNumber" : "S12345",
     "containerNumber" : "C12345",

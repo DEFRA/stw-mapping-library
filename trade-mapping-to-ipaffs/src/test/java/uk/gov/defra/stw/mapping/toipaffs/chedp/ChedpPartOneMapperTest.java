@@ -8,6 +8,8 @@ import static org.mockito.Mockito.when;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
+import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalDateMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalTimeMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
@@ -61,6 +67,14 @@ class ChedpPartOneMapperTest {
   private TransportToBcpQuestionMapper transportToBcpQuestionMapper;
   @Mock
   private ChedpMeansOfTransportMapper chedpMeansOfTransportMapper;
+  @Mock
+  private ArrivalDateMapper arrivalDateMapper;
+  @Mock
+  private ArrivalTimeMapper arrivalTimeMapper;
+  @Mock
+  private DepartureDateMapper departureDateMapper;
+  @Mock
+  private DepartureTimeMapper departureTimeMapper;
 
   @InjectMocks
   private ChedpPartOneMapper chedpPartOneMapper;
@@ -101,8 +115,7 @@ class ChedpPartOneMapperTest {
     when(chedpPurposeMapper.map(spsCertificate)).thenReturn(purpose);
     when(chedpPointOfEntryMapper.map(spsCertificate.getSpsConsignment()
         .getUnloadingBaseportSpsLocation())).thenReturn("GBLHR1P");
-    when(meansOfTransportFromEntryPointMapper.map(spsCertificate.getSpsConsignment()
-        .getMainCarriageSpsTransportMovement())).thenReturn(meansOfTransportBeforeBip);
+    when(meansOfTransportFromEntryPointMapper.map(spsCertificate)).thenReturn(meansOfTransportBeforeBip);
 
     when(chedpSealsContainersMapper.map(spsCertificate.getSpsConsignment()
         .getUtilizedSpsTransportEquipment())).thenReturn(notificationSealsContainers);
@@ -122,7 +135,10 @@ class ChedpPartOneMapperTest {
 
     when(transportToBcpQuestionMapper.map(spsCertificate.getSpsConsignment())).thenReturn(true);
 
-
+    when(arrivalDateMapper.map(spsCertificate)).thenReturn(LocalDate.parse("2020-01-01"));
+    when(arrivalTimeMapper.map(spsCertificate)).thenReturn(LocalTime.parse("22:30:00"));
+    when(departureDateMapper.map(spsCertificate)).thenReturn(LocalDate.parse("2020-06-15"));
+    when(departureTimeMapper.map(spsCertificate)).thenReturn(LocalTime.parse("22:30:00"));
   }
 
   @Test
