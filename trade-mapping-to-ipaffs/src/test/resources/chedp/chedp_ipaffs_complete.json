@@ -27,7 +27,8 @@
       "type": "destination"
     },
     "commodities": {
-      "totalGrossWeight": 1678.52,
+      "totalGrossWeight": 1800.0,
+      "totalNetWeight": 1678.52,
       "temperature": "Ambient",
       "commodityComplement": [
         {

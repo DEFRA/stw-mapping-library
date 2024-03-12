@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
@@ -19,6 +20,7 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParame
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
@@ -44,8 +46,12 @@ class ChedpCommoditiesMapperTest {
   private ChedpTemperatureMapper chedpTemperatureMapper;
   @Mock
   private CountryOfOriginMapper countryOfOriginMapper;
+  @Mock
+  private TotalNetWeightMapper totalNetWeightMapper;
 
+  @InjectMocks
   private ChedpCommoditiesMapper mapper;
+
   private ObjectMapper objectMapper;
   private SpsCertificate spsCertificate;
 
@@ -54,9 +60,6 @@ class ChedpCommoditiesMapperTest {
 
   @BeforeEach
   void setup() throws JsonProcessingException, NotificationMapperException {
-    mapper = new ChedpCommoditiesMapper(chedpCommodityComplementMapper,
-        chedpComplementParameterSetMapper, regionOfOriginMapper, totalGrossWeightMapper,
-        chedpTemperatureMapper, countryOfOriginMapper);
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer
@@ -78,7 +81,8 @@ class ChedpCommoditiesMapperTest {
     when(regionOfOriginMapper.map(spsCertificate)).thenReturn(null);
     when(chedpTemperatureMapper.map(spsCertificate)).thenReturn(CommodityTemperature.AMBIENT);
     when(countryOfOriginMapper.map(spsCertificate)).thenReturn("NZ");
-    when(totalGrossWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1678.52));
+    when(totalGrossWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1800.0));
+    when(totalNetWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1678.52));
 
     Commodities commodities = mapper.map(spsCertificate);
     String actualCommodities = objectMapper.writeValueAsString(commodities);

@@ -215,7 +215,7 @@
             ],
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 939.26
+              "value": 1000.0
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
@@ -323,7 +323,7 @@
             ],
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 739.26
+              "value": 800.0
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
