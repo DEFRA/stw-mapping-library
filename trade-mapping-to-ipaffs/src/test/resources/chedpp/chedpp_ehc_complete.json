@@ -635,6 +635,121 @@
             "value": "Document"
           }
         ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_NAME"
+        },
+        "content": [
+          {
+            "value": "Joe Bloggs"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_PHONE"
+        },
+        "content": [
+          {
+            "value": "0123456789"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_EMAIL"
+        },
+        "content": [
+          {
+            "value": "joe.bloggs@example.com"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_AGENT"
+        },
+        "content": [
+          {
+            "value": "Jane Doe"
+          }
+        ]
+      },
+      {
+        "content": [
+          {
+            "value": "Jane Doe"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_NAME"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "jane.doe@example.com"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_EMAIL"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "Joe Bloggs"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "2"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_NAME"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "0123456789"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "2"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_PHONE"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "joe.bloggs@example.com"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "2"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_EMAIL"
+        }
       }
     ],
     "id": {

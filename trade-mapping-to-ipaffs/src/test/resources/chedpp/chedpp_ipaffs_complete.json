@@ -259,6 +259,23 @@
         "containerNumber": "C6789",
         "officialSeal": true
       }
+    ],
+    "contactDetails": {
+      "name": "Joe Bloggs",
+      "telephone": "0123456789",
+      "email": "joe.bloggs@example.com",
+      "agent": "Jane Doe"
+    },
+    "nominatedContacts": [
+      {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com"
+      },
+      {
+        "name": "Joe Bloggs",
+        "telephone": "0123456789",
+        "email": "joe.bloggs@example.com"
+      }
     ]
   }
 }
