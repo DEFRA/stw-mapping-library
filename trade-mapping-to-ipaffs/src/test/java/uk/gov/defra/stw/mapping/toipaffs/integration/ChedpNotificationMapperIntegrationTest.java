@@ -46,6 +46,25 @@ class ChedpNotificationMapperIntegrationTest {
     assertThat(actualNotification).isEqualTo(expectedNotification);
   }
 
+  @Test
+  void map_ReturnsChedpNotification_WhenBasicEhcSpsCertificate() throws Exception {
+    ObjectMapper objectMapper = TestUtils.initObjectMapper();
+
+    SpsCertificate spsCertificate =
+        JsonDeserializer.get(
+            SpsCertificate.class, "chedp/chedp_ehc_basic.json", objectMapper);
+
+    String expectedNotification =
+        ResourceUtils.readFileToString("classpath:chedp/chedp_ipaffs_basic.json");
+
+    Notification notification = chedpNotificationMapper.map(spsCertificate);
+    overrideUniqueComplementIdToStaticValue(notification);
+
+    String actualNotification = objectMapper.writeValueAsString(notification);
+
+    assertThat(actualNotification).isEqualTo(expectedNotification);
+  }
+
   private void overrideUniqueComplementIdToStaticValue(Notification notification) {
     notification
         .getPartOne()

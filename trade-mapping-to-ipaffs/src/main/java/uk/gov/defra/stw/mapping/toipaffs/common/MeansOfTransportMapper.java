@@ -15,6 +15,7 @@ public class MeansOfTransportMapper implements
   public MeansOfTransportAfterBip map(MainCarriageSpsTransportMovement data) {
     return MeansOfTransportAfterBip.builder()
         .id(mapId(data))
+        .document(data.getUsedSpsTransportMeans().getName().getValue())
         .build();
   }
 

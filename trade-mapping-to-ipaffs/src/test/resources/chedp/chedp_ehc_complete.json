@@ -67,6 +67,11 @@
         },
         "modeCode": {
           "value": "1"
+        },
+        "usedSpsTransportMeans" : {
+          "name" : {
+            "value" : "TESTDOCUMENT"
+          }
         }
       }
     ],
