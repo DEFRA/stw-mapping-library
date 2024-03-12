@@ -1,4 +1,4 @@
-package uk.gov.defra.stw.mapping.toipaffs.common;
+package uk.gov.defra.stw.mapping.toipaffs.chedpp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
