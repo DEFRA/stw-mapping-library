@@ -1,4 +1,5 @@
 {
   "id" : "035N",
-  "type" : "Ship"
+  "type" : "Ship",
+  "document" : "TESTDOCUMENT"
 }

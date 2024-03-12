@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointHelper;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
 @ExtendWith(MockitoExtension.class)
@@ -35,7 +36,7 @@ class ChedppMeansOfTransportFromEntryPointMapperTest {
           "airplane_flight_number_before_bcp");
 
   @Mock
-  private ChedppMeansOfTransportFromEntryPointHelper chedppMeansOfTransportFromEntryPointHelper;
+  private MeansOfTransportFromEntryPointHelper meansOfTransportFromEntryPointHelper;
 
   @InjectMocks
   private ChedppMeansOfTransportFromEntryPointMapper chedppMeansOfTransportFromEntryPointMapper;
@@ -46,7 +47,7 @@ class ChedppMeansOfTransportFromEntryPointMapperTest {
 
     chedppMeansOfTransportFromEntryPointMapper.map(data);
 
-    verify(chedppMeansOfTransportFromEntryPointHelper)
+    verify(meansOfTransportFromEntryPointHelper)
         .map(data, BEFORE_BCP_SCHEME_IDS, referenceTransportMethodMap);
   }
 }
