@@ -58,6 +58,16 @@
         "modeCode": {
           "value": "1"
         }
+      },
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_after_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        }
       }
     ],
     "utilizedSpsTransportEquipment": [
