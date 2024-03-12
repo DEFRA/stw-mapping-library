@@ -24,6 +24,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
@@ -66,7 +67,7 @@ class ChedpPartOneMapperTest {
   @Mock
   private TransportToBcpQuestionMapper transportToBcpQuestionMapper;
   @Mock
-  private ChedpMeansOfTransportMapper chedpMeansOfTransportMapper;
+  private MeansOfTransportMapper meansOfTransportMapper;
   @Mock
   private ArrivalDateMapper arrivalDateMapper;
   @Mock

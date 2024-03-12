@@ -15,30 +15,38 @@ import uk.gov.defra.stw.mapping.dto.SpsExchangedDocument;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
 import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.dto.UsedSpsTransportMeans;
-import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportAfterBip;
+import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportBeforeBip;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
-class MeansOfTransportMapperTest {
+class MeansOfTransportFromEntryPointMapperTest {
 
   private static final String SHIP_IMO_NUMBER_BEFORE_BCP = "ship_imo_number_before_bcp";
   private static final String SHIP_IMO_NUMBER_AFTER_BCP = "ship_imo_number_after_bcp";
-  private static final String DOCUMENT_SUBJECT_CODE = "transport_after_bcp_document";
+  private static final String DOCUMENT_SUBJECT_CODE = "transport_before_bcp_document";
 
-  private final MeansOfTransportMapper mapper = new MeansOfTransportMapper();
+  private final MeansOfTransportFromEntryPointMapper mapper =
+      new MeansOfTransportFromEntryPointMapper();
 
   @Test
-  void map_ReturnsMeansOfTransportAfterBip_WhenComplete() {
+  void map_ReturnsMeansOfTransportBeforeBip_WhenComplete() {
     SpsCertificate spsCertificate = new SpsCertificate()
-        .withSpsExchangedDocument(exchangedDocument())
+        .withSpsExchangedDocument(new SpsExchangedDocument()
+            .withIncludedSpsNote(List.of(
+                new SpsNoteType()
+                    .withSubjectCode(new CodeType().withValue(DOCUMENT_SUBJECT_CODE))
+                    .withContent(List.of(
+                        new TextType().withValue("Document")
+                    ))
+            )))
         .withSpsConsignment(new SpsConsignment()
             .withMainCarriageSpsTransportMovement(List.of(
                 transportMovement(SHIP_IMO_NUMBER_BEFORE_BCP, SHIP.getValue()),
                 transportMovement(SHIP_IMO_NUMBER_AFTER_BCP, SHIP.getValue())
             )));
 
-    MeansOfTransportAfterBip actual = mapper.map(spsCertificate);
+    MeansOfTransportBeforeBip actual = mapper.map(spsCertificate);
 
-    assertThat(actual).isEqualTo(MeansOfTransportAfterBip.builder()
+    assertThat(actual).isEqualTo(MeansOfTransportBeforeBip.builder()
         .id("Identification, Transport means")
         .type(TransportMethod.SHIP)
         .document("Document")
@@ -48,11 +56,10 @@ class MeansOfTransportMapperTest {
   @Test
   void map_ReturnsNull_WhenEmptyMainCarriageSpsTransportMovement() {
     SpsCertificate spsCertificate = new SpsCertificate()
-        .withSpsExchangedDocument(exchangedDocument())
         .withSpsConsignment(new SpsConsignment()
             .withMainCarriageSpsTransportMovement(List.of()));
 
-    MeansOfTransportAfterBip actual = mapper.map(spsCertificate);
+    MeansOfTransportBeforeBip actual = mapper.map(spsCertificate);
 
     assertThat(actual).isNull();
   }
@@ -66,16 +73,5 @@ class MeansOfTransportMapperTest {
         .withModeCode(new ModeCode().withValue(modeCode))
         .withUsedSpsTransportMeans(new UsedSpsTransportMeans()
             .withName(new TextType().withValue("Transport means")));
-  }
-
-  SpsExchangedDocument exchangedDocument() {
-    return new SpsExchangedDocument()
-        .withIncludedSpsNote(List.of(
-            new SpsNoteType()
-                .withSubjectCode(new CodeType().withValue(DOCUMENT_SUBJECT_CODE))
-                .withContent(List.of(
-                    new TextType().withValue("Document")
-                ))
-        ));
   }
 }
