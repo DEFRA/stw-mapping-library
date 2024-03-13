@@ -19,6 +19,7 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpCommodityComplem
 import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
@@ -48,6 +49,8 @@ class ChedpCommoditiesMapperTest {
   private CountryOfOriginMapper countryOfOriginMapper;
   @Mock
   private TotalNetWeightMapper totalNetWeightMapper;
+  @Mock
+  private NumberOfPackagesMapper numberOfPackagesMapper;
 
   @InjectMocks
   private ChedpCommoditiesMapper mapper;
@@ -83,6 +86,7 @@ class ChedpCommoditiesMapperTest {
     when(countryOfOriginMapper.map(spsCertificate)).thenReturn("NZ");
     when(totalGrossWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1800.0));
     when(totalNetWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1678.52));
+    when(numberOfPackagesMapper.map(spsCertificate)).thenReturn(10);
 
     Commodities commodities = mapper.map(spsCertificate);
     String actualCommodities = objectMapper.writeValueAsString(commodities);

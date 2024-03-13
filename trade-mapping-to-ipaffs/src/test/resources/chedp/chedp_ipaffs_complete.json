@@ -29,6 +29,7 @@
     "commodities": {
       "totalGrossWeight": 1800.0,
       "totalNetWeight": 1678.52,
+      "numberOfPackages": 5,
       "temperature": "Ambient",
       "commodityComplement": [
         {

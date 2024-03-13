@@ -20,6 +20,7 @@ import uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities.TotalGrossVolumeUnit
 import uk.gov.defra.stw.mapping.toipaffs.common.ConsignedCountryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
@@ -49,6 +50,8 @@ class ChedppCommoditiesMapperTest {
   private TotalGrossVolumeUnitMapper totalGrossVolumeUnitMapper;
   @Mock
   private ConsignedCountryMapper consignedCountryMapper;
+  @Mock
+  private NumberOfPackagesMapper numberOfPackagesMapper;
 
   @InjectMocks
   private ChedppCommoditiesMapper mapper;
@@ -64,8 +67,10 @@ class ChedppCommoditiesMapperTest {
   void map_ReturnsCommodities() throws NotificationMapperException {
     CommodityComplement commodityComplement = new CommodityComplement();
     ComplementParameterSet complementParameterSet = new ComplementParameterSet();
-    when(chedppCommodityComplementMapper.map(spsCertificate)).thenReturn(List.of(commodityComplement));
-    when(chedppComplementParameterSetMapper.map(spsCertificate)).thenReturn(List.of(complementParameterSet));
+    when(chedppCommodityComplementMapper.map(spsCertificate)).thenReturn(
+        List.of(commodityComplement));
+    when(chedppComplementParameterSetMapper.map(spsCertificate)).thenReturn(
+        List.of(complementParameterSet));
     when(countryOfOriginMapper.map(spsCertificate)).thenReturn("Country of origin");
     when(regionOfOriginMapper.map(spsCertificate)).thenReturn("Region of origin");
     when(consignedCountryMapper.map(spsCertificate)).thenReturn("Consigned country");
@@ -73,6 +78,7 @@ class ChedppCommoditiesMapperTest {
     when(totalNetWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(2.0));
     when(totalGrossVolumeMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(3.0));
     when(totalGrossVolumeUnitMapper.map(spsCertificate)).thenReturn("Total gross volume unit");
+    when(numberOfPackagesMapper.map(spsCertificate)).thenReturn(1);
 
     Commodities actual = mapper.map(spsCertificate);
 
@@ -86,6 +92,7 @@ class ChedppCommoditiesMapperTest {
         .totalNetWeight(BigDecimal.valueOf(2.0))
         .totalGrossVolume(BigDecimal.valueOf(3.0))
         .totalGrossVolumeUnit("Total gross volume unit")
+        .numberOfPackages(1)
         .build());
   }
 
@@ -96,7 +103,8 @@ class ChedppCommoditiesMapperTest {
 
     assertThatThrownBy(() -> mapper.map(spsCertificate))
         .isInstanceOf(NotificationMapperException.class)
-        .hasMessage("uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException: Message")
+        .hasMessage(
+            "uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException: Message")
         .hasRootCauseInstanceOf(CommoditiesMapperException.class)
         .hasRootCauseMessage("Message");
   }

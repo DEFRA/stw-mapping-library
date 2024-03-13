@@ -8,6 +8,7 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpCommodityComplem
 import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
@@ -24,6 +25,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
   private final ChedpTemperatureMapper chedpTemperatureMapper;
   private final CountryOfOriginMapper countryOfOriginMapper;
   private final TotalNetWeightMapper totalNetWeightMapper;
+  private final NumberOfPackagesMapper numberOfPackagesMapper;
 
   @Autowired
   public ChedpCommoditiesMapper(
@@ -33,7 +35,8 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
       TotalGrossWeightMapper totalGrossWeightMapper,
       ChedpTemperatureMapper chedpTemperatureMapper,
       CountryOfOriginMapper countryOfOriginMapper,
-      TotalNetWeightMapper totalNetWeightMapper) {
+      TotalNetWeightMapper totalNetWeightMapper,
+      NumberOfPackagesMapper numberOfPackagesMapper) {
     this.chedpCommodityComplementMapper = chedpCommodityComplementMapper;
     this.chedpComplementParameterSetMapper = chedpComplementParameterSetMapper;
     this.regionOfOriginMapper = regionOfOriginMapper;
@@ -41,6 +44,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
     this.chedpTemperatureMapper = chedpTemperatureMapper;
     this.countryOfOriginMapper = countryOfOriginMapper;
     this.totalNetWeightMapper = totalNetWeightMapper;
+    this.numberOfPackagesMapper = numberOfPackagesMapper;
   }
 
   @Override
@@ -57,6 +61,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
               .getExportSpsCountry().getId().getValue())
           .totalGrossWeight(totalGrossWeightMapper.map(data))
           .totalNetWeight(totalNetWeightMapper.map(data))
+          .numberOfPackages(numberOfPackagesMapper.map(data))
           .build();
     } catch (CommoditiesMapperException exception) {
       throw new NotificationMapperException(exception.getMessage());
