@@ -23,13 +23,9 @@
       "type": "exporter"
     },
     "commodities": {
-      "totalGrossWeight": 550.5,
-      "totalNetWeight": 460.0,
-      "numberOfPackages": 10,
-      "countryOfOrigin": "AF",
-      "consignedCountry": "DZ",
-      "totalGrossVolume": 26.6,
-      "totalGrossVolumeUnit": "MTQ",
+      "totalGrossWeight": 144.8,
+      "totalNetWeight": 113.2,
+      "numberOfPackages": 69,
       "commodityComplement": [
         {
           "commodityID": "0808108090",
@@ -62,10 +58,37 @@
           "commodityID": "06022030",
           "commodityDescription": "Citrus",
           "complementID": 4,
-          "complementName": "Aegle sp.",
-          "eppoCode": "AELSS",
-          "speciesName": "Aegle sp.",
-          "speciesNomination": "Aegle sp."
+          "complementName": "Aeglopsis chevalieri",
+          "eppoCode": "AEZCH",
+          "speciesName": "Aeglopsis chevalieri",
+          "speciesNomination": "Aeglopsis chevalieri"
+        },
+        {
+          "commodityID": "06022030",
+          "commodityDescription": "Citrus",
+          "complementID": 5,
+          "complementName": "Aegle marmelos",
+          "eppoCode": "AELMA",
+          "speciesName": "Aegle marmelos",
+          "speciesNomination": "Aegle marmelos"
+        },
+        {
+          "commodityID": "0713500010",
+          "commodityDescription": "For sowing",
+          "complementID": 6,
+          "complementName": "Vicia acutifolia",
+          "eppoCode": "VICAC",
+          "speciesName": "Vicia acutifolia",
+          "speciesNomination": "Vicia acutifolia"
+        },
+        {
+          "commodityID": "0713500010",
+          "commodityDescription": "For sowing",
+          "complementID": 7,
+          "complementName": "Vicia articulata",
+          "eppoCode": "VICAR",
+          "speciesName": "Vicia articulata",
+          "speciesNomination": "Vicia articulata"
         }
       ],
       "complementParameterSet": [
@@ -75,23 +98,23 @@
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "250.0"
+              "data": "50.0"
             },
             {
               "key": "number_package",
-              "data": "1"
-            },
-            {
-              "key": "type_package",
-              "data": "Bag"
-            },
-            {
-              "key": "quantity",
               "data": "10"
             },
             {
+              "key": "type_package",
+              "data": "Crate"
+            },
+            {
+              "key": "quantity",
+              "data": "240"
+            },
+            {
               "key": "type_quantity",
-              "data": "Bulbs"
+              "data": "Pieces"
             },
             {
               "key": "sequence_numeric",
@@ -105,11 +128,11 @@
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "40.0"
+              "data": "20.0"
             },
             {
               "key": "number_package",
-              "data": "4"
+              "data": "5"
             },
             {
               "key": "type_package",
@@ -147,23 +170,23 @@
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "100.0"
+              "data": "15.4"
             },
             {
               "key": "number_package",
-              "data": "2"
-            },
-            {
-              "key": "type_package",
-              "data": "Crate"
-            },
-            {
-              "key": "quantity",
               "data": "5"
             },
             {
+              "key": "type_package",
+              "data": "Box"
+            },
+            {
+              "key": "quantity",
+              "data": "15.4"
+            },
+            {
               "key": "type_quantity",
-              "data": "Stems"
+              "data": "Kilograms"
             },
             {
               "key": "variety",
@@ -185,11 +208,45 @@
           "keyDataPair": [
             {
               "key": "netweight",
-              "data": "70.0"
+              "data": "10.1"
             },
             {
               "key": "number_package",
-              "data": "3"
+              "data": "2"
+            },
+            {
+              "key": "type_package",
+              "data": "Can"
+            },
+            {
+              "key": "quantity",
+              "data": "25"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Stems"
+            },
+            {
+              "key": "finished_or_propagated",
+              "data": "Finished"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "4"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 5,
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "8.0"
+            },
+            {
+              "key": "number_package",
+              "data": "5"
             },
             {
               "key": "type_package",
@@ -197,11 +254,11 @@
             },
             {
               "key": "quantity",
-              "data": "15.4"
+              "data": "53"
             },
             {
               "key": "type_quantity",
-              "data": "Kilograms"
+              "data": "Pieces"
             },
             {
               "key": "container",
@@ -213,11 +270,75 @@
             },
             {
               "key": "sequence_numeric",
-              "data": "4"
+              "data": "5"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 6,
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "2.7"
+            },
+            {
+              "key": "number_package",
+              "data": "30"
+            },
+            {
+              "key": "type_package",
+              "data": "Bag"
+            },
+            {
+              "key": "quantity",
+              "data": "80"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Seeds"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "6"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 7,
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "7.0"
+            },
+            {
+              "key": "number_package",
+              "data": "12"
+            },
+            {
+              "key": "type_package",
+              "data": "Tube"
+            },
+            {
+              "key": "quantity",
+              "data": "60"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Bulbs"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "7"
             }
           ]
         }
-      ]
+      ],
+      "countryOfOrigin": "AF",
+      "consignedCountry": "DZ",
+      "totalGrossVolume": 26.8,
+      "totalGrossVolumeUnit": "metres cubed"
     },
     "purpose": {
       "purposeGroup": "For Import"

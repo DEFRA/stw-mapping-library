@@ -22,7 +22,7 @@ class SealsContainersMapperTest {
   void setup() throws JsonProcessingException {
     chedppSealsContainersMapper = new SealsContainersMapper();
     spsTransportEquipmentTypeList = JsonDeserializer
-        .get("chedpp/chedpp_ehc_complete.json", SpsCertificate.class)
+        .get("chedpp/chedpp_trade_complete.json", SpsCertificate.class)
         .getSpsConsignment().getUtilizedSpsTransportEquipment();
   }
 

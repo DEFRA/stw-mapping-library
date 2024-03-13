@@ -53,4 +53,16 @@ class TotalGrossVolumeMapperTest {
 
     assertThat(actual).isEqualTo(BigDecimal.valueOf(3.0));
   }
+
+  @Test
+  void map_ReturnsNull_WhenNoGrossVolumes() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsConsignment(new SpsConsignment()
+            .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
+                .withIncludedSpsTradeLineItem(List.of(new IncludedSpsTradeLineItem())))));
+
+    BigDecimal actual = totalGrossVolumeMapper.map(spsCertificate);
+
+    assertThat(actual).isNull();
+  }
 }

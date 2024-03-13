@@ -1,6 +1,8 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
 import uk.gov.defra.stw.mapping.dto.MeasureType;
@@ -12,11 +14,18 @@ public class TotalGrossVolumeMapper implements Mapper<SpsCertificate, BigDecimal
 
   @Override
   public BigDecimal map(SpsCertificate spsCertificate) {
-    return spsCertificate.getSpsConsignment().getIncludedSpsConsignmentItem().stream()
+    List<BigDecimal> grossVolumes = spsCertificate.getSpsConsignment()
+        .getIncludedSpsConsignmentItem()
+        .stream()
         .flatMap(consignmentItem -> consignmentItem.getIncludedSpsTradeLineItem().stream())
-        .map(IncludedSpsTradeLineItem::getGrossVolumeMeasure)
-        .map(MeasureType::getValue)
-        .map(BigDecimal::valueOf)
-        .reduce(BigDecimal.ZERO, BigDecimal::add);
+        .flatMap(tradeLineItem -> Optional.of(tradeLineItem)
+            .map(IncludedSpsTradeLineItem::getGrossVolumeMeasure)
+            .map(MeasureType::getValue)
+            .map(BigDecimal::valueOf)
+            .stream())
+        .toList();
+    return !grossVolumes.isEmpty()
+        ? grossVolumes.stream().reduce(BigDecimal.ZERO, BigDecimal::add)
+        : null;
   }
 }

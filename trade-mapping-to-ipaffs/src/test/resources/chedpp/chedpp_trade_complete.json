@@ -1,13 +1,5 @@
 {
   "spsConsignment": {
-    "consigneeSpsParty": {
-      "id": {
-        "value": "00000000-0000-0000-0000-000000000003"
-      },
-      "name": {
-        "value": "Oakfield (Foods) Ltd"
-      }
-    },
     "consignorSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000001"
@@ -16,17 +8,25 @@
         "value": "Oakfield (Foods) Ltd"
       }
     },
-    "deliverySpsParty": {
+    "despatchSpsParty": {
       "id": {
-        "value": "00000000-0000-0000-0000-000000000004"
+        "value": "00000000-0000-0000-0000-000000000002"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
       }
     },
-    "despatchSpsParty": {
+    "consigneeSpsParty": {
       "id": {
-        "value": "00000000-0000-0000-0000-000000000002"
+        "value": "00000000-0000-0000-0000-000000000003"
+      },
+      "name": {
+        "value": "Oakfield (Foods) Ltd"
+      }
+    },
+    "deliverySpsParty": {
+      "id": {
+        "value": "00000000-0000-0000-0000-000000000004"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
@@ -69,12 +69,12 @@
               {
                 "content": [
                   {
-                    "value": "10"
+                    "value": "240"
                   }
                 ],
                 "contentCode": [
                   {
-                    "value": "BLB"
+                    "value": "PCS"
                   }
                 ],
                 "subjectCode": {
@@ -127,15 +127,15 @@
             ],
             "grossVolumeMeasure": {
               "unitCode": "MTQ",
-              "value": 10
+              "value": 2.4
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 300
+              "value": 55
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 250
+              "value": 50
             },
             "originSpsCountry": [
               {
@@ -152,13 +152,13 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 1
+                  "value": 10
                 },
                 "levelCode": {
                   "value": "4"
                 },
                 "typeCode": {
-                  "value": "BG"
+                  "value": "CR"
                 }
               }
             ],
@@ -268,11 +268,11 @@
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 50.5
+              "value": 24.8
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 40
+              "value": 20
             },
             "originSpsCountry": [
               {
@@ -289,7 +289,7 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 4
+                  "value": 5
                 },
                 "levelCode": {
                   "value": "4"
@@ -313,12 +313,12 @@
               {
                 "content": [
                   {
-                    "value": "5"
+                    "value": "15.4"
                   }
                 ],
                 "contentCode": [
                   {
-                    "value": "STM"
+                    "value": "KGM"
                   }
                 ],
                 "subjectCode": {
@@ -395,11 +395,128 @@
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 120
+              "value": 20
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 100
+              "value": 15.4
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 5
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BX"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus domestica"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 3
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "25"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "STM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "FINISHED"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "finished_or_propagated"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "06022030"
+                },
+                "className": [
+                  {
+                    "value": "Citrus"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "AEZCH"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 8.5
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 14
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 10.1
             },
             "originSpsCountry": [
               {
@@ -422,17 +539,17 @@
                   "value": "4"
                 },
                 "typeCode": {
-                  "value": "CR"
+                  "value": "CA"
                 }
               }
             ],
             "scientificName": [
               {
-                "value": "Malus domestica"
+                "value": "Aeglopsis chevalieri"
               }
             ],
             "sequenceNumeric": {
-              "value": 3
+              "value": 4
             }
           },
           {
@@ -440,12 +557,12 @@
               {
                 "content": [
                   {
-                    "value": "15.4"
+                    "value": "53"
                   }
                 ],
                 "contentCode": [
                   {
-                    "value": "KGM"
+                    "value": "PCS"
                   }
                 ],
                 "subjectCode": {
@@ -494,7 +611,7 @@
               },
               {
                 "classCode": {
-                  "value": "AELSS"
+                  "value": "AELMA"
                 },
                 "className": [
                   {
@@ -518,15 +635,15 @@
             ],
             "grossVolumeMeasure": {
               "unitCode": "MTQ",
-              "value": 8.5
+              "value": 2.4
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 80
+              "value": 11
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 70
+              "value": 8
             },
             "originSpsCountry": [
               {
@@ -543,7 +660,7 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 3
+                  "value": 5
                 },
                 "levelCode": {
                   "value": "4"
@@ -555,11 +672,225 @@
             ],
             "scientificName": [
               {
-                "value": "Aegle sp."
+                "value": "Aegle marmelos"
               }
             ],
             "sequenceNumeric": {
-              "value": 4
+              "value": 5
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "80"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "SDS"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0713500010"
+                },
+                "className": [
+                  {
+                    "value": "For sowing"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "VICAC"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 2.4
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 11
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 2.7
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 30
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BG"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Vicia acutifolia"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 6
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "60"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "BLB"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0713500010"
+                },
+                "className": [
+                  {
+                    "value": "For sowing"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "VICAR"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 3
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 9
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 7
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 12
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "TU"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Vicia articulata"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 7
             }
           }
         ]
@@ -749,16 +1080,6 @@
         ],
         "subjectCode": {
           "value": "NOMINATED_CONTACT_EMAIL"
-        }
-      },
-      {
-        "content": [
-          {
-            "value": "Document"
-          }
-        ],
-        "subjectCode": {
-          "value": "transport_before_bcp_document"
         }
       }
     ],
