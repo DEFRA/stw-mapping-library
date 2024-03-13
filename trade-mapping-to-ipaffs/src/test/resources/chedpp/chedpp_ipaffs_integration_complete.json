@@ -72,7 +72,8 @@
     "transporterDetailsRequired" : true,
     "meansOfTransport" : {
       "id" : "Voyage N° 1, Ocean Vessel: Green Opal",
-      "type" : "Ship"
+      "type" : "Ship",
+      "document" : "TESTDOCUMENT"
     },
     "meansOfTransportFromEntryPoint" : {
       "id" : "Voyage N° 1, Ocean Vessel: Green Opal",

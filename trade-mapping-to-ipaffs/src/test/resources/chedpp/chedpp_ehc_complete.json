@@ -299,6 +299,16 @@
         "subjectCode": {
           "value": "TradePlatform UN/CEFACT Mapping Version"
         }
+      },
+      {
+        "content": [
+          {
+          "value": "TESTDOCUMENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "transport_after_bcp_document"
+        }
       }
     ],
     "id": {

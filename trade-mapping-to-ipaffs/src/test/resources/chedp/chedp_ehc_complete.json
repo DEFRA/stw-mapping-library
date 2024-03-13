@@ -447,6 +447,16 @@
           }
         ],
         "subjectCode": {
+          "value": "transport_after_bcp_document"
+        }
+      },
+      {
+        "content": [
+          {
+          "value": "TESTDOCUMENT"
+          }
+        ],
+        "subjectCode": {
           "value": "transport_to_bcp_document"
         }
       },

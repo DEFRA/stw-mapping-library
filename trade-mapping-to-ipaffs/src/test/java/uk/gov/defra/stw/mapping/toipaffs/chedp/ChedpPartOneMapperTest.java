@@ -24,6 +24,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
@@ -36,6 +37,7 @@ import uk.gov.defra.tracesx.notificationschema.representation.ApprovedEstablishm
 import uk.gov.defra.tracesx.notificationschema.representation.CatchCertificate;
 import uk.gov.defra.tracesx.notificationschema.representation.Commodities;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperator;
+import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportAfterBip;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportBeforeBip;
 import uk.gov.defra.tracesx.notificationschema.representation.NotificationSealsContainers;
 import uk.gov.defra.tracesx.notificationschema.representation.PartOne;
@@ -66,7 +68,7 @@ class ChedpPartOneMapperTest {
   @Mock
   private TransportToBcpQuestionMapper transportToBcpQuestionMapper;
   @Mock
-  private ChedpMeansOfTransportMapper chedpMeansOfTransportMapper;
+  private MeansOfTransportMapper meansOfTransportMapper;
   @Mock
   private ArrivalDateMapper arrivalDateMapper;
   @Mock
@@ -98,6 +100,8 @@ class ChedpPartOneMapperTest {
 
     MeansOfTransportBeforeBip meansOfTransportBeforeBip = JsonDeserializer.get(MeansOfTransportBeforeBip.class,
         "common/transport/common_ipaffs_meansOfTransportFromEntryPoint_complete.json", objectMapper);
+    MeansOfTransportAfterBip meansOfTransportAfterBip = JsonDeserializer.get(MeansOfTransportAfterBip.class,
+        "common/transport/common_ipaffs_meansOfTransport_complete.json", objectMapper);
     List<NotificationSealsContainers> notificationSealsContainers = JsonDeserializer.get(
         objectMapper.getTypeFactory().constructCollectionType(List.class, NotificationSealsContainers.class),
         "common/sealscontainers/common_ipaffs_sealscontainers_complete.json",
@@ -116,6 +120,7 @@ class ChedpPartOneMapperTest {
     when(chedpPointOfEntryMapper.map(spsCertificate.getSpsConsignment()
         .getUnloadingBaseportSpsLocation())).thenReturn("GBLHR1P");
     when(meansOfTransportFromEntryPointMapper.map(spsCertificate)).thenReturn(meansOfTransportBeforeBip);
+    when(meansOfTransportMapper.map(spsCertificate)).thenReturn(meansOfTransportAfterBip);
 
     when(chedpSealsContainersMapper.map(spsCertificate.getSpsConsignment()
         .getUtilizedSpsTransportEquipment())).thenReturn(notificationSealsContainers);

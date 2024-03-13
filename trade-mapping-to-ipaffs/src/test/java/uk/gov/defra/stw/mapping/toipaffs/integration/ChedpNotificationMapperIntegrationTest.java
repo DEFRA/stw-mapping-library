@@ -52,10 +52,10 @@ class ChedpNotificationMapperIntegrationTest {
 
     SpsCertificate spsCertificate =
         JsonDeserializer.get(
-            SpsCertificate.class, "chedp/chedp_ehc_basic.json", objectMapper);
+            SpsCertificate.class, "chedp/chedp_ehc_minimum.json", objectMapper);
 
     String expectedNotification =
-        ResourceUtils.readFileToString("classpath:chedp/chedp_ipaffs_basic.json");
+        ResourceUtils.readFileToString("classpath:chedp/chedp_ipaffs_minimum.json");
 
     Notification notification = chedpNotificationMapper.map(spsCertificate);
     overrideUniqueComplementIdToStaticValue(notification);

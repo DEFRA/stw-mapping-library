@@ -16,6 +16,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
@@ -35,7 +36,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final ApprovedEstablishmentMapper approvedEstablishmentMapper;
   private final EconomicOperatorMapper economicOperatorMapper;
   private final TransportToBcpQuestionMapper transportToBcpQuestionMapper;
-  private final ChedpMeansOfTransportMapper chedpMeansOfTransportMapper;
+  private final MeansOfTransportMapper meansOfTransportMapper;
   private final DepartureDateMapper departureDateMapper;
   private final DepartureTimeMapper departureTimeMapper;
   private final ArrivalDateMapper arrivalDateMapper;
@@ -52,7 +53,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       ApprovedEstablishmentMapper approvedEstablishmentMapper,
       EconomicOperatorMapper economicOperatorMapper,
       TransportToBcpQuestionMapper transportToBcpQuestionMapper,
-      ChedpMeansOfTransportMapper chedpMeansOfTransportMapper,
+      MeansOfTransportMapper meansOfTransportMapper,
       DepartureDateMapper departureDateMapper,
       DepartureTimeMapper departureTimeMapper,
       ArrivalDateMapper arrivalDateMapper,
@@ -66,7 +67,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.approvedEstablishmentMapper = approvedEstablishmentMapper;
     this.economicOperatorMapper = economicOperatorMapper;
     this.transportToBcpQuestionMapper = transportToBcpQuestionMapper;
-    this.chedpMeansOfTransportMapper = chedpMeansOfTransportMapper;
+    this.meansOfTransportMapper = meansOfTransportMapper;
     this.departureDateMapper = departureDateMapper;
     this.departureTimeMapper = departureTimeMapper;
     this.arrivalDateMapper = arrivalDateMapper;
@@ -102,8 +103,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
             PRIVATE_TRANSPORTER))
         .transporterDetailsRequired(
             transportToBcpQuestionMapper.map(spsCertificate.getSpsConsignment()))
-        .meansOfTransport(chedpMeansOfTransportMapper.map(
-            spsCertificate.getSpsConsignment().getMainCarriageSpsTransportMovement()))
+        .meansOfTransport(meansOfTransportMapper.map(spsCertificate))
         .arrivalDate(arrivalDateMapper.map(spsCertificate))
         .arrivalTime(arrivalTimeMapper.map(spsCertificate))
         .departureDate(departureDateMapper.map(spsCertificate))
