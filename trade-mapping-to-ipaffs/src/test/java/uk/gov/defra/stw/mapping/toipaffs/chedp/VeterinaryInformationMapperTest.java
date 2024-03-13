@@ -5,7 +5,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.DocumentType.OTHER;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +18,6 @@ import uk.gov.defra.stw.mapping.dto.SpsReferencedDocumentType;
 import uk.gov.defra.stw.mapping.toipaffs.common.VeterinaryInformationMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.utils.VeterinaryInformationFieldMapper;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 import uk.gov.defra.tracesx.notificationschema.representation.VeterinaryInformation;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.DocumentType;
 
@@ -29,13 +27,11 @@ class VeterinaryInformationMapperTest {
   @Mock
   private VeterinaryInformationFieldMapper veterinaryInformationFieldMapper;
   private VeterinaryInformationMapper mapper;
-  private ObjectMapper objectMapper;
   private SpsExchangedDocument spsExchangedDocument;
 
   @BeforeEach
   void setup() throws Exception {
     mapper = new VeterinaryInformationMapper(veterinaryInformationFieldMapper);
-    objectMapper = TestUtils.initObjectMapper();
 
     spsExchangedDocument = setUpSpsExchangedDocument();
   }

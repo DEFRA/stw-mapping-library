@@ -1,14 +1,18 @@
 {
   "accompanyingDocuments" : [
     {
-    "documentType" : "airWaybill",
-    "documentReference" : "9022780365",
-    "documentIssueDate" : "2020-07-01"
+      "documentType" : "airWaybill",
+      "documentReference" : "9022780365",
+      "documentIssueDate" : "2020-07-01",
+      "attachmentFilename" : "airwaybill.jpg",
+      "attachmentContentType" : "image/jpeg"
     },
     {
       "documentType" : "phytosanitaryCertificate",
       "documentReference" : "9022780366",
-      "documentIssueDate" : "2020-07-02"
+      "documentIssueDate" : "2020-07-02",
+      "attachmentFilename" : "phytosanitarycert.jpg",
+      "attachmentContentType" : "image/jpeg"
     }
   ]
 }

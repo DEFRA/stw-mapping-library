@@ -2,11 +2,6 @@
   "type": "CHEDPP",
   "status": "SUBMITTED",
   "partOne": {
-    "submissionDate": "2030-01-01T09:13:50Z",
-    "submittedBy": {
-      "displayName": "Isabel Irwin",
-      "userId": "b40ca011-bc72-eb11-a812-000d3a274b26"
-    },
     "consignor": {
       "id": "00000000-0000-0000-0000-000000000001",
       "type": "exporter"

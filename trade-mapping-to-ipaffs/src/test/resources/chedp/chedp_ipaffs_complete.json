@@ -141,7 +141,9 @@
         {
           "documentType": "veterinaryHealthCertificate",
           "documentReference": "9022780365",
-          "documentIssueDate": "2020-07-01"
+          "documentIssueDate": "2020-07-01",
+          "attachmentFilename": "sample.pdf",
+          "attachmentContentType": "application/pdf"
         }
       ]
     },

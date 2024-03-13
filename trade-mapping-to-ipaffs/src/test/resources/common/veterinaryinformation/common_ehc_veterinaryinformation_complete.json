@@ -23,7 +23,7 @@
       },
       "issueDateTime": "2020-07-01T00:00:00.000+02:00",
       "relationshipTypeCode": {
-        "name": "",
+        "name": "Mutually defined reference number (Supporting document)",
         "value": "ZZZ"
       },
       "typeCode": {
