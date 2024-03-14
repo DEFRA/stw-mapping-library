@@ -21,7 +21,7 @@ public class MeansOfTransportHelper {
 
   public MeansOfTransportAfterBip map(
       List<MainCarriageSpsTransportMovement> data,
-      List<String> beforeBcpSchemeIds,
+      List<String> afterBcpSchemeIds,
       Map<String, TransportMethod> referenceTransportMethodMap) {
 
     if (CollectionUtils.isEmpty(data)) {
@@ -30,7 +30,7 @@ public class MeansOfTransportHelper {
 
     return data.stream()
         .filter(
-            transportMovementRow -> beforeBcpSchemeIds.contains(
+            transportMovementRow -> afterBcpSchemeIds.contains(
               transportMovementRow.getId().getSchemeID()))
         .findFirst()
         .map(
