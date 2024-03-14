@@ -34,12 +34,12 @@ public class MeansOfTransportHelper {
               transportMovementRow.getId().getSchemeID()))
         .findFirst()
         .map(
-            transportMovement -> createMeansOfTransportBeforeBip(
+            transportMovement -> createMeansOfTransportAfterBip(
               transportMovement, referenceTransportMethodMap))
         .orElse(null);
   }
 
-  private MeansOfTransportAfterBip createMeansOfTransportBeforeBip(
+  private MeansOfTransportAfterBip createMeansOfTransportAfterBip(
       MainCarriageSpsTransportMovement transportMovement,
       Map<String, TransportMethod> referenceTransportMethodMap) {
 
