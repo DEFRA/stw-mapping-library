@@ -1,0 +1,159 @@
+{
+
+  "type": "CVEDA",
+  "status": "SUBMITTED",
+  "isHighRiskEuImport": false,
+  "partOne": {
+    "consignor": {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "type": "exporter"
+    },
+    "consignee": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "importer"
+    },
+    "importer": {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "importer"
+    },
+    "placeOfDestination": {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "type": "importer"
+    },
+    "commodities": {
+      "numberOfPackages": 3,
+      "numberOfAnimals": 3,
+      "commodityComplement": [
+        {
+          "commodityID": "0101",
+          "commodityDescription": "Live horses, asses, mules and hinnies",
+          "complementID": 1,
+          "complementName": "Equus asinus",
+          "speciesName": "Equus asinus",
+          "speciesNomination": "Equus asinus"
+        },
+        {
+          "commodityID": "0101",
+          "commodityDescription": "Live horses, asses, mules and hinnies",
+          "complementID": 1,
+          "complementName": "Equus caballus",
+          "speciesName": "Equus caballus",
+          "speciesNomination": "Equus caballus"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 1,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "number_animal",
+              "data": "1"
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 1,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "2"
+            },
+            {
+              "key": "number_animal",
+              "data": "2"
+            }
+          ]
+        }
+      ],
+      "includeNonAblactedAnimals": true,
+      "countryOfOrigin": "AF",
+      "regionOfOrigin": "AF-123",
+      "animalsCertifiedAs": "Approved"
+    },
+    "purpose": {
+      "forImportOrAdmission": "Definitive import",
+      "purposeGroup": "For Re-Import"
+    },
+    "pointOfEntry": "GBLGW4",
+    "arrivalDate": "2030-01-01",
+    "arrivalTime": "09:30:00",
+    "transporter": {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "type": "private transporter"
+    },
+    "meansOfTransport": {
+      "id": "Identification",
+      "type": "Road Vehicle",
+      "document": "Document"
+    },
+    "meansOfTransportFromEntryPoint": {
+      "id": "Identification",
+      "type": "Aeroplane",
+      "document": "Document"
+    },
+    "departureDate": "2030-01-02",
+    "departureTime": "15:00:00",
+    "estimatedJourneyTimeInMinutes": 570,
+    "veterinaryInformation": {
+      "accompanyingDocuments": [
+        {
+          "documentType": "latestVeterinaryHealthCertificate",
+          "documentReference": "Latest veterinary certificate reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "document.pdf",
+          "attachmentContentType": "application/pdf"
+        },
+        {
+          "documentType": "airWaybill",
+          "documentReference": "Air waybill reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "picture.png",
+          "attachmentContentType": "image/png"
+        },
+        {
+          "documentType": "veterinaryHealthCertificate",
+          "documentReference": "Other veterinary certificate reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "document.doc",
+          "attachmentContentType": "application/msword"
+        }
+      ],
+      "identificationDetails": [
+        {
+          "identificationDetail": "Identification 1",
+          "identificationDescription": "Description 1"
+        },
+        {
+          "identificationDetail": "Identification 2",
+          "identificationDescription": "Description 2"
+        }
+      ]
+    },
+    "route": {
+      "transitingStates": [
+        "AF",
+        "AX",
+        "AL"
+      ]
+    },
+    "sealsContainers": [
+      {
+        "sealNumber": "S12345",
+        "containerNumber": "C12345",
+        "officialSeal": false
+      },
+      {
+        "sealNumber": "S67890",
+        "containerNumber": "C67890",
+        "officialSeal": true
+      }
+    ],
+    "complexCommoditySelected": true
+  }
+}

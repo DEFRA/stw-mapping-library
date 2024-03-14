@@ -1,0 +1,81 @@
+{
+  "type": "CVEDA",
+  "status": "SUBMITTED",
+  "isHighRiskEuImport": false,
+  "partOne": {
+    "consignor": {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "type": "exporter"
+    },
+    "consignee": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "importer"
+    },
+    "importer": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "importer"
+    },
+    "placeOfDestination": {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "importer"
+    },
+    "commodities": {
+      "numberOfPackages": 1,
+      "numberOfAnimals": 1,
+      "commodityComplement": [
+        {
+          "commodityID": "0101",
+          "commodityDescription": "Live horses, asses, mules and hinnies",
+          "complementID": 1,
+          "complementName": "Equus asinus",
+          "speciesName": "Equus asinus",
+          "speciesNomination": "Equus asinus"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "uniqueComplementID": "00000000-0000-0000-0000-000000000000",
+          "complementID": 1,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "number_animal",
+              "data": "1"
+            }
+          ]
+        }
+      ],
+      "includeNonAblactedAnimals": false,
+      "countryOfOrigin": "AF",
+      "animalsCertifiedAs": "Approved"
+    },
+    "purpose": {
+      "forImportOrAdmission": "Definitive import",
+      "purposeGroup": "For Re-Import"
+    },
+    "pointOfEntry": "GBLGW4",
+    "arrivalDate": "2030-01-01",
+    "arrivalTime": "09:30:00",
+    "transporter": {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "type": "private transporter"
+    },
+    "meansOfTransport": {
+      "id": "Identification",
+      "type": "Road Vehicle",
+      "document": "Document"
+    },
+    "meansOfTransportFromEntryPoint": {
+      "id": "Identification",
+      "type": "Aeroplane",
+      "document": "Document"
+    },
+    "departureDate": "2030-01-02",
+    "departureTime": "15:00:00",
+    "estimatedJourneyTimeInMinutes": 570,
+    "complexCommoditySelected": true
+  }
+}

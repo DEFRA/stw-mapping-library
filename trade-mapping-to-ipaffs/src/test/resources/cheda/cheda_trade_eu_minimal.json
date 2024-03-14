@@ -1,0 +1,331 @@
+{
+  "spsConsignment": {
+    "consignorSpsParty": {
+      "id": {
+        "value": "00000000-0000-0000-0000-000000000001"
+      }
+    },
+    "consigneeSpsParty": {
+      "id": {
+        "value": "00000000-0000-0000-0000-000000000002"
+      }
+    },
+    "deliverySpsParty": {
+      "id": {
+        "value": "00000000-0000-0000-0000-000000000003"
+      }
+    },
+    "carrierSpsParty": {
+      "id": {
+        "value": "00000000-0000-0000-0000-000000000004"
+      }
+    },
+    "examinationSpsEvent": {
+      "occurrenceSpsLocation": {
+        "name": [
+          {
+            "value": ""
+          }
+        ]
+      }
+    },
+    "importSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0101"
+                },
+                "className": [
+                  {
+                    "value": "Live horses, asses, mules and hinnies"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "netVolumeMeasure": {
+              "unitCode": "H87",
+              "value": 1
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 1
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "NA"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Equus asinus"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          }
+        ]
+      }
+    ],
+    "mainCarriageSpsTransportMovement": [
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "airplane_flight_number_before_bcp",
+          "value": "Identification"
+        },
+        "modeCode": {
+          "value": "4"
+        }
+      },
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "road_vehicle_registration_after_bcp",
+          "value": "Identification"
+        },
+        "modeCode": {
+          "value": "4"
+        }
+      }
+    ],
+    "unloadingBaseportSpsLocation": {
+      "id": {
+        "schemeID": "un_locode",
+        "value": "GBLGW4"
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2030-01-01T09:30:00Z"
+      }
+    }
+  },
+  "spsExchangedDocument": {
+    "includedSpsNote": [
+      {
+        "subjectCode": {
+          "value": "transport_before_bcp_document"
+        },
+        "content": [
+          {
+            "value": "Document"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "transport_after_bcp_document"
+        },
+        "content": [
+          {
+            "value": "Document"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "DEPARTURE_FROM_BCP_DATETIME"
+        },
+        "content": [
+          {
+            "value": "2023-01-02T15:00:00Z"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "ESTIMATED_JOURNEY_TIME_IN_MINUTES"
+        },
+        "content": [
+          {
+            "value": "570"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "INCLUDES_NON_ABLACTED_ANIMALS"
+        },
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ]
+      }
+    ],
+    "id": {
+      "value": "188044499"
+    },
+    "issueDateTime": {
+      "dateTime": {
+        "value": "2020-10-11T21:20:46Z"
+      }
+    },
+    "name": [
+      {
+        "value": ""
+      }
+    ],
+    "referenceSpsReferencedDocument": [
+      {
+        "attachmentBinaryObject": [
+          {
+            "filename": "document.pdf",
+            "mimeCode": "application/pdf",
+            "value": [
+              ""
+            ]
+          }
+        ],
+        "id": {
+          "value": "Latest veterinary certificate reference"
+        },
+        "issueDateTime": "2024-01-01T00:00:00Z",
+        "relationshipTypeCode": {
+          "name": "Mutually defined reference number (Supporting document)",
+          "value": "ZZZ"
+        },
+        "typeCode": {
+          "name": "Veterinary certificate",
+          "value": "853"
+        }
+      },
+      {
+        "attachmentBinaryObject": [
+          {
+            "filename": "picture.png",
+            "mimeCode": "image/png",
+            "value": [
+              ""
+            ]
+          }
+        ],
+        "id": {
+          "value": "Air waybill reference"
+        },
+        "issueDateTime": "2024-01-01T00:00:00Z",
+        "relationshipTypeCode": {
+          "name": "Mutually defined reference number (Supporting document)",
+          "value": "ZZZ"
+        },
+        "typeCode": {
+          "name": "Air waybill",
+          "value": "740"
+        }
+      },
+      {
+        "attachmentBinaryObject": [
+          {
+            "filename": "document.doc",
+            "mimeCode": "application/msword",
+            "value": [
+              ""
+            ]
+          }
+        ],
+        "id": {
+          "value": "Other veterinary certificate reference"
+        },
+        "issueDateTime": "2024-01-01T00:00:00Z",
+        "relationshipTypeCode": {
+          "name": "Mutually defined reference number (Supporting document)",
+          "value": "ZZZ"
+        },
+        "typeCode": {
+          "name": "Veterinary certificate",
+          "value": "853"
+        }
+      }
+    ],
+    "signatorySpsAuthentication": [
+      {
+        "actualDateTime": {
+          "dateTime": {
+            "value": "2020-10-21T14:30:00Z"
+          }
+        },
+        "includedSpsClause": [
+          {
+            "content": [
+              {
+                "value": "INTERNAL_MARKET"
+              }
+            ],
+            "id": {
+              "value": "PURPOSE"
+            }
+          },
+          {
+            "id": {
+              "value": "GOODS_CERTIFIED_AS"
+            },
+            "content": [
+              {
+                "value": "APPROVED_BODIES"
+              }
+            ]
+          }
+        ],
+        "providerSpsParty": {
+          "name": {
+            "value": ""
+          }
+        }
+      }
+    ],
+    "statusCode": {
+      "value": "47"
+    },
+    "typeCode": {
+      "value": "636"
+    }
+  }
+}
