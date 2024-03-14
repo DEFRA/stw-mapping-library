@@ -114,7 +114,6 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .arrivalTime(arrivalTimeMapper.map(spsCertificate))
         .departureDate(departureDateMapper.map(spsCertificate))
         .departureTime(departureTimeMapper.map(spsCertificate))
-        // TODO: submissionDate, submittedBy
         .build();
   }
 }

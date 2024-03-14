@@ -2,29 +2,18 @@ package uk.gov.defra.stw.mapping.toipaffs.common.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsConsignmentItem;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
 import uk.gov.defra.stw.mapping.dto.MeasureType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsConsignment;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 
 class TotalNetWeightMapperTest {
 
-  private final ObjectMapper objectMapper = TestUtils.initObjectMapper();
-
-  private TotalNetWeightMapper totalNetWeightMapper;
-
-  @BeforeEach
-  void setup() {
-    totalNetWeightMapper = new TotalNetWeightMapper();
-  }
+  private final TotalNetWeightMapper totalNetWeightMapper = new TotalNetWeightMapper();
 
   @Test
   void map_ReturnsTotalNetWeight_WhenSingleNetWeight() {

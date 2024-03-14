@@ -3,9 +3,7 @@ package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import java.math.BigDecimal;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsConsignmentItem;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
@@ -16,12 +14,7 @@ import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 
 class TotalGrossVolumeUnitUnitMapperTest {
 
-  private TotalGrossVolumeUnitMapper totalGrossVolumeUnitMapper;
-
-  @BeforeEach
-  void setup() {
-    totalGrossVolumeUnitMapper = new TotalGrossVolumeUnitMapper();
-  }
+  private final TotalGrossVolumeUnitMapper totalGrossVolumeUnitMapper = new TotalGrossVolumeUnitMapper();
 
   @Test
   void map_ReturnsGrossVolumeUnit_WhenLitres() throws NotificationMapperException {
@@ -66,7 +59,8 @@ class TotalGrossVolumeUnitUnitMapperTest {
   }
 
   @Test
-  void map_ReturnsGrossVolumeUnit_WhenMultipleGrossVolumesWithSameUnit() throws NotificationMapperException {
+  void map_ReturnsGrossVolumeUnit_WhenMultipleGrossVolumesWithSameUnit()
+      throws NotificationMapperException {
     SpsCertificate spsCertificate = new SpsCertificate()
         .withSpsConsignment(new SpsConsignment()
             .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()

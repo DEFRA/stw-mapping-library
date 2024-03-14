@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigDecimal;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsConsignmentItem;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
@@ -14,12 +13,7 @@ import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 
 class TotalGrossWeightMapperTest {
 
-  private TotalGrossWeightMapper totalGrossWeightMapper;
-
-  @BeforeEach
-  void setup() {
-    totalGrossWeightMapper = new TotalGrossWeightMapper();
-  }
+  private final TotalGrossWeightMapper totalGrossWeightMapper = new TotalGrossWeightMapper();
 
   @Test
   void map_ReturnsTotalGrossWeight_WhenSingleGrossWeight() {
