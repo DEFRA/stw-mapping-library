@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
@@ -43,7 +44,7 @@ class ChedppPartOneMapperTest {
   private ChedppMeansOfTransportFromEntryPointMapper chedppMeansOfTransportFromEntryPointMapper;
 
   @Mock
-  private ChedppMeansOfTransportMapper chedppMeansOfTransportMapper;
+  private MeansOfTransportMapper meansOfTransportMapper;
 
   @Mock
   private PointOfEntryMapper pointOfEntryMapper;
@@ -67,7 +68,7 @@ class ChedppPartOneMapperTest {
   @BeforeEach
   void setup() throws JsonProcessingException, NotificationMapperException {
     mapper = new ChedppPartOneMapper(chedppPurposeMapper, economicOperatorMapper,
-        chedppMeansOfTransportFromEntryPointMapper, chedppMeansOfTransportMapper,
+        chedppMeansOfTransportFromEntryPointMapper, meansOfTransportMapper,
         pointOfEntryMapper, chedppVeterinaryInformationMapper, chedppSealsContainersMapper,
         chedppCommoditiesMapper, transportToBcpQuestionMapper);
     objectMapper = TestUtils.initObjectMapper();

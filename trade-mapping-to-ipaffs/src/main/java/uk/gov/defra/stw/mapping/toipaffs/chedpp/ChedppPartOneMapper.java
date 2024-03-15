@@ -9,6 +9,7 @@ import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.dto.SpsExchangedDocument;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
@@ -24,7 +25,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final PointOfEntryMapper pointOfEntryMapper;
   private final ChedppVeterinaryInformationMapper chedppVeterinaryInformationMapper;
   private final SealsContainersMapper chedppSealsContainersMapper;
-  private final ChedppMeansOfTransportMapper chedppMeansOfTransportMapper;
+  private final MeansOfTransportMapper meansOfTransportMapper;
   private final ChedppCommoditiesMapper chedppCommoditiesMapper;
   private final TransportToBcpQuestionMapper transportToBcpQuestionMapper;
 
@@ -32,7 +33,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   public ChedppPartOneMapper(ChedppPurposeMapper chedppPurposeMapper,
       EconomicOperatorMapper economicOperatorMapper,
       ChedppMeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper,
-      ChedppMeansOfTransportMapper chedppMeansOfTransportMapper,
+      MeansOfTransportMapper meansOfTransportMapper,
       PointOfEntryMapper pointOfEntryMapper,
       ChedppVeterinaryInformationMapper chedppVeterinaryInformationMapper,
       SealsContainersMapper chedppSealsContainersMapper,
@@ -41,7 +42,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.chedppPurposeMapper = chedppPurposeMapper;
     this.economicOperatorMapper = economicOperatorMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
-    this.chedppMeansOfTransportMapper = chedppMeansOfTransportMapper;
+    this.meansOfTransportMapper = meansOfTransportMapper;
     this.pointOfEntryMapper = pointOfEntryMapper;
     this.chedppVeterinaryInformationMapper = chedppVeterinaryInformationMapper;
     this.chedppSealsContainersMapper = chedppSealsContainersMapper;
@@ -65,7 +66,7 @@ public class ChedppPartOneMapper implements Mapper<SpsCertificate, PartOne> {
             meansOfTransportFromEntryPointMapper.map(
                 spsConsignment.getMainCarriageSpsTransportMovement()))
         .meansOfTransport(
-            chedppMeansOfTransportMapper.map(spsConsignment.getMainCarriageSpsTransportMovement()))
+            meansOfTransportMapper.map(spsCertificate))
         .veterinaryInformation(
             chedppVeterinaryInformationMapper.map(
                 spsExchangedDocument.getReferenceSpsReferencedDocument()))

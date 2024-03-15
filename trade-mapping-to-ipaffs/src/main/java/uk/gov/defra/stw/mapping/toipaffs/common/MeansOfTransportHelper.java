@@ -1,4 +1,4 @@
-package uk.gov.defra.stw.mapping.toipaffs.chedpp;
+package uk.gov.defra.stw.mapping.toipaffs.common;
 
 import java.util.List;
 import java.util.Map;
@@ -6,18 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
-import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportAfterBip;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
 @Component
-public class ChedppMeansOfTransportHelper {
-
-  private final MeansOfTransportMapper meansOfTransportMapper;
+public class MeansOfTransportHelper {
+  private final MeansOfTransportBaseMapper meansOfTransportBaseMapper;
 
   @Autowired
-  public ChedppMeansOfTransportHelper(MeansOfTransportMapper meansOfTransportMapper) {
-    this.meansOfTransportMapper = meansOfTransportMapper;
+  public MeansOfTransportHelper(
+      MeansOfTransportBaseMapper meansOfTransportBaseMapper) {
+    this.meansOfTransportBaseMapper = meansOfTransportBaseMapper;
   }
 
   public MeansOfTransportAfterBip map(
@@ -31,12 +30,12 @@ public class ChedppMeansOfTransportHelper {
 
     return data.stream()
         .filter(
-            transportMovementRow ->
-                afterBcpSchemeIds.contains(transportMovementRow.getId().getSchemeID()))
+            transportMovementRow -> afterBcpSchemeIds.contains(
+              transportMovementRow.getId().getSchemeID()))
         .findFirst()
         .map(
-            transportMovement ->
-                createMeansOfTransportAfterBip(transportMovement, referenceTransportMethodMap))
+            transportMovement -> createMeansOfTransportAfterBip(
+              transportMovement, referenceTransportMethodMap))
         .orElse(null);
   }
 
@@ -44,8 +43,8 @@ public class ChedppMeansOfTransportHelper {
       MainCarriageSpsTransportMovement transportMovement,
       Map<String, TransportMethod> referenceTransportMethodMap) {
 
-    MeansOfTransportAfterBip meansOfTransportAfterBip =
-        meansOfTransportMapper.map(transportMovement);
+    MeansOfTransportAfterBip meansOfTransportAfterBip = meansOfTransportBaseMapper
+        .map(transportMovement);
 
     meansOfTransportAfterBip.setType(
         referenceTransportMethodMap.get(transportMovement.getModeCode().getValue()));

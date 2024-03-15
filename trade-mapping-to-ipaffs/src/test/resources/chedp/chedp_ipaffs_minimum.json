@@ -32,9 +32,6 @@
         "complementID" : 1,
         "complementName" : "Aegle",
         "speciesName" : "Aegle",
-        "speciesTypeName" : "Farmed game  ",
-        "speciesClassName" : "Artiodactyla",
-        "speciesFamilyName" : "Camelidae",
         "speciesNomination" : "Aegle"
       }, {
         "commodityID" : "07099991",
@@ -42,9 +39,6 @@
         "complementID" : 2,
         "complementName" : "Aegle",
         "speciesName" : "Aegle",
-        "speciesTypeName" : "Farmed game  ",
-        "speciesClassName" : "Artiodactyla",
-        "speciesFamilyName" : "Camelidae",
         "speciesNomination" : "Aegle"
       } ],
       "complementParameterSet" : [ {
@@ -59,10 +53,6 @@
         }, {
           "key" : "type_package",
           "data" : "Bag"
-        } ],
-        "catchCertificates" : [ {
-          "certificateNumber" : "12345",
-          "weight" : 100
         } ]
       }, {
         "uniqueComplementID" : "1e364d17-5ba6-49e7-953f-338b9792557b",
@@ -91,41 +81,18 @@
     "pointOfEntry" : "GBLHR1P",
     "arrivalDate" : "2020-01-01",
     "arrivalTime" : "22:30:00",
-    "transporter" : {
-      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
-      "type" : "private transporter"
-    },
-    "transporterDetailsRequired" : true,
-    "meansOfTransport" : {
-      "id" : "035N, TESTDOCUMENT",
-      "type" : "Ship",
-      "document" : "TESTDOCUMENT"
-    },
+    "transporterDetailsRequired" : false,
     "meansOfTransportFromEntryPoint" : {
       "id" : "035N",
       "type" : "Ship",
       "document" : "TESTDOCUMENT"
     },
-    "departureDate" : "2020-06-15",
-    "departureTime" : "22:30:00",
     "veterinaryInformation" : {
-      "establishmentsOfOrigin" : [ {
-        "name" : "Silver Fern Farms Limited - Pareora",
-        "country" : "NZ",
-        "types" : [ "Slaughterhouses" ],
-        "approvalNumber" : "ME26",
-        "section" : "Meat of domestic ungulates"
-      } ],
       "accompanyingDocuments" : [ {
         "documentType" : "veterinaryHealthCertificate",
-        "documentReference" : "9022780365",
-        "documentIssueDate" : "2020-07-01"
+        "documentReference" : "NZL2020/PPCS2/121580",
+        "documentIssueDate" : "2020-10-11"
       } ]
-    },
-    "sealsContainers" : [ {
-      "sealNumber" : "S12345",
-      "containerNumber" : "C12345",
-      "officialSeal" : false
-    } ]
+    }
   }
 }

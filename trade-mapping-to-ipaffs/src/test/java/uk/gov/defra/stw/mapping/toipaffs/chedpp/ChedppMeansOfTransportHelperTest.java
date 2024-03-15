@@ -12,6 +12,8 @@ import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
 import uk.gov.defra.stw.mapping.dto.ModeCode;
 import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.dto.UsedSpsTransportMeans;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportBaseMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportHelper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportAfterBip;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
@@ -44,11 +46,11 @@ class ChedppMeansOfTransportHelperTest {
   private static final String SHIP_IMO_NUMBER_BEFORE_BCP = "ship_imo_number_before_bcp";
   private static final String SHIP_IMO_NUMBER_AFTER_BCP = "ship_imo_number_after_bcp";
 
-  private ChedppMeansOfTransportHelper helper;
+  private MeansOfTransportHelper helper;
 
   @BeforeEach
   void setup() {
-    helper = new ChedppMeansOfTransportHelper(new MeansOfTransportMapper());
+    helper = new MeansOfTransportHelper(new MeansOfTransportBaseMapper());
   }
 
   @Test
