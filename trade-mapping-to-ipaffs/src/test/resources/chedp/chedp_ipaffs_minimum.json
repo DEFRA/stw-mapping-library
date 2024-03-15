@@ -25,6 +25,9 @@
       "type" : "destination"
     },
     "commodities" : {
+      "totalNetWeight": 1678.52,
+      "totalGrossWeight": 1678.52,
+      "numberOfPackages": 5,
       "temperature" : "Ambient",
       "commodityComplement" : [ {
         "commodityID" : "07099990",
@@ -42,7 +45,7 @@
         "speciesNomination" : "Aegle"
       } ],
       "complementParameterSet" : [ {
-        "uniqueComplementID" : "0d1be0bc-a7c9-430e-8b8c-5f18d83f687d",
+        "uniqueComplementID" : "00000000-0000-0000-0000-000000000000",
         "complementID" : 1,
         "keyDataPair" : [ {
           "key" : "netweight",
@@ -53,9 +56,10 @@
         }, {
           "key" : "type_package",
           "data" : "Bag"
-        } ]
+        } ],
+        "catchCertificates": []
       }, {
-        "uniqueComplementID" : "1e364d17-5ba6-49e7-953f-338b9792557b",
+        "uniqueComplementID" : "00000000-0000-0000-0000-000000000000",
         "complementID" : 2,
         "keyDataPair" : [ {
           "key" : "netweight",
@@ -66,7 +70,8 @@
         }, {
           "key" : "type_package",
           "data" : "Package"
-        } ]
+        } ],
+        "catchCertificates": []
       } ],
       "includeNonAblactedAnimals" : false,
       "countryOfOrigin" : "NZ",
@@ -92,7 +97,8 @@
         "documentType" : "veterinaryHealthCertificate",
         "documentReference" : "NZL2020/PPCS2/121580",
         "documentIssueDate" : "2020-10-11"
-      } ]
+      } ],
+      "establishmentsOfOrigin": []
     }
   }
 }
