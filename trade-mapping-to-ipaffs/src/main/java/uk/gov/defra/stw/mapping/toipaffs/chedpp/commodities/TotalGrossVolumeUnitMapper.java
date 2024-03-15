@@ -36,11 +36,7 @@ public class TotalGrossVolumeUnitMapper implements Mapper<SpsCertificate, String
 
     if (grossVolumeUnits.stream().allMatch(unit -> unit.equals(grossVolumeUnits.get(0)))) {
       String unitType = grossVolumeUnits.get(0);
-      if (UNIT_TYPE_MAP.containsKey(unitType)) {
-        return UNIT_TYPE_MAP.get(unitType);
-      } else {
-        throw new NotificationMapperException("Invalid unit type: " + unitType);
-      }
+      return UNIT_TYPE_MAP.get(unitType);
     } else {
       throw new NotificationMapperException("Gross volume units are not all the same");
     }

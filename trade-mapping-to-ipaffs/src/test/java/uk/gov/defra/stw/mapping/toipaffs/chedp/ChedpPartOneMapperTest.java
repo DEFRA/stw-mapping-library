@@ -149,11 +149,9 @@ class ChedpPartOneMapperTest {
   void map_ReturnsPartOne_WhenCompleteSpsCertificate() throws Exception {
     VeterinaryInformation veterinaryInformation = JsonDeserializer.get(
         "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete.json",
-        VeterinaryInformation.class
-    );
+        VeterinaryInformation.class);
     ApprovedEstablishment approvedEstablishment = JsonDeserializer.get(
-        "chedp/partone/chedp_approved_establishments.json", ApprovedEstablishment.class
-    );
+        "chedp/partone/chedp_approved_establishments.json", ApprovedEstablishment.class);
 
     when(veterinaryInformationMapper.map(spsCertificate.getSpsExchangedDocument()))
         .thenReturn(veterinaryInformation);

@@ -45,7 +45,7 @@ class TotalGrossVolumeUnitUnitMapperTest {
   }
 
   @Test
-  void map_ThrowsException_WhenInvalidUnitType() {
+  void map_ReturnsNull_WhenInvalidUnitType() throws NotificationMapperException {
     SpsCertificate spsCertificate = new SpsCertificate()
         .withSpsConsignment(new SpsConsignment()
             .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
@@ -53,9 +53,9 @@ class TotalGrossVolumeUnitUnitMapperTest {
                     .withGrossVolumeMeasure(new MeasureType()
                         .withUnitCode("INVALID")))))));
 
-    assertThatThrownBy(() -> totalGrossVolumeUnitMapper.map(spsCertificate))
-        .isInstanceOf(NotificationMapperException.class)
-        .hasMessage("Invalid unit type: INVALID");
+    String actual = totalGrossVolumeUnitMapper.map(spsCertificate);
+
+    assertThat(actual).isNull();
   }
 
   @Test

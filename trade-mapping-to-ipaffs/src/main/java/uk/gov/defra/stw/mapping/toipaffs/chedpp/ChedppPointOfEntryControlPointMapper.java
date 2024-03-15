@@ -9,12 +9,7 @@ public class ChedppPointOfEntryControlPointMapper implements Mapper<SpsLocationT
 
   @Override
   public String map(SpsLocationType spsLocationType) {
-    if (spsLocationType != null
-        && spsLocationType.getName() != null
-        && !spsLocationType.getName().isEmpty()
-        && spsLocationType.getName().get(0) != null) {
-      return spsLocationType.getName().get(0).getValue();
-    }
-    return null;
+    String controlPoint = spsLocationType.getName().get(0).getValue();
+    return !controlPoint.isBlank() ? controlPoint : null;
   }
 }
