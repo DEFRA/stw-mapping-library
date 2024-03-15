@@ -37,6 +37,7 @@ import uk.gov.defra.tracesx.notificationschema.representation.ApprovedEstablishm
 import uk.gov.defra.tracesx.notificationschema.representation.CatchCertificate;
 import uk.gov.defra.tracesx.notificationschema.representation.Commodities;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperator;
+import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportAfterBip;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportBeforeBip;
 import uk.gov.defra.tracesx.notificationschema.representation.NotificationSealsContainers;
 import uk.gov.defra.tracesx.notificationschema.representation.PartOne;
@@ -101,6 +102,10 @@ class ChedpPartOneMapperTest {
         "common/transport/common_ipaffs_meansOfTransportFromEntryPoint_complete.json",
         MeansOfTransportBeforeBip.class
     );
+    MeansOfTransportAfterBip meansOfTransportAfterBip = JsonDeserializer.get(
+        "common/transport/common_ipaffs_meansOfTransport_complete.json",
+        MeansOfTransportAfterBip.class
+    );
     List<NotificationSealsContainers> notificationSealsContainers = JsonDeserializer.get(
         "common/sealscontainers/common_ipaffs_sealscontainers_complete.json",
         objectMapper.getTypeFactory().constructCollectionType(List.class, NotificationSealsContainers.class)
@@ -120,6 +125,7 @@ class ChedpPartOneMapperTest {
     when(chedpPointOfEntryMapper.map(spsCertificate.getSpsConsignment()
         .getUnloadingBaseportSpsLocation())).thenReturn("GBLHR1P");
     when(meansOfTransportFromEntryPointMapper.map(spsCertificate)).thenReturn(meansOfTransportBeforeBip);
+    when(meansOfTransportMapper.map(spsCertificate)).thenReturn(meansOfTransportAfterBip);
 
     when(chedpSealsContainersMapper.map(spsCertificate.getSpsConsignment()
         .getUtilizedSpsTransportEquipment())).thenReturn(notificationSealsContainers);

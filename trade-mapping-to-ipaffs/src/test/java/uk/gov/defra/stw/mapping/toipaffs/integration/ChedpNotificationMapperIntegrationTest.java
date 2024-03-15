@@ -41,6 +41,23 @@ class ChedpNotificationMapperIntegrationTest {
         .isEqualTo(expected);
   }
 
+  @Test
+  void map_ReturnsChedpNotification_WhenMinimalEhcSpsCertificate() throws Exception {
+    SpsCertificate spsCertificate = JsonDeserializer.get("chedp/chedp_ehc_minimum.json",
+        SpsCertificate.class);
+
+
+    Notification actual = chedpNotificationMapper.map(spsCertificate);
+    overrideUniqueComplementIdToStaticValue(actual);
+
+    Notification expected = JsonDeserializer.get("chedp/chedp_ipaffs_minimum.json",
+        Notification.class);
+    assertThat(actual)
+        .usingRecursiveComparison()
+        .withStrictTypeChecking()
+        .isEqualTo(expected);
+  }
+
   private void overrideUniqueComplementIdToStaticValue(Notification notification) {
     UUID staticComplementId = UUID.fromString("00000000-0000-0000-0000-000000000000");
     notification.getPartOne()

@@ -118,6 +118,11 @@
       "type": "private transporter"
     },
     "transporterDetailsRequired": true,
+    "meansOfTransport": {
+      "id": "035N, TESTDOCUMENT",
+      "type": "Ship",
+      "document": "TESTDOCUMENT"
+    },
     "meansOfTransportFromEntryPoint": {
       "id": "035N",
       "type": "Ship",

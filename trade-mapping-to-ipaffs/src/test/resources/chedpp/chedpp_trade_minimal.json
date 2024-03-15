@@ -230,6 +230,16 @@
             "value": "joe.bloggs@example.com"
           }
         ]
+      },
+      {
+        "content": [
+          {
+            "value": "TESTDOCUMENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "transport_after_bcp_document"
+        }
       }
     ],
     "id": {

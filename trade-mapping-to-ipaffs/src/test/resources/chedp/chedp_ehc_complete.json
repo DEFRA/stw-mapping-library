@@ -58,6 +58,21 @@
         "modeCode": {
           "value": "1"
         }
+      },
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_after_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        },
+        "usedSpsTransportMeans" : {
+          "name" : {
+            "value" : "TESTDOCUMENT"
+          }
+        }
       }
     ],
     "utilizedSpsTransportEquipment": [
@@ -423,6 +438,16 @@
         ],
         "subjectCode": {
           "value": "CONFORMS_TO_EU"
+        }
+      },
+      {
+        "content": [
+          {
+          "value": "TESTDOCUMENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "transport_after_bcp_document"
         }
       },
       {
