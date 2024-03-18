@@ -45,7 +45,7 @@
         "speciesNomination" : "Aegle"
       } ],
       "complementParameterSet" : [ {
-        "uniqueComplementID" : "00000000-0000-0000-0000-000000000000",
+        "uniqueComplementID" : "12345678-0000-0000-0000-000000000000",
         "complementID" : 1,
         "keyDataPair" : [ {
           "key" : "netweight",
@@ -59,7 +59,7 @@
         } ],
         "catchCertificates": []
       }, {
-        "uniqueComplementID" : "00000000-0000-0000-0000-000000000000",
+        "uniqueComplementID" : "12345678-0000-0000-0000-000000000000",
         "complementID" : 2,
         "keyDataPair" : [ {
           "key" : "netweight",
