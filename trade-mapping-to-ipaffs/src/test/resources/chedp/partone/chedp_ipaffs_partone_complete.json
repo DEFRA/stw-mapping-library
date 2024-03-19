@@ -16,6 +16,9 @@
     "type" : "destination"
   },
   "commodities" : {
+    "totalGrossWeight" : 1800.0,
+    "totalNetWeight" : 1678.52,
+    "numberOfPackages" : 10,
     "temperature" : "Ambient",
     "commodityComplement" : [ {
       "commodityID" : "07099990",
@@ -110,7 +113,9 @@
     "accompanyingDocuments" : [ {
       "documentType" : "veterinaryHealthCertificate",
       "documentReference" : "9022780365",
-      "documentIssueDate" : "2020-07-01"
+      "documentIssueDate" : "2020-07-01",
+      "attachmentFilename" : "sample.pdf",
+      "attachmentContentType" : "application/pdf"
     } ]
   },
   "sealsContainers" : [ {

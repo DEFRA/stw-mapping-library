@@ -119,15 +119,17 @@ class ChedppVeterinaryInformationMapperTest {
   }
 
   private VeterinaryInformation setUpExpectedVeterinaryInformation() throws Exception {
-    return JsonDeserializer.get(VeterinaryInformation.class,
-        "chedpp/partone/veterinaryinformation/chedpp_ipaffs_veterinaryinformation_complete.json", objectMapper);
+    return JsonDeserializer.get(
+        "chedpp/partone/veterinaryinformation/chedpp_ipaffs_veterinaryinformation_complete.json",
+        VeterinaryInformation.class
+    );
   }
 
   private List<SpsReferencedDocumentType> setUpSpsReferenceDocumentTypes() throws Exception{
     return JsonDeserializer.get(
-        objectMapper.getTypeFactory()
-            .constructCollectionType(List.class, SpsReferencedDocumentType.class),
         "chedpp/partone/veterinaryinformation/chedpp_ehc_veterinaryinformation_complete.json",
-        objectMapper);
+        objectMapper.getTypeFactory()
+            .constructCollectionType(List.class, SpsReferencedDocumentType.class)
+    );
   }
 }

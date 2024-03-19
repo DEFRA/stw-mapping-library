@@ -1,16 +1,24 @@
 {
   "spsConsignment": {
-    "consigneeSpsParty": {
+    "consignorSpsParty": {
       "id": {
-        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+        "value": "00000000-0000-0000-0000-000000000001"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
       }
     },
-    "consignorSpsParty": {
+    "despatchSpsParty": {
       "id": {
-        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+        "value": "00000000-0000-0000-0000-000000000002"
+      },
+      "name": {
+        "value": "Oakfield (Foods) Ltd"
+      }
+    },
+    "consigneeSpsParty": {
+      "id": {
+        "value": "00000000-0000-0000-0000-000000000003"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
@@ -18,7 +26,7 @@
     },
     "deliverySpsParty": {
       "id": {
-        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+        "value": "00000000-0000-0000-0000-000000000004"
       },
       "name": {
         "value": "Oakfield (Foods) Ltd"
@@ -35,11 +43,11 @@
     },
     "exportSpsCountry": {
       "id": {
-        "value": "NL"
+        "value": "DZ"
       },
       "name": [
         {
-          "value": "The Netherlands"
+          "value": "Algeria"
         }
       ]
     },
@@ -61,12 +69,119 @@
               {
                 "content": [
                   {
-                    "value": "20.0"
+                    "value": "240"
                   }
                 ],
                 "contentCode": [
                   {
-                    "value": "STM"
+                    "value": "PCS"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABAN"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 2.4
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 55
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 50
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 10
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "CR"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus angustifolia"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "20"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "KGM"
                   }
                 ],
                 "subjectCode": {
@@ -76,37 +191,7 @@
               {
                 "content": [
                   {
-                    "value": "Finished"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "finished_or_propagated"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Plants for Planting"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "commodity_group"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "true"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "container"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Pink Lady"
+                    "value": "Altess"
                   }
                 ],
                 "subjectCode": {
@@ -122,16 +207,26 @@
                 "subjectCode": {
                   "value": "class"
                 }
+              },
+              {
+                "content": [
+                  {
+                    "value": "TRUE"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "container"
+                }
               }
             ],
             "applicableSpsClassification": [
               {
                 "classCode": {
-                  "value": "1209918010"
+                  "value": "0808108090"
                 },
                 "className": [
                   {
-                    "value": "Seeds"
+                    "value": "Other"
                   }
                 ],
                 "systemID": {
@@ -149,7 +244,7 @@
                 },
                 "className": [
                   {
-                    "value": " "
+                    "value": ""
                   }
                 ],
                 "systemID": {
@@ -173,32 +268,20 @@
             },
             "grossWeightMeasure": {
               "unitCode": "KGM",
-              "value": 939.26
+              "value": 24.8
             },
             "netWeightMeasure": {
               "unitCode": "KGM",
-              "value": 929.26
+              "value": 20
             },
             "originSpsCountry": [
               {
                 "id": {
-                  "value": "NL"
+                  "value": "AF"
                 },
                 "name": [
                   {
-                    "value": "The Netherlands"
-                  }
-                ],
-                "subordinateSpsCountrySubDivision": [
-                  {
-                    "name": [
-                      {
-                        "value": "GE"
-                      }
-                    ],
-                    "hierarchicalLevelCode": {
-                      "value": "0"
-                    }
+                    "value": "Afghanistan"
                   }
                 ]
               }
@@ -206,7 +289,485 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 2.0
+                  "value": 5
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BX"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus domestica"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 2
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "15.4"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "KGM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Cameo"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "variety"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Extra Class"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "class"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABSD"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 3
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 20
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 15.4
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 5
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BX"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus domestica"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 3
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "25"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "STM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "FINISHED"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "finished_or_propagated"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "06022030"
+                },
+                "className": [
+                  {
+                    "value": "Citrus"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "AEZCH"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 8.5
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 14
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 10.1
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 2
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "CA"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aeglopsis chevalieri"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 4
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "53"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "PCS"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "PROPAGATED"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "finished_or_propagated"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "TRUE"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "container"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "06022030"
+                },
+                "className": [
+                  {
+                    "value": "Citrus"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "AELMA"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 2.4
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 11
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 8
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 5
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "CN"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle marmelos"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 5
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "80"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "SDS"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0713500010"
+                },
+                "className": [
+                  {
+                    "value": "For sowing"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "VICAC"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 2.4
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 11
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 2.7
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 30
                 },
                 "levelCode": {
                   "value": "4"
@@ -218,11 +779,118 @@
             ],
             "scientificName": [
               {
-                "value": "Chamaecrista comosa var. capricorna"
+                "value": "Vicia acutifolia"
               }
             ],
             "sequenceNumeric": {
-              "value": 1
+              "value": 6
+            }
+          },
+          {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "60"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "BLB"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              }
+            ],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0713500010"
+                },
+                "className": [
+                  {
+                    "value": "For sowing"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "VICAR"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossVolumeMeasure": {
+              "unitCode": "MTQ",
+              "value": 3
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 9
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 7
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "AF"
+                },
+                "name": [
+                  {
+                    "value": "Afghanistan"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 12
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "TU"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Vicia articulata"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 7
             }
           }
         ]
@@ -232,42 +900,22 @@
       {
         "id": {
           "schemeAgencyID": "GB",
-          "schemeID": "ship_imo_number_before_bcp",
-          "value": "Voyage N° 1"
+          "schemeID": "airplane_flight_number_before_bcp",
+          "value": "Identification"
         },
         "modeCode": {
-          "value": "1"
-        },
-        "usedSpsTransportMeans": {
-          "name": {
-            "value": "Ocean Vessel: Green Opal"
-          }
-        }
-      },
-      {
-        "id": {
-          "schemeAgencyID": "GB",
-          "schemeID": "ship_imo_number_after_bcp",
-          "value": "Voyage N° 1"
-        },
-        "modeCode": {
-          "value": "1"
-        },
-        "usedSpsTransportMeans": {
-          "name": {
-            "value": "Ocean Vessel: Green Opal"
-          }
+          "value": "4"
         }
       }
     ],
     "unloadingBaseportSpsLocation": {
       "id": {
         "schemeID": "un_locode",
-        "value": "GBFXT1PP"
+        "value": "GBBXH4PP"
       },
       "name": [
         {
-          "value": "GB"
+          "value": "INSPBHX1"
         }
       ]
     },
@@ -285,29 +933,153 @@
           "schemeID": "container_number",
           "value": "C12345"
         }
+      },
+      {
+        "affixedSpsSeal": [
+          {
+            "id": {
+              "schemeID": "official_seal_number",
+              "value": "S6789"
+            }
+          }
+        ],
+        "id": {
+          "schemeID": "container_number",
+          "value": "C6789"
+        }
       }
-    ]
+    ],
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2030-01-01T10:30:00Z"
+      }
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
       {
+        "subjectCode": {
+          "value": "transport_before_bcp_document"
+        },
         "content": [
           {
-            "value": "TradePlatform-17A-1.0.0-alpha"
+            "value": "Document"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_NAME"
+        },
+        "content": [
+          {
+            "value": "Joe Bloggs"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_PHONE"
+        },
+        "content": [
+          {
+            "value": "0123456789"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_EMAIL"
+        },
+        "content": [
+          {
+            "value": "joe.bloggs@example.com"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_AGENT"
+        },
+        "content": [
+          {
+            "value": "Jane Doe"
+          }
+        ]
+      },
+      {
+        "content": [
+          {
+            "value": "Jane Doe"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
           }
         ],
         "subjectCode": {
-          "value": "TradePlatform UN/CEFACT Mapping Version"
+          "value": "NOMINATED_CONTACT_NAME"
         }
       },
       {
         "content": [
           {
-          "value": "TESTDOCUMENT"
+            "value": "jane.doe@example.com"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
           }
         ],
         "subjectCode": {
-          "value": "transport_after_bcp_document"
+          "value": "NOMINATED_CONTACT_EMAIL"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "Joe Bloggs"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "2"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_NAME"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "0123456789"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "2"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_PHONE"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "joe.bloggs@example.com"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "2"
+          }
+        ],
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_EMAIL"
         }
       }
     ],

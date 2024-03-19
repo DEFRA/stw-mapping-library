@@ -48,6 +48,10 @@ public class ChedppVeterinaryInformationMapper implements
                 veterinaryInformationFieldMapper.mapDocumentType(spsReferencedDocumentType))
             .documentReference(
                 veterinaryInformationFieldMapper.mapDocumentReference(spsReferencedDocumentType))
+            .attachmentFilename(
+                spsReferencedDocumentType.getAttachmentBinaryObject().get(0).getFilename())
+            .attachmentContentType(
+                spsReferencedDocumentType.getAttachmentBinaryObject().get(0).getMimeCode())
             .build());
       }
     }

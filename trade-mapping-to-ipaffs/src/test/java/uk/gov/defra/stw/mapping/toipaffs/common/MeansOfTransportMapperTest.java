@@ -1,15 +1,11 @@
 package uk.gov.defra.stw.mapping.toipaffs.common;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static uk.gov.defra.stw.mapping.toipaffs.enumeration.TransportType.SHIP;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.IDType;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
 import uk.gov.defra.stw.mapping.dto.ModeCode;
@@ -17,54 +13,69 @@ import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.dto.SpsExchangedDocument;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
+import uk.gov.defra.stw.mapping.dto.TextType;
+import uk.gov.defra.stw.mapping.dto.UsedSpsTransportMeans;
 import uk.gov.defra.tracesx.notificationschema.representation.MeansOfTransportAfterBip;
+import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
 class MeansOfTransportMapperTest {
 
-  private MeansOfTransportMapper meansOfTransportMapper;
-  private ObjectMapper objectMapper;
-  private SpsCertificate spsCertificate;
+  private static final String SHIP_IMO_NUMBER_BEFORE_BCP = "ship_imo_number_before_bcp";
+  private static final String SHIP_IMO_NUMBER_AFTER_BCP = "ship_imo_number_after_bcp";
+  private static final String DOCUMENT_SUBJECT_CODE = "transport_after_bcp_document";
 
-  @BeforeEach
-  void setup() throws JsonProcessingException {
-    meansOfTransportMapper = new MeansOfTransportMapper(new MeansOfTransportHelper(new MeansOfTransportBaseMapper()));
-    objectMapper = TestUtils.initObjectMapper();
-    spsCertificate = JsonDeserializer.get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper);
+  private final MeansOfTransportMapper mapper = new MeansOfTransportMapper();
+
+  @Test
+  void map_ReturnsMeansOfTransportAfterBip_WhenComplete() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsExchangedDocument(exchangedDocument())
+        .withSpsConsignment(new SpsConsignment()
+            .withMainCarriageSpsTransportMovement(List.of(
+                transportMovement(SHIP_IMO_NUMBER_BEFORE_BCP, SHIP.getValue()),
+                transportMovement(SHIP_IMO_NUMBER_AFTER_BCP, SHIP.getValue())
+            )));
+
+    MeansOfTransportAfterBip actual = mapper.map(spsCertificate);
+
+    assertThat(actual).isEqualTo(MeansOfTransportAfterBip.builder()
+        .id("Identification, Transport means")
+        .type(TransportMethod.SHIP)
+        .document("Document")
+        .build());
   }
 
   @Test
-  void map_ReturnsFullMeansOfTransport_WhenComplete() throws JsonProcessingException {
-    MeansOfTransportAfterBip meansOfTransportAfterBip = meansOfTransportMapper.map(spsCertificate);
-    assertThat(meansOfTransportAfterBip.getId())
-        .isEqualTo("Voyage N° 1, Ocean Vessel: Green Opal");
-    assertThat(meansOfTransportAfterBip.getDocument())
-        .isEqualTo("TESTDOCUMENT");
-    
+  void map_ReturnsNull_WhenEmptyMainCarriageSpsTransportMovement() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsExchangedDocument(exchangedDocument())
+        .withSpsConsignment(new SpsConsignment()
+            .withMainCarriageSpsTransportMovement(List.of()));
+
+    MeansOfTransportAfterBip actual = mapper.map(spsCertificate);
+
+    assertThat(actual).isNull();
   }
 
-  @Test
-  void map_ReturnsString_WhenUsedSpsTransportMeansNull() throws JsonProcessingException {
-    List<SpsNoteType> listOfSpsNotes = spsCertificate.getSpsExchangedDocument()
-      .getIncludedSpsNote();
-    List<MainCarriageSpsTransportMovement> mainCarriageSpsTransportMovement = 
-        new ArrayList<MainCarriageSpsTransportMovement>();
-    mainCarriageSpsTransportMovement.add(new MainCarriageSpsTransportMovement()
+  MainCarriageSpsTransportMovement transportMovement(String schemeId, String modeCode) {
+    return new MainCarriageSpsTransportMovement()
         .withId(new IDType()
-            .withSchemeID("ship_imo_number_after_bcp")
-            .withValue("Voyage N° 1")
-            .withSchemeAgencyID("GB"))
-        .withModeCode(new ModeCode()
-            .withValue("1")));
-      
-    spsCertificate = new SpsCertificate()
-        .withSpsConsignment(
-            new SpsConsignment()
-                .withMainCarriageSpsTransportMovement(mainCarriageSpsTransportMovement))
-        .withSpsExchangedDocument(new SpsExchangedDocument()
-            .withIncludedSpsNote(listOfSpsNotes));
-    assertThat(meansOfTransportMapper.map(spsCertificate).getId())
-        .isEqualTo("Voyage N° 1");
+            .withSchemeID(schemeId)
+            .withSchemeAgencyID("GB")
+            .withValue("Identification"))
+        .withModeCode(new ModeCode().withValue(modeCode))
+        .withUsedSpsTransportMeans(new UsedSpsTransportMeans()
+            .withName(new TextType().withValue("Transport means")));
+  }
+
+  SpsExchangedDocument exchangedDocument() {
+    return new SpsExchangedDocument()
+        .withIncludedSpsNote(List.of(
+            new SpsNoteType()
+                .withSubjectCode(new CodeType().withValue(DOCUMENT_SUBJECT_CODE))
+                .withContent(List.of(
+                    new TextType().withValue("Document")
+                ))
+        ));
   }
 }

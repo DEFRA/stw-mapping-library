@@ -3,7 +3,6 @@ package uk.gov.defra.stw.mapping.toipaffs.common;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,36 +11,37 @@ import uk.gov.defra.stw.mapping.dto.IDType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsTransportEquipmentType;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.ResourceUtils;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 import uk.gov.defra.tracesx.notificationschema.representation.NotificationSealsContainers;
 
 class SealsContainersMapperTest {
 
-  private ObjectMapper objectMapper;
   private SealsContainersMapper chedppSealsContainersMapper;
   private List<SpsTransportEquipmentType> spsTransportEquipmentTypeList;
 
   @BeforeEach
   void setup() throws JsonProcessingException {
     chedppSealsContainersMapper = new SealsContainersMapper();
-    objectMapper = TestUtils.initObjectMapper();
     spsTransportEquipmentTypeList = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper)
+        .get("chedpp/chedpp_trade_complete.json", SpsCertificate.class)
         .getSpsConsignment().getUtilizedSpsTransportEquipment();
   }
 
   @Test
-  void map_ReturnsSealsContainersList_WhenComplete() throws JsonProcessingException {
-    String expectedSealsContainers = ResourceUtils
-        .readFileToString(
-            "classpath:chedpp/partone/sealscontainers/chedpp_ipaffs_sealscontainers_complete.json");
-
-    List<NotificationSealsContainers> sealsContainers = chedppSealsContainersMapper
+  void map_ReturnsSealsContainersList_WhenComplete() {
+    List<NotificationSealsContainers> actual = chedppSealsContainersMapper
         .map(spsTransportEquipmentTypeList);
-    String actualSealsContainers = objectMapper.writeValueAsString(sealsContainers);
 
-    assertThat(actualSealsContainers).isEqualTo(expectedSealsContainers);
+    assertThat(actual).containsExactly(
+        NotificationSealsContainers.builder()
+            .sealNumber("S12345")
+            .containerNumber("C12345")
+            .officialSeal(false)
+            .build(),
+        NotificationSealsContainers.builder()
+            .sealNumber("S6789")
+            .containerNumber("C6789")
+            .officialSeal(true)
+            .build());
   }
 
   @Test

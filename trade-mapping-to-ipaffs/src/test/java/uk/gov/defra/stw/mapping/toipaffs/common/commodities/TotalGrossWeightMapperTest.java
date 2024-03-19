@@ -1,124 +1,47 @@
 package uk.gov.defra.stw.mapping.toipaffs.common.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import uk.gov.defra.stw.mapping.dto.CodeType;
+import uk.gov.defra.stw.mapping.dto.IncludedSpsConsignmentItem;
+import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
+import uk.gov.defra.stw.mapping.dto.MeasureType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.dto.SpsNoteType;
-import uk.gov.defra.stw.mapping.dto.TextType;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
+import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 
 class TotalGrossWeightMapperTest {
 
-  private TotalGrossWeightMapper totalGrossWeightMapper;
-  private SpsCertificate spsCertificate;
-
-  private final ObjectMapper objectMapper = TestUtils.initObjectMapper();
-
-  @BeforeEach
-  void setup() throws JsonProcessingException {
-    totalGrossWeightMapper = new TotalGrossWeightMapper();
-
-    spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper);
-  }
+  private final TotalGrossWeightMapper totalGrossWeightMapper = new TotalGrossWeightMapper();
 
   @Test
-  void map_ReturnsGrossTotalWeight_WhenNoteExists() {
-    // Given
-    spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().add(
-        createTotalGrossWeightSpsNoteType("420.69"));
+  void map_ReturnsTotalGrossWeight_WhenSingleGrossWeight() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsConsignment(new SpsConsignment()
+            .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
+                .withIncludedSpsTradeLineItem(List.of(new IncludedSpsTradeLineItem()
+                    .withGrossWeightMeasure(new MeasureType().withValue(1.0)))))));
 
-    // When
     BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
 
-    // Then
-    assertThat(actual).isEqualTo(new BigDecimal("420.69"));
+    assertThat(actual).isEqualTo(BigDecimal.valueOf(1.0));
   }
 
   @Test
-  void map_ReturnsNull_WhenNoteDoesNotExist() {
-    // Given / When
+  void map_ReturnsTotalGrossWeight_WhenMultipleGrossWeights() {
+    SpsCertificate spsCertificate = new SpsCertificate()
+        .withSpsConsignment(new SpsConsignment()
+            .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
+                .withIncludedSpsTradeLineItem(List.of(
+                    new IncludedSpsTradeLineItem()
+                        .withGrossWeightMeasure(new MeasureType().withValue(1.0)),
+                    new IncludedSpsTradeLineItem()
+                        .withGrossWeightMeasure(new MeasureType().withValue(2.0))
+                )))));
+
     BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
 
-    // Then
-    assertThat(actual).isNull();
-  }
-
-  @Test
-  void map_ReturnsNull_WhenNoteHasNullValue() {
-    // Given
-    spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().add(
-        createTotalGrossWeightSpsNoteType(null));
-
-    // When
-    BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
-
-    // Then
-    assertThat(actual).isNull();
-  }
-
-  @Test
-  void map_ReturnsNull_WhenGivenAnEmptyNote() {
-    // Given
-    spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().add(new SpsNoteType());
-
-    // When
-    BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
-
-    // Then
-    assertThat(actual).isNull();
-  }
-
-  @Test
-  void map_ReturnsNull_WhenNoteHasNullSubjectCode() {
-    // Given
-    spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().add(new SpsNoteType()
-        .withContent(List.of(new TextType().withValue("value")))
-        .withSubjectCode(null));
-
-    // When
-    BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
-
-    // Then
-    assertThat(actual).isNull();
-  }
-
-  @Test
-  void map_ReturnsNull_WhenNoteHasNullContent() {
-    // Given
-    spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().add(new SpsNoteType()
-        .withContent(null));
-
-    // When
-    BigDecimal actual = totalGrossWeightMapper.map(spsCertificate);
-
-    // Then
-    assertThat(actual).isNull();
-  }
-
-  @Test
-  void map_ReturnsNumberFormatException_WhenGivenInvalidInput() {
-    // Given
-    spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().add(
-        createTotalGrossWeightSpsNoteType("this is not a number"));
-
-    // When / Then
-    assertThatThrownBy(() -> totalGrossWeightMapper.map(spsCertificate))
-        .isInstanceOf(NumberFormatException.class);
-  }
-
-  private SpsNoteType createTotalGrossWeightSpsNoteType(String value) {
-    return new SpsNoteType()
-        .withContent(List.of(new TextType().withValue(value)))
-        .withSubjectCode(new CodeType().withValue("total_gross_weight"));
+    assertThat(actual).isEqualTo(BigDecimal.valueOf(3.0));
   }
 }

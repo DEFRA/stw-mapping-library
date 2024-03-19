@@ -2,6 +2,7 @@ package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 
 import static uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet.FINISHED_OR_PROPAGATED;
 
+import java.util.Map;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
@@ -13,6 +14,11 @@ import uk.gov.defra.tracesx.notificationschema.representation.ComplementParamete
 public class FinishedOrPropagatedMapper
     implements Mapper<IncludedSpsTradeLineItem, ComplementParameterSetKeyDataPair> {
 
+  private static final Map<String, String> VALUE_MAP = Map.of(
+      "FINISHED", "Finished",
+      "PROPAGATED", "Propagated"
+  );
+
   @Override
   public ComplementParameterSetKeyDataPair map(IncludedSpsTradeLineItem tradeLineItem) {
     return tradeLineItem.getAdditionalInformationSpsNote().stream()
@@ -22,6 +28,7 @@ public class FinishedOrPropagatedMapper
         .map(SpsNoteType::getContent)
         .map(textTypes -> textTypes.get(0))
         .map(TextType::getValue)
+        .map(VALUE_MAP::get)
         .map(this::buildKeyDataPair)
         .orElse(null);
   }

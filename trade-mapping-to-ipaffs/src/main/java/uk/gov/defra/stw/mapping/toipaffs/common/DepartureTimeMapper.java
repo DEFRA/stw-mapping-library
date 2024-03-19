@@ -29,5 +29,4 @@ public class DepartureTimeMapper implements Mapper<SpsCertificate, LocalTime> {
             .toLocalTime())
         .orElse(null);
   }
-
 }

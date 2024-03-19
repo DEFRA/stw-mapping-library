@@ -273,9 +273,10 @@ class VeterinaryInformationFieldMapperTest {
   }
 
   private SpsReferencedDocumentType getSpsReferencedDocumentType() throws Exception{
-    SpsExchangedDocument spsExchangedDocument = JsonDeserializer.get(SpsExchangedDocument.class,
+    SpsExchangedDocument spsExchangedDocument = JsonDeserializer.get(
         "common/veterinaryinformation/common_ehc_veterinaryinformation_complete.json",
-        objectMapper);
+        SpsExchangedDocument.class
+    );
     return spsExchangedDocument.getReferenceSpsReferencedDocument().get(0);
   }
 }

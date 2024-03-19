@@ -89,7 +89,7 @@ class ChedpPartOneMapperTest {
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper);
+        .get("chedp/chedp_ehc_complete.json", SpsCertificate.class);
 
     Purpose purpose = Purpose.builder()
         .conformsToEU(true)
@@ -98,16 +98,21 @@ class ChedpPartOneMapperTest {
         .purposeGroup(PurposeGroupEnum.TRANSHIPMENT_TO)
         .build();
 
-    MeansOfTransportBeforeBip meansOfTransportBeforeBip = JsonDeserializer.get(MeansOfTransportBeforeBip.class,
-        "common/transport/common_ipaffs_meansOfTransportFromEntryPoint_complete.json", objectMapper);
-    MeansOfTransportAfterBip meansOfTransportAfterBip = JsonDeserializer.get(MeansOfTransportAfterBip.class,
-        "common/transport/common_ipaffs_meansOfTransport_complete.json", objectMapper);
+    MeansOfTransportBeforeBip meansOfTransportBeforeBip = JsonDeserializer.get(
+        "common/transport/common_ipaffs_meansOfTransportFromEntryPoint_complete.json",
+        MeansOfTransportBeforeBip.class
+    );
+    MeansOfTransportAfterBip meansOfTransportAfterBip = JsonDeserializer.get(
+        "common/transport/common_ipaffs_meansOfTransport_complete.json",
+        MeansOfTransportAfterBip.class
+    );
     List<NotificationSealsContainers> notificationSealsContainers = JsonDeserializer.get(
-        objectMapper.getTypeFactory().constructCollectionType(List.class, NotificationSealsContainers.class),
         "common/sealscontainers/common_ipaffs_sealscontainers_complete.json",
-        objectMapper);
-    Commodities commodities = JsonDeserializer.get(Commodities.class,
-        "chedp/partone/commodities/chedp_ipaffs_commodities_complete.json", objectMapper);
+        objectMapper.getTypeFactory().constructCollectionType(List.class, NotificationSealsContainers.class)
+    );
+    Commodities commodities = JsonDeserializer.get(
+        "chedp/partone/commodities/chedp_ipaffs_commodities_complete.json", Commodities.class
+    );
     commodities.getCommodityComplement().forEach(commodityComplement -> {
       commodityComplement.setSpeciesTypeName("Farmed game  ");
       commodityComplement.setSpeciesClassName("Artiodactyla");
@@ -148,10 +153,11 @@ class ChedpPartOneMapperTest {
 
   @Test
   void map_ReturnsPartOne_WhenCompleteSpsCertificate() throws Exception {
-    VeterinaryInformation veterinaryInformation = JsonDeserializer.get(VeterinaryInformation.class,
-        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete.json", objectMapper);
-    ApprovedEstablishment approvedEstablishment = JsonDeserializer.get(ApprovedEstablishment.class,
-        "chedp/partone/chedp_approved_establishments.json", objectMapper);
+    VeterinaryInformation veterinaryInformation = JsonDeserializer.get(
+        "common/veterinaryinformation/common_ipaffs_veterinaryinformation_complete.json",
+        VeterinaryInformation.class);
+    ApprovedEstablishment approvedEstablishment = JsonDeserializer.get(
+        "chedp/partone/chedp_approved_establishments.json", ApprovedEstablishment.class);
 
     when(veterinaryInformationMapper.map(spsCertificate.getSpsExchangedDocument()))
         .thenReturn(veterinaryInformation);

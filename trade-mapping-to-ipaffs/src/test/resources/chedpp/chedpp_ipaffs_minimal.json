@@ -1,0 +1,105 @@
+{
+  "type": "CHEDPP",
+  "status": "SUBMITTED",
+  "partOne": {
+    "consignor": {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "type": "exporter"
+    },
+    "packer": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "packer"
+    },
+    "consignee": {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "consignee"
+    },
+    "importer": {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "importer"
+    },
+    "placeOfDestination": {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "type": "exporter"
+    },
+    "commodities": {
+      "totalGrossWeight": 2.0,
+      "totalNetWeight": 1.0,
+      "numberOfPackages": 1,
+      "commodityComplement": [
+        {
+          "commodityID": "0808108090",
+          "commodityDescription": "Other",
+          "complementID": 1,
+          "complementName": "Malus angustifolia",
+          "eppoCode": "MABAN",
+          "speciesName": "Malus angustifolia",
+          "speciesNomination": "Malus angustifolia"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
+          "complementID": 1,
+          "keyDataPair": [
+            {
+              "key": "netweight",
+              "data": "1.0"
+            },
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "type_package",
+              "data": "Bag"
+            },
+            {
+              "key": "quantity",
+              "data": "1"
+            },
+            {
+              "key": "type_quantity",
+              "data": "Stems"
+            },
+            {
+              "key": "sequence_numeric",
+              "data": "1"
+            }
+          ]
+        }
+      ],
+      "countryOfOrigin": "AF",
+      "consignedCountry": "DZ"
+    },
+    "purpose": {
+      "purposeGroup": "For Import"
+    },
+    "pointOfEntry": "GBBXH4PP",
+    "pointOfEntryControlPoint": "INSPBHX1",
+    "arrivalDate": "2030-01-01",
+    "arrivalTime": "10:30:00",
+    "meansOfTransportFromEntryPoint": {
+      "id": "Identification",
+      "type": "Aeroplane",
+      "document": "Document"
+    },
+    "transporterDetailsRequired": false,
+    "veterinaryInformation": {
+      "accompanyingDocuments": [
+        {
+          "documentType": "phytosanitaryCertificate",
+          "documentReference": "ADDDOC12345",
+          "documentIssueDate": "2020-10-11",
+          "attachmentFilename": "phytosanitarycert.jpg",
+          "attachmentContentType": "image/jpeg"
+        }
+      ]
+    },
+    "contactDetails": {
+      "name": "Joe Bloggs",
+      "email": "joe.bloggs@example.com"
+    },
+    "nominatedContacts": []
+  }
+}

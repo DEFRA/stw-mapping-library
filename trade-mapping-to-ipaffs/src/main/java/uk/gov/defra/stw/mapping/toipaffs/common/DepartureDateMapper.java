@@ -29,5 +29,4 @@ public class DepartureDateMapper implements Mapper<SpsCertificate, LocalDate> {
             .toLocalDate())
         .orElse(null);
   }
-
 }

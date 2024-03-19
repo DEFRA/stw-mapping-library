@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
+import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
 import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;
@@ -25,19 +26,22 @@ class ChedppControlledAtmosphereContainerMapperTest {
   @Test
   void map_ReturnsKeyDataPairWithContainer_WhenContainerIsPresentWithTrueValue() {
     // Given
-    IncludedSpsTradeLineItem tradeLineItem = buildContainerTradeLineItem("true");
+    IncludedSpsTradeLineItem tradeLineItem = buildContainerTradeLineItem("TRUE");
 
     // When
     ComplementParameterSetKeyDataPair result = containerMapper.map(tradeLineItem);
 
     // Then
-    assertThat(result).isEqualTo(buildContainerComplementParameterSetKeyDataPair("true"));
+    assertThat(result).isEqualTo(ComplementParameterSetKeyDataPair.builder()
+        .key(CONTAINER_KEY)
+        .data("TRUE")
+        .build());
   }
 
   @Test
   void map_ReturnsNullKeyDataPair_WhenContainerIsPresentWithFalseValue() {
     // Given
-    IncludedSpsTradeLineItem tradeLineItem = buildContainerTradeLineItem("false");
+    IncludedSpsTradeLineItem tradeLineItem = buildContainerTradeLineItem("FALSE");
 
     // When
     ComplementParameterSetKeyDataPair result = containerMapper.map(tradeLineItem);
@@ -56,10 +60,6 @@ class ChedppControlledAtmosphereContainerMapperTest {
 
     // Then
     assertThat(result).isNull();
-  }
-
-  private ComplementParameterSetKeyDataPair buildContainerComplementParameterSetKeyDataPair(String data) {
-    return ComplementParameterSetKeyDataPair.builder().key(CONTAINER_KEY).data(data).build();
   }
 
   private IncludedSpsTradeLineItem buildContainerTradeLineItem(String value) {

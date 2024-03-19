@@ -38,7 +38,7 @@ class ChedppPurposeMapperTest {
     objectMapper = TestUtils.initObjectMapper();
 
     spsAuthenticationTypes = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper)
+        .get("chedpp/chedpp_trade_complete.json", SpsCertificate.class)
         .getSpsExchangedDocument().getSignatorySpsAuthentication();
   }
 

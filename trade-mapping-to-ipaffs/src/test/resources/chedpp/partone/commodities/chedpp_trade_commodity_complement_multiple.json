@@ -1,0 +1,213 @@
+{
+  "spsConsignment": {
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABAN"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus angustifolia"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          },
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABSD"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus domestica"
+              }
+            ],
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "Gala"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "variety"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Class II"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "class"
+                }
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 2
+            }
+          },
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0808108090"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              },
+              {
+                "classCode": {
+                  "value": "MABSD"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Malus domestica"
+              }
+            ],
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "Discovery"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "variety"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Class I"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "class"
+                }
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 3
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

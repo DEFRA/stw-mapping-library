@@ -6,10 +6,12 @@ import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.math.BigDecimal;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
@@ -17,7 +19,9 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpCommodityComplem
 import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
@@ -43,8 +47,14 @@ class ChedpCommoditiesMapperTest {
   private ChedpTemperatureMapper chedpTemperatureMapper;
   @Mock
   private CountryOfOriginMapper countryOfOriginMapper;
+  @Mock
+  private TotalNetWeightMapper totalNetWeightMapper;
+  @Mock
+  private NumberOfPackagesMapper numberOfPackagesMapper;
 
+  @InjectMocks
   private ChedpCommoditiesMapper mapper;
+
   private ObjectMapper objectMapper;
   private SpsCertificate spsCertificate;
 
@@ -53,17 +63,18 @@ class ChedpCommoditiesMapperTest {
 
   @BeforeEach
   void setup() throws JsonProcessingException, NotificationMapperException {
-    mapper = new ChedpCommoditiesMapper(chedpCommodityComplementMapper,
-        chedpComplementParameterSetMapper, regionOfOriginMapper, totalGrossWeightMapper,
-        chedpTemperatureMapper, countryOfOriginMapper);
     objectMapper = TestUtils.initObjectMapper();
 
     spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedp/chedp_ehc_complete.json", objectMapper);
-    commodityComplements = JsonDeserializer.get(objectMapper.getTypeFactory().constructCollectionType(List.class, CommodityComplement.class),
-        "chedp/partone/commodities/chedp_ipaffs_commodityComplement_complete.json", objectMapper);
-    complementParameterSets = JsonDeserializer.get(objectMapper.getTypeFactory().constructCollectionType(List.class, ComplementParameterSet.class),
-        "chedp/partone/commodities/chedp_ipaffs_complementParameterSet_complete.json", objectMapper);
+        .get("chedp/chedp_ehc_complete.json", SpsCertificate.class);
+    commodityComplements = JsonDeserializer.get(
+        "chedp/partone/commodities/chedp_ipaffs_commodityComplement_complete.json",
+        objectMapper.getTypeFactory().constructCollectionType(List.class, CommodityComplement.class)
+    );
+    complementParameterSets = JsonDeserializer.get(
+        "chedp/partone/commodities/chedp_ipaffs_complementParameterSet_complete.json",
+        objectMapper.getTypeFactory().constructCollectionType(List.class, ComplementParameterSet.class)
+    );
   }
 
   @Test
@@ -73,6 +84,9 @@ class ChedpCommoditiesMapperTest {
     when(regionOfOriginMapper.map(spsCertificate)).thenReturn(null);
     when(chedpTemperatureMapper.map(spsCertificate)).thenReturn(CommodityTemperature.AMBIENT);
     when(countryOfOriginMapper.map(spsCertificate)).thenReturn("NZ");
+    when(totalGrossWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1800.0));
+    when(totalNetWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1678.52));
+    when(numberOfPackagesMapper.map(spsCertificate)).thenReturn(10);
 
     Commodities commodities = mapper.map(spsCertificate);
     String actualCommodities = objectMapper.writeValueAsString(commodities);

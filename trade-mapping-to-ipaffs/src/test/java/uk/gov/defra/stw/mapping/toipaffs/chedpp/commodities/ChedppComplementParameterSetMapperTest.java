@@ -1,61 +1,87 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.when;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
-import uk.gov.defra.stw.mapping.dto.CodeType;
+import org.mockito.junit.jupiter.MockitoExtension;
+import uk.gov.defra.stw.mapping.dto.IncludedSpsConsignmentItem;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
+import uk.gov.defra.stw.mapping.dto.SequenceNumeric;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.dto.SpsNoteType;
+import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.ComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NetWeightMeasureKeyDataMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesKeyDataMapper;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.ResourceUtils;
-import uk.gov.defra.stw.mapping.toipaffs.testutils.TestUtils;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;
 
+@ExtendWith(MockitoExtension.class)
 class ChedppComplementParameterSetMapperTest {
 
-  private ChedppComplementParameterSetMapper mapper;
-  private ObjectMapper objectMapper;
+  private final UUID TEST_UUID = UUID.fromString("3f8bd1d2-199c-447f-955e-c5a5a9160c95");
+
   private SpsCertificate spsCertificate;
+  private IncludedSpsTradeLineItem includedSpsTradeLineItem;
   private MockedStatic<UUID> mockedUuid;
+
+  @Mock
+  private ComplementParameterSetMapper complementParameterSetMapper;
+  @Mock
+  private ChedppQuantityTypeMapper chedppQuantityTypeMapper;
+  @Mock
+  private ChedppQuantityMapper chedppQuantityMapper;
+  @Mock
+  private NetWeightMeasureKeyDataMapper netWeightMeasureKeyDataMapper;
+  @Mock
+  private NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper;
+  @Mock
+  private ChedppPackageTypeMapper chedppPackageTypeMapper;
+  @Mock
+  private ChedppControlledAtmosphereContainerMapper chedppControlledAtmosphereContainerMapper;
+  @Mock
+  private FinishedOrPropagatedMapper finishedOrPropagatedMapper;
+  @Mock
+  private VarietyMapper varietyMapper;
+  @Mock
+  private ClassMapper classMapper;
+  @Mock
+  private ChedppSequenceNumericMapper chedppSequenceNumericMapper;
+
+  @InjectMocks
+  private ChedppComplementParameterSetMapper mapper;
 
   @BeforeEach
   void setup() throws JsonProcessingException {
-    ChedppQuantityTypeMapper chedppQuantityTypeMapper = new ChedppQuantityTypeMapper();
+    includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
+        .withSequenceNumeric(new SequenceNumeric().withValue(1));
+    spsCertificate = new SpsCertificate()
+        .withSpsConsignment(new SpsConsignment()
+            .withIncludedSpsConsignmentItem(List.of(
+                new IncludedSpsConsignmentItem()
+                    .withIncludedSpsTradeLineItem(List.of(
+                        includedSpsTradeLineItem
+                    ))
+            )));
 
-    mapper = new ChedppComplementParameterSetMapper(
-        new ComplementParameterSetMapper(),
-        chedppQuantityTypeMapper,
-        new ChedppQuantityMapper(),
-        new NetWeightMeasureKeyDataMapper(),
-        new NumberOfPackagesKeyDataMapper(),
-        new ChedppPackageTypeMapper(),
-        new ChedppControlledAtmosphereContainerMapper(),
-        new FinishedOrPropagatedMapper(),
-        new VarietyMapper(),
-        new ClassMapper(),
-        new ChedppSequenceNumericMapper());
-    objectMapper = TestUtils.initObjectMapper();
-
-    spsCertificate = JsonDeserializer
-        .get(SpsCertificate.class, "chedpp/chedpp_ehc_complete.json", objectMapper);
-
-    UUID uuid = UUID.fromString("3f8bd1d2-199c-447f-955e-c5a5a9160c95");
     mockedUuid = Mockito.mockStatic(UUID.class);
-    mockedUuid.when(UUID::randomUUID).thenReturn(uuid);
+    mockedUuid.when(UUID::randomUUID).thenReturn(TEST_UUID);
+    mockedUuid.when(() -> UUID.fromString(anyString())).thenCallRealMethod();
   }
 
   @AfterEach
@@ -64,81 +90,86 @@ class ChedppComplementParameterSetMapperTest {
   }
 
   @Test
-  void map_ReturnsComplementParameterSet_WhenComplete() throws JsonProcessingException {
-    List<ComplementParameterSet> complementParameterSet = mapper.map(spsCertificate);
-    String actualComplementParameterSet = objectMapper.writeValueAsString(complementParameterSet);
+  void map_ReturnsComplementParameterSet_WhenAllMappersReturnValues() {
+    List<ComplementParameterSetKeyDataPair> complementParameterSetKeyDataPairs = new ArrayList<>();
+    complementParameterSetKeyDataPairs.add(createPair("TEST"));
+    when(complementParameterSetMapper.create(
+        netWeightMeasureKeyDataMapper,
+        numberOfPackagesKeyDataMapper,
+        chedppPackageTypeMapper,
+        includedSpsTradeLineItem)
+    ).thenReturn(complementParameterSetKeyDataPairs);
+    when(chedppQuantityMapper.map(includedSpsTradeLineItem)).thenReturn(createPair("QUANTITY"));
+    when(chedppQuantityTypeMapper.map(includedSpsTradeLineItem))
+        .thenReturn(createPair("QUANTITY_TYPE"));
+    when(chedppControlledAtmosphereContainerMapper.map(includedSpsTradeLineItem)).
+        thenReturn(createPair("CONTAINER"));
+    when(finishedOrPropagatedMapper.map(includedSpsTradeLineItem))
+        .thenReturn(createPair("FINISHED_PROPAGATED"));
+    when(varietyMapper.map(includedSpsTradeLineItem)).thenReturn(createPair("VARIETY"));
+    when(classMapper.map(includedSpsTradeLineItem)).thenReturn(createPair("CLASS"));
+    when(chedppSequenceNumericMapper.map(includedSpsTradeLineItem))
+        .thenReturn(createPair("SEQUENCE"));
 
-    String expectedComplementParameterSet = ResourceUtils
-        .readFileToString("classpath:chedpp/partone/commodities/chedpp_ipaffs_complementParameterSet_complete.json");
-    assertThat(complementParameterSet.get(0).getKeyDataPair()).hasSize(10);
-    assertThat(actualComplementParameterSet).isEqualTo(expectedComplementParameterSet);
+    List<ComplementParameterSet> actual = mapper.map(spsCertificate);
+
+    assertThat(actual).hasSize(1);
+    ComplementParameterSet actualParameterSet = actual.get(0);
+    assertThat(actualParameterSet.getUniqueComplementID()).isEqualTo(TEST_UUID);
+    assertThat(actualParameterSet.getComplementID()).isEqualTo(1);
+    assertThat(actualParameterSet.getKeyDataPair()).containsExactly(
+        createPair("TEST"),
+        createPair("QUANTITY"),
+        createPair("QUANTITY_TYPE"),
+        createPair("CONTAINER"),
+        createPair("FINISHED_PROPAGATED"),
+        createPair("VARIETY"),
+        createPair("CLASS"),
+        createPair("SEQUENCE")
+    );
   }
 
   @Test
-  void map_ReturnsComplementParameterSet_WhenFinishedOrPropagatedMapperReturnsNull() {
-    spsCertificate
-        .getSpsConsignment()
-        .getIncludedSpsConsignmentItem()
-        .get(0)
-        .getIncludedSpsTradeLineItem()
-        .get(0)
-        .setAdditionalInformationSpsNote(Collections.emptyList());
+  void map_ReturnsEmptyKeyDataPair_WhenNoMappersReturnValues() {
+    when(complementParameterSetMapper.create(
+        netWeightMeasureKeyDataMapper,
+        numberOfPackagesKeyDataMapper,
+        chedppPackageTypeMapper,
+        includedSpsTradeLineItem)
+    ).thenReturn(new ArrayList<>());
 
-    List<ComplementParameterSet> complementParameterSet = mapper.map(spsCertificate);
+    List<ComplementParameterSet> actual = mapper.map(spsCertificate);
 
-    assertThat(findByKey(complementParameterSet.get(0).getKeyDataPair(), "finished_or_propagated"))
-        .isNull();
+    assertThat(actual).hasSize(1);
+    ComplementParameterSet actualParameterSet = actual.get(0);
+    assertThat(actualParameterSet.getUniqueComplementID()).isEqualTo(TEST_UUID);
+    assertThat(actualParameterSet.getComplementID()).isEqualTo(1);
+    assertThat(actualParameterSet.getKeyDataPair()).isEmpty();
   }
 
   @Test
-  void map_ReturnsComplementParameterSetWithoutVariety_WhenInvalidSubjectCode() {
-    IncludedSpsTradeLineItem includedSpsTradeLineItem =
-        spsCertificate
-            .getSpsConsignment()
-            .getIncludedSpsConsignmentItem()
-            .get(0)
-            .getIncludedSpsTradeLineItem()
-            .get(0);
-    SpsNoteType spsNoteType =
-        findSpsNoteBySubjectCode(
-            includedSpsTradeLineItem.getAdditionalInformationSpsNote(), "variety");
-    spsNoteType.setSubjectCode(new CodeType().withValue("Invalid"));
+  void map_ReturnsCorrectComplementIds_WhenMultipleSpeciesVarietyAndClass()
+      throws JsonProcessingException {
+    spsCertificate = JsonDeserializer.get(
+        "chedpp/partone/commodities/chedpp_trade_commodity_complement_multiple.json",
+        SpsCertificate.class);
+    when(complementParameterSetMapper.create(
+        eq(netWeightMeasureKeyDataMapper),
+        eq(numberOfPackagesKeyDataMapper),
+        eq(chedppPackageTypeMapper),
+        any())
+    ).thenReturn(new ArrayList<>());
 
-    List<ComplementParameterSet> complementParameterSet = mapper.map(spsCertificate);
+    List<ComplementParameterSet> actual = mapper.map(spsCertificate);
 
-    assertThat(findByKey(complementParameterSet.get(0).getKeyDataPair(), "variety")).isNull();
+    assertThat(actual).hasSize(3);
+    assertThat(actual).extracting("complementID").containsExactly(1, 2, 3);
   }
 
-  @Test
-  void map_ReturnsComplementParameterSetWithoutClass_WhenInvalidSubjectCode() {
-    IncludedSpsTradeLineItem includedSpsTradeLineItem =
-        spsCertificate
-            .getSpsConsignment()
-            .getIncludedSpsConsignmentItem()
-            .get(0)
-            .getIncludedSpsTradeLineItem()
-            .get(0);
-    SpsNoteType spsNoteType =
-        findSpsNoteBySubjectCode(
-            includedSpsTradeLineItem.getAdditionalInformationSpsNote(), "class");
-    spsNoteType.setSubjectCode(new CodeType().withValue("Invalid"));
-
-    List<ComplementParameterSet> complementParameterSet = mapper.map(spsCertificate);
-
-    assertThat(findByKey(complementParameterSet.get(0).getKeyDataPair(), "class")).isNull();
-  }
-
-  private ComplementParameterSetKeyDataPair findByKey(List<ComplementParameterSetKeyDataPair> keyDataPairs, String key) {
-    return keyDataPairs.stream()
-        .filter(pair -> pair.getKey().equals(key))
-        .findFirst()
-        .orElse(null);
-  }
-
-  private SpsNoteType findSpsNoteBySubjectCode(List<SpsNoteType> items, String code) {
-    return items.stream()
-        .filter(item -> item.getSubjectCode().getValue().equals(code))
-        .findFirst()
-        .orElse(null);
+  private ComplementParameterSetKeyDataPair createPair(String prefix) {
+    return ComplementParameterSetKeyDataPair.builder()
+        .key(prefix + "_KEY")
+        .data(prefix + "_VALUE")
+        .build();
   }
 }

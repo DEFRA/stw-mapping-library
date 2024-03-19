@@ -1,7 +1,6 @@
 package uk.gov.defra.stw.mapping.toipaffs.common;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
@@ -16,8 +15,10 @@ public class RegionOfOriginMapper implements Mapper<SpsCertificate, String> {
     List<SpsCountrySubDivisionType> subDivisionTypeList = spsCertificate
         .getSpsConsignment().getIncludedSpsConsignmentItem().stream()
         .flatMap(item -> item.getIncludedSpsTradeLineItem().stream())
-        .collect(Collectors.toList()).get(0)
-        .getOriginSpsCountry().get(0)
+        .toList()
+        .get(0)
+        .getOriginSpsCountry()
+        .get(0)
         .getSubordinateSpsCountrySubDivision();
 
     return CollectionUtils.isEmpty(subDivisionTypeList) ? null :

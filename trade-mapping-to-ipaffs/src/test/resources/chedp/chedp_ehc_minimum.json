@@ -276,7 +276,7 @@
           }
         ],
         "subjectCode": {
-          "value": "transport_to_bcp_document"
+          "value": "transport_before_bcp_document"
         }
       }
     ],
