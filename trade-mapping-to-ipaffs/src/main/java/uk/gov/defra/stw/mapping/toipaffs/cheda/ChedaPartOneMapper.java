@@ -30,6 +30,7 @@ import uk.gov.defra.tracesx.notificationschema.representation.enumeration.Econom
 public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
 
   private final EconomicOperatorMapper economicOperatorMapper;
+  private final ChedaCommoditiesMapper chedaCommoditiesMapper;
   private final PointOfEntryMapper pointOfEntryMapper;
   private final MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper;
   private final ArrivalDateMapper arrivalDateMapper;
@@ -42,6 +43,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   @Autowired
   public ChedaPartOneMapper(
       EconomicOperatorMapper economicOperatorMapper,
+      ChedaCommoditiesMapper chedaCommoditiesMapper,
       PointOfEntryMapper pointOfEntryMapper,
       MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper,
       ArrivalDateMapper arrivalDateMapper,
@@ -51,6 +53,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       DepartureTimeMapper departureTimeMapper,
       SealsContainersMapper sealsContainersMapper) {
     this.economicOperatorMapper = economicOperatorMapper;
+    this.chedaCommoditiesMapper = chedaCommoditiesMapper;
     this.pointOfEntryMapper = pointOfEntryMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
     this.arrivalDateMapper = arrivalDateMapper;
@@ -69,7 +72,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .consignee(economicOperator(spsConsignment.getConsigneeSpsParty(), CONSIGNEE))
         .importer(economicOperator(spsConsignment.getConsigneeSpsParty(), IMPORTER))
         .placeOfDestination(economicOperator(spsConsignment.getDeliverySpsParty(), DESTINATION))
-        .commodities(null)
+        .commodities(chedaCommoditiesMapper.map(spsCertificate))
         .purpose(null)
         .pointOfEntry(pointOfEntryMapper.map(spsConsignment.getUnloadingBaseportSpsLocation()))
         .transporter(economicOperator(spsConsignment.getConsignorSpsParty(), PRIVATE_TRANSPORTER))

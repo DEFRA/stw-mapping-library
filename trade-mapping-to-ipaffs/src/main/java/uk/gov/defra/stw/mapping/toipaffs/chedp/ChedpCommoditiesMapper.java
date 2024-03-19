@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
-import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpCommodityComplementMapper;
 import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
@@ -18,7 +18,7 @@ import uk.gov.defra.tracesx.notificationschema.representation.Commodities;
 @Component
 public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commodities> {
 
-  private final ChedpCommodityComplementMapper chedpCommodityComplementMapper;
+  private final CommodityComplementMapper commodityComplementMapper;
   private final ChedpComplementParameterSetMapper chedpComplementParameterSetMapper;
   private final RegionOfOriginMapper regionOfOriginMapper;
   private final TotalGrossWeightMapper totalGrossWeightMapper;
@@ -29,7 +29,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
 
   @Autowired
   public ChedpCommoditiesMapper(
-      ChedpCommodityComplementMapper chedpCommodityComplementMapper,
+      CommodityComplementMapper commodityComplementMapper,
       ChedpComplementParameterSetMapper chedpComplementParameterSetMapper,
       RegionOfOriginMapper regionOfOriginMapper,
       TotalGrossWeightMapper totalGrossWeightMapper,
@@ -37,7 +37,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
       CountryOfOriginMapper countryOfOriginMapper,
       TotalNetWeightMapper totalNetWeightMapper,
       NumberOfPackagesMapper numberOfPackagesMapper) {
-    this.chedpCommodityComplementMapper = chedpCommodityComplementMapper;
+    this.commodityComplementMapper = commodityComplementMapper;
     this.chedpComplementParameterSetMapper = chedpComplementParameterSetMapper;
     this.regionOfOriginMapper = regionOfOriginMapper;
     this.totalGrossWeightMapper = totalGrossWeightMapper;
@@ -52,7 +52,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
     try {
       return Commodities.builder()
           .temperature(chedpTemperatureMapper.map(data))
-          .commodityComplement(chedpCommodityComplementMapper.map(data))
+          .commodityComplement(commodityComplementMapper.map(data))
           .complementParameterSet(chedpComplementParameterSetMapper.map(data))
           .includeNonAblactedAnimals(Boolean.FALSE)
           .countryOfOrigin(countryOfOriginMapper.map(data))
