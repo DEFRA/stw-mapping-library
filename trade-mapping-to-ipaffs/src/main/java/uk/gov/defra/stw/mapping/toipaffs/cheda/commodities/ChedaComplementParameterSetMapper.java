@@ -16,13 +16,16 @@ public class ChedaComplementParameterSetMapper implements
 
   private final NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper;
   private final NumberOfAnimalsKeyDataMapper numberOfAnimalsKeyDataMapper;
+  private final IdentifiersMapper identifiersMapper;
 
   @Autowired
   public ChedaComplementParameterSetMapper(
       NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper,
-      NumberOfAnimalsKeyDataMapper numberOfAnimalsKeyDataMapper) {
+      NumberOfAnimalsKeyDataMapper numberOfAnimalsKeyDataMapper,
+      IdentifiersMapper identifiersMapper) {
     this.numberOfPackagesKeyDataMapper = numberOfPackagesKeyDataMapper;
     this.numberOfAnimalsKeyDataMapper = numberOfAnimalsKeyDataMapper;
+    this.identifiersMapper = identifiersMapper;
   }
 
   @Override
@@ -41,7 +44,7 @@ public class ChedaComplementParameterSetMapper implements
             numberOfPackagesKeyDataMapper.map(tradeLineItem.getPhysicalSpsPackage().get(0)),
             numberOfAnimalsKeyDataMapper.map(tradeLineItem)
         ))
-        // TODO: identifiers
+        .identifiers(identifiersMapper.map(tradeLineItem))
         .build();
   }
 }

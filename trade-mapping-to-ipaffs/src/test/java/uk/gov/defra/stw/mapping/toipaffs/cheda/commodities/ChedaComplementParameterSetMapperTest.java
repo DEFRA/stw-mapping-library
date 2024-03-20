@@ -22,6 +22,7 @@ import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesKeyDataMapper;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;
+import uk.gov.defra.tracesx.notificationschema.representation.Identifier;
 
 @ExtendWith(MockitoExtension.class)
 class ChedaComplementParameterSetMapperTest {
@@ -32,6 +33,8 @@ class ChedaComplementParameterSetMapperTest {
   private NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper;
   @Mock
   private NumberOfAnimalsKeyDataMapper numberOfAnimalsKeyDataMapper;
+  @Mock
+  private IdentifiersMapper identifiersMapper;
 
   @InjectMocks
   private ChedaComplementParameterSetMapper mapper;
@@ -40,16 +43,19 @@ class ChedaComplementParameterSetMapperTest {
   void map_ReturnsComplementParameterSet_WhenAllMappersReturnValues() {
     PhysicalSpsPackage physicalSpsPackage = new PhysicalSpsPackage()
         .withItemQuantity(new ItemQuantity().withValue(1.0));
-    IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
+    IncludedSpsTradeLineItem tradeLineItem = new IncludedSpsTradeLineItem()
         .withPhysicalSpsPackage(List.of(physicalSpsPackage))
         .withSequenceNumeric(new SequenceNumeric().withValue(1));
     SpsCertificate spsCertificate = new SpsCertificate()
         .withSpsConsignment(new SpsConsignment()
             .withIncludedSpsConsignmentItem(List.of(new IncludedSpsConsignmentItem()
-                .withIncludedSpsTradeLineItem(List.of(includedSpsTradeLineItem)))));
+                .withIncludedSpsTradeLineItem(List.of(tradeLineItem)))));
 
     when(numberOfPackagesKeyDataMapper.map(physicalSpsPackage)).thenReturn(createPair("NUMBER_OF_PACKAGES"));
-    when(numberOfAnimalsKeyDataMapper.map(includedSpsTradeLineItem)).thenReturn(createPair("NUMBER_OF_ANIMALS"));
+    when(numberOfAnimalsKeyDataMapper.map(tradeLineItem)).thenReturn(createPair("NUMBER_OF_ANIMALS"));
+    when(identifiersMapper.map(tradeLineItem)).thenReturn(List.of(Identifier.builder()
+        .speciesNumber(1)
+        .build()));
 
     try (MockedStatic<UUID> mockedUuid = mockStatic(UUID.class)) {
       mockedUuid.when(UUID::randomUUID).thenReturn(TEST_UUID);
@@ -63,6 +69,9 @@ class ChedaComplementParameterSetMapperTest {
           createPair("NUMBER_OF_PACKAGES"),
           createPair("NUMBER_OF_ANIMALS")
       );
+      assertThat(actualParameterSet.getIdentifiers()).containsExactly(Identifier.builder()
+          .speciesNumber(1)
+          .build());
     }
   }
 
