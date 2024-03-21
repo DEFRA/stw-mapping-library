@@ -12,6 +12,7 @@ import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsConsignment;
 import uk.gov.defra.stw.mapping.dto.SpsPartyType;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
+import uk.gov.defra.stw.mapping.toipaffs.cheda.purpose.PortOfExitMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
@@ -31,6 +32,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
 
   private final EconomicOperatorMapper economicOperatorMapper;
   private final ChedaCommoditiesMapper chedaCommoditiesMapper;
+  private final ChedaPurposeMapper chedaPurposeMapper;
+  private final PortOfExitMapper portOfExitMapper;
   private final PointOfEntryMapper pointOfEntryMapper;
   private final MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper;
   private final ArrivalDateMapper arrivalDateMapper;
@@ -44,6 +47,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   public ChedaPartOneMapper(
       EconomicOperatorMapper economicOperatorMapper,
       ChedaCommoditiesMapper chedaCommoditiesMapper,
+      ChedaPurposeMapper chedaPurposeMapper,
+      PortOfExitMapper portOfExitMapper,
       PointOfEntryMapper pointOfEntryMapper,
       MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper,
       ArrivalDateMapper arrivalDateMapper,
@@ -54,6 +59,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       SealsContainersMapper sealsContainersMapper) {
     this.economicOperatorMapper = economicOperatorMapper;
     this.chedaCommoditiesMapper = chedaCommoditiesMapper;
+    this.chedaPurposeMapper = chedaPurposeMapper;
+    this.portOfExitMapper = portOfExitMapper;
     this.pointOfEntryMapper = pointOfEntryMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
     this.arrivalDateMapper = arrivalDateMapper;
@@ -73,7 +80,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .importer(economicOperator(spsConsignment.getConsigneeSpsParty(), IMPORTER))
         .placeOfDestination(economicOperator(spsConsignment.getDeliverySpsParty(), DESTINATION))
         .commodities(chedaCommoditiesMapper.map(spsCertificate))
-        .purpose(null)
+        .purpose(chedaPurposeMapper.map(spsCertificate))
+        .portOfExit(portOfExitMapper.map(spsCertificate))
         .pointOfEntry(pointOfEntryMapper.map(spsConsignment.getUnloadingBaseportSpsLocation()))
         .transporter(economicOperator(spsConsignment.getConsignorSpsParty(), PRIVATE_TRANSPORTER))
         .meansOfTransportFromEntryPoint(meansOfTransportFromEntryPointMapper.map(spsCertificate))

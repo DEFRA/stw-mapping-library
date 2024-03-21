@@ -96,7 +96,7 @@ class ChedaNotificationMapperIntegrationTest {
   }
 
   private void overrideUniqueComplementIdToStaticValue(Notification notification) {
-    UUID staticComplementId = UUID.fromString("00000000-0000-0000-0000-000000000000");
+    UUID staticComplementId = UUID.fromString("12345678-0000-0000-0000-000000000000");
     notification.getPartOne()
         .getCommodities()
         .getComplementParameterSet()
