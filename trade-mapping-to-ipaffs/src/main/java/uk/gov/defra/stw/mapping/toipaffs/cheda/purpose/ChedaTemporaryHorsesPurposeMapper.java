@@ -1,6 +1,7 @@
 package uk.gov.defra.stw.mapping.toipaffs.cheda.purpose;
 
 import static uk.gov.defra.stw.mapping.toipaffs.cheda.purpose.ChedaPurposeUtils.APHA_BCP_ID;
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.getNoteContentBySubjectCode;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.ForImportOrAdmissionEnum.TEMPORARY_ADMISSION_HORSES;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PurposeGroupEnum.RE_IMPORT;
 
@@ -35,13 +36,7 @@ public class ChedaTemporaryHorsesPurposeMapper implements Mapper<SpsCertificate,
   }
 
   private String getExitDate(SpsCertificate spsCertificate) {
-    return spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().stream()
-        .filter(note ->
-            note.getSubjectCode().getValue().equals("TEMPORARY_ADMISSION_HORSES_EXIT_DATE"))
-        .findAny()
-        .map(SpsNoteType::getContent)
-        .map(contents -> contents.get(0))
-        .map(TextType::getValue)
+    return getNoteContentBySubjectCode(spsCertificate, "TEMPORARY_ADMISSION_HORSES_EXIT_DATE")
         .orElse(null);
   }
 }

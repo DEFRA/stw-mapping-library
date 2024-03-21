@@ -41,6 +41,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final MeansOfTransportMapper meansOfTransportMapper;
   private final DepartureDateMapper departureDateMapper;
   private final DepartureTimeMapper departureTimeMapper;
+  private final EstimatedJourneyTimeMapper estimatedJourneyTimeMapper;
   private final SealsContainersMapper sealsContainersMapper;
 
   @Autowired
@@ -56,6 +57,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       MeansOfTransportMapper meansOfTransportMapper,
       DepartureDateMapper departureDateMapper,
       DepartureTimeMapper departureTimeMapper,
+      EstimatedJourneyTimeMapper estimatedJourneyTimeMapper,
       SealsContainersMapper sealsContainersMapper) {
     this.economicOperatorMapper = economicOperatorMapper;
     this.chedaCommoditiesMapper = chedaCommoditiesMapper;
@@ -68,6 +70,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.meansOfTransportMapper = meansOfTransportMapper;
     this.departureDateMapper = departureDateMapper;
     this.departureTimeMapper = departureTimeMapper;
+    this.estimatedJourneyTimeMapper = estimatedJourneyTimeMapper;
     this.sealsContainersMapper = sealsContainersMapper;
   }
 
@@ -90,7 +93,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .meansOfTransport(meansOfTransportMapper.map(spsCertificate))
         .departureDate(departureDateMapper.map(spsCertificate))
         .departureTime(departureTimeMapper.map(spsCertificate))
-        .estimatedJourneyTimeInMinutes(null)
+        .estimatedJourneyTimeInMinutes(estimatedJourneyTimeMapper.map(spsCertificate))
         .veterinaryInformation(null)
         .sealsContainers(
             sealsContainersMapper.map(spsConsignment.getUtilizedSpsTransportEquipment()))

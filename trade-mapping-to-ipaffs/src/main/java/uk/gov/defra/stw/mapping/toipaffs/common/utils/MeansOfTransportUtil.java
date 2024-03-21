@@ -5,12 +5,11 @@ import static uk.gov.defra.stw.mapping.toipaffs.enumeration.TransportType.AEROPL
 import static uk.gov.defra.stw.mapping.toipaffs.enumeration.TransportType.RAILWAY_WAGON;
 import static uk.gov.defra.stw.mapping.toipaffs.enumeration.TransportType.ROAD_VEHICLE;
 import static uk.gov.defra.stw.mapping.toipaffs.enumeration.TransportType.SHIP;
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.getNoteContentBySubjectCode;
 
 import java.util.Map;
 import uk.gov.defra.stw.mapping.dto.MainCarriageSpsTransportMovement;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.dto.SpsNoteType;
-import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.TransportMethod;
 
 public class MeansOfTransportUtil {
@@ -37,14 +36,6 @@ public class MeansOfTransportUtil {
   }
 
   public static String mapTransportDocument(SpsCertificate spsCertificate, String subjectCode) {
-    return spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().stream()
-        .filter(includedSpsNote -> includedSpsNote.getSubjectCode()
-            .getValue()
-            .equals(subjectCode))
-        .findAny()
-        .map(SpsNoteType::getContent)
-        .map(content -> content.get(0))
-        .map(TextType::getValue)
-        .orElse(null);
+    return getNoteContentBySubjectCode(spsCertificate, subjectCode).orElse(null);
   }
 }

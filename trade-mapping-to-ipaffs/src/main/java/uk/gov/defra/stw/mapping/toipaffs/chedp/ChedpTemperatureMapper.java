@@ -1,11 +1,11 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedp;
 
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.findNoteBySubjectCode;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature.AMBIENT;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature.CHILLED;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature.FROZEN;
 
 import java.util.Map;
-import java.util.Objects;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
@@ -25,12 +25,8 @@ public class ChedpTemperatureMapper implements Mapper<SpsCertificate, CommodityT
   @Override
   public CommodityTemperature map(SpsCertificate spsCertificate)
       throws NotificationMapperException {
-    return spsCertificate.getSpsExchangedDocument().getIncludedSpsNote()
-        .stream()
-        .filter(ChedpTemperatureMapper::isTemperature)
+    return findNoteBySubjectCode(spsCertificate, "PRODUCT_TEMPERATURE")
         .map(SpsNoteType::getContentCode)
-        .filter(Objects::nonNull)
-        .findFirst()
         .filter(items -> !items.isEmpty())
         .map(codeTypes -> codeTypes.get(0))
         .map(CodeType::getValue)

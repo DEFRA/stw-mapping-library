@@ -1,6 +1,6 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 
-import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.findSpsNoteByType;
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.findNoteBySubjectCode;
 import static uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet.QUANTITY;
 
 import java.util.Map;
@@ -26,7 +26,7 @@ public class ChedppQuantityTypeMapper implements
 
   @Override
   public ComplementParameterSetKeyDataPair map(IncludedSpsTradeLineItem tradeLineItem) {
-    return findSpsNoteByType(tradeLineItem.getAdditionalInformationSpsNote(), QUANTITY)
+    return findNoteBySubjectCode(tradeLineItem.getAdditionalInformationSpsNote(), QUANTITY)
         .map(spsNoteType -> spsNoteType.getContentCode().get(0))
         .map(CodeType::getValue)
         .map(QUANTITY_TYPE_MAP::get)
