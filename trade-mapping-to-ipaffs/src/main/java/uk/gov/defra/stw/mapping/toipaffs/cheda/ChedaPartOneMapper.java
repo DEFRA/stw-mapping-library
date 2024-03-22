@@ -34,7 +34,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final ChedaCommoditiesMapper chedaCommoditiesMapper;
   private final ChedaPurposeMapper chedaPurposeMapper;
   private final PortOfExitMapper portOfExitMapper;
-  private final PointOfEntryMapper pointOfEntryMapper;
+  private final ChedaPointOfEntryMapper chedaPointOfEntryMapper;
+  private final PortOfEntryMapper portOfEntryMapper;
   private final MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper;
   private final ArrivalDateMapper arrivalDateMapper;
   private final ArrivalTimeMapper arrivalTimeMapper;
@@ -52,7 +53,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       ChedaCommoditiesMapper chedaCommoditiesMapper,
       ChedaPurposeMapper chedaPurposeMapper,
       PortOfExitMapper portOfExitMapper,
-      PointOfEntryMapper pointOfEntryMapper,
+      ChedaPointOfEntryMapper chedaPointOfEntryMapper,
+      PortOfEntryMapper portOfEntryMapper,
       MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper,
       ArrivalDateMapper arrivalDateMapper,
       ArrivalTimeMapper arrivalTimeMapper,
@@ -67,7 +69,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.chedaCommoditiesMapper = chedaCommoditiesMapper;
     this.chedaPurposeMapper = chedaPurposeMapper;
     this.portOfExitMapper = portOfExitMapper;
-    this.pointOfEntryMapper = pointOfEntryMapper;
+    this.chedaPointOfEntryMapper = chedaPointOfEntryMapper;
+    this.portOfEntryMapper = portOfEntryMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
     this.arrivalDateMapper = arrivalDateMapper;
     this.arrivalTimeMapper = arrivalTimeMapper;
@@ -91,7 +94,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .commodities(chedaCommoditiesMapper.map(spsCertificate))
         .purpose(chedaPurposeMapper.map(spsCertificate))
         .portOfExit(portOfExitMapper.map(spsCertificate))
-        .pointOfEntry(pointOfEntryMapper.map(spsConsignment.getUnloadingBaseportSpsLocation()))
+        .pointOfEntry(chedaPointOfEntryMapper.map(spsCertificate))
+        .portOfEntry(portOfEntryMapper.map(spsCertificate))
         .transporter(economicOperator(spsConsignment.getCarrierSpsParty(), PRIVATE_TRANSPORTER))
         .meansOfTransportFromEntryPoint(meansOfTransportFromEntryPointMapper.map(spsCertificate))
         .arrivalDate(arrivalDateMapper.map(spsCertificate))
@@ -103,7 +107,6 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .veterinaryInformation(chedaVeterinaryInformationMapper.map(spsCertificate))
         .sealsContainers(
             sealsContainersMapper.map(spsConsignment.getUtilizedSpsTransportEquipment()))
-        .portOfEntry(null)
         .isGVMSRoute(isGvmsRouteMapper.map(spsCertificate))
         .build();
   }
