@@ -909,6 +909,16 @@
             "value": "FALSE"
           }
         ]
+      },
+      {
+        "subjectCode": {
+          "value": "IS_GVMS_ROUTE"
+        },
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ]
       }
     ],
     "id": {

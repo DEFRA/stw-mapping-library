@@ -44,6 +44,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final EstimatedJourneyTimeMapper estimatedJourneyTimeMapper;
   private final ChedaVeterinaryInformationMapper chedaVeterinaryInformationMapper;
   private final SealsContainersMapper sealsContainersMapper;
+  private final IsGvmsRouteMapper isGvmsRouteMapper;
 
   @Autowired
   public ChedaPartOneMapper(
@@ -60,7 +61,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       DepartureTimeMapper departureTimeMapper,
       EstimatedJourneyTimeMapper estimatedJourneyTimeMapper,
       ChedaVeterinaryInformationMapper chedaVeterinaryInformationMapper,
-      SealsContainersMapper sealsContainersMapper) {
+      SealsContainersMapper sealsContainersMapper,
+      IsGvmsRouteMapper isGvmsRouteMapper) {
     this.economicOperatorMapper = economicOperatorMapper;
     this.chedaCommoditiesMapper = chedaCommoditiesMapper;
     this.chedaPurposeMapper = chedaPurposeMapper;
@@ -75,6 +77,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.estimatedJourneyTimeMapper = estimatedJourneyTimeMapper;
     this.chedaVeterinaryInformationMapper = chedaVeterinaryInformationMapper;
     this.sealsContainersMapper = sealsContainersMapper;
+    this.isGvmsRouteMapper = isGvmsRouteMapper;
   }
 
   @Override
@@ -100,6 +103,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .veterinaryInformation(chedaVeterinaryInformationMapper.map(spsCertificate))
         .sealsContainers(
             sealsContainersMapper.map(spsConsignment.getUtilizedSpsTransportEquipment()))
+        .portOfEntry(null)
+        .isGVMSRoute(isGvmsRouteMapper.map(spsCertificate))
         .build();
   }
 
