@@ -237,18 +237,18 @@
           "attachmentContentType": "application/pdf"
         },
         {
-          "documentType": "veterinaryHealthCertificate",
-          "documentReference": "Other veterinary health certificate reference",
-          "documentIssueDate": "2024-01-01",
-          "attachmentFilename": "document.doc",
-          "attachmentContentType": "application/msword"
-        },
-        {
           "documentType": "airWaybill",
           "documentReference": "Air waybill reference",
           "documentIssueDate": "2024-01-01",
           "attachmentFilename": "picture.png",
           "attachmentContentType": "image/png"
+        },
+        {
+          "documentType": "veterinaryHealthCertificate",
+          "documentReference": "Other veterinary certificate reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "document.doc",
+          "attachmentContentType": "application/msword"
         }
       ]
     },

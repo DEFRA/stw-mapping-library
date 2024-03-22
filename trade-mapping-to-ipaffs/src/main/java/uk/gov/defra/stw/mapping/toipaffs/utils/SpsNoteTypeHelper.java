@@ -15,11 +15,8 @@ public class SpsNoteTypeHelper {
 
   public static Optional<SpsNoteType> findNoteBySubjectCode(SpsCertificate spsCertificate,
       String subjectCode) {
-    return spsCertificate.getSpsExchangedDocument().getIncludedSpsNote().stream()
-        .filter(note -> !ObjectUtils.isEmpty(note.getSubjectCode()))
-        .filter(note -> Objects.equals(note.getSubjectCode().getValue(), subjectCode))
-        .filter(note -> !ObjectUtils.isEmpty(note.getContent()))
-        .findFirst();
+    return findNoteBySubjectCode(spsCertificate.getSpsExchangedDocument().getIncludedSpsNote(),
+        subjectCode);
   }
 
   public static Optional<SpsNoteType> findNoteBySubjectCode(List<SpsNoteType> notes,
