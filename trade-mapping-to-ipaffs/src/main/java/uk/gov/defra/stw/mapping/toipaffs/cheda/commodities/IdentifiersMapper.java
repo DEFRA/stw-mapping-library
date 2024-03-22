@@ -62,7 +62,7 @@ public class IdentifiersMapper implements Mapper<IncludedSpsTradeLineItem, List<
     String identifier = note.getContentCode().get(0).getValue();
     Matcher matcher = IDENTIFIER_PATTERN.matcher(identifier);
     if (matcher.find()) {
-      return matcher.group(1);
+      return matcher.group(1).toLowerCase();
     } else {
       throw new IdentifiersMapperException("Unable to extract type from identifier: " + identifier);
     }

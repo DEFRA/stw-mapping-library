@@ -100,7 +100,13 @@ class ChedaNotificationMapperIntegrationTest {
     notification.getPartOne()
         .getCommodities()
         .getComplementParameterSet()
-        .forEach(complementParameterSet ->
-            complementParameterSet.setUniqueComplementID(staticComplementId));
+        .forEach(complementParameterSet -> {
+          complementParameterSet.setUniqueComplementID(staticComplementId);
+          complementParameterSet.getIdentifiers().forEach(identifier -> {
+            if (identifier.getPermanentAddress() != null) {
+              identifier.getPermanentAddress().setId(staticComplementId.toString());
+            }
+          });
+        });
   }
 }

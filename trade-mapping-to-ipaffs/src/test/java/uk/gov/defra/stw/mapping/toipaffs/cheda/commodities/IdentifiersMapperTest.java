@@ -65,8 +65,8 @@ class IdentifiersMapperTest {
       assertThat(actual).containsExactly(Identifier.builder()
           .speciesNumber(1)
           .data(Map.of(
-              "MICROCHIP", "M-1234",
-              "PASSPORT", "P-1234"
+              "microchip", "M-1234",
+              "passport", "P-1234"
           ))
           .isPlaceOfDestinationThePermanentAddress(false)
           .permanentAddress(EconomicOperator.builder()
@@ -103,8 +103,8 @@ class IdentifiersMapperTest {
     assertThat(actual).containsExactly(Identifier.builder()
         .speciesNumber(1)
         .data(Map.of(
-            "MICROCHIP", "M-1234",
-            "PASSPORT", "P-1234"
+            "microchip", "M-1234",
+            "passport", "P-1234"
         ))
         .isPlaceOfDestinationThePermanentAddress(true)
         .build());
@@ -162,8 +162,8 @@ class IdentifiersMapperTest {
           Identifier.builder()
               .speciesNumber(1)
               .data(Map.of(
-                  "MICROCHIP", "M-1234",
-                  "PASSPORT", "P-1234"
+                  "microchip", "M-1234",
+                  "passport", "P-1234"
               ))
               .isPlaceOfDestinationThePermanentAddress(false)
               .permanentAddress(EconomicOperator.builder()
@@ -186,8 +186,8 @@ class IdentifiersMapperTest {
           Identifier.builder()
               .speciesNumber(2)
               .data(Map.of(
-                  "MICROCHIP", "M-5678",
-                  "PASSPORT", "P-5678"
+                  "microchip", "M-5678",
+                  "passport", "P-5678"
               ))
               .isPlaceOfDestinationThePermanentAddress(false)
               .permanentAddress(EconomicOperator.builder()
@@ -240,7 +240,7 @@ class IdentifiersMapperTest {
       assertThat(actual).containsExactly(
           Identifier.builder()
               .speciesNumber(1)
-              .data(Map.of("MICROCHIP", "M-1"))
+              .data(Map.of("microchip", "M-1"))
               .isPlaceOfDestinationThePermanentAddress(false)
               .permanentAddress(EconomicOperator.builder()
                   .id(TEST_UUID.toString())
@@ -260,7 +260,7 @@ class IdentifiersMapperTest {
               .build(),
           Identifier.builder()
               .speciesNumber(2)
-              .data(Map.of("MICROCHIP", "M-2"))
+              .data(Map.of("microchip", "M-2"))
               .build());
     }
   }
@@ -295,7 +295,7 @@ class IdentifiersMapperTest {
 
       assertThat(actual).containsExactly(Identifier.builder()
           .speciesNumber(1)
-          .data(Map.of("MICROCHIP", "M-1"))
+          .data(Map.of("microchip", "M-1"))
           .isPlaceOfDestinationThePermanentAddress(false)
           .permanentAddress(EconomicOperator.builder()
               .id(TEST_UUID.toString())

@@ -80,7 +80,6 @@
                 "passport": "Passport-1",
                 "tattoo": "Tattoo-1"
               },
-              "permanentAddress": {},
               "isPlaceOfDestinationThePermanentAddress": true
             },
             {
@@ -90,7 +89,6 @@
                 "passport": "Passport-2",
                 "tattoo": "Tattoo-2"
               },
-              "permanentAddress": {},
               "isPlaceOfDestinationThePermanentAddress": true
             }
           ]
@@ -117,7 +115,7 @@
                 "tattoo": "Tattoo-3"
               },
               "permanentAddress": {
-                "id": "d8181d44-9423-4608-a7d1-d3df37f5653d",
+                "id": "12345678-0000-0000-0000-000000000000",
                 "type": "consignee",
                 "status": "nonapproved",
                 "companyName": "Different address",
@@ -156,7 +154,6 @@
                 "passport": "Passport-4",
                 "tattoo": "Tattoo-4"
               },
-              "permanentAddress": {},
               "isPlaceOfDestinationThePermanentAddress": true
             },
             {
@@ -166,7 +163,6 @@
                 "passport": "Passport-5",
                 "tattoo": "Tattoo-5"
               },
-              "permanentAddress": {},
               "isPlaceOfDestinationThePermanentAddress": true
             }
           ]
@@ -192,7 +188,6 @@
                 "passport": "Passport-6",
                 "tattoo": "Tattoo-6"
               },
-              "permanentAddress": {},
               "isPlaceOfDestinationThePermanentAddress": true
             }
           ]
