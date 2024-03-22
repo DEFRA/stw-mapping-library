@@ -89,7 +89,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .purpose(chedaPurposeMapper.map(spsCertificate))
         .portOfExit(portOfExitMapper.map(spsCertificate))
         .pointOfEntry(pointOfEntryMapper.map(spsConsignment.getUnloadingBaseportSpsLocation()))
-        .transporter(economicOperator(spsConsignment.getConsignorSpsParty(), PRIVATE_TRANSPORTER))
+        .transporter(economicOperator(spsConsignment.getCarrierSpsParty(), PRIVATE_TRANSPORTER))
         .meansOfTransportFromEntryPoint(meansOfTransportFromEntryPointMapper.map(spsCertificate))
         .arrivalDate(arrivalDateMapper.map(spsCertificate))
         .arrivalTime(arrivalTimeMapper.map(spsCertificate))

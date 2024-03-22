@@ -81,6 +81,18 @@
                   {
                     "value": "Afghanistan"
                   }
+                ],
+                "subordinateSpsCountrySubDivision": [
+                  {
+                    "name": [
+                      {
+                        "value": "AF-123"
+                      }
+                    ],
+                    "hierarchicalLevelCode": {
+                      "value": "0"
+                    }
+                  }
                 ]
               }
             ],
@@ -191,7 +203,7 @@
           "value": "Identification"
         },
         "modeCode": {
-          "value": "4"
+          "value": "3"
         }
       }
     ],
@@ -270,7 +282,7 @@
         },
         "content": [
           {
-            "value": "2023-01-02T15:00:00Z"
+            "value": "2030-01-02T15:00:00Z"
           }
         ]
       },
@@ -281,16 +293,6 @@
         "content": [
           {
             "value": "570"
-          }
-        ]
-      },
-      {
-        "subjectCode": {
-          "value": "INCLUDES_NON_ABLACTED_ANIMALS"
-        },
-        "content": [
-          {
-            "value": "TRUE"
           }
         ]
       },
@@ -429,11 +431,21 @@
           },
           {
             "id": {
-              "value": "GOODS_CERTIFIED_AS"
+              "value": "ANIMALS_CERTIFIED_AS"
             },
             "content": [
               {
                 "value": "APPROVED_BODIES"
+              }
+            ]
+          },
+          {
+            "id": {
+              "value": "INCLUDES_NON_ABLACTED_ANIMALS"
+            },
+            "content": [
+              {
+                "value": "TRUE"
               }
             ]
           }

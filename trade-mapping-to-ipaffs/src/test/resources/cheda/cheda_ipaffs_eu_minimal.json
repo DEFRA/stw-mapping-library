@@ -9,15 +9,15 @@
     },
     "consignee": {
       "id": "00000000-0000-0000-0000-000000000002",
-      "type": "importer"
+      "type": "consignee"
     },
     "importer": {
-      "id": "00000000-0000-0000-0000-000000000003",
+      "id": "00000000-0000-0000-0000-000000000002",
       "type": "importer"
     },
     "placeOfDestination": {
-      "id": "00000000-0000-0000-0000-000000000004",
-      "type": "importer"
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "destination"
     },
     "commodities": {
       "numberOfPackages": 1,
@@ -34,7 +34,7 @@
       ],
       "complementParameterSet": [
         {
-          "uniqueComplementID": "144112a3-f858-4d80-9e50-c8220f913843",
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
           "complementID": 1,
           "keyDataPair": [
             {
@@ -45,7 +45,8 @@
               "key": "number_animal",
               "data": "1"
             }
-          ]
+          ],
+          "identifiers": []
         }
       ],
       "includeNonAblactedAnimals": false,
@@ -58,7 +59,7 @@
     },
     "pointOfEntry": "GBAPHA1A",
     "arrivalDate": "2030-01-01",
-    "arrivalTime": "22:00:00",
+    "arrivalTime": "09:30:00",
     "transporter": {
       "id": "00000000-0000-0000-0000-000000000004",
       "type": "private transporter"

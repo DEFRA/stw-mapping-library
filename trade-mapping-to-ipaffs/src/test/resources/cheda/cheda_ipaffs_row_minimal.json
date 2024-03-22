@@ -9,7 +9,7 @@
     },
     "consignee": {
       "id": "00000000-0000-0000-0000-000000000002",
-      "type": "importer"
+      "type": "consignee"
     },
     "importer": {
       "id": "00000000-0000-0000-0000-000000000002",
@@ -17,7 +17,7 @@
     },
     "placeOfDestination": {
       "id": "00000000-0000-0000-0000-000000000003",
-      "type": "importer"
+      "type": "destination"
     },
     "commodities": {
       "numberOfPackages": 1,
@@ -45,7 +45,8 @@
               "key": "number_animal",
               "data": "1"
             }
-          ]
+          ],
+          "identifiers": []
         }
       ],
       "includeNonAblactedAnimals": false,

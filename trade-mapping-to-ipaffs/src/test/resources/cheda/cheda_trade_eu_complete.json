@@ -209,11 +209,23 @@
             "originSpsCountry": [
               {
                 "id": {
-                  "value": "AF"
+                  "value": "DE"
                 },
                 "name": [
                   {
-                    "value": "Afghanistan"
+                    "value": "Germany"
+                  }
+                ],
+                "subordinateSpsCountrySubDivision": [
+                  {
+                    "name": [
+                      {
+                        "value": "DE-123"
+                      }
+                    ],
+                    "hierarchicalLevelCode": {
+                      "value": "0"
+                    }
                   }
                 ]
               }
@@ -755,7 +767,7 @@
             "physicalSpsPackage": [
               {
                 "itemQuantity": {
-                  "value": 2
+                  "value": 1
                 },
                 "levelCode": {
                   "value": "4"
@@ -795,18 +807,18 @@
           "value": "Identification"
         },
         "modeCode": {
-          "value": "4"
+          "value": "3"
         }
       }
     ],
     "unloadingBaseportSpsLocation": {
       "id": {
-        "schemeID": "un_locode",
-        "value": "GBLGW4"
+        "schemeID": "IPAFFS_POE",
+        "value": "GBLGW"
       },
       "name": [
         {
-          "value": ""
+          "value": "GATWICK"
         }
       ]
     },
@@ -874,7 +886,7 @@
         },
         "content": [
           {
-            "value": "2023-01-02T15:00:00Z"
+            "value": "2030-01-02T15:00:00Z"
           }
         ]
       },
@@ -885,16 +897,6 @@
         "content": [
           {
             "value": "570"
-          }
-        ]
-      },
-      {
-        "subjectCode": {
-          "value": "INCLUDES_NON_ABLACTED_ANIMALS"
-        },
-        "content": [
-          {
-            "value": "TRUE"
           }
         ]
       }
@@ -1008,6 +1010,26 @@
             "content": [
               {
                 "value": "COMMERCIAL_SALE_OR_CHANGE_OF_OWNERSHIP"
+              }
+            ]
+          },
+          {
+            "id": {
+              "value": "INCLUDES_NON_ABLACTED_ANIMALS"
+            },
+            "content": [
+              {
+                "value": "FALSE"
+              }
+            ]
+          },
+          {
+            "id": {
+              "value": "ANIMALS_CERTIFIED_AS"
+            },
+            "content": [
+              {
+                "value": "APPROVED_BODIES"
               }
             ]
           }

@@ -9,15 +9,15 @@
     },
     "consignee": {
       "id": "00000000-0000-0000-0000-000000000002",
-      "type": "importer"
+      "type": "consignee"
     },
     "importer": {
-      "id": "00000000-0000-0000-0000-000000000003",
+      "id": "00000000-0000-0000-0000-000000000002",
       "type": "importer"
     },
     "placeOfDestination": {
-      "id": "00000000-0000-0000-0000-000000000004",
-      "type": "importer"
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "destination"
     },
     "commodities": {
       "numberOfPackages": 4,
@@ -60,7 +60,7 @@
       ],
       "complementParameterSet": [
         {
-          "uniqueComplementID": "7a4480eb-15d6-4616-907b-08b922070d9a",
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
           "complementID": 1,
           "keyDataPair": [
             {
@@ -96,7 +96,7 @@
           ]
         },
         {
-          "uniqueComplementID": "4ba48dbe-f45d-4aec-ad29-acf9ada39baf",
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
           "complementID": 2,
           "keyDataPair": [
             {
@@ -136,7 +136,7 @@
           ]
         },
         {
-          "uniqueComplementID": "b8771888-c61d-4c61-a3eb-ecc94f7e02b9",
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
           "complementID": 3,
           "keyDataPair": [
             {
@@ -172,7 +172,7 @@
           ]
         },
         {
-          "uniqueComplementID": "aaac6b76-6dac-40f6-9c55-fba15687ee3c",
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
           "complementID": 4,
           "keyDataPair": [
             {
@@ -209,7 +209,7 @@
     },
     "pointOfEntry": "GBAPHA1A",
     "arrivalDate": "2030-01-01",
-    "arrivalTime": "22:00:00",
+    "arrivalTime": "09:30:00",
     "transporter": {
       "id": "00000000-0000-0000-0000-000000000004",
       "type": "private transporter"
