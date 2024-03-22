@@ -325,6 +325,16 @@
             "value": "Identification 2"
           }
         ]
+      },
+      {
+        "subjectCode": {
+          "value": "INCLUDES_NON_ABLACTED_ANIMALS"
+        },
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ]
       }
     ],
     "id": {
@@ -436,16 +446,6 @@
             "content": [
               {
                 "value": "APPROVED_BODIES"
-              }
-            ]
-          },
-          {
-            "id": {
-              "value": "INCLUDES_NON_ABLACTED_ANIMALS"
-            },
-            "content": [
-              {
-                "value": "TRUE"
               }
             ]
           }

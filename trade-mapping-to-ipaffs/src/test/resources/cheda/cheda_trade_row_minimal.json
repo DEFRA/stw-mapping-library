@@ -190,6 +190,16 @@
             "value": "570"
           }
         ]
+      },
+      {
+        "subjectCode": {
+          "value": "INCLUDES_NON_ABLACTED_ANIMALS"
+        },
+        "content": [
+          {
+            "value": "FALSE"
+          }
+        ]
       }
     ],
     "id": {
@@ -230,16 +240,6 @@
             "content": [
               {
                 "value": "APPROVED_BODIES"
-              }
-            ]
-          },
-          {
-            "id": {
-              "value": "INCLUDES_NON_ABLACTED_ANIMALS"
-            },
-            "content": [
-              {
-                "value": "FALSE"
               }
             ]
           }

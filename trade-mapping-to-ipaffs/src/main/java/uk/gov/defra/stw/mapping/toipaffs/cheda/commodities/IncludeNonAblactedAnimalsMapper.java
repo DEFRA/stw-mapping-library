@@ -1,9 +1,9 @@
 package uk.gov.defra.stw.mapping.toipaffs.cheda.commodities;
 
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.getNoteContentBySubjectCode;
+
 import org.springframework.stereotype.Component;
-import uk.gov.defra.stw.mapping.dto.IncludedSpsClause;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
 
 @Component
@@ -11,16 +11,7 @@ public class IncludeNonAblactedAnimalsMapper implements Mapper<SpsCertificate, B
 
   @Override
   public Boolean map(SpsCertificate spsCertificate) {
-    return spsCertificate.getSpsExchangedDocument()
-        .getSignatorySpsAuthentication()
-        .get(0)
-        .getIncludedSpsClause()
-        .stream()
-        .filter(clause -> clause.getId().getValue().equals("INCLUDES_NON_ABLACTED_ANIMALS"))
-        .findAny()
-        .map(IncludedSpsClause::getContent)
-        .map(contents -> contents.get(0))
-        .map(TextType::getValue)
+    return getNoteContentBySubjectCode(spsCertificate, "INCLUDES_NON_ABLACTED_ANIMALS")
         .map(Boolean::parseBoolean)
         .orElse(null);
   }
