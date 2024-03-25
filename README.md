@@ -5,7 +5,13 @@ IPAFFS Notification JSON.
 
 ## Setup
 
-Run `mvn install` to configure Git hooks.
+Run `mvn install` to configure Git hooks. The linter runs on pre-commit and the secret scanner runs
+on pre-push.
+
+### Secret scanning
+
+[TruffleHog](https://github.com/trufflesecurity/trufflehog) is used for secret scanning. It can be
+installed using brew: `brew install trufflehog`.
 
 ## Running tests
 
