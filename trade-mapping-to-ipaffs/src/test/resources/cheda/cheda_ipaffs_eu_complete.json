@@ -1,7 +1,6 @@
 {
   "type": "CVEDA",
   "status": "SUBMITTED",
-  "isHighRiskEuImport": true,
   "partOne": {
     "consignor": {
       "id": "00000000-0000-0000-0000-000000000001",
@@ -247,13 +246,6 @@
         }
       ]
     },
-    "route": {
-      "transitingStates": [
-        "AF",
-        "AX",
-        "AL"
-      ]
-    },
     "sealsContainers": [
       {
         "sealNumber": "S12345",
@@ -267,7 +259,6 @@
       }
     ],
     "submissionDate": "2024-01-02T03:04:05Z",
-    "complexCommoditySelected": true,
     "portOfEntry": "GBLGW",
     "isGVMSRoute": true
   }
