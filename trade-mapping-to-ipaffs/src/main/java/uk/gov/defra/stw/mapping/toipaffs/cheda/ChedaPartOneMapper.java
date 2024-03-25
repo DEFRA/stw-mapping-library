@@ -20,8 +20,8 @@ import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
-import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.SubmissionDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperator;
 import uk.gov.defra.tracesx.notificationschema.representation.PartOne;
@@ -46,6 +46,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final ChedaVeterinaryInformationMapper chedaVeterinaryInformationMapper;
   private final SealsContainersMapper sealsContainersMapper;
   private final IsGvmsRouteMapper isGvmsRouteMapper;
+  private final SubmissionDateMapper submissionDateMapper;
 
   @Autowired
   public ChedaPartOneMapper(
@@ -64,7 +65,8 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       EstimatedJourneyTimeMapper estimatedJourneyTimeMapper,
       ChedaVeterinaryInformationMapper chedaVeterinaryInformationMapper,
       SealsContainersMapper sealsContainersMapper,
-      IsGvmsRouteMapper isGvmsRouteMapper) {
+      IsGvmsRouteMapper isGvmsRouteMapper,
+      SubmissionDateMapper submissionDateMapper) {
     this.economicOperatorMapper = economicOperatorMapper;
     this.chedaCommoditiesMapper = chedaCommoditiesMapper;
     this.chedaPurposeMapper = chedaPurposeMapper;
@@ -81,6 +83,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.chedaVeterinaryInformationMapper = chedaVeterinaryInformationMapper;
     this.sealsContainersMapper = sealsContainersMapper;
     this.isGvmsRouteMapper = isGvmsRouteMapper;
+    this.submissionDateMapper = submissionDateMapper;
   }
 
   @Override
@@ -108,6 +111,7 @@ public class ChedaPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .sealsContainers(
             sealsContainersMapper.map(spsConsignment.getUtilizedSpsTransportEquipment()))
         .isGVMSRoute(isGvmsRouteMapper.map(spsCertificate))
+        .submissionDate(submissionDateMapper.map(spsCertificate))
         .build();
   }
 

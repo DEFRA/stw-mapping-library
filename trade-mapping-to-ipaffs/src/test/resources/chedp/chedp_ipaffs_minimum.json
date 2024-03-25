@@ -96,9 +96,10 @@
       "accompanyingDocuments" : [ {
         "documentType" : "veterinaryHealthCertificate",
         "documentReference" : "NZL2020/PPCS2/121580",
-        "documentIssueDate" : "2020-10-11"
+        "documentIssueDate" : "2024-01-02"
       } ],
       "establishmentsOfOrigin": []
-    }
+    },
+    "submissionDate": "2024-01-02T03:04:05Z"
   }
 }

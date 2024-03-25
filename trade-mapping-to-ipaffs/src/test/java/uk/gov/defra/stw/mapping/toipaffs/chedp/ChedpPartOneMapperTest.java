@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,6 +28,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMa
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.SubmissionDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.VeterinaryInformationMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
@@ -77,6 +79,8 @@ class ChedpPartOneMapperTest {
   private DepartureDateMapper departureDateMapper;
   @Mock
   private DepartureTimeMapper departureTimeMapper;
+  @Mock
+  private SubmissionDateMapper submissionDateMapper;
 
   @InjectMocks
   private ChedpPartOneMapper chedpPartOneMapper;
@@ -149,6 +153,8 @@ class ChedpPartOneMapperTest {
     when(arrivalTimeMapper.map(spsCertificate)).thenReturn(LocalTime.parse("22:30:00"));
     when(departureDateMapper.map(spsCertificate)).thenReturn(LocalDate.parse("2020-06-15"));
     when(departureTimeMapper.map(spsCertificate)).thenReturn(LocalTime.parse("22:30:00"));
+    when(submissionDateMapper.map(spsCertificate))
+        .thenReturn(LocalDateTime.of(2024, 1, 2, 3, 4, 5));
   }
 
   @Test
