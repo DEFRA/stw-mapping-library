@@ -15,7 +15,6 @@ import uk.gov.defra.stw.mapping.toipaffs.common.utils.VeterinaryInformationField
 import uk.gov.defra.tracesx.notificationschema.representation.AccompanyingDocument;
 import uk.gov.defra.tracesx.notificationschema.representation.NotificationIdentificationDetails;
 import uk.gov.defra.tracesx.notificationschema.representation.VeterinaryInformation;
-import uk.gov.defra.tracesx.notificationschema.representation.enumeration.DocumentType;
 
 @Component
 public class ChedaVeterinaryInformationMapper implements

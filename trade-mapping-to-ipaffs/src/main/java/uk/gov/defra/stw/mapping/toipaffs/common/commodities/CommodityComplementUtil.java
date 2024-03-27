@@ -97,31 +97,26 @@ public class CommodityComplementUtil {
         .orElse(StringUtils.EMPTY);
   }
 
-  private boolean hasSystemNameCnCode(
-      ApplicableSpsClassification applicableSpsClassification) {
+  private boolean hasSystemName(ApplicableSpsClassification applicableSpsClassification,
+      String systemName) {
     return applicableSpsClassification.getSystemName().stream()
         .filter(Objects::nonNull)
-        .anyMatch(systemName -> COMBINED_NOMENCLATURE.equals(systemName.getValue()));
+        .anyMatch(actualSystemName -> Objects.equals(systemName, actualSystemName.getValue()));
   }
 
-  private boolean hasSystemNameIpaffsCct(
-      final ApplicableSpsClassification applicableSpsClassification) {
-    return applicableSpsClassification.getSystemName().stream()
-        .filter(Objects::nonNull)
-        .anyMatch(systemName -> IPAFFS_CCT.equals(systemName.getValue()));
+  private boolean hasSystemNameCnCode(ApplicableSpsClassification applicableSpsClassification) {
+    return hasSystemName(applicableSpsClassification, COMBINED_NOMENCLATURE);
   }
 
-  private boolean hasSystemNameIpaffsCcc(
-      final ApplicableSpsClassification applicableSpsClassification) {
-    return applicableSpsClassification.getSystemName().stream()
-        .filter(Objects::nonNull)
-        .anyMatch(systemName -> IPAFFS_CCC.equals(systemName.getValue()));
+  private boolean hasSystemNameIpaffsCct(ApplicableSpsClassification applicableSpsClassification) {
+    return hasSystemName(applicableSpsClassification, IPAFFS_CCT);
   }
 
-  private boolean hasSystemNameIpaffsCcf(
-      final ApplicableSpsClassification applicableSpsClassification) {
-    return applicableSpsClassification.getSystemName().stream()
-        .filter(Objects::nonNull)
-        .anyMatch(systemName -> IPAFFS_CCF.equals(systemName.getValue()));
+  private boolean hasSystemNameIpaffsCcc(ApplicableSpsClassification applicableSpsClassification) {
+    return hasSystemName(applicableSpsClassification, IPAFFS_CCC);
+  }
+
+  private boolean hasSystemNameIpaffsCcf(ApplicableSpsClassification applicableSpsClassification) {
+    return hasSystemName(applicableSpsClassification, IPAFFS_CCF);
   }
 }
