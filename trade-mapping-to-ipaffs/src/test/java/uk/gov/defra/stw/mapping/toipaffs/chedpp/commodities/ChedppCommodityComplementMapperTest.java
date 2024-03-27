@@ -12,18 +12,22 @@ import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.ApplicableSpsClassification;
 import uk.gov.defra.stw.mapping.dto.SequenceNumeric;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementUtil;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
 import uk.gov.defra.stw.mapping.toipaffs.testutils.JsonDeserializer;
 import uk.gov.defra.tracesx.notificationschema.representation.CommodityComplement;
 
 class ChedppCommodityComplementMapperTest {
 
+  private final CommodityComplementUtil commodityComplementUtil =
+      new CommodityComplementUtil();
   private ChedppCommodityComplementMapper mapper;
+
   private SpsCertificate spsCertificate;
 
   @BeforeEach
   void setup() throws JsonProcessingException {
-    mapper = new ChedppCommodityComplementMapper();
+    mapper = new ChedppCommodityComplementMapper(commodityComplementUtil);
 
     spsCertificate = JsonDeserializer.get(
         "chedpp/partone/commodities/chedpp_trade_commodity_complement.json", SpsCertificate.class);

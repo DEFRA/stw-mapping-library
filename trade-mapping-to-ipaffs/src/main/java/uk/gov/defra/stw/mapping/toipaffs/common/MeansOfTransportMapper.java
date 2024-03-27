@@ -22,8 +22,7 @@ public class MeansOfTransportMapper implements Mapper<SpsCertificate, MeansOfTra
 
   @Override
   public MeansOfTransportAfterBip map(SpsCertificate spsCertificate) {
-    return spsCertificate
-        .getSpsConsignment().getMainCarriageSpsTransportMovement().stream()
+    return spsCertificate.getSpsConsignment().getMainCarriageSpsTransportMovement().stream()
         .filter(this::isAfterBcpMovement)
         .findAny()
         .map(transportMovement -> MeansOfTransportAfterBip.builder()

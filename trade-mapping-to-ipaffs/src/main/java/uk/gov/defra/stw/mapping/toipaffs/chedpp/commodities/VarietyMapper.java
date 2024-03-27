@@ -1,6 +1,6 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedpp.commodities;
 
-import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.findSpsNoteByType;
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.getNoteContentBySubjectCode;
 import static uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSet.VARIETY;
 
 import org.springframework.stereotype.Component;
@@ -14,8 +14,7 @@ public class VarietyMapper
 
   @Override
   public ComplementParameterSetKeyDataPair map(IncludedSpsTradeLineItem tradeLineItem) {
-    return findSpsNoteByType(tradeLineItem.getAdditionalInformationSpsNote(), VARIETY)
-        .map(spsNoteType -> spsNoteType.getContent().get(0).getValue())
+    return getNoteContentBySubjectCode(tradeLineItem.getAdditionalInformationSpsNote(), VARIETY)
         .map(this::buildKeyDataPair)
         .orElse(null);
   }

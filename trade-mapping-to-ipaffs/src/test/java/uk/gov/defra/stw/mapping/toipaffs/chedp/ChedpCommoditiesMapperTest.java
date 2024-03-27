@@ -15,10 +15,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpCommodityComplementMapper;
 import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParameterSetMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
@@ -36,7 +36,7 @@ import uk.gov.defra.tracesx.notificationschema.representation.enumeration.Commod
 class ChedpCommoditiesMapperTest {
 
   @Mock
-  private ChedpCommodityComplementMapper chedpCommodityComplementMapper;
+  private CommodityComplementMapper commodityComplementMapper;
   @Mock
   private ChedpComplementParameterSetMapper chedpComplementParameterSetMapper;
   @Mock
@@ -79,7 +79,7 @@ class ChedpCommoditiesMapperTest {
 
   @Test
   void map_ReturnsCommodities_WhenComplete() throws NotificationMapperException, JsonProcessingException {
-    when(chedpCommodityComplementMapper.map(spsCertificate)).thenReturn(commodityComplements);
+    when(commodityComplementMapper.map(spsCertificate)).thenReturn(commodityComplements);
     when(chedpComplementParameterSetMapper.map(spsCertificate)).thenReturn(complementParameterSets);
     when(regionOfOriginMapper.map(spsCertificate)).thenReturn(null);
     when(chedpTemperatureMapper.map(spsCertificate)).thenReturn(CommodityTemperature.AMBIENT);
@@ -99,7 +99,7 @@ class ChedpCommoditiesMapperTest {
   @Test
   void map_ThrowsNotificationMapperException_WhenCommodityComplementMapperThrowsException()
       throws NotificationMapperException {
-    when(chedpCommodityComplementMapper.map(spsCertificate)).thenThrow(new CommoditiesMapperException(""));
+    when(commodityComplementMapper.map(spsCertificate)).thenThrow(new CommoditiesMapperException(""));
 
     assertThrows(NotificationMapperException.class, () -> mapper.map(spsCertificate));
   }
