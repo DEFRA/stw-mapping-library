@@ -19,6 +19,7 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParame
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityTemperatureMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
@@ -44,7 +45,7 @@ class ChedpCommoditiesMapperTest {
   @Mock
   private TotalGrossWeightMapper totalGrossWeightMapper;
   @Mock
-  private ChedpTemperatureMapper chedpTemperatureMapper;
+  private CommodityTemperatureMapper commodityTemperatureMapper;
   @Mock
   private CountryOfOriginMapper countryOfOriginMapper;
   @Mock
@@ -82,7 +83,7 @@ class ChedpCommoditiesMapperTest {
     when(commodityComplementMapper.map(spsCertificate)).thenReturn(commodityComplements);
     when(chedpComplementParameterSetMapper.map(spsCertificate)).thenReturn(complementParameterSets);
     when(regionOfOriginMapper.map(spsCertificate)).thenReturn(null);
-    when(chedpTemperatureMapper.map(spsCertificate)).thenReturn(CommodityTemperature.AMBIENT);
+    when(commodityTemperatureMapper.map(spsCertificate)).thenReturn(CommodityTemperature.AMBIENT);
     when(countryOfOriginMapper.map(spsCertificate)).thenReturn("NZ");
     when(totalGrossWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1800.0));
     when(totalNetWeightMapper.map(spsCertificate)).thenReturn(BigDecimal.valueOf(1678.52));

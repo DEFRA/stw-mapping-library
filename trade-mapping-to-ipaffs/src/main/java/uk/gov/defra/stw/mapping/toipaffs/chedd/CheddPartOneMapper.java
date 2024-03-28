@@ -35,6 +35,7 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private DepartureTimeMapper departureTimeMapper;
   private ArrivalDateMapper arrivalDateMapper;
   private ArrivalTimeMapper arrivalTimeMapper;
+  private CheddPurposeMapper cheddPurposeMapper;
 
   public CheddPartOneMapper(
       CheddCommoditiesMapper cheddCommoditiesMapper,
@@ -50,7 +51,8 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       DepartureDateMapper departureDateMapper,
       DepartureTimeMapper departureTimeMapper,
       ArrivalDateMapper arrivalDateMapper,
-      ArrivalTimeMapper arrivalTimeMapper) {
+      ArrivalTimeMapper arrivalTimeMapper,
+      CheddPurposeMapper cheddPurposeMapper) {
     this.cheddCommoditiesMapper = cheddCommoditiesMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
     this.veterinaryInformationMapper = veterinaryInformationMapper;
@@ -64,6 +66,7 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.sealsContainersMapper = sealsContainersMapper;
     this.meansOfTransportMapper = meansOfTransportMapper;
     this.pointOfEntryMapper = pointOfEntryMapper;
+    this.cheddPurposeMapper = cheddPurposeMapper;
   }
 
   @Override
@@ -88,6 +91,7 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .arrivalTime(arrivalTimeMapper.map(spsCertificate))
         .departureDate(departureDateMapper.map(spsCertificate))
         .departureTime(departureTimeMapper.map(spsCertificate))
+        .purpose(cheddPurposeMapper.map(spsCertificate))
         .build();
   }
 }
