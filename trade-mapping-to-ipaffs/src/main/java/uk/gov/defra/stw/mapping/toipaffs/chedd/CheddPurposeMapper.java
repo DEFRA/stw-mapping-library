@@ -1,5 +1,8 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedd;
 
+import static uk.gov.defra.stw.mapping.toipaffs.enumeration.Purpose.TRANSHIPMENT;
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PurposeGroupEnum.TRANSHIPMENT_TO;
+
 import java.util.List;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.SpsAuthenticationType;
@@ -21,12 +24,40 @@ public class CheddPurposeMapper implements Mapper<SpsCertificate, Purpose> {
   public Purpose map(SpsCertificate spsCertificate) throws NotificationMapperException {
     List<SpsAuthenticationType> spsAuthenticationTypeList = spsCertificate.getSpsExchangedDocument()
         .getSignatorySpsAuthentication();
-    for (SpsAuthenticationType spsAuthenticationType : spsAuthenticationTypeList) {
-      Purpose purpose = purposeMapper.map(spsAuthenticationType);
-      if (purpose != null) {
-        return purpose;
+
+    String purposeString = spsCertificate.getSpsExchangedDocument().getSignatorySpsAuthentication()
+        .stream()
+        .flatMap(spsAuthentication -> spsAuthentication.getIncludedSpsClause().stream())
+        .filter(clause -> "PURPOSE".equals(clause.getId().getValue()))
+        .findAny()
+        .map(clause -> clause.getContent().get(0).getValue())
+        .orElse(null);
+    if (TRANSHIPMENT.toString().equals(purposeString)) {
+      return Purpose.builder()
+          .purposeGroup(TRANSHIPMENT_TO)
+          .finalBIP(retrieveFinalBip(spsCertificate))
+          .build();
+    } else {
+      for (SpsAuthenticationType spsAuthenticationType : spsAuthenticationTypeList) {
+        Purpose purpose = purposeMapper.map(spsAuthenticationType);
+        if (purpose != null) {
+          return purpose;
+        }
       }
+      throw new NotificationMapperException("Unable to map to the Purpose");
     }
-    throw new NotificationMapperException("Unable to map to the Purpose");
+  }
+
+  private String retrieveFinalBip(SpsCertificate spsCertificate) {
+    return spsCertificate
+        .getSpsConsignment()
+        .getTransitSpsCountry()
+        .get(0)
+        .getSubordinateSpsCountrySubDivision()
+        .get(0)
+        .getActivityAuthorizedSpsParty()
+        .get(0)
+        .getId()
+        .getValue();
   }
 }

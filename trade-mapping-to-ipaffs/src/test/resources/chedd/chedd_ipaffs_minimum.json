@@ -1,0 +1,77 @@
+{
+  "id" : 0,
+  "version" : 0,
+  "type" : "CED",
+  "status" : "SUBMITTED",
+  "partOne" : {
+    "commodities" : {
+      "totalGrossWeight" : 1678.52,
+      "totalNetWeight" : 1678.52,
+      "temperature" : "Ambient",
+      "commodityComplement" : [ {
+        "commodityID" : "07099990",
+        "commodityDescription" : "Other",
+        "complementID" : 1,
+        "complementName" : "Aegle",
+        "speciesName" : "Aegle",
+        "speciesNomination" : "Aegle"
+      }, {
+        "commodityID" : "07099991",
+        "commodityDescription" : "Other",
+        "complementID" : 2,
+        "complementName" : "Aegle",
+        "speciesName" : "Aegle",
+        "speciesNomination" : "Aegle"
+      } ],
+      "complementParameterSet" : [ {
+        "uniqueComplementID" : "12345678-0000-0000-0000-000000000000",
+        "complementID" : 1,
+        "keyDataPair" : [ {
+          "key" : "netweight",
+          "data" : "939.26"
+        }, {
+          "key" : "number_package",
+          "data" : "2"
+        }, {
+          "key" : "type_package",
+          "data" : "Bag"
+        } ]
+      }, {
+        "uniqueComplementID" : "12345678-0000-0000-0000-000000000000",
+        "complementID" : 2,
+        "keyDataPair" : [ {
+          "key" : "netweight",
+          "data" : "739.26"
+        }, {
+          "key" : "number_package",
+          "data" : "3"
+        }, {
+          "key" : "type_package",
+          "data" : "Package"
+        } ]
+      } ],
+      "consignedCountry" : "NZ",
+      "commodityIntendedFor" : "human"
+    },
+    "pointOfEntry" : "GBLHR1P",
+    "arrivalDate" : "2020-01-01",
+    "arrivalTime" : "22:30:00",
+    "transporterDetailsRequired" : false,
+    "meansOfTransportFromEntryPoint" : {
+      "id" : "035N",
+      "type" : "Ship",
+      "document" : "TESTDOCUMENT"
+    },
+    "purpose": {
+      "finalBIP": "BEBRU",
+      "purposeGroup": "For Transhipment to"
+    },
+    "veterinaryInformation" : {
+      "accompanyingDocuments" : [ {
+        "documentType" : "veterinaryHealthCertificate",
+        "documentReference" : "NZL2020/PPCS2/121580",
+        "documentIssueDate" : "2024-01-02"
+      } ]
+    }
+  }
+}

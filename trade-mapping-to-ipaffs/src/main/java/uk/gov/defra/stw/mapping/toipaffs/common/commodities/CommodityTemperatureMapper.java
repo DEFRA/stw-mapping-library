@@ -1,4 +1,4 @@
-package uk.gov.defra.stw.mapping.toipaffs.chedp;
+package uk.gov.defra.stw.mapping.toipaffs.common.commodities;
 
 import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.findNoteBySubjectCode;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature.AMBIENT;
@@ -15,7 +15,7 @@ import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature;
 
 @Component
-public class ChedpTemperatureMapper implements Mapper<SpsCertificate, CommodityTemperature> {
+public class CommodityTemperatureMapper implements Mapper<SpsCertificate, CommodityTemperature> {
 
   private static final Map<String, CommodityTemperature> temperatureMap = Map.of(
       "AMBIENT", AMBIENT,
