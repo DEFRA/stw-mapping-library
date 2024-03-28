@@ -16,6 +16,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMa
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.SubmissionDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.VeterinaryInformationMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
@@ -23,19 +24,20 @@ import uk.gov.defra.tracesx.notificationschema.representation.PartOne;
 
 @Component
 public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
-  private CheddCommoditiesMapper cheddCommoditiesMapper;
-  private PointOfEntryMapper pointOfEntryMapper;
-  private VeterinaryInformationMapper veterinaryInformationMapper;
-  private SealsContainersMapper sealsContainersMapper;
-  private EconomicOperatorMapper economicOperatorMapper;
-  private TransportToBcpQuestionMapper transportToBcpQuestionMapper;
-  private MeansOfTransportMapper meansOfTransportMapper;
-  private MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper;
-  private DepartureDateMapper departureDateMapper;
-  private DepartureTimeMapper departureTimeMapper;
-  private ArrivalDateMapper arrivalDateMapper;
-  private ArrivalTimeMapper arrivalTimeMapper;
-  private CheddPurposeMapper cheddPurposeMapper;
+  private final CheddCommoditiesMapper cheddCommoditiesMapper;
+  private final PointOfEntryMapper pointOfEntryMapper;
+  private final VeterinaryInformationMapper veterinaryInformationMapper;
+  private final SealsContainersMapper sealsContainersMapper;
+  private final EconomicOperatorMapper economicOperatorMapper;
+  private final TransportToBcpQuestionMapper transportToBcpQuestionMapper;
+  private final MeansOfTransportMapper meansOfTransportMapper;
+  private final MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper;
+  private final DepartureDateMapper departureDateMapper;
+  private final DepartureTimeMapper departureTimeMapper;
+  private final ArrivalDateMapper arrivalDateMapper;
+  private final ArrivalTimeMapper arrivalTimeMapper;
+  private final CheddPurposeMapper cheddPurposeMapper;
+  private final SubmissionDateMapper submissionDateMapper;
 
   public CheddPartOneMapper(
       CheddCommoditiesMapper cheddCommoditiesMapper,
@@ -52,13 +54,13 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       DepartureTimeMapper departureTimeMapper,
       ArrivalDateMapper arrivalDateMapper,
       ArrivalTimeMapper arrivalTimeMapper,
-      CheddPurposeMapper cheddPurposeMapper) {
+      CheddPurposeMapper cheddPurposeMapper,
+      SubmissionDateMapper submissionDateMapper) {
     this.cheddCommoditiesMapper = cheddCommoditiesMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
     this.veterinaryInformationMapper = veterinaryInformationMapper;
     this.economicOperatorMapper = economicOperatorMapper;
     this.transportToBcpQuestionMapper = transportToBcpQuestionMapper;
-    this.meansOfTransportMapper = meansOfTransportMapper;
     this.departureDateMapper = departureDateMapper;
     this.departureTimeMapper = departureTimeMapper;
     this.arrivalDateMapper = arrivalDateMapper;
@@ -67,6 +69,7 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.meansOfTransportMapper = meansOfTransportMapper;
     this.pointOfEntryMapper = pointOfEntryMapper;
     this.cheddPurposeMapper = cheddPurposeMapper;
+    this.submissionDateMapper = submissionDateMapper;
   }
 
   @Override
@@ -91,6 +94,7 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .arrivalTime(arrivalTimeMapper.map(spsCertificate))
         .departureDate(departureDateMapper.map(spsCertificate))
         .departureTime(departureTimeMapper.map(spsCertificate))
+        .submissionDate(submissionDateMapper.map(spsCertificate))
         .purpose(cheddPurposeMapper.map(spsCertificate))
         .build();
   }

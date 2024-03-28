@@ -51,11 +51,13 @@
         } ]
       } ],
       "consignedCountry" : "NZ",
-      "commodityIntendedFor" : "human"
+      "commodityIntendedFor" : "human",
+      "countryOfOrigin" : "NZ"
     },
     "pointOfEntry" : "GBLHR1P",
     "arrivalDate" : "2020-01-01",
     "arrivalTime" : "22:30:00",
+    "submissionDate" : "2024-01-02T03:04:05Z",
     "transporterDetailsRequired" : false,
     "meansOfTransportFromEntryPoint" : {
       "id" : "035N",
