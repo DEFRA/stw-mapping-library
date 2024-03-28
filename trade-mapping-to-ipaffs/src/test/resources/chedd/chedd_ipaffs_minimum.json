@@ -4,10 +4,27 @@
   "type" : "CED",
   "status" : "SUBMITTED",
   "partOne" : {
+    "consignor" : {
+      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "type" : "exporter"
+    },
+    "consignee" : {
+      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "type" : "consignee"
+    },
+    "importer" : {
+      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "type" : "importer"
+    },
+    "placeOfDestination" : {
+      "id" : "6fcfe3ec-a316-43db-a516-ce34566e96ad",
+      "type" : "destination"
+    },
     "commodities" : {
       "totalGrossWeight" : 1678.52,
       "totalNetWeight" : 1678.52,
       "temperature" : "Ambient",
+      
       "commodityComplement" : [ {
         "commodityID" : "07099990",
         "commodityDescription" : "Other",

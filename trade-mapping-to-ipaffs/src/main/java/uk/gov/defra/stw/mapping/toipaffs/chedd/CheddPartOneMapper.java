@@ -1,5 +1,9 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedd;
 
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.CONSIGNEE;
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.DESTINATION;
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.EXPORTER;
+import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.IMPORTER;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.PRIVATE_TRANSPORTER;
 
 import org.springframework.stereotype.Component;
@@ -81,6 +85,18 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .transporter(economicOperatorMapper.setEconomicOperatorType(
             economicOperatorMapper.map(spsCertificate.getSpsConsignment().getCarrierSpsParty()),
             PRIVATE_TRANSPORTER))
+        .importer(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsCertificate.getSpsConsignment().getConsigneeSpsParty()),
+            IMPORTER))
+        .placeOfDestination(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsCertificate.getSpsConsignment().getDeliverySpsParty()),
+            DESTINATION))
+        .consignor(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsCertificate.getSpsConsignment().getConsignorSpsParty()),
+            EXPORTER))
+        .consignee(economicOperatorMapper.setEconomicOperatorType(
+            economicOperatorMapper.map(spsCertificate.getSpsConsignment().getConsigneeSpsParty()),
+            CONSIGNEE))
         .transporterDetailsRequired(
             transportToBcpQuestionMapper.map(spsCertificate.getSpsConsignment()))
         .veterinaryInformation(

@@ -13,14 +13,6 @@
         "value": "COOPERATIVECa30 Ltd"
       }
     },
-    "issuerSpsParty": {
-      "id": {
-        "value": "79f6dc68-2144-e911-a96a-000d3a29ba60"
-      },
-      "name": {
-        "value": "TESTUSER"
-      }
-    },
     "consignorSpsParty": {
       "id": {
         "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
