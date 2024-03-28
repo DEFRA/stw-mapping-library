@@ -11,7 +11,7 @@ import uk.gov.defra.tracesx.notificationschema.representation.Notification;
 
 @Component
 public class CheddNotificationMapper implements Mapper<SpsCertificate, Notification> {
-  private CheddPartOneMapper cheddPartOneMapper;
+  private final CheddPartOneMapper cheddPartOneMapper;
 
   public CheddNotificationMapper(CheddPartOneMapper cheddPartOneMapper) {
     this.cheddPartOneMapper = cheddPartOneMapper;

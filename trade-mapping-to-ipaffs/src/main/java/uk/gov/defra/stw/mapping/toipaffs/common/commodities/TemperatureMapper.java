@@ -15,7 +15,7 @@ import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature;
 
 @Component
-public class CommodityTemperatureMapper implements Mapper<SpsCertificate, CommodityTemperature> {
+public class TemperatureMapper implements Mapper<SpsCertificate, CommodityTemperature> {
 
   private static final Map<String, CommodityTemperature> temperatureMap = Map.of(
       "AMBIENT", AMBIENT,

@@ -8,8 +8,8 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParame
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementMapper;
-import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityTemperatureMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TemperatureMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
@@ -23,7 +23,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
   private final ChedpComplementParameterSetMapper chedpComplementParameterSetMapper;
   private final RegionOfOriginMapper regionOfOriginMapper;
   private final TotalGrossWeightMapper totalGrossWeightMapper;
-  private final CommodityTemperatureMapper commodityTemperatureMapper;
+  private final TemperatureMapper commodityTemperatureMapper;
   private final CountryOfOriginMapper countryOfOriginMapper;
   private final TotalNetWeightMapper totalNetWeightMapper;
   private final NumberOfPackagesMapper numberOfPackagesMapper;
@@ -34,7 +34,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
       ChedpComplementParameterSetMapper chedpComplementParameterSetMapper,
       RegionOfOriginMapper regionOfOriginMapper,
       TotalGrossWeightMapper totalGrossWeightMapper,
-      CommodityTemperatureMapper commodityTemperatureMapper,
+      TemperatureMapper commodityTemperatureMapper,
       CountryOfOriginMapper countryOfOriginMapper,
       TotalNetWeightMapper totalNetWeightMapper,
       NumberOfPackagesMapper numberOfPackagesMapper) {

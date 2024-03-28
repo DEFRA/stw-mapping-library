@@ -19,7 +19,7 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.commodities.ChedpComplementParame
 import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementMapper;
-import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityTemperatureMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TemperatureMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
@@ -45,7 +45,7 @@ class ChedpCommoditiesMapperTest {
   @Mock
   private TotalGrossWeightMapper totalGrossWeightMapper;
   @Mock
-  private CommodityTemperatureMapper commodityTemperatureMapper;
+  private TemperatureMapper commodityTemperatureMapper;
   @Mock
   private CountryOfOriginMapper countryOfOriginMapper;
   @Mock
