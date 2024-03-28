@@ -67,7 +67,7 @@ class ChedppComplementParameterSetMapperTest {
   private ChedppComplementParameterSetMapper mapper;
 
   @BeforeEach
-  void setup() throws JsonProcessingException {
+  void setup() {
     includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
         .withSequenceNumeric(new SequenceNumeric().withValue(1));
     spsCertificate = new SpsCertificate()

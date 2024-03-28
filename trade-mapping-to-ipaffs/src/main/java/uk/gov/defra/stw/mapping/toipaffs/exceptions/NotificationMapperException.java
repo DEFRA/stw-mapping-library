@@ -9,4 +9,8 @@ public class NotificationMapperException extends Exception {
   public NotificationMapperException(Throwable cause) {
     super(cause);
   }
+
+  public NotificationMapperException(String message, Throwable cause) {
+    super(message, cause);
+  }
 }

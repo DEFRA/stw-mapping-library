@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+RED='\033[0;31m'
+NO_COLOUR='\033[0m'
+LOG_PREFIX="Pre-push hook:"
+FAILED_MESSAGE="${LOG_PREFIX} ${RED}[FAILED]${NO_COLOUR}"
+
+trufflehog --help > /dev/null 2>&1 || { echo -e "${FAILED_MESSAGE} TruffleHog is not installed, install via https://github.com/trufflesecurity/trufflehog" ; exit 1; }
+
+echo "${LOG_PREFIX} Running TruffleHog to test for leaked secrets"
+trufflehog git --fail --since_commit main --branch HEAD file://.
+exit_code=$?
+
+if [[ $exit_code -ne 0 ]]; then
+  echo -e "${FAILED_MESSAGE} TruffleHog found some suspicious commits containing possible secrets"
+  echo -e "${FAILED_MESSAGE} git push failed, remove the secrets caught by TruffleHog"
+  exit 1
+else
+  echo "${LOG_PREFIX} OK proceeding with push"
+  exit 0
+fi

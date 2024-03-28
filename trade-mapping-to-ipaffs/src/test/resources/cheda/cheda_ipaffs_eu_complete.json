@@ -1,0 +1,265 @@
+{
+  "type": "CVEDA",
+  "status": "SUBMITTED",
+  "partOne": {
+    "consignor": {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "type": "exporter"
+    },
+    "consignee": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "consignee"
+    },
+    "importer": {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "type": "importer"
+    },
+    "placeOfDestination": {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "type": "destination"
+    },
+    "commodities": {
+      "numberOfPackages": 4,
+      "numberOfAnimals": 6,
+      "commodityComplement": [
+        {
+          "commodityID": "01061900",
+          "commodityDescription": "Other",
+          "complementID": 1,
+          "complementName": "Canis familiaris",
+          "speciesName": "Canis familiaris",
+          "speciesClassName": "Carnivora",
+          "speciesNomination": "Canis familiaris"
+        },
+        {
+          "commodityID": "01061900",
+          "commodityDescription": "Other",
+          "complementID": 2,
+          "complementName": "Felis catus",
+          "speciesName": "Felis catus",
+          "speciesClassName": "Carnivora",
+          "speciesNomination": "Felis catus"
+        },
+        {
+          "commodityID": "0101",
+          "commodityDescription": "Live horses, asses, mules and hinnies",
+          "complementID": 3,
+          "complementName": "Equus asinus",
+          "speciesName": "Equus asinus",
+          "speciesNomination": "Equus asinus"
+        },
+        {
+          "commodityID": "0101",
+          "commodityDescription": "Live horses, asses, mules and hinnies",
+          "complementID": 4,
+          "complementName": "Equus caballus",
+          "speciesName": "Equus caballus",
+          "speciesNomination": "Equus caballus"
+        }
+      ],
+      "complementParameterSet": [
+        {
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
+          "complementID": 1,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "number_animal",
+              "data": "2"
+            }
+          ],
+          "identifiers": [
+            {
+              "speciesNumber": 1,
+              "data": {
+                "microchip": "Microchip-1",
+                "passport": "Passport-1",
+                "tattoo": "Tattoo-1"
+              },
+              "isPlaceOfDestinationThePermanentAddress": true
+            },
+            {
+              "speciesNumber": 2,
+              "data": {
+                "microchip": "Microchip-2",
+                "passport": "Passport-2",
+                "tattoo": "Tattoo-2"
+              },
+              "isPlaceOfDestinationThePermanentAddress": true
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
+          "complementID": 2,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "number_animal",
+              "data": "1"
+            }
+          ],
+          "identifiers": [
+            {
+              "speciesNumber": 1,
+              "data": {
+                "microchip": "Microchip-3",
+                "passport": "Passport-3",
+                "tattoo": "Tattoo-3"
+              },
+              "permanentAddress": {
+                "id": "12345678-0000-0000-0000-000000000000",
+                "type": "consignee",
+                "status": "nonapproved",
+                "companyName": "Different address",
+                "individualName": "Felis catus 1",
+                "address": {
+                  "addressLine1": "Line 1",
+                  "addressLine2": "Line 2",
+                  "city": "Town",
+                  "postalZipCode": "Postcode",
+                  "telephone": "0123456789",
+                  "email": "joe@example.com"
+                }
+              },
+              "isPlaceOfDestinationThePermanentAddress": false
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
+          "complementID": 3,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "number_animal",
+              "data": "2"
+            }
+          ],
+          "identifiers": [
+            {
+              "speciesNumber": 1,
+              "data": {
+                "microchip": "Microchip-4",
+                "passport": "Passport-4",
+                "tattoo": "Tattoo-4"
+              },
+              "isPlaceOfDestinationThePermanentAddress": true
+            },
+            {
+              "speciesNumber": 2,
+              "data": {
+                "microchip": "Microchip-5",
+                "passport": "Passport-5",
+                "tattoo": "Tattoo-5"
+              },
+              "isPlaceOfDestinationThePermanentAddress": true
+            }
+          ]
+        },
+        {
+          "uniqueComplementID": "12345678-0000-0000-0000-000000000000",
+          "complementID": 4,
+          "keyDataPair": [
+            {
+              "key": "number_package",
+              "data": "1"
+            },
+            {
+              "key": "number_animal",
+              "data": "1"
+            }
+          ],
+          "identifiers": [
+            {
+              "speciesNumber": 1,
+              "data": {
+                "microchip": "Microchip-6",
+                "passport": "Passport-6",
+                "tattoo": "Tattoo-6"
+              },
+              "isPlaceOfDestinationThePermanentAddress": true
+            }
+          ]
+        }
+      ],
+      "includeNonAblactedAnimals": false,
+      "countryOfOrigin": "DE",
+      "regionOfOrigin": "DE-123",
+      "animalsCertifiedAs": "Approved"
+    },
+    "purpose": {
+      "internalMarketPurpose": "Commercial sale or change of ownership",
+      "purposeGroup": "For Import"
+    },
+    "pointOfEntry": "GBAPHA1A",
+    "arrivalDate": "2030-01-01",
+    "arrivalTime": "09:30:00",
+    "transporter": {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "type": "private transporter"
+    },
+    "meansOfTransport": {
+      "id": "Identification",
+      "type": "Road Vehicle",
+      "document": "Document"
+    },
+    "meansOfTransportFromEntryPoint": {
+      "id": "Identification",
+      "type": "Aeroplane",
+      "document": "Document"
+    },
+    "departureDate": "2030-01-02",
+    "departureTime": "15:00:00",
+    "estimatedJourneyTimeInMinutes": 570,
+    "veterinaryInformation": {
+      "accompanyingDocuments": [
+        {
+          "documentType": "latestVeterinaryHealthCertificate",
+          "documentReference": "Latest veterinary certificate reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "document.pdf",
+          "attachmentContentType": "application/pdf"
+        },
+        {
+          "documentType": "airWaybill",
+          "documentReference": "Air waybill reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "picture.png",
+          "attachmentContentType": "image/png"
+        },
+        {
+          "documentType": "veterinaryHealthCertificate",
+          "documentReference": "Other veterinary certificate reference",
+          "documentIssueDate": "2024-01-01",
+          "attachmentFilename": "document.doc",
+          "attachmentContentType": "application/msword"
+        }
+      ]
+    },
+    "sealsContainers": [
+      {
+        "sealNumber": "S12345",
+        "containerNumber": "C12345",
+        "officialSeal": false
+      },
+      {
+        "sealNumber": "S67890",
+        "containerNumber": "C67890",
+        "officialSeal": true
+      }
+    ],
+    "submissionDate": "2024-01-02T03:04:05Z",
+    "portOfEntry": "GBLGW",
+    "isGVMSRoute": true
+  }
+}

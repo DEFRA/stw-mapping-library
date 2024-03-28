@@ -9,7 +9,7 @@ import static uk.gov.defra.stw.mapping.toipaffs.enumeration.Purpose.NON_CONFORMI
 import static uk.gov.defra.stw.mapping.toipaffs.enumeration.Purpose.RE_ENTRY;
 import static uk.gov.defra.stw.mapping.toipaffs.enumeration.Purpose.TRANSHIPMENT;
 import static uk.gov.defra.stw.mapping.toipaffs.enumeration.SubjectCode.NON_CONFORMING_GOODS_DESTINATION_TYPE;
-import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.findSpsNoteByType;
+import static uk.gov.defra.stw.mapping.toipaffs.utils.SpsNoteTypeHelper.getNoteContentBySubjectCode;
 
 import java.util.List;
 import java.util.Map;
@@ -63,8 +63,8 @@ public class PurposeMapperFactory {
   }
 
   private String getDestinationType(List<SpsNoteType> spsNoteTypes) {
-    return findSpsNoteByType(spsNoteTypes, NON_CONFORMING_GOODS_DESTINATION_TYPE.getValue())
-        .map(spsNoteType -> spsNoteType.getContent().get(0).getValue())
+    return getNoteContentBySubjectCode(spsNoteTypes,
+        NON_CONFORMING_GOODS_DESTINATION_TYPE.getValue())
         .orElse(StringUtils.EMPTY);
   }
 

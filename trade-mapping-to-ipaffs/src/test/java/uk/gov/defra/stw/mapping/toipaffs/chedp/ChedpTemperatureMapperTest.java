@@ -9,6 +9,7 @@ import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsExchangedDocument;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
+import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.CommodityTemperature;
 
@@ -105,7 +106,8 @@ class ChedpTemperatureMapperTest {
     spsExchangedDocument
         .setIncludedSpsNote(List.of(new SpsNoteType()
             .withSubjectCode(new CodeType().withValue(subjectCode))
-            .withContentCode(List.of(new CodeType().withValue(contentCode)))));
+            .withContentCode(List.of(new CodeType().withValue(contentCode)))
+            .withContent(List.of(new TextType().withValue("")))));
     return new SpsCertificate()
         .withSpsExchangedDocument(spsExchangedDocument);
   }
