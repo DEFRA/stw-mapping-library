@@ -231,6 +231,9 @@
           },
           "roleCode" : {
             "value" : "CM"
+          },
+          "name": {
+            "value": ""
           }
         } ],
         "functionTypeCode" : {
@@ -238,9 +241,22 @@
         },
         "hierarchicalLevelCode" : {
           "value" : "0"
-        }
-      } ]
-    } ]
+        },
+        "name": [
+
+        ]
+      } ],
+      "name": [
+
+      ]
+    } ],
+    "examinationSpsEvent": {
+      "occurrenceSpsLocation": {
+        "name": [
+
+        ]
+      }
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
@@ -301,12 +317,26 @@
               "value": "PURPOSE"
             }
           }
-        ]
+        ],
+        "actualDateTime": {
+          "dateTime": {
+
+          }
+        },
+        "providerSpsParty": {
+          "name": {
+            "value": ""
+          }
+        }
       }
     ],
     "statusCode": {
       "name": "Draft",
       "value": "47"
+    },
+    "name": [],
+    "typeCode": {
+      "value": ""
     }
   }
 }
