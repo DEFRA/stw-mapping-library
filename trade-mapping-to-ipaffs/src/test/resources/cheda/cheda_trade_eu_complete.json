@@ -3,21 +3,33 @@
     "consignorSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000001"
+      },
+      "name": {
+        "value": ""
       }
     },
     "consigneeSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000002"
+      },
+      "name": {
+        "value": ""
       }
     },
     "deliverySpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000003"
+      },
+      "name": {
+        "value": ""
       }
     },
     "carrierSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000004"
+      },
+      "name": {
+        "value": ""
       }
     },
     "examinationSpsEvent": {
@@ -856,7 +868,13 @@
           "value": "C67890"
         }
       }
-    ]
+    ],
+    "exportSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": []
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
