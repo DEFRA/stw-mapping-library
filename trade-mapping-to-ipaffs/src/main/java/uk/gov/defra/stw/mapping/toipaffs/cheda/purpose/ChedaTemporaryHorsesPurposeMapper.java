@@ -8,8 +8,6 @@ import static uk.gov.defra.tracesx.notificationschema.representation.enumeration
 import java.util.Optional;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
-import uk.gov.defra.stw.mapping.dto.SpsNoteType;
-import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
 import uk.gov.defra.tracesx.notificationschema.representation.Purpose;
 import uk.gov.defra.tracesx.notificationschema.representation.Purpose.PurposeBuilder;
