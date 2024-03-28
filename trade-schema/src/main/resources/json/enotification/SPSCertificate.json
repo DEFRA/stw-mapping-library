@@ -20,13 +20,13 @@
               ]
             },
             "carrierSpsParty": {
-              "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+              "$ref": "definitions/SpsPartyType.json"
             },
             "consignorSpsParty": {
-              "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+              "$ref": "definitions/SpsPartyType.json"
             },
             "consigneeSpsParty": {
-              "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+              "$ref": "definitions/SpsPartyType.json"
             },
             "exportSpsCountry": {
               "properties": {
@@ -48,7 +48,7 @@
                       "properties": {
                         "additionalInformationSpsNote": {
                           "items": {
-                            "$ref": "definitions/AdditionalInformationSpsNote.json#/AdditionalInformationSpsNote"
+                            "$ref": "definitions/AdditionalInformationSpsNote.json"
                           }
                         },
                         "applicableSpsClassification": {
@@ -106,14 +106,14 @@
                             "type": "object",
                             "properties": {
                               "operationSpsCountry": {
-                                "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                                "$ref": "definitions/SpsCountryType.json"
                               },
                               "operatorSpsParty": {
-                                "$ref": "../uncefact/definitions/SpsPartyType.json#/SpsPartyType"
+                                "$ref": "../uncefact/definitions/SpsPartyType.json"
                               },
                               "typeCode": {
                                 "allOf": [
-                                  { "$ref": "../uncefact/definitions/ProcessTypeCodeType.json#/ProcessTypeCodeType"},
+                                  { "$ref": "../uncefact/definitions/ProcessTypeCodeType.json"},
                                   { "required": [ "value" ] }
                                 ]
                               }
@@ -138,7 +138,7 @@
                         "originSpsCountry": {
                           "type": "array",
                           "items": {
-                            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                            "$ref": "definitions/SpsCountryType.json"
                           }
                         },
                         "physicalSpsPackage": {
@@ -237,7 +237,8 @@
                   "properties": {
                     "schemeID": {
                       "enum": [
-                        "un_locode"
+                        "un_locode",
+                        "IPAFFS_POE"
                       ]
                     }
                   },
@@ -245,19 +246,6 @@
                     "schemeID",
                     "value"
                   ]
-                },
-                "name": {
-                  "items": {
-                    "properties": {
-                      "value": {
-                        "enum": [
-                          "GB"
-                        ]
-                      }
-                    }
-                  },
-                  "minItems": 1,
-                  "maxItems": 1
                 }
               },
               "required": [

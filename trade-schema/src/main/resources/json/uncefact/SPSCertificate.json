@@ -6,43 +6,43 @@
       "type": "object",
       "properties": {
         "availabilityDueDateTime": {
-          "$ref": "definitions/DateTimeType.json#/DateTimeType"
+          "$ref": "definitions/DateTimeType.json"
         },
         "carrierSpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "consigneeReceiptSpsLocation": {
-          "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+          "$ref": "definitions/SpsLocationType.json"
         },
         "consigneeSpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "consignorSpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "customsTransitAgentSpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "deliverySpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "despatchSpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "examinationSpsEvent": {
-          "$ref": "definitions/SpsEventType.json#/SpsEventType"
+          "$ref": "definitions/SpsEventType.json"
         },
         "exportExitDateTime": {
-          "$ref": "definitions/DateTimeType.json#/DateTimeType"
+          "$ref": "definitions/DateTimeType.json"
         },
         "exportSpsCountry": {
-          "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+          "$ref": "definitions/SpsCountryType.json"
         },
         "id": {
-          "$ref": "definitions/IDType.json#/IDType"
+          "$ref": "definitions/IDType.json"
         },
         "importSpsCountry": {
-          "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+          "$ref": "definitions/SpsCountryType.json"
         },
         "includedSpsConsignmentItem": {
           "type": "array",
@@ -57,7 +57,7 @@
                     "additionalInformationSpsNote": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/SpsNoteType.json#/SpsNoteType"
+                        "$ref": "definitions/SpsNoteType.json"
                       }
                     },
                     "applicableSpsClassification": {
@@ -66,25 +66,25 @@
                         "type": "object",
                         "properties": {
                           "classCode": {
-                            "$ref": "definitions/CodeType.json#/CodeType"
+                            "$ref": "definitions/CodeType.json"
                           },
                           "className": {
                             "type": "array",
                             "items": {
                               "allOf": [
-                                { "$ref": "definitions/TextType.json#/TextType"},
+                                { "$ref": "definitions/TextType.json"},
                                 { "required": [ "value" ] }
                               ]
                             }
                           },
                           "systemID": {
-                            "$ref": "definitions/IDType.json#/IDType"
+                            "$ref": "definitions/IDType.json"
                           },
                           "systemName": {
                             "type": "array",
                             "items": {
                               "allOf": [
-                                { "$ref": "definitions/TextType.json#/TextType"},
+                                { "$ref": "definitions/TextType.json"},
                                 { "required": [ "value" ] }
                               ]
                             }
@@ -110,22 +110,22 @@
                                   "type": "array",
                                   "items": {
                                     "allOf": [
-                                      { "$ref": "definitions/TextType.json#/TextType"},
+                                      { "$ref": "definitions/TextType.json"},
                                       { "required": [ "value" ] }
                                     ]
                                   }
                                 },
                                 "maximumValueMeasure": {
-                                  "$ref": "definitions/MeasureType.json#/MeasureType"
+                                  "$ref": "definitions/MeasureType.json"
                                 },
                                 "minimumValueMeasure": {
-                                  "$ref": "definitions/MeasureType.json#/MeasureType"
+                                  "$ref": "definitions/MeasureType.json"
                                 },
                                 "typeCode": {
-                                  "$ref": "definitions/MeasuredAttributeCodeType.json#/MeasuredAttributeCodeType"
+                                  "$ref": "definitions/MeasuredAttributeCodeType.json"
                                 },
                                 "valueMeasure": {
-                                  "$ref": "definitions/MeasureType.json#/MeasureType"
+                                  "$ref": "definitions/MeasureType.json"
                                 }
                               },
                               "required": [
@@ -137,13 +137,13 @@
                             "type": "object",
                             "properties": {
                               "durationMeasure": {
-                                "$ref": "definitions/MeasureType.json#/MeasureType"
+                                "$ref": "definitions/MeasureType.json"
                               },
                               "endDateTime": {
-                                "$ref": "definitions/DateTimeType.json#/DateTimeType"
+                                "$ref": "definitions/DateTimeType.json"
                               },
                               "startDateTime": {
-                                "$ref": "definitions/DateTimeType.json#/DateTimeType"
+                                "$ref": "definitions/DateTimeType.json"
                               }
                             },
                             "required": [
@@ -151,14 +151,14 @@
                             ]
                           },
                           "operationSpsCountry": {
-                            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                            "$ref": "definitions/SpsCountryType.json"
                           },
                           "operatorSpsParty": {
-                            "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+                            "$ref": "definitions/SpsPartyType.json"
                           },
                           "typeCode": {
                             "allOf": [
-                              { "$ref": "definitions/ProcessTypeCodeType.json#/ProcessTypeCodeType"},
+                              { "$ref": "definitions/ProcessTypeCodeType.json"},
                               { "required": [ "value" ] }
                             ]
                           }
@@ -171,26 +171,26 @@
                     "assertedSpsAuthentication": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/SpsAuthenticationType.json#/SpsAuthenticationType"
+                        "$ref": "definitions/SpsAuthenticationType.json"
                       }
                     },
                     "associatedSpsTransportEquipment": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/SpsTransportEquipmentType.json#/SpsTransportEquipmentType"
+                        "$ref": "definitions/SpsTransportEquipmentType.json"
                       }
                     },
                     "commonName": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/TextType.json#/TextType"
+                        "$ref": "definitions/TextType.json"
                       }
                     },
                     "description": {
                       "type": "array",
                       "items": {
                         "allOf": [
-                          { "$ref": "definitions/TextType.json#/TextType"},
+                          { "$ref": "definitions/TextType.json"},
                           { "required": [ "value" ] }
                         ]
                       }
@@ -198,37 +198,37 @@
                     "expiryDateTime": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/DateTimeType.json#/DateTimeType"
+                        "$ref": "definitions/DateTimeType.json"
                       }
                     },
                     "grossVolumeMeasure": {
-                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                      "$ref": "definitions/MeasureType.json"
                     },
                     "grossWeightMeasure": {
-                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                      "$ref": "definitions/MeasureType.json"
                     },
                     "intendedUse": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/TextType.json#/TextType"
+                        "$ref": "definitions/TextType.json"
                       }
                     },
                     "netVolumeMeasure": {
-                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                      "$ref": "definitions/MeasureType.json"
                     },
                     "netWeightMeasure": {
-                      "$ref": "definitions/MeasureType.json#/MeasureType"
+                      "$ref": "definitions/MeasureType.json"
                     },
                     "originSpsCountry": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+                        "$ref": "definitions/SpsCountryType.json"
                       }
                     },
                     "originSpsLocation": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+                        "$ref": "definitions/SpsLocationType.json"
                       }
                     },
                     "physicalSpsPackage": {
@@ -261,15 +261,15 @@
                           },
                           "levelCode": {
                             "allOf": [
-                              { "$ref": "definitions/CodeType.json#/CodeType"},
+                              { "$ref": "definitions/CodeType.json"},
                               { "required": [ "value" ] }
                             ]
                           },
                           "nominalGrossVolumeMeasure": {
-                            "$ref": "definitions/MeasureType.json#/MeasureType"
+                            "$ref": "definitions/MeasureType.json"
                           },
                           "nominalGrossWeightMeasure": {
-                            "$ref": "definitions/MeasureType.json#/MeasureType"
+                            "$ref": "definitions/MeasureType.json"
                           },
                           "physicalSpsShippingMarks": {
                             "type": "array",
@@ -278,7 +278,7 @@
                               "properties": {
                                 "marking": {
                                   "allOf": [
-                                    { "$ref": "definitions/TextType.json#/TextType"},
+                                    { "$ref": "definitions/TextType.json"},
                                     { "required": [ "value" ] }
                                   ]
                                 }
@@ -290,7 +290,7 @@
                           },
                           "typeCode": {
                             "allOf": [
-                              { "$ref": "definitions/PackageTypeCodeType.json#/PackageTypeCodeType"},
+                              { "$ref": "definitions/PackageTypeCodeType.json"},
                               { "required": [ "value" ] }
                             ]
                           }
@@ -305,19 +305,19 @@
                     "productionBatchID": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/IDType.json#/IDType"
+                        "$ref": "definitions/IDType.json"
                       }
                     },
                     "referenceSpsReferencedDocument": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/SpsReferencedDocumentType.json#/SpsReferencedDocumentType"
+                        "$ref": "definitions/SpsReferencedDocumentType.json"
                       }
                     },
                     "scientificName": {
                       "type": "array",
                       "items": {
-                        "$ref": "definitions/TextType.json#/TextType"
+                        "$ref": "definitions/TextType.json"
                       }
                     },
                     "sequenceNumeric": {
@@ -347,7 +347,7 @@
                   "type": "object",
                   "properties": {
                     "typeCode": {
-                      "$ref": "definitions/CargoTypeClassificationCodeType.json#/CargoTypeClassificationCodeType"
+                      "$ref": "definitions/CargoTypeClassificationCodeType.json"
                     }
                   },
                   "required": [
@@ -362,7 +362,7 @@
           }
         },
         "loadingBaseportSpsLocation": {
-          "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+          "$ref": "definitions/SpsLocationType.json"
         },
         "mainCarriageSpsTransportMovement": {
           "type": "array",
@@ -370,7 +370,7 @@
             "type": "object",
             "properties": {
               "id": {
-                "$ref": "definitions/IDType.json#/IDType"
+                "$ref": "definitions/IDType.json"
               },
               "modeCode": {
                 "type": "object",
@@ -400,7 +400,7 @@
                 "properties": {
                   "name": {
                     "allOf": [
-                      { "$ref": "definitions/TextType.json#/TextType"},
+                      { "$ref": "definitions/TextType.json"},
                       { "required": [ "value" ] }
                     ]
                   }
@@ -418,37 +418,37 @@
         "reExportSpsCountry": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+            "$ref": "definitions/SpsCountryType.json"
           }
         },
         "shipStoresIndicator": {
-          "$ref": "definitions/IndicatorType.json#/IndicatorType"
+          "$ref": "definitions/IndicatorType.json"
         },
         "storageSpsEvent": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsEventType.json#/SpsEventType"
+            "$ref": "definitions/SpsEventType.json"
           }
         },
         "transitSpsCountry": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsCountryType.json#/SpsCountryType"
+            "$ref": "definitions/SpsCountryType.json"
           }
         },
         "transitSpsLocation": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+            "$ref": "definitions/SpsLocationType.json"
           }
         },
         "unloadingBaseportSpsLocation": {
-          "$ref": "definitions/SpsLocationType.json#/SpsLocationType"
+          "$ref": "definitions/SpsLocationType.json"
         },
         "utilizedSpsTransportEquipment": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsTransportEquipmentType.json#/SpsTransportEquipmentType"
+            "$ref": "definitions/SpsTransportEquipmentType.json"
           }
         }
       },
@@ -465,37 +465,37 @@
       "type": "object",
       "properties": {
         "copyIndicator": {
-          "$ref": "definitions/IndicatorType.json#/IndicatorType"
+          "$ref": "definitions/IndicatorType.json"
         },
         "description": {
           "type": "array",
           "items": {
-            "$ref": "definitions/TextType.json#/TextType"
+            "$ref": "definitions/TextType.json"
           }
         },
         "id": {
           "allOf": [
-            { "$ref": "definitions/IDType.json#/IDType"},
+            { "$ref": "definitions/IDType.json"},
             { "required": [ "value" ] }
           ]
         },
         "includedSpsNote": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsNoteType.json#/SpsNoteType"
+            "$ref": "definitions/SpsNoteType.json"
           }
         },
         "issueDateTime": {
-          "$ref": "definitions/DateTimeType.json#/DateTimeType"
+          "$ref": "definitions/DateTimeType.json"
         },
         "issuerSpsParty": {
-          "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+          "$ref": "definitions/SpsPartyType.json"
         },
         "name": {
           "type": "array",
           "items": {
             "allOf": [
-              { "$ref": "definitions/TextType.json#/TextType"},
+              { "$ref": "definitions/TextType.json"},
               { "required": [ "value" ] }
             ]
           }
@@ -503,19 +503,19 @@
         "recipientSpsParty": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsPartyType.json#/SpsPartyType"
+            "$ref": "definitions/SpsPartyType.json"
           }
         },
         "referenceSpsReferencedDocument": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsReferencedDocumentType.json#/SpsReferencedDocumentType"
+            "$ref": "definitions/SpsReferencedDocumentType.json"
           }
         },
         "signatorySpsAuthentication": {
           "type": "array",
           "items": {
-            "$ref": "definitions/SpsAuthenticationType.json#/SpsAuthenticationType"
+            "$ref": "definitions/SpsAuthenticationType.json"
           }
         },
         "statusCode": {

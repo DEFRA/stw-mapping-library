@@ -1,69 +1,79 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "id": "SpsCountrySubDivisionType.json",
-  "SpsCountrySubDivisionType": {
-    "type": "object",
-    "properties": {
-      "activityAuthorizedSpsParty": {
-        "type": "array",
-        "items": {
-          "$ref": "SpsPartyType.json#/SpsPartyType"
-        }
-      },
-      "functionTypeCode": {
-        "type": "object",
-        "properties": {
-          "listAgencyID": {
-            "type": "string"
-          },
-          "listID": {
-            "type": "string"
-          },
-          "listVersionID": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "hierarchicalLevelCode": {
-        "allOf": [
-          { "$ref": "CodeType.json#/CodeType"},
-          { "required": [ "value" ] }
-        ]
-      },
-      "id": {
-        "$ref": "IDType.json#/IDType"
-      },
-      "name": {
-        "type": "array",
-        "items": {
-          "allOf": [
-            { "$ref": "TextType.json#/TextType"},
-            { "required": [ "value" ] }
-          ]
-        }
-      },
-      "subordinateSpsCountrySubDivision": {
-        "type": "array",
-        "items": {
-          "$ref": "SpsCountrySubDivisionType.json#/SpsCountrySubDivisionType"
-        }
-      },
-      "superordinateSpsCountrySubDivision": {
-        "type": "array",
-        "items": {
-          "$ref": "SpsCountrySubDivisionType.json#/SpsCountrySubDivisionType"
+  "type": "object",
+  "properties": {
+    "activityAuthorizedSpsParty": {
+      "type": "array",
+      "items": {
+        "$ref": "SpsPartyType.json"
+      }
+    },
+    "functionTypeCode": {
+      "type": "object",
+      "properties": {
+        "listAgencyID": {
+          "type": "string"
+        },
+        "listID": {
+          "type": "string"
+        },
+        "listVersionID": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
         }
       }
     },
-    "required": [
-      "name",
-      "hierarchicalLevelCode"
-    ]
-  }
+    "hierarchicalLevelCode": {
+      "allOf": [
+        {
+          "$ref": "CodeType.json"
+        },
+        {
+          "required": [
+            "value"
+          ]
+        }
+      ]
+    },
+    "id": {
+      "$ref": "IDType.json"
+    },
+    "name": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "TextType.json"
+          },
+          {
+            "required": [
+              "value"
+            ]
+          }
+        ]
+      }
+    },
+    "subordinateSpsCountrySubDivision": {
+      "type": "array",
+      "items": {
+        "$ref": "SpsCountrySubDivisionType.json"
+      }
+    },
+    "superordinateSpsCountrySubDivision": {
+      "type": "array",
+      "items": {
+        "$ref": "SpsCountrySubDivisionType.json"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "hierarchicalLevelCode"
+  ]
 }

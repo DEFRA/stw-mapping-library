@@ -1,24 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "id": "TemperatureTypeCodeType.json",
-  "TemperatureTypeCodeType": {
-    "type": "object",
-    "properties": {
-      "listAgencyID": {
-        "type": "string"
-      },
-      "listID": {
-        "type": "string"
-      },
-      "listVersionID": {
-        "type": "string"
-      },
-      "name": {
-        "type": "string"
-      },
-      "value": {
-        "type": "string"
-      }
+  "type": "object",
+  "properties": {
+    "listAgencyID": {
+      "type": "string"
+    },
+    "listID": {
+      "type": "string"
+    },
+    "listVersionID": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
     }
   }
 }

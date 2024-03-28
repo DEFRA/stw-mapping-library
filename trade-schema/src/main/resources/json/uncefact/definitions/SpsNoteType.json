@@ -1,33 +1,37 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "id": "SpsNoteType.json",
-  "SpsNoteType": {
-    "type": "object",
-    "properties": {
-      "content": {
-        "type": "array",
-        "items": {
-          "allOf": [
-            { "$ref": "TextType.json#/TextType"},
-            { "required": [ "value" ] }
-          ]
-        }
-      },
-      "contentCode": {
-        "type": "array",
-        "items": {
-          "$ref": "CodeType.json#/CodeType"
-        }
-      },
-      "subject": {
-        "$ref": "TextType.json#/TextType"
-      },
-      "subjectCode": {
-        "$ref": "CodeType.json#/CodeType"
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "TextType.json"
+          },
+          {
+            "required": [
+              "value"
+            ]
+          }
+        ]
       }
     },
-    "required": [
-      "content"
-    ]
-  }
+    "contentCode": {
+      "type": "array",
+      "items": {
+        "$ref": "CodeType.json"
+      }
+    },
+    "subject": {
+      "$ref": "TextType.json"
+    },
+    "subjectCode": {
+      "$ref": "CodeType.json"
+    }
+  },
+  "required": [
+    "content"
+  ]
 }
