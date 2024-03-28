@@ -16,10 +16,6 @@ public class CommodityIntendedForMapper implements Mapper<SpsCertificate, Commod
       Map.entry("OTHER", CommodityIntention.OTHER),
       Map.entry("FURTHER_PROCESS", CommodityIntention.FURTHER));
 
-  public CommodityIntendedForMapper() {
-
-  }
-
   @Override
   public CommodityIntention map(SpsCertificate spsCertificate) {
     return spsCertificate.getSpsExchangedDocument()
@@ -27,8 +23,7 @@ public class CommodityIntendedForMapper implements Mapper<SpsCertificate, Commod
         .get(0)
         .getIncludedSpsClause()
         .stream()
-        .filter(clause -> clause.getId().getValue()
-            .equals("GOODS_CERTIFIED_AS"))
+        .filter(clause -> clause.getId().getValue().equals("GOODS_CERTIFIED_AS"))
         .findAny()
         .map(IncludedSpsClause::getContent)
         .map(contents -> contents.get(0))
