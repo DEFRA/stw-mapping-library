@@ -4,8 +4,8 @@ import static uk.gov.defra.tracesx.notificationschema.representation.enumeration
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.DESTINATION;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.EXPORTER;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.IMPORTER;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.EconomicOperatorType.PRIVATE_TRANSPORTER;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
@@ -13,8 +13,6 @@ import uk.gov.defra.stw.mapping.toipaffs.chedp.ApprovedEstablishmentMapper;
 import uk.gov.defra.stw.mapping.toipaffs.chedp.ChedpCommoditiesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalTimeMapper;
-import uk.gov.defra.stw.mapping.toipaffs.common.DepartureDateMapper;
-import uk.gov.defra.stw.mapping.toipaffs.common.DepartureTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
@@ -39,6 +37,7 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final CheddPurposeMapper cheddPurposeMapper;
   private final SubmissionDateMapper submissionDateMapper;
 
+  @Autowired
   public CheddPartOneMapper(
       CheddCommoditiesMapper cheddCommoditiesMapper,
       MeansOfTransportFromEntryPointMapper meansOfTransportFromEntryPointMapper,

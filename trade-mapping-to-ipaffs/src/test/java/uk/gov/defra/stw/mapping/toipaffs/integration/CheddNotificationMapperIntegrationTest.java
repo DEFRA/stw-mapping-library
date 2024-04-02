@@ -45,6 +45,24 @@ public class CheddNotificationMapperIntegrationTest {
         .withStrictTypeChecking()
         .isEqualTo(expected);
   }
+
+  @Test
+  void map_ReturnsCheddNotification_WhenCompleteSpsCertificate()
+      throws JsonProcessingException, NotificationMapperException {
+    SpsCertificate spsCertificate = JsonDeserializer.get("chedd/chedd_ehc_complete.json",
+        SpsCertificate.class);
+
+    Notification actual = cheddNotificationMapper.map(spsCertificate);
+    overrideUniqueComplementIdToStaticValue(actual);
+
+    Notification expected = JsonDeserializer.get("chedd/chedd_ipaffs_complete.json",
+        Notification.class);
+    assertThat(actual)
+        .usingRecursiveComparison()
+        .withStrictTypeChecking()
+        .isEqualTo(expected);
+  }
+
   private void overrideUniqueComplementIdToStaticValue(Notification notification) {
     UUID staticComplementId = UUID.fromString("12345678-0000-0000-0000-000000000000");
     notification.getPartOne()

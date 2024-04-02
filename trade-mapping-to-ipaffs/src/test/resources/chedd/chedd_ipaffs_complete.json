@@ -107,6 +107,13 @@
           "documentIssueDate": "2024-01-02"
         }
       ]
-    }
+    },
+    "sealsContainers": [
+      {
+        "sealNumber": "S12345",
+        "containerNumber": "C12345",
+        "officialSeal": false
+      }
+    ]
   }
 }

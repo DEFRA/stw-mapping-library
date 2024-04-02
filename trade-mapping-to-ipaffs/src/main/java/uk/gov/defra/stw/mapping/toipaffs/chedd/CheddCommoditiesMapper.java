@@ -1,5 +1,6 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedd;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
@@ -25,6 +26,7 @@ public class CheddCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
   private final CountryOfOriginMapper countryOfOriginMapper;
   private final NumberOfPackagesMapper numberOfPackagesMapper;
 
+  @Autowired
   public CheddCommoditiesMapper(
       CommodityComplementMapper commodityComplementMapper,
       CheddComplementParameterSetMapper cheddComplementParameterSetMapper,

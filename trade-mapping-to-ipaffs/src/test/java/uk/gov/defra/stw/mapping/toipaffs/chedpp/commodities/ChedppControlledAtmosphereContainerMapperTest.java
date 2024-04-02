@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
-import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
 import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;

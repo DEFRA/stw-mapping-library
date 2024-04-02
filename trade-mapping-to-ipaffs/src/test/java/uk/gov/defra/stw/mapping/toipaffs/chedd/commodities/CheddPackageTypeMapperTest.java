@@ -1,5 +1,6 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedd.commodities;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BAG;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BALE;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BLOCK;
@@ -13,7 +14,6 @@ import static uk.gov.defra.tracesx.notificationschema.representation.enumeration
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CRATE;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.DRUM;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.JAR;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.OTHER;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PACKAGE;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PAIL;
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PALLET;
@@ -25,16 +25,19 @@ import static uk.gov.defra.tracesx.notificationschema.representation.enumeration
 import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.VIAL;
 
 import java.util.Map;
-import org.springframework.stereotype.Component;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import uk.gov.defra.stw.mapping.dto.CodeType;
+import uk.gov.defra.stw.mapping.dto.PackageTypeCodeType;
 import uk.gov.defra.stw.mapping.dto.PhysicalSpsPackage;
-import uk.gov.defra.stw.mapping.toipaffs.Mapper;
-import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType;
 
-@Component
-public class CheddPackageTypeMapper implements
-    Mapper<PhysicalSpsPackage, ComplementParameterSetKeyDataPair> {
+class CheddPackageTypeMapperTest {
+
+  private CheddPackageTypeKeyDataMapper cheddPackageTypeKeyDataMapper;
 
   private static final Map<String, PackageType> packageMap = Map.ofEntries(
       Map.entry("BG", BAG),
@@ -60,16 +63,40 @@ public class CheddPackageTypeMapper implements
       Map.entry("TU", TUBE),
       Map.entry("VI", VIAL));
 
-  @Override
-  public ComplementParameterSetKeyDataPair map(PhysicalSpsPackage physicalSpsPackage)
-      throws NotificationMapperException {
-    PackageType packageType = packageMap.get(physicalSpsPackage.getTypeCode().getValue());
-    if (packageType == null) {
-      packageType = OTHER;
+
+  @BeforeEach
+  void setup() {
+    cheddPackageTypeKeyDataMapper = new CheddPackageTypeKeyDataMapper();
+  }
+
+  @Test
+  void map_ReturnsComplementParameterSetKeyDataPair_WhenComplete() {
+    for (String item : packageMap.keySet()) {
+      PhysicalSpsPackage physicalSpsPackage = createPhysicalPackage(item);
+      assertThat(cheddPackageTypeKeyDataMapper.map(physicalSpsPackage))
+          .isEqualTo(createComplementParameterSetKeyDataPair(packageMap.get(item).getValue()));
     }
+  }
+
+  @Test
+  void map_ReturnsComplementParameterSetWithOtherPackageType_WhenUnknownPackageType() {
+    PhysicalSpsPackage physicalSpsPackage = createPhysicalPackage("XX");
+
+    assertThat(cheddPackageTypeKeyDataMapper.map(physicalSpsPackage)).isEqualTo(createComplementParameterSetKeyDataPair("Other"));
+  }
+
+  private PhysicalSpsPackage createPhysicalPackage(String typeCode) {
+    return new PhysicalSpsPackage()
+        .withLevelCode(new CodeType()
+            .withValue("4"))
+        .withTypeCode(new PackageTypeCodeType()
+            .withValue(typeCode));
+  }
+
+  private ComplementParameterSetKeyDataPair createComplementParameterSetKeyDataPair(String data) {
     return ComplementParameterSetKeyDataPair.builder()
         .key("type_package")
-        .data(packageType.getValue())
+        .data(data)
         .build();
   }
 }

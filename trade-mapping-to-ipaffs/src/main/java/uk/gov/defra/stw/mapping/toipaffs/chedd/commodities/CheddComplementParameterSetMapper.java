@@ -3,6 +3,7 @@ package uk.gov.defra.stw.mapping.toipaffs.chedd.commodities;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
@@ -19,13 +20,14 @@ public class CheddComplementParameterSetMapper
   private final ComplementParameterSetMapper complementParameterSetMapper;
   private final NetWeightMeasureKeyDataMapper netWeightMeasureKeyDataMapper;
   private final NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper;
-  private final CheddPackageTypeMapper cheddPackageTypeMapper;
-
+  private final CheddPackageTypeKeyDataMapper cheddPackageTypeMapper;
+  
+  @Autowired
   public CheddComplementParameterSetMapper(
       ComplementParameterSetMapper complementParameterSetMapper,
       NetWeightMeasureKeyDataMapper netWeightMeasureKeyDataMapper,
       NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper,
-      CheddPackageTypeMapper cheddPackageTypeMapper) {
+      CheddPackageTypeKeyDataMapper cheddPackageTypeMapper) {
     this.complementParameterSetMapper = complementParameterSetMapper;
     this.netWeightMeasureKeyDataMapper = netWeightMeasureKeyDataMapper;
     this.numberOfPackagesKeyDataMapper = numberOfPackagesKeyDataMapper;

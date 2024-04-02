@@ -10,11 +10,11 @@ import uk.gov.defra.tracesx.notificationschema.representation.enumeration.Commod
 
 @Component
 public class CommodityIntendedForMapper implements Mapper<SpsCertificate, CommodityIntention> {
-  private static final Map<String, CommodityIntention> COMMODITY_INTENTION_MAP = Map.ofEntries(
-      Map.entry("HUMAN_CONSUMPTION", CommodityIntention.HUMAN),
-      Map.entry("FEEDING_STUFF", CommodityIntention.FEEDINGSTUFF),
-      Map.entry("OTHER", CommodityIntention.OTHER),
-      Map.entry("FURTHER_PROCESS", CommodityIntention.FURTHER));
+  private static final Map<String, CommodityIntention> COMMODITY_INTENTION_MAP = Map.of(
+      "HUMAN_CONSUMPTION", CommodityIntention.HUMAN,
+      "FEEDING_STUFF", CommodityIntention.FEEDINGSTUFF,
+      "OTHER", CommodityIntention.OTHER,
+      "FURTHER_PROCESS", CommodityIntention.FURTHER);
 
   @Override
   public CommodityIntention map(SpsCertificate spsCertificate) {
