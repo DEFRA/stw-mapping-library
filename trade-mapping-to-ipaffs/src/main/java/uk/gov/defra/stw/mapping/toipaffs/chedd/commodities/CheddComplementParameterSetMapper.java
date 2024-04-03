@@ -20,18 +20,18 @@ public class CheddComplementParameterSetMapper
   private final ComplementParameterSetMapper complementParameterSetMapper;
   private final NetWeightMeasureKeyDataMapper netWeightMeasureKeyDataMapper;
   private final NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper;
-  private final CheddPackageTypeKeyDataMapper cheddPackageTypeMapper;
+  private final CheddPackageTypeKeyDataMapper cheddPackageTypeKeyDataMapper;
   
   @Autowired
   public CheddComplementParameterSetMapper(
       ComplementParameterSetMapper complementParameterSetMapper,
       NetWeightMeasureKeyDataMapper netWeightMeasureKeyDataMapper,
       NumberOfPackagesKeyDataMapper numberOfPackagesKeyDataMapper,
-      CheddPackageTypeKeyDataMapper cheddPackageTypeMapper) {
+      CheddPackageTypeKeyDataMapper cheddPackageTypeKeyDataMapper) {
     this.complementParameterSetMapper = complementParameterSetMapper;
     this.netWeightMeasureKeyDataMapper = netWeightMeasureKeyDataMapper;
     this.numberOfPackagesKeyDataMapper = numberOfPackagesKeyDataMapper;
-    this.cheddPackageTypeMapper = cheddPackageTypeMapper;
+    this.cheddPackageTypeKeyDataMapper = cheddPackageTypeKeyDataMapper;
   }
 
   @Override
@@ -45,7 +45,9 @@ public class CheddComplementParameterSetMapper
   private ComplementParameterSet createComplementParameterSet(IncludedSpsTradeLineItem item) {
     List<ComplementParameterSetKeyDataPair> complementParameterSetKeyDataPairs = 
         complementParameterSetMapper.create(
-            netWeightMeasureKeyDataMapper, numberOfPackagesKeyDataMapper, cheddPackageTypeMapper,
+            netWeightMeasureKeyDataMapper,
+            numberOfPackagesKeyDataMapper,
+            cheddPackageTypeKeyDataMapper,
             item);
 
     return ComplementParameterSet.builder()
