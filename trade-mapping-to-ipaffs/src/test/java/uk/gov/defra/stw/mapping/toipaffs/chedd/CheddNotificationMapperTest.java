@@ -26,7 +26,7 @@ class CheddNotificationMapperTest {
   private CheddNotificationMapper mapper;
 
   @Test
-  void map_ReturnsChedaNotification() throws NotificationMapperException {
+  void map_ReturnsCheddNotification() throws NotificationMapperException {
     SpsCertificate spsCertificate = new SpsCertificate();
     PartOne partOne = new PartOne();
     when(cheddPartOneMapper.map(spsCertificate)).thenReturn(partOne);

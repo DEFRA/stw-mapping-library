@@ -1,33 +1,11 @@
 package uk.gov.defra.stw.mapping.toipaffs.chedd.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BAG;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BALE;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BLOCK;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.BOX;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CAN;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CARTON;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CASE;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CASK;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.COFFER;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CONTAINER_NOT_SPECIFIED;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.CRATE;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.DRUM;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.JAR;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PACKAGE;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PAIL;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PALLET;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.PALLET_BOX;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.TANK;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.TOTE;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.TRAY;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.TUBE;
-import static uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType.VIAL;
-
-import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import uk.gov.defra.stw.mapping.dto.CodeType;
 import uk.gov.defra.stw.mapping.dto.PackageTypeCodeType;
@@ -39,43 +17,42 @@ class CheddPackageTypeMapperTest {
 
   private CheddPackageTypeKeyDataMapper cheddPackageTypeKeyDataMapper;
 
-  private static final Map<String, PackageType> packageMap = Map.ofEntries(
-      Map.entry("BG", BAG),
-      Map.entry("BL", BALE),
-      Map.entry("OK", BLOCK),
-      Map.entry("BX", BOX),
-      Map.entry("CA", CAN),
-      Map.entry("CT", CARTON),
-      Map.entry("CS", CASE),
-      Map.entry("CK", CASK),
-      Map.entry("CF", COFFER),
-      Map.entry("CN", CONTAINER_NOT_SPECIFIED),
-      Map.entry("CR", CRATE),
-      Map.entry("DR", DRUM),
-      Map.entry("JR", JAR),
-      Map.entry("PK", PACKAGE),
-      Map.entry("PL", PAIL),
-      Map.entry("PX", PALLET),
-      Map.entry("PB", PALLET_BOX),
-      Map.entry("TK", TANK),
-      Map.entry("TT", TOTE),
-      Map.entry("DT", TRAY),
-      Map.entry("TU", TUBE),
-      Map.entry("VI", VIAL));
-
-
   @BeforeEach
   void setup() {
     cheddPackageTypeKeyDataMapper = new CheddPackageTypeKeyDataMapper();
   }
 
-  @Test
-  void map_ReturnsComplementParameterSetKeyDataPair_WhenComplete() {
-    for (String item : packageMap.keySet()) {
-      PhysicalSpsPackage physicalSpsPackage = createPhysicalPackage(item);
+  @ParameterizedTest
+  @CsvSource({
+      "BG, BAG",
+      "BL, BALE",
+      "OK, BLOCK",
+      "BX, BOX",
+      "CA, CAN",
+      "CT, CARTON",
+      "CS, CASE",
+      "CK, CASK",
+      "CF, COFFER",
+      "CN, CONTAINER_NOT_SPECIFIED",
+      "CR, CRATE",
+      "DR, DRUM",
+      "JR, JAR",
+      "PK, PACKAGE",
+      "PL, PAIL",
+      "PX, PALLET",
+      "PB, PALLET_BOX",
+      "TK, TANK",
+      "TT, TOTE",
+      "DT, TRAY",
+      "TU, TUBE",
+      "VI, VIAL"
+  })
+
+  void map_ReturnsComplementParameterSetKeyDataPair_WhenComplete(String value, PackageType expected){
+      PhysicalSpsPackage physicalSpsPackage = createPhysicalPackage(value);
       assertThat(cheddPackageTypeKeyDataMapper.map(physicalSpsPackage))
-          .isEqualTo(createComplementParameterSetKeyDataPair(packageMap.get(item).getValue()));
-    }
+          .isEqualTo(createComplementParameterSetKeyDataPair(expected.getValue()));
+    
   }
 
   @Test
