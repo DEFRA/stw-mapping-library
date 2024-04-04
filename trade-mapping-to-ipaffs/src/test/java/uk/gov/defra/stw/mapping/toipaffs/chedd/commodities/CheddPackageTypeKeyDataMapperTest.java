@@ -13,7 +13,7 @@ import uk.gov.defra.stw.mapping.dto.PhysicalSpsPackage;
 import uk.gov.defra.tracesx.notificationschema.representation.ComplementParameterSetKeyDataPair;
 import uk.gov.defra.tracesx.notificationschema.representation.enumeration.PackageType;
 
-class CheddPackageTypeMapperTest {
+class CheddPackageTypeKeyDataMapperTest {
 
   private CheddPackageTypeKeyDataMapper cheddPackageTypeKeyDataMapper;
 
