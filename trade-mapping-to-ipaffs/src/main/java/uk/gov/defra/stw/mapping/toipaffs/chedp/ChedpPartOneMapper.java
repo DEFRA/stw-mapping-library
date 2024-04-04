@@ -19,6 +19,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportFromEntryPointMa
 import uk.gov.defra.stw.mapping.toipaffs.common.MeansOfTransportMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.PointOfEntryMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.SealsContainersMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.SubmissionDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.TransportToBcpQuestionMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.VeterinaryInformationMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.NotificationMapperException;
@@ -41,6 +42,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
   private final DepartureTimeMapper departureTimeMapper;
   private final ArrivalDateMapper arrivalDateMapper;
   private final ArrivalTimeMapper arrivalTimeMapper;
+  private final SubmissionDateMapper submissionDateMapper;
 
   @Autowired
   public ChedpPartOneMapper(
@@ -57,7 +59,8 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       DepartureDateMapper departureDateMapper,
       DepartureTimeMapper departureTimeMapper,
       ArrivalDateMapper arrivalDateMapper,
-      ArrivalTimeMapper arrivalTimeMapper) {
+      ArrivalTimeMapper arrivalTimeMapper,
+      SubmissionDateMapper submissionDateMapper) {
     this.chedpPurposeMapper = chedpPurposeMapper;
     this.meansOfTransportFromEntryPointMapper = meansOfTransportFromEntryPointMapper;
     this.chedpPointOfEntryMapper = chedpPointOfEntryMapper;
@@ -72,6 +75,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
     this.departureTimeMapper = departureTimeMapper;
     this.arrivalDateMapper = arrivalDateMapper;
     this.arrivalTimeMapper = arrivalTimeMapper;
+    this.submissionDateMapper = submissionDateMapper;
   }
 
   @Override
@@ -108,6 +112,7 @@ public class ChedpPartOneMapper implements Mapper<SpsCertificate, PartOne> {
         .arrivalTime(arrivalTimeMapper.map(spsCertificate))
         .departureDate(departureDateMapper.map(spsCertificate))
         .departureTime(departureTimeMapper.map(spsCertificate))
+        .submissionDate(submissionDateMapper.map(spsCertificate))
         .build();
 
     if (partOne.getVeterinaryInformation() != null) {
