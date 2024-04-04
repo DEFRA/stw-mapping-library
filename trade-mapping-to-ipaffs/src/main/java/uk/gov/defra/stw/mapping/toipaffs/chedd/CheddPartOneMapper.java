@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.gov.defra.stw.mapping.dto.SpsCertificate;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
-import uk.gov.defra.stw.mapping.toipaffs.chedp.ApprovedEstablishmentMapper;
-import uk.gov.defra.stw.mapping.toipaffs.chedp.ChedpCommoditiesMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalDateMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.ArrivalTimeMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.EconomicOperatorMapper;
@@ -44,8 +42,6 @@ public class CheddPartOneMapper implements Mapper<SpsCertificate, PartOne> {
       PointOfEntryMapper pointOfEntryMapper,
       VeterinaryInformationMapper veterinaryInformationMapper,
       SealsContainersMapper sealsContainersMapper,
-      ChedpCommoditiesMapper commoditiesMapper,
-      ApprovedEstablishmentMapper approvedEstablishmentMapper,
       EconomicOperatorMapper economicOperatorMapper,
       TransportToBcpQuestionMapper transportToBcpQuestionMapper,
       ArrivalDateMapper arrivalDateMapper,
