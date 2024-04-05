@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "ProcessTypeCodeType.json",
+  "$id": "ProcessTypeCodeType.json",
   "type": "object",
   "properties": {
     "listAgencyID": {
@@ -18,5 +18,8 @@
     "value": {
       "type": "string"
     }
-  }
+  },
+  "required": [
+    "value"
+  ]
 }

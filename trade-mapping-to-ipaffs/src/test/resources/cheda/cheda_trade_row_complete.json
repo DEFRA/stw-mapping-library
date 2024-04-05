@@ -266,7 +266,11 @@
       }
     ],
     "exportSpsCountry": {
-      "name": [],
+      "name": [
+        {
+          "value": ""
+        }
+      ],
       "id": {
         "value": ""
       }

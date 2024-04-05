@@ -1,8 +1,8 @@
 {
   "spsConsignment": {
-    "availabilityDueDateTime" : {
-      "dateTime" : {
-        "value" : "2020-01-01T22:30:00Z"
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2020-01-01T22:30:00Z"
       }
     },
     "consigneeSpsParty": {
@@ -40,7 +40,7 @@
         }
       ]
     },
-    "mainCarriageSpsTransportMovement":[
+    "mainCarriageSpsTransportMovement": [
       {
         "id": {
           "schemeAgencyID": "GB",
@@ -220,40 +220,52 @@
         }
       ]
     },
-    "transitSpsCountry" : [ {
-      "id" : {
-        "value" : "BH"
-      },
-      "subordinateSpsCountrySubDivision" : [ {
-        "activityAuthorizedSpsParty" : [ {
-          "id" : {
-            "value" : "BEBRU"
-          },
-          "roleCode" : {
-            "value" : "CM"
-          },
-          "name": {
+    "transitSpsCountry": [
+      {
+        "id": {
+          "value": "BH"
+        },
+        "subordinateSpsCountrySubDivision": [
+          {
+            "activityAuthorizedSpsParty": [
+              {
+                "id": {
+                  "value": "BEBRU"
+                },
+                "roleCode": {
+                  "value": "CM"
+                },
+                "name": {
+                  "value": ""
+                }
+              }
+            ],
+            "functionTypeCode": {
+              "value": "42"
+            },
+            "hierarchicalLevelCode": {
+              "value": "0"
+            },
+            "name": [
+              {
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "name": [
+          {
             "value": ""
           }
-        } ],
-        "functionTypeCode" : {
-          "value" : "42"
-        },
-        "hierarchicalLevelCode" : {
-          "value" : "0"
-        },
-        "name": [
-
         ]
-      } ],
-      "name": [
-
-      ]
-    } ],
+      }
+    ],
     "examinationSpsEvent": {
       "occurrenceSpsLocation": {
         "name": [
-
+          {
+            "value": ""
+          }
         ]
       }
     }
@@ -288,7 +300,7 @@
       {
         "content": [
           {
-          "value": "TESTDOCUMENT"
+            "value": "TESTDOCUMENT"
           }
         ],
         "subjectCode": {
@@ -296,8 +308,8 @@
         }
       }
     ],
-    "id" : {
-      "value" : "NZL2020/PPCS2/121580"
+    "id": {
+      "value": "NZL2020/PPCS2/121580"
     },
     "issueDateTime": {
       "dateTime": {
@@ -320,7 +332,7 @@
         ],
         "actualDateTime": {
           "dateTime": {
-
+            "value": "2020-10-21T14:30:00Z"
           }
         },
         "providerSpsParty": {
@@ -334,9 +346,13 @@
       "name": "Draft",
       "value": "47"
     },
-    "name": [],
+    "name": [
+      {
+        "value": ""
+      }
+    ],
     "typeCode": {
-      "value": ""
+      "value": "636"
     }
   }
 }

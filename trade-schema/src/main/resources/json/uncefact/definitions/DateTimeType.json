@@ -1,10 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "DateTimeType.json",
+  "$id": "DateTimeType.json",
   "type": "object",
   "properties": {
     "dateTime": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "value"
+      ]
     },
     "dateTimeString": {
       "type": "object",

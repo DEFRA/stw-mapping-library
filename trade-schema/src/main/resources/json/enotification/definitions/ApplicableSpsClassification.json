@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ApplicableSpsClassification.json",
+  "items": {
+    "oneOf": [
+      {
+        "properties": {
+          "systemID": {
+            "properties": {
+              "value": {
+                "const": "CN"
+              }
+            }
+          },
+          "systemName": {
+            "items": {
+              "properties": {
+                "value": {
+                  "const": "CN Code (Combined Nomenclature)"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "systemID": {
+            "properties": {
+              "value": {
+                "const": "EPPO"
+              }
+            }
+          },
+          "systemName": {
+            "items": {
+              "properties": {
+                "value": {
+                  "const": "European and Mediterranean Plant Protection Organization"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "systemID": false,
+          "systemName": {
+            "items": {
+              "properties": {
+                "value": {
+                  "const": "IPAFFS_CCC"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "systemID": false,
+          "systemName": {
+            "items": {
+              "properties": {
+                "value": {
+                  "const": "IPAFFS_CCF"
+                }
+              }
+            }
+          }
+        }
+      },{
+        "properties": {
+          "systemID": false,
+          "systemName": {
+            "items": {
+              "properties": {
+                "value": {
+                  "const": "IPAFFS_CCT"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

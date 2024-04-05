@@ -1,33 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "SpsCountryType.json",
+  "$id": "SpsCountryType.json",
   "type": "object",
   "properties": {
     "id": {
-      "allOf": [
-        {
-          "$ref": "IDType.json"
-        },
-        {
-          "required": [
-            "value"
-          ]
-        }
-      ]
+      "$ref": "IDType.json"
     },
     "name": {
       "type": "array",
+      "minItems": 1,
       "items": {
-        "allOf": [
-          {
-            "$ref": "TextType.json"
-          },
-          {
-            "required": [
-              "value"
-            ]
-          }
-        ]
+        "$ref": "TextType.json"
       }
     },
     "subordinateSpsCountrySubDivision": {

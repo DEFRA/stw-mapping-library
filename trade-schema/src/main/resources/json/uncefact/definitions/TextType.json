@@ -12,5 +12,8 @@
     "value": {
       "type": "string"
     }
-  }
+  },
+  "required": [
+    "value"
+  ]
 }

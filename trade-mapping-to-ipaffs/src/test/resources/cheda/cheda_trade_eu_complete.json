@@ -873,7 +873,11 @@
       "id": {
         "value": ""
       },
-      "name": []
+      "name": [
+        {
+          "value": ""
+        }
+      ]
     }
   },
   "spsExchangedDocument": {

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "SpsTransportEquipmentType.json",
+  "$id": "SpsTransportEquipmentType.json",
   "type": "object",
   "properties": {
     "affixedSpsSeal": {
@@ -9,16 +9,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "allOf": [
-              {
-                "$ref": "IDType.json"
-              },
-              {
-                "required": [
-                  "value"
-                ]
-              }
-            ]
+            "$ref": "IDType.json"
           },
           "issuingSpsParty": {
             "$ref": "SpsPartyType.json"
@@ -33,16 +24,7 @@
       }
     },
     "id": {
-      "allOf": [
-        {
-          "$ref": "IDType.json"
-        },
-        {
-          "required": [
-            "value"
-          ]
-        }
-      ]
+      "$ref": "IDType.json"
     },
     "settingSpsTemperature": {
       "type": "array",

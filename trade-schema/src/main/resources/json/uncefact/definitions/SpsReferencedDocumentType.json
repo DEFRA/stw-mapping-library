@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "SpsReferencedDocumentType.json",
+  "$id": "SpsReferencedDocumentType.json",
   "type": "object",
   "properties": {
     "attachmentBinaryObject": {
@@ -36,16 +36,7 @@
       }
     },
     "id": {
-      "allOf": [
-        {
-          "$ref": "IDType.json"
-        },
-        {
-          "required": [
-            "value"
-          ]
-        }
-      ]
+      "$ref": "IDType.json"
     },
     "information": {
       "$ref": "TextType.json"

@@ -70,11 +70,9 @@
                           },
                           "className": {
                             "type": "array",
+                            "minItems": 1,
                             "items": {
-                              "allOf": [
-                                { "$ref": "definitions/TextType.json"},
-                                { "required": [ "value" ] }
-                              ]
+                              "$ref": "definitions/TextType.json"
                             }
                           },
                           "systemID": {
@@ -82,11 +80,9 @@
                           },
                           "systemName": {
                             "type": "array",
+                            "minItems": 1,
                             "items": {
-                              "allOf": [
-                                { "$ref": "definitions/TextType.json"},
-                                { "required": [ "value" ] }
-                              ]
+                              "$ref": "definitions/TextType.json"
                             }
                           }
                         },
@@ -108,11 +104,9 @@
                               "properties": {
                                 "description": {
                                   "type": "array",
+                                  "minItems": 1,
                                   "items": {
-                                    "allOf": [
-                                      { "$ref": "definitions/TextType.json"},
-                                      { "required": [ "value" ] }
-                                    ]
+                                    "$ref": "definitions/TextType.json"
                                   }
                                 },
                                 "maximumValueMeasure": {
@@ -157,10 +151,7 @@
                             "$ref": "definitions/SpsPartyType.json"
                           },
                           "typeCode": {
-                            "allOf": [
-                              { "$ref": "definitions/ProcessTypeCodeType.json"},
-                              { "required": [ "value" ] }
-                            ]
+                            "$ref": "definitions/ProcessTypeCodeType.json"
                           }
                         },
                         "required": [
@@ -189,10 +180,7 @@
                     "description": {
                       "type": "array",
                       "items": {
-                        "allOf": [
-                          { "$ref": "definitions/TextType.json"},
-                          { "required": [ "value" ] }
-                        ]
+                        "$ref": "definitions/TextType.json"
                       }
                     },
                     "expiryDateTime": {
@@ -260,10 +248,7 @@
                             ]
                           },
                           "levelCode": {
-                            "allOf": [
-                              { "$ref": "definitions/CodeType.json"},
-                              { "required": [ "value" ] }
-                            ]
+                            "$ref": "definitions/CodeType.json"
                           },
                           "nominalGrossVolumeMeasure": {
                             "$ref": "definitions/MeasureType.json"
@@ -277,10 +262,7 @@
                               "type": "object",
                               "properties": {
                                 "marking": {
-                                  "allOf": [
-                                    { "$ref": "definitions/TextType.json"},
-                                    { "required": [ "value" ] }
-                                  ]
+                                  "$ref": "definitions/TextType.json"
                                 }
                               },
                               "required": [
@@ -289,10 +271,7 @@
                             }
                           },
                           "typeCode": {
-                            "allOf": [
-                              { "$ref": "definitions/PackageTypeCodeType.json"},
-                              { "required": [ "value" ] }
-                            ]
+                            "$ref": "definitions/PackageTypeCodeType.json"
                           }
                         },
                         "required": [
@@ -388,7 +367,19 @@
                     "type": "string"
                   },
                   "value": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9"
+                    ]
                   }
                 },
                 "required": [
@@ -399,10 +390,7 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "allOf": [
-                      { "$ref": "definitions/TextType.json"},
-                      { "required": [ "value" ] }
-                    ]
+                    "$ref": "definitions/TextType.json"
                   }
                 },
                 "required": [
@@ -474,10 +462,7 @@
           }
         },
         "id": {
-          "allOf": [
-            { "$ref": "definitions/IDType.json"},
-            { "required": [ "value" ] }
-          ]
+          "$ref": "definitions/IDType.json"
         },
         "includedSpsNote": {
           "type": "array",
@@ -493,11 +478,9 @@
         },
         "name": {
           "type": "array",
+          "minItems": 1,
           "items": {
-            "allOf": [
-              { "$ref": "definitions/TextType.json"},
-              { "required": [ "value" ] }
-            ]
+            "$ref": "definitions/TextType.json"
           }
         },
         "recipientSpsParty": {

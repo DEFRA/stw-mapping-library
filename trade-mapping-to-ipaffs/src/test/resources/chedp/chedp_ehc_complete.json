@@ -1,8 +1,8 @@
 {
   "spsConsignment": {
-    "availabilityDueDateTime" : {
-      "dateTime" : {
-        "value" : "2020-01-01T22:30:00Z"
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2020-01-01T22:30:00Z"
       }
     },
     "carrierSpsParty": {
@@ -48,7 +48,7 @@
         }
       ]
     },
-    "mainCarriageSpsTransportMovement":[
+    "mainCarriageSpsTransportMovement": [
       {
         "id": {
           "schemeAgencyID": "GB",
@@ -68,9 +68,9 @@
         "modeCode": {
           "value": "1"
         },
-        "usedSpsTransportMeans" : {
-          "name" : {
-            "value" : "TESTDOCUMENT"
+        "usedSpsTransportMeans": {
+          "name": {
+            "value": "TESTDOCUMENT"
           }
         }
       }
@@ -391,39 +391,53 @@
         }
       ]
     },
-    "transitSpsCountry" : [ {
-      "id" : {
-        "value" : "BH"
-      },
-      "subordinateSpsCountrySubDivision" : [ {
-        "activityAuthorizedSpsParty" : [ {
-          "id" : {
-            "value" : "BEBRU"
-          },
-          "roleCode" : {
-            "value" : "CM"
-          },
-          "name": {
+    "transitSpsCountry": [
+      {
+        "id": {
+          "value": "BH"
+        },
+        "subordinateSpsCountrySubDivision": [
+          {
+            "activityAuthorizedSpsParty": [
+              {
+                "id": {
+                  "value": "BEBRU"
+                },
+                "roleCode": {
+                  "value": "CM"
+                },
+                "name": {
+                  "value": ""
+                }
+              }
+            ],
+            "functionTypeCode": {
+              "value": "42"
+            },
+            "hierarchicalLevelCode": {
+              "value": "0"
+            },
+            "name": [
+              {
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "name": [
+          {
             "value": ""
           }
-        } ],
-        "functionTypeCode" : {
-          "value" : "42"
-        },
-        "hierarchicalLevelCode" : {
-          "value" : "0"
-        },
-        "name": [
-
         ]
-      } ],
-      "name": [
-        
-      ]
-    } ],
+      }
+    ],
     "examinationSpsEvent": {
       "occurrenceSpsLocation": {
-        "name": []
+        "name": [
+          {
+            "value": ""
+          }
+        ]
       }
     }
   },
@@ -457,7 +471,7 @@
       {
         "content": [
           {
-          "value": "TESTDOCUMENT"
+            "value": "TESTDOCUMENT"
           }
         ],
         "subjectCode": {
@@ -467,7 +481,7 @@
       {
         "content": [
           {
-          "value": "TESTDOCUMENT"
+            "value": "TESTDOCUMENT"
           }
         ],
         "subjectCode": {
@@ -475,16 +489,18 @@
         }
       },
       {
-        "content" : [ {
-          "value" : "2020-06-15T21:30:00Z"
-        } ],
-        "subjectCode" : {
-          "value" : "DEPARTURE_FROM_BCP_DATETIME"
+        "content": [
+          {
+            "value": "2020-06-15T21:30:00Z"
+          }
+        ],
+        "subjectCode": {
+          "value": "DEPARTURE_FROM_BCP_DATETIME"
         }
       }
     ],
-    "id" : {
-      "value" : "NZL2020/PPCS2/121580"
+    "id": {
+      "value": "NZL2020/PPCS2/121580"
     },
     "issueDateTime": {
       "dateTime": {
@@ -532,7 +548,7 @@
         ],
         "actualDateTime": {
           "dateTime": {
-
+            "value": "2020-10-21T14:30:00Z"
           }
         },
         "providerSpsParty": {
@@ -546,9 +562,13 @@
       "name": "Draft",
       "value": "47"
     },
-    "name": [],
+    "name": [
+      {
+        "value": ""
+      }
+    ],
     "typeCode": {
-      "value": ""
+      "value": "636"
     }
   }
 }

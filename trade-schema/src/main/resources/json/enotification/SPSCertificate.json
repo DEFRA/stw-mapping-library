@@ -1,44 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "spsConsignment": {
-      "allOf": [
-        { "$ref": "../uncefact/SPSCertificate.json#/properties/spsConsignment"},
-        {
+  "allOf": [
+    {
+      "$ref": "../uncefact/SPSCertificate.json"
+    },
+    {
+      "properties": {
+        "spsConsignment": {
           "properties": {
             "availabilityDueDateTime": {
-              "properties": {
-                "dateTime": {
-                  "required": [
-                    "value"
-                  ]
-                }
-              },
               "required": [
                 "dateTime"
               ]
-            },
-            "carrierSpsParty": {
-              "$ref": "definitions/SpsPartyType.json"
-            },
-            "consignorSpsParty": {
-              "$ref": "definitions/SpsPartyType.json"
-            },
-            "consigneeSpsParty": {
-              "$ref": "definitions/SpsPartyType.json"
-            },
-            "exportSpsCountry": {
-              "properties": {
-                "id": {
-                  "properties": {
-                    "value": {
-                      "minLength": 2,
-                      "maxLength": 2
-                    }
-                  }
-                }
-              }
             },
             "includedSpsConsignmentItem": {
               "items": {
@@ -48,98 +21,50 @@
                       "properties": {
                         "additionalInformationSpsNote": {
                           "items": {
-                            "$ref": "definitions/AdditionalInformationSpsNote.json"
+                            "required": [
+                              "subjectCode"
+                            ]
                           }
                         },
                         "applicableSpsClassification": {
-                          "items": {
-                            "properties": {
-                              "classCode": {
-                                "required": [
-                                  "value"
-                                ]
-                              },
-                              "systemID": {
-                                "properties": {
-                                  "value": {
-                                    "enum": [
-                                      "CN",
-                                      "EPPO"
-                                    ]
-                                  }
-                                }
-                              },
-                              "systemName": {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "languageID": {
-                                      "type": "string"
-                                    },
-                                    "languageLocaleID": {
-                                      "type": "string"
-                                    },
-                                    "value": {
-                                      "type": "string",
-                                      "enum": [
-                                        "CN Code (Combined Nomenclature)",
-                                        "European and Mediterranean Plant Protection Organization",
-                                        "IPAFFS_CCC",
-                                        "IPAFFS_CCF",
-                                        "IPAFFS_CCT"
-                                      ]
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "required": [
-                              "className",
-                              "systemName"
-                            ]
-                          }
+                          "$ref": "definitions/ApplicableSpsClassification.json"
                         },
-                        "appliedSpsProcess": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "operationSpsCountry": {
-                                "$ref": "definitions/SpsCountryType.json"
-                              },
-                              "operatorSpsParty": {
-                                "$ref": "../uncefact/definitions/SpsPartyType.json"
-                              },
-                              "typeCode": {
-                                "allOf": [
-                                  { "$ref": "../uncefact/definitions/ProcessTypeCodeType.json"},
-                                  { "required": [ "value" ] }
-                                ]
-                              }
-                            },
-                            "required": [
-                              "typeCode"
-                            ]
-                          }
+                        "grossVolumeMeasure": {
+                          "properties": {
+                            "unitCode": {
+                              "enum": [
+                                "LTR",
+                                "MTQ"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "value",
+                            "unitCode"
+                          ]
                         },
                         "grossWeightMeasure": {
                           "required": [
-                            "unitCode",
-                            "value"
+                            "value",
+                            "unitCode"
                           ]
                         },
                         "netWeightMeasure": {
                           "required": [
-                            "unitCode",
-                            "value"
+                            "value",
+                            "unitCode"
                           ]
                         },
-                        "originSpsCountry": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "definitions/SpsCountryType.json"
-                          }
+                        "netVolumeMeasure": {
+                          "properties": {
+                            "unitCode": {
+                              "const": "H87"
+                            }
+                          },
+                          "required": [
+                            "value",
+                            "unitCode"
+                          ]
                         },
                         "physicalSpsPackage": {
                           "items": {
@@ -147,27 +72,11 @@
                               "levelCode": {
                                 "properties": {
                                   "value": {
-                                    "enum": [
-                                      "4"
-                                    ]
-                                  }
-                                }
-                              },
-                              "typeCode": {
-                                "properties": {
-                                  "value": {
-                                    "maxLength": 2
+                                    "const": "4"
                                   }
                                 }
                               }
                             }
-                          }
-                        },
-                        "scientificName": {
-                          "items": {
-                            "required": [
-                              "value"
-                            ]
                           }
                         }
                       },
@@ -175,8 +84,7 @@
                         "applicableSpsClassification",
                         "originSpsCountry",
                         "physicalSpsPackage",
-                        "scientificName",
-                        "netWeightMeasure"
+                        "scientificName"
                       ]
                     }
                   }
@@ -189,9 +97,7 @@
                   "id": {
                     "properties": {
                       "schemeAgencyID": {
-                        "enum": [
-                          "GB"
-                        ]
+                        "const": "GB"
                       },
                       "schemeID": {
                         "enum": [
@@ -219,8 +125,7 @@
                           "1",
                           "2",
                           "3",
-                          "4",
-                          "5"
+                          "4"
                         ]
                       }
                     }
@@ -243,14 +148,12 @@
                     }
                   },
                   "required": [
-                    "schemeID",
-                    "value"
+                    "schemeID"
                   ]
                 }
               },
               "required": [
-                "id",
-                "name"
+                "id"
               ]
             },
             "utilizedSpsTransportEquipment": {
@@ -261,6 +164,9 @@
                       "value": {
                         "minLength": 1,
                         "maxLength": 32
+                      },
+                      "schemeID": {
+                        "const": "container_number"
                       }
                     },
                     "required": [
@@ -268,6 +174,8 @@
                     ]
                   },
                   "affixedSpsSeal": {
+                    "minItems": 1,
+                    "maxItems": 1,
                     "items": {
                       "properties": {
                         "id": {
@@ -275,6 +183,12 @@
                             "value": {
                               "minLength": 1,
                               "maxLength": 32
+                            },
+                            "schemeID": {
+                              "enum": [
+                                "seal_number",
+                                "official_seal_number"
+                              ]
                             }
                           },
                           "required": [
@@ -282,9 +196,7 @@
                           ]
                         }
                       }
-                    },
-                    "minItems": 1,
-                    "maxItems": 2
+                    }
                   }
                 }
               }
@@ -294,13 +206,8 @@
             "exportSpsCountry",
             "unloadingBaseportSpsLocation"
           ]
-        }
-      ]
-    },
-    "spsExchangedDocument": {
-      "allOf": [
-        { "$ref": "../uncefact/SPSCertificate.json#/properties/spsExchangedDocument"},
-        {
+        },
+        "spsExchangedDocument": {
           "properties": {
             "id": {
               "properties": {
@@ -314,16 +221,20 @@
               "items": {
                 "if": {
                   "properties": {
-                    "content": {
-                      "items": {
-                        "properties": {
-                          "value": {
-                            "const": ""
-                          }
+                    "subjectCode": {
+                      "properties": {
+                        "value": {
+                          "const": "PRODUCT_TEMPERATURE"
                         }
-                      }
+                      },
+                      "required": [
+                        "value"
+                      ]
                     }
-                  }
+                  },
+                  "required": [
+                    "subjectCode"
+                  ]
                 },
                 "then": {
                   "properties": {
@@ -340,12 +251,12 @@
                         }
                       }
                     },
-                    "subjectCode": {
-                      "properties": {
-                        "value": {
-                          "enum": [
-                            "PRODUCT_TEMPERATURE"
-                          ]
+                    "content": {
+                      "items": {
+                        "properties": {
+                          "value": {
+                            "const": ""
+                          }
                         }
                       }
                     }
@@ -355,10 +266,8 @@
                   ]
                 },
                 "properties": {
-                  "subjectCode": {
-                    "required": [
-                      "value"
-                    ]
+                  "contentCode": {
+                    "minItems": 1
                   }
                 },
                 "required": [
@@ -370,14 +279,16 @@
               "items": {
                 "properties": {
                   "includedSpsClause": {
-                    "items":{
+                    "items": {
                       "properties": {
                         "id": {
                           "properties": {
                             "value": {
                               "enum": [
                                 "PURPOSE",
-                                "GOODS_CERTIFIED_AS"
+                                "GOODS_CERTIFIED_AS",
+                                "INTERNAL_MARKET_PURPOSE",
+                                "ANIMALS_CERTIFIED_AS"
                               ]
                             }
                           }
@@ -394,28 +305,20 @@
             "statusCode": {
               "properties": {
                 "value": {
-                  "enum": [
-                    "47"
-                  ]
+                  "const": "47"
                 }
               }
             },
             "typeCode": {
               "properties": {
                 "value": {
-                  "enum": [
-                    "636"
-                  ]
+                  "const": "636"
                 }
               }
             }
           }
         }
-      ]
+      }
     }
-  },
-  "required": [
-    "spsConsignment",
-    "spsExchangedDocument"
   ]
 }
