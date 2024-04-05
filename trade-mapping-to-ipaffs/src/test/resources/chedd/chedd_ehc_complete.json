@@ -1,0 +1,343 @@
+{
+  "spsConsignment": {
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2020-01-01T22:30:00Z"
+      }
+    },
+    "consigneeSpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "consignorSpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "deliverySpsParty": {
+      "id": {
+        "value": "6fcfe3ec-a316-43db-a516-ce34566e96ad"
+      },
+      "name": {
+        "value": "COOPERATIVECa30 Ltd"
+      }
+    },
+    "unloadingBaseportSpsLocation": {
+      "id": {
+        "schemeID": "un_locode",
+        "value": "GBLHR1P"
+      },
+      "name": [
+        {
+          "value": "GB"
+        }
+      ]
+    },
+    "mainCarriageSpsTransportMovement": [
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_before_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        }
+      }
+    ],
+    "utilizedSpsTransportEquipment": [
+      {
+        "affixedSpsSeal": [
+          {
+            "id": {
+              "schemeID": "seal_number",
+              "value": "S12345"
+            }
+          }
+        ],
+        "id": {
+          "schemeID": "container_number",
+          "value": "C12345"
+        }
+      }
+    ],
+    "importSpsCountry": {
+      "id": {
+        "value": "FR"
+      },
+      "name": [
+        {
+          "value": "France"
+        }
+      ]
+    },
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "additionalInformationSpsNote": [],
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "07099990"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 939.26
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "NZ"
+                },
+                "name": [
+                  {
+                    "value": "New Zealand"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 2.0
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BG"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "07099991"
+                },
+                "className": [
+                  {
+                    "value": "Other"
+                  }
+                ],
+                "systemID": {
+                  "value": "CN"
+                },
+                "systemName": [
+                  {
+                    "value": "CN Code (Combined Nomenclature)"
+                  }
+                ]
+              }
+            ],
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 739.26
+            },
+            "netWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 739.26
+            },
+            "originSpsCountry": [
+              {
+                "id": {
+                  "value": "NZ"
+                },
+                "name": [
+                  {
+                    "value": "New Zealand"
+                  }
+                ]
+              }
+            ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 3.0
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "PK"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle"
+              }
+            ],
+            "sequenceNumeric": {
+              "value": 2
+            }
+          }
+        ]
+      }
+    ],
+    "exportSpsCountry": {
+      "id": {
+        "value": "NZ"
+      },
+      "name": [
+        {
+          "value": "New Zealand"
+        }
+      ]
+    },
+    "transitSpsCountry": [
+      {
+        "id": {
+          "value": "BH"
+        },
+        "subordinateSpsCountrySubDivision": [
+          {
+            "activityAuthorizedSpsParty": [
+              {
+                "id": {
+                  "value": "BEBRU"
+                },
+                "roleCode": {
+                  "value": "CM"
+                }
+              }
+            ],
+            "functionTypeCode": {
+              "value": "42"
+            },
+            "hierarchicalLevelCode": {
+              "value": "0"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "spsExchangedDocument": {
+    "includedSpsNote": [
+      {
+        "content": [
+          {
+            "value": ""
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "AMBIENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "PRODUCT_TEMPERATURE"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ],
+        "subjectCode": {
+          "value": "CONFORMS_TO_EU"
+        }
+      },
+      {
+        "content": [
+          {
+            "value": "TESTDOCUMENT"
+          }
+        ],
+        "subjectCode": {
+          "value": "transport_before_bcp_document"
+        }
+      }
+    ],
+    "id": {
+      "value": "NZL2020/PPCS2/121580"
+    },
+    "issueDateTime": {
+      "dateTime": {
+        "value": "2024-01-02T03:04:05Z"
+      }
+    },
+    "signatorySpsAuthentication": [
+      {
+        "includedSpsClause": [
+          {
+            "content": [
+              {
+                "value": "TRANSHIPMENT"
+              }
+            ],
+            "id": {
+              "value": "PURPOSE"
+            }
+          },
+          {
+            "content": [
+              {
+                "value": "HUMAN_CONSUMPTION"
+              }
+            ],
+            "id": {
+              "value": "GOODS_CERTIFIED_AS"
+            }
+          }
+        ]
+      }
+    ],
+    "statusCode": {
+      "name": "Draft",
+      "value": "47"
+    }
+  }
+}

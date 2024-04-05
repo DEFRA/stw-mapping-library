@@ -9,6 +9,7 @@ import uk.gov.defra.stw.mapping.toipaffs.common.CountryOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.RegionOfOriginMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.CommodityComplementMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.NumberOfPackagesMapper;
+import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TemperatureMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalGrossWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.common.commodities.TotalNetWeightMapper;
 import uk.gov.defra.stw.mapping.toipaffs.exceptions.CommoditiesMapperException;
@@ -22,7 +23,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
   private final ChedpComplementParameterSetMapper chedpComplementParameterSetMapper;
   private final RegionOfOriginMapper regionOfOriginMapper;
   private final TotalGrossWeightMapper totalGrossWeightMapper;
-  private final ChedpTemperatureMapper chedpTemperatureMapper;
+  private final TemperatureMapper commodityTemperatureMapper;
   private final CountryOfOriginMapper countryOfOriginMapper;
   private final TotalNetWeightMapper totalNetWeightMapper;
   private final NumberOfPackagesMapper numberOfPackagesMapper;
@@ -33,7 +34,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
       ChedpComplementParameterSetMapper chedpComplementParameterSetMapper,
       RegionOfOriginMapper regionOfOriginMapper,
       TotalGrossWeightMapper totalGrossWeightMapper,
-      ChedpTemperatureMapper chedpTemperatureMapper,
+      TemperatureMapper commodityTemperatureMapper,
       CountryOfOriginMapper countryOfOriginMapper,
       TotalNetWeightMapper totalNetWeightMapper,
       NumberOfPackagesMapper numberOfPackagesMapper) {
@@ -41,7 +42,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
     this.chedpComplementParameterSetMapper = chedpComplementParameterSetMapper;
     this.regionOfOriginMapper = regionOfOriginMapper;
     this.totalGrossWeightMapper = totalGrossWeightMapper;
-    this.chedpTemperatureMapper = chedpTemperatureMapper;
+    this.commodityTemperatureMapper = commodityTemperatureMapper;
     this.countryOfOriginMapper = countryOfOriginMapper;
     this.totalNetWeightMapper = totalNetWeightMapper;
     this.numberOfPackagesMapper = numberOfPackagesMapper;
@@ -51,7 +52,7 @@ public class ChedpCommoditiesMapper implements Mapper<SpsCertificate, Commoditie
   public Commodities map(SpsCertificate data) throws NotificationMapperException {
     try {
       return Commodities.builder()
-          .temperature(chedpTemperatureMapper.map(data))
+          .temperature(commodityTemperatureMapper.map(data))
           .commodityComplement(commodityComplementMapper.map(data))
           .complementParameterSet(chedpComplementParameterSetMapper.map(data))
           .includeNonAblactedAnimals(Boolean.FALSE)
