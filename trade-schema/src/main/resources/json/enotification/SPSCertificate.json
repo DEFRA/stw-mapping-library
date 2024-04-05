@@ -58,7 +58,9 @@
                         "netVolumeMeasure": {
                           "properties": {
                             "unitCode": {
-                              "const": "H87"
+                              "enum": [
+                                "H87"
+                              ]
                             }
                           },
                           "required": [
@@ -72,7 +74,9 @@
                               "levelCode": {
                                 "properties": {
                                   "value": {
-                                    "const": "4"
+                                    "enum": [
+                                      "4"
+                                    ]
                                   }
                                 }
                               }
@@ -97,7 +101,9 @@
                   "id": {
                     "properties": {
                       "schemeAgencyID": {
-                        "const": "GB"
+                        "enum": [
+                          "GB"
+                        ]
                       },
                       "schemeID": {
                         "enum": [
@@ -166,7 +172,9 @@
                         "maxLength": 32
                       },
                       "schemeID": {
-                        "const": "container_number"
+                        "enum": [
+                          "container_number"
+                        ]
                       }
                     },
                     "required": [
@@ -218,62 +226,7 @@
               }
             },
             "includedSpsNote": {
-              "items": {
-                "if": {
-                  "properties": {
-                    "subjectCode": {
-                      "properties": {
-                        "value": {
-                          "const": "PRODUCT_TEMPERATURE"
-                        }
-                      },
-                      "required": [
-                        "value"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "subjectCode"
-                  ]
-                },
-                "then": {
-                  "properties": {
-                    "contentCode": {
-                      "items": {
-                        "properties": {
-                          "value": {
-                            "enum": [
-                              "AMBIENT",
-                              "CHILLED",
-                              "FROZEN"
-                            ]
-                          }
-                        }
-                      }
-                    },
-                    "content": {
-                      "items": {
-                        "properties": {
-                          "value": {
-                            "const": ""
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "contentCode"
-                  ]
-                },
-                "properties": {
-                  "contentCode": {
-                    "minItems": 1
-                  }
-                },
-                "required": [
-                  "subjectCode"
-                ]
-              }
+              "$ref": "definitions/IncludedSpsNote.json"
             },
             "signatorySpsAuthentication": {
               "items": {
@@ -305,14 +258,18 @@
             "statusCode": {
               "properties": {
                 "value": {
-                  "const": "47"
+                  "enum": [
+                    "47"
+                  ]
                 }
               }
             },
             "typeCode": {
               "properties": {
                 "value": {
-                  "const": "636"
+                  "enum": [
+                    "636"
+                  ]
                 }
               }
             }

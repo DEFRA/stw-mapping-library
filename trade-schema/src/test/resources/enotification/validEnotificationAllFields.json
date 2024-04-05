@@ -1,5 +1,38 @@
 {
   "spsConsignment": {
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2020-10-21T14:30:00Z"
+      }
+    },
+    "carrierSpsParty": {
+      "id": {
+        "value": "NS123"
+      },
+      "name": {
+        "value": "Transporter name"
+      },
+      "specifiedSpsAddress": {
+        "cityName": {
+          "value": "Ashashire"
+        },
+        "countryID": {
+          "value": "GB"
+        },
+        "lineOne": {
+          "value": "82760 Stoltenberg Oval"
+        },
+        "lineThree": {
+          "value": "Georgia"
+        },
+        "lineTwo": {
+          "value": "Apt. 890"
+        },
+        "postcodeCode": {
+          "value": "81731"
+        }
+      }
+    },
     "consigneeSpsParty": {
       "id": {
         "value": "GB00092121"
@@ -16,6 +49,15 @@
         },
         "lineOne": {
           "value": "82760 Stoltenberg Oval"
+        },
+        "lineThree": {
+          "value": "Georgia"
+        },
+        "lineTwo": {
+          "value": "Apt. 890"
+        },
+        "postcodeCode": {
+          "value": "81731"
         }
       }
     },
@@ -35,6 +77,15 @@
         },
         "lineOne": {
           "value": "5953 Francisco Plain"
+        },
+        "lineThree": {
+          "value": "Vermont"
+        },
+        "lineTwo": {
+          "value": "Suite 175"
+        },
+        "postcodeCode": {
+          "value": "43348"
         }
       }
     },
@@ -53,7 +104,7 @@
       },
       "name": [
         {
-          "value": ""
+          "value": "New Zealand"
         }
       ]
     },
@@ -71,6 +122,18 @@
       {
         "includedSpsTradeLineItem": [
           {
+            "additionalInformationSpsNote": [
+              {
+                "content": [
+                  {
+                    "value": "true"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "container"
+                }
+              }
+            ],
             "applicableSpsClassification": [
               {
                 "classCode": {
@@ -111,7 +174,7 @@
                 },
                 "name": [
                   {
-                    "value": ""
+                    "value": "New Zealand"
                   }
                 ]
               }
@@ -141,6 +204,18 @@
         ]
       }
     ],
+    "mainCarriageSpsTransportMovement": [
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_before_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        }
+      }
+    ],
     "unloadingBaseportSpsLocation": {
       "id": {
         "schemeID": "un_locode",
@@ -151,20 +226,26 @@
           "value": "GB"
         }
       ]
-    }
+    },
+    "utilizedSpsTransportEquipment": [
+      {
+        "affixedSpsSeal": [
+          {
+            "id": {
+              "schemeID": "seal_number",
+              "value": "S12345"
+            }
+          }
+        ],
+        "id": {
+          "schemeID": "container_number",
+          "value": "C12345"
+        }
+      }
+    ]
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
-      {
-        "content": [
-          {
-            "value": "TradePlatform-17A-1.0.0-alpha"
-          }
-        ],
-        "subjectCode": {
-          "value": "TradePlatform UN/CEFACT Mapping Version"
-        }
-      },
       {
         "content": [
           {

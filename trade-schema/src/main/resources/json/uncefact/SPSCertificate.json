@@ -497,6 +497,7 @@
         },
         "signatorySpsAuthentication": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "$ref": "definitions/SpsAuthenticationType.json"
           }
@@ -528,10 +529,7 @@
           ]
         },
         "typeCode": {
-          "allOf": [
-            { "$ref": "definitions/DocumentCodeType.json"},
-            { "required": [ "value"] }
-          ]
+          "$ref": "definitions/DocumentCodeType.json"
         }
       },
       "required": [

@@ -2,85 +2,140 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "ApplicableSpsClassification.json",
   "items": {
-    "oneOf": [
-      {
+    "properties": {
+      "systemID": {
         "properties": {
-          "systemID": {
-            "properties": {
-              "value": {
-                "const": "CN"
+          "value": {
+            "enum": [
+              "CN",
+              "EPPO"
+            ]
+          }
+        }
+      },
+      "systemName": {
+        "items": {
+          "properties": {
+            "value": {
+              "enum": [
+                "CN Code (Combined Nomenclature)",
+                "European and Mediterranean Plant Protection Organization",
+                "IPAFFS_CCC",
+                "IPAFFS_CCF",
+                "IPAFFS_CCT"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "systemName": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "const": "CN Code (Combined Nomenclature)"
+                  }
+                }
               }
             }
           },
-          "systemName": {
-            "items": {
+          "required": [
+            "systemName"
+          ]
+        },
+        "then": {
+          "properties": {
+            "systemID": {
               "properties": {
                 "value": {
-                  "const": "CN Code (Combined Nomenclature)"
+                  "enum": [
+                    "CN"
+                  ]
                 }
-              }
-            }
-          }
-        }
-      },
-      {
-        "properties": {
-          "systemID": {
-            "properties": {
-              "value": {
-                "const": "EPPO"
               }
             }
           },
-          "systemName": {
-            "items": {
-              "properties": {
-                "value": {
-                  "const": "European and Mediterranean Plant Protection Organization"
-                }
-              }
-            }
-          }
+          "required": [
+            "systemID",
+            "classCode"
+          ]
         }
       },
       {
-        "properties": {
-          "systemID": false,
-          "systemName": {
-            "items": {
-              "properties": {
-                "value": {
-                  "const": "IPAFFS_CCC"
+        "if": {
+          "properties": {
+            "systemName": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "const": "European and Mediterranean Plant Protection Organization"
+                  }
                 }
               }
             }
-          }
+          },
+          "required": [
+            "systemName"
+          ]
+        },
+        "then": {
+          "properties": {
+            "systemID": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "EPPO"
+                  ]
+                }
+              }
+            },
+            "className": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      ""
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "systemID",
+            "classCode"
+          ]
         }
       },
       {
-        "properties": {
-          "systemID": false,
-          "systemName": {
-            "items": {
-              "properties": {
-                "value": {
-                  "const": "IPAFFS_CCF"
+        "if": {
+          "properties": {
+            "systemName": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "IPAFFS_CCT",
+                      "IPAFFS_CCC",
+                      "IPAFFS_CCF"
+                    ]
+                  }
                 }
               }
             }
-          }
-        }
-      },{
-        "properties": {
-          "systemID": false,
-          "systemName": {
-            "items": {
-              "properties": {
-                "value": {
-                  "const": "IPAFFS_CCT"
-                }
-              }
-            }
+          },
+          "required": [
+            "systemName"
+          ]
+        },
+        "then": {
+          "properties": {
+            "systemID": false,
+            "classCode": false
           }
         }
       }

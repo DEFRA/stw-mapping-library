@@ -1,0 +1,358 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IncludedSpsNote.json",
+  "items": {
+    "properties": {
+      "subjectCode": {
+        "properties": {
+          "value": {
+            "enum": [
+              "PRODUCT_TEMPERATURE",
+              "CHED_TYPE",
+              "transport_before_bcp_document",
+              "transport_after_bcp_document",
+              "INCLUDES_NON_ABLACTED_ANIMALS",
+              "DEPARTURE_FROM_BCP_DATETIME",
+              "ESTIMATED_JOURNEY_TIME_IN_MINUTES",
+              "IS_GVMS_ROUTE",
+              "TEMPORARY_ADMISSION_HORSES_EXIT_DATE",
+              "CONFORMS_TO_EU",
+              "NON_CONFORMING_GOODS_DESTINATION_TYPE",
+              "NON_CONFORMING_GOODS_DESTINATION_REGISTERED_NUMBER",
+              "NON_CONFORMING_GOODS_DESTINATION_SHIP_NAME",
+              "NON_CONFORMING_GOODS_DESTINATION_SHIP_PORT",
+              "CONTACT_DETAILS_NAME",
+              "CONTACT_DETAILS_PHONE",
+              "CONTACT_DETAILS_EMAIL",
+              "CONTACT_DETAILS_AGENT",
+              "NOMINATED_CONTACT_NAME",
+              "NOMINATED_CONTACT_PHONE",
+              "NOMINATED_CONTACT_EMAIL",
+              "IDENTIFICATION_DETAIL"
+            ]
+          }
+        }
+      }
+    },
+    "required": [
+      "subjectCode"
+    ],
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "PRODUCT_TEMPERATURE"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": {
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "AMBIENT",
+                      "CHILLED",
+                      "FROZEN"
+                    ]
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      ""
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "CHED_TYPE"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "CHEDA",
+                      "CHEDP",
+                      "CHEDD",
+                      "CHEDPP"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "transport_before_bcp_document",
+                    "transport_after_bcp_document",
+                    "ESTIMATED_JOURNEY_TIME_IN_MINUTES",
+                    "NON_CONFORMING_GOODS_DESTINATION_TYPE",
+                    "NON_CONFORMING_GOODS_DESTINATION_REGISTERED_NUMBER",
+                    "NON_CONFORMING_GOODS_DESTINATION_SHIP_NAME",
+                    "NON_CONFORMING_GOODS_DESTINATION_SHIP_PORT",
+                    "CONTACT_DETAILS_NAME",
+                    "CONTACT_DETAILS_PHONE",
+                    "CONTACT_DETAILS_AGENT"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "INCLUDES_NON_ABLACTED_ANIMALS",
+                    "IS_GVMS_ROUTE",
+                    "CONFORMS_TO_EU"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "TRUE",
+                      "FALSE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "DEPARTURE_FROM_BCP_DATETIME"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "TEMPORARY_ADMISSION_HORSES_EXIT_DATE"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "CONTACT_DETAILS_EMAIL"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "email"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "NOMINATED_CONTACT_EMAIL"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": {
+              "minItems": 1
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "email"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "IDENTIFICATION_DETAIL",
+                    "NOMINATED_CONTACT_NAME",
+                    "NOMINATED_CONTACT_PHONE"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": {
+              "minItems": 1
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      }
+    ]
+  }
+}

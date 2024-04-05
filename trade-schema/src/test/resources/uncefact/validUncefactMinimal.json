@@ -1,0 +1,88 @@
+{
+  "spsConsignment": {
+    "consignorSpsParty": {
+      "name": {
+        "value": ""
+      }
+    },
+    "consigneeSpsParty": {
+      "name": {
+        "value": ""
+      }
+    },
+    "importSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    "includedSpsConsignmentItem": [],
+    "examinationSpsEvent": {
+      "occurrenceSpsLocation": {
+        "name": [
+          {
+            "value": ""
+          }
+        ]
+      }
+    },
+    "exportSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    }
+  },
+  "spsExchangedDocument": {
+    "id": {
+      "value": ""
+    },
+    "issueDateTime": {
+      "dateTime": {
+        "value": "2024-01-01T09:00:00Z"
+      }
+    },
+    "name": [
+      {
+        "value": ""
+      }
+    ],
+    "signatorySpsAuthentication": [
+      {
+        "actualDateTime": {
+          "dateTime": {
+            "value": "2024-01-01T09:00:00Z"
+          }
+        },
+        "includedSpsClause": [
+          {
+            "content": [
+              {
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "providerSpsParty": {
+          "name": {
+            "value": ""
+          }
+        }
+      }
+    ],
+    "statusCode": {
+      "value": ""
+    },
+    "typeCode": {
+      "value": ""
+    }
+  }
+}
