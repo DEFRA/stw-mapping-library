@@ -60,9 +60,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -75,9 +78,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -90,9 +96,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -120,9 +129,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_2"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -135,9 +147,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_2"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -150,9 +165,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_2"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -270,9 +288,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -285,9 +306,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -300,9 +324,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -492,9 +519,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -507,9 +537,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -522,9 +555,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -552,9 +588,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_2"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -567,9 +606,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_2"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -582,9 +624,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_2"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -678,9 +723,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -693,9 +741,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -708,9 +759,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [

@@ -20,11 +20,7 @@
                     "items": {
                       "properties": {
                         "additionalInformationSpsNote": {
-                          "items": {
-                            "required": [
-                              "subjectCode"
-                            ]
-                          }
+                          "$ref": "definitions/AdditionalInformationSpsNote.json"
                         },
                         "applicableSpsClassification": {
                           "$ref": "definitions/ApplicableSpsClassification.json"
@@ -232,25 +228,7 @@
               "items": {
                 "properties": {
                   "includedSpsClause": {
-                    "items": {
-                      "properties": {
-                        "id": {
-                          "properties": {
-                            "value": {
-                              "enum": [
-                                "PURPOSE",
-                                "GOODS_CERTIFIED_AS",
-                                "INTERNAL_MARKET_PURPOSE",
-                                "ANIMALS_CERTIFIED_AS"
-                              ]
-                            }
-                          }
-                        }
-                      },
-                      "required": [
-                        "id"
-                      ]
-                    }
+                    "$ref": "definitions/IncludedSpsClause.json"
                   }
                 }
               }

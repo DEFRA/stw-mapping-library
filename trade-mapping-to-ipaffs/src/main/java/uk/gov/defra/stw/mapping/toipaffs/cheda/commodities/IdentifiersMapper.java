@@ -3,8 +3,6 @@ package uk.gov.defra.stw.mapping.toipaffs.cheda.commodities;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.springframework.stereotype.Component;
@@ -13,7 +11,6 @@ import uk.gov.defra.stw.mapping.dto.IncludedSpsTradeLineItem;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
 import uk.gov.defra.stw.mapping.dto.TextType;
 import uk.gov.defra.stw.mapping.toipaffs.Mapper;
-import uk.gov.defra.stw.mapping.toipaffs.exceptions.IdentifiersMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperator;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperatorAddress;
 import uk.gov.defra.tracesx.notificationschema.representation.Identifier;
@@ -24,7 +21,6 @@ import uk.gov.defra.tracesx.notificationschema.representation.enumeration.Econom
 public class IdentifiersMapper implements Mapper<IncludedSpsTradeLineItem, List<Identifier>> {
 
   private static final String STORING_PROCESS_TYPE_CODE = "43";
-  private static final Pattern IDENTIFIER_PATTERN = Pattern.compile("^(.+)_(\\d)$");
 
   public List<Identifier> map(IncludedSpsTradeLineItem tradeLineItem) {
     List<SpsNoteType> notes = tradeLineItem.getAdditionalInformationSpsNote();
@@ -48,24 +44,11 @@ public class IdentifiersMapper implements Mapper<IncludedSpsTradeLineItem, List<
   }
 
   private String getIdentifierIndex(SpsNoteType note) {
-    String identifier = note.getContentCode().get(0).getValue();
-    Matcher matcher = IDENTIFIER_PATTERN.matcher(identifier);
-    if (matcher.find()) {
-      return matcher.group(2);
-    } else {
-      throw new IdentifiersMapperException("Unable to extract index from identifier: "
-          + identifier);
-    }
+    return note.getSubject().getValue();
   }
 
   private String getIdentifierType(SpsNoteType note) {
-    String identifier = note.getContentCode().get(0).getValue();
-    Matcher matcher = IDENTIFIER_PATTERN.matcher(identifier);
-    if (matcher.find()) {
-      return matcher.group(1).toLowerCase();
-    } else {
-      throw new IdentifiersMapperException("Unable to extract type from identifier: " + identifier);
-    }
+    return note.getContentCode().get(0).getValue().toLowerCase();
   }
 
   private Map<String, String> createIdentifierData(List<SpsNoteType> identifierNotes) {

@@ -120,21 +120,6 @@
                 "subjectCode": {
                   "value": "CATCH_CERTIFICATE_WEIGHT_KG"
                 }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Arenareus spp"
-                  }
-                ],
-                "contentCode": [
-                  {
-                    "value": "12345"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "CATCH_CERTIFICATE_SPECIES"
-                }
               }
             ],
             "appliedSpsProcess": [

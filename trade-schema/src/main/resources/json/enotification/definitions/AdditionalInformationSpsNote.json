@@ -1,0 +1,402 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IncludedSpsNote.json",
+  "items": {
+    "properties": {
+      "subjectCode": {
+        "properties": {
+          "value": {
+            "enum": [
+              "IDENTIFIER",
+              "IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS",
+              "PERMANENT_ADDRESS_TELEPHONE",
+              "PERMANENT_ADDRESS_EMAIL",
+              "CATCH_CERTIFICATE_WEIGHT_KG",
+              "finished_or_propagated",
+              "variety",
+              "class",
+              "container",
+              "quantity"
+            ]
+          }
+        }
+      }
+    },
+    "required": [
+      "subjectCode"
+    ],
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "IDENTIFIER"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": {
+              "properties": {
+                "value": {
+                  "minLength": 1
+                }
+              }
+            },
+            "contentCode": {
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode",
+            "subject"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": {
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "TRUE",
+                      "FALSE"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "PERMANENT_ADDRESS_TELEPHONE",
+                    "CATCH_CERTIFICATE_WEIGHT_KG"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": {
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "PERMANENT_ADDRESS_EMAIL"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": {
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "email"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "finished_or_propagated"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "FINISHED",
+                      "PROPAGATED"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "variety",
+                    "class"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "variety",
+                    "class"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "container"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "TRUE",
+                      "FALSE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "const": "quantity"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "STM",
+                      "BLB",
+                      "CRZ",
+                      "PTC",
+                      "SDS",
+                      "KGM",
+                      "PCS"
+                    ]
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      }
+    ]
+  }
+}
