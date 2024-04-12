@@ -13,10 +13,26 @@
                 "dateTime"
               ]
             },
+            "consignorSpsParty": {
+              "required": [
+                "id"
+              ]
+            },
+            "consigneeSpsParty": {
+              "required": [
+                "id"
+              ]
+            },
+            "deliverySpsParty": {
+              "required": [
+                "id"
+              ]
+            },
             "includedSpsConsignmentItem": {
               "items": {
                 "properties": {
                   "includedSpsTradeLineItem": {
+                    "maxItems": 500,
                     "items": {
                       "properties": {
                         "additionalInformationSpsNote": {
@@ -35,19 +51,34 @@
                             }
                           },
                           "required": [
-                            "value",
                             "unitCode"
                           ]
                         },
                         "grossWeightMeasure": {
+                          "properties": {
+                            "unitCode": {
+                              "enum": [
+                                "KGM"
+                              ]
+                            }
+                          },
                           "required": [
-                            "value",
                             "unitCode"
                           ]
                         },
                         "netWeightMeasure": {
+                          "properties": {
+                            "unitCode": {
+                              "enum": [
+                                "KGM"
+                              ]
+                            },
+                            "value": {
+                              "minimum": 0.001,
+                              "multipleOf": 0.001
+                            }
+                          },
                           "required": [
-                            "value",
                             "unitCode"
                           ]
                         },
@@ -65,6 +96,8 @@
                           ]
                         },
                         "physicalSpsPackage": {
+                          "minItems": 1,
+                          "maxItems": 1,
                           "items": {
                             "properties": {
                               "levelCode": {
@@ -75,6 +108,24 @@
                                     ]
                                   }
                                 }
+                              },
+                              "itemQuantity": {
+                                "properties": {
+                                  "value": {
+                                    "minimum": 1
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "scientificName": {
+                          "minItems": 1,
+                          "maxItems": 1,
+                          "items": {
+                            "properties": {
+                              "value": {
+                                "minLength": 1
                               }
                             }
                           }
@@ -92,6 +143,7 @@
               }
             },
             "mainCarriageSpsTransportMovement": {
+              "minItems": 1,
               "items": {
                 "properties": {
                   "id": {
@@ -112,6 +164,9 @@
                           "road_vehicle_registration_after_bcp",
                           "airplane_flight_number_after_bcp"
                         ]
+                      },
+                      "value": {
+                        "minLength": 1
                       }
                     },
                     "required": [
@@ -129,6 +184,17 @@
                           "3",
                           "4"
                         ]
+                      }
+                    }
+                  },
+                  "usedSpsTransportMeans": {
+                    "properties": {
+                      "name": {
+                        "properties": {
+                          "value": {
+                            "minLength": 1
+                          }
+                        }
                       }
                     }
                   }
@@ -202,13 +268,20 @@
                       }
                     }
                   }
-                }
+                },
+                "required": [
+                  "affixedSpsSeal"
+                ]
               }
             }
           },
           "required": [
             "exportSpsCountry",
-            "unloadingBaseportSpsLocation"
+            "unloadingBaseportSpsLocation",
+            "consignorSpsParty",
+            "consigneeSpsParty",
+            "deliverySpsParty",
+            "mainCarriageSpsTransportMovement"
           ]
         },
         "spsExchangedDocument": {

@@ -38,6 +38,37 @@
         }
       }
     },
+    "deliverySpsParty": {
+      "id": {
+        "value": "GB00092121"
+      },
+      "name": {
+        "value": "Oakfield (Foods) Ltd"
+      },
+      "specifiedSpsAddress": {
+        "cityName": {
+          "value": "Lake Marcellus"
+        },
+        "countryID": {
+          "value": "BR"
+        },
+        "lineOne": {
+          "value": "5953 Francisco Plain"
+        }
+      }
+    },
+    "mainCarriageSpsTransportMovement": [
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_before_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        }
+      }
+    ],
     "examinationSpsEvent": {
       "occurrenceSpsLocation": {
         "name": [

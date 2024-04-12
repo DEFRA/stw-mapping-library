@@ -129,8 +129,7 @@
               "properties": {
                 "value": {
                   "enum": [
-                    "PERMANENT_ADDRESS_TELEPHONE",
-                    "CATCH_CERTIFICATE_WEIGHT_KG"
+                    "PERMANENT_ADDRESS_TELEPHONE"
                   ]
                 }
               }
@@ -158,6 +157,53 @@
                 "properties": {
                   "value": {
                     "minLength": 1
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "contentCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "CATCH_CERTIFICATE_WEIGHT_KG"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "subject": false,
+            "contentCode": {
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1,
+                    "pattern": "^[0-9]+$"
+                  }
+                }
+              }
+            },
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "minLength": 1,
+                    "pattern": "^[0-9]+$"
                   }
                 }
               }
@@ -366,6 +412,7 @@
           "properties": {
             "subject": false,
             "contentCode": {
+              "minItems": 1,
               "items": {
                 "properties": {
                   "value": {
@@ -386,7 +433,8 @@
               "items": {
                 "properties": {
                   "value": {
-                    "minLength": 1
+                    "minLength": 1,
+                    "pattern": "^[0-9.]+$"
                   }
                 }
               }

@@ -35,7 +35,11 @@ class EnotificationValidatorTest {
             "#/spsConsignment/examinationSpsEvent/occurrenceSpsLocation/name: expected minimum item count: 1, found: 0",
             "#/spsConsignment/exportSpsCountry/name: expected minimum item count: 1, found: 0",
             "#/spsConsignment/importSpsCountry/name: expected minimum item count: 1, found: 0",
-            "#/spsExchangedDocument/name: expected minimum item count: 1, found: 0"
+            "#/spsExchangedDocument/name: expected minimum item count: 1, found: 0",
+            "#/spsConsignment: required key [deliverySpsParty] not found",
+            "#/spsConsignment: required key [mainCarriageSpsTransportMovement] not found",
+            "#/spsConsignment/consigneeSpsParty: required key [id] not found",
+            "#/spsConsignment/consignorSpsParty: required key [id] not found"
         );
   }
 
@@ -56,7 +60,8 @@ class EnotificationValidatorTest {
             "#/spsConsignment/includedSpsConsignmentItem/0/includedSpsTradeLineItem/0/applicableSpsClassification/0/systemName/0/value:  is not a valid enum value",
             "#/spsExchangedDocument/id/value: expected maxLength: 90, actual: 100",
             "#/spsExchangedDocument/typeCode/value:  is not a valid enum value",
-            "#/spsExchangedDocument/includedSpsNote/0/subjectCode/value: PROD_TEMPERATURE is not a valid enum value"
+            "#/spsExchangedDocument/includedSpsNote/0/subjectCode/value: PROD_TEMPERATURE is not a valid enum value",
+            "#/spsConsignment: required key [deliverySpsParty] not found"
         );
   }
 

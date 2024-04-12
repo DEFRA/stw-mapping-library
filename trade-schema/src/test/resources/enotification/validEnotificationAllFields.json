@@ -89,6 +89,34 @@
         }
       }
     },
+    "deliverySpsParty": {
+      "id": {
+        "value": "GB00092121"
+      },
+      "name": {
+        "value": "Oakfield (Foods) Ltd"
+      },
+      "specifiedSpsAddress": {
+        "cityName": {
+          "value": "Lake Marcellus"
+        },
+        "countryID": {
+          "value": "BR"
+        },
+        "lineOne": {
+          "value": "5953 Francisco Plain"
+        },
+        "lineThree": {
+          "value": "Vermont"
+        },
+        "lineTwo": {
+          "value": "Suite 175"
+        },
+        "postcodeCode": {
+          "value": "43348"
+        }
+      }
+    },
     "examinationSpsEvent": {
       "occurrenceSpsLocation": {
         "name": [
