@@ -3,21 +3,33 @@
     "consignorSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000001"
+      },
+      "name": {
+        "value": ""
       }
     },
     "consigneeSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000002"
+      },
+      "name": {
+        "value": ""
       }
     },
     "deliverySpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000003"
+      },
+      "name": {
+        "value": ""
       }
     },
     "carrierSpsParty": {
       "id": {
         "value": "00000000-0000-0000-0000-000000000004"
+      },
+      "name": {
+        "value": ""
       }
     },
     "examinationSpsEvent": {
@@ -48,9 +60,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -63,9 +78,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -78,9 +96,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -108,9 +129,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_2"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -123,9 +147,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_2"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -138,9 +165,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_2"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -258,9 +288,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -273,9 +306,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -288,9 +324,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -480,9 +519,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -495,9 +537,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -510,9 +555,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -540,9 +588,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_2"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -555,9 +606,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_2"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -570,9 +624,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "2"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_2"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -666,9 +723,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "MICROCHIP_1"
+                    "value": "MICROCHIP"
                   }
                 ],
                 "content": [
@@ -681,9 +741,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "PASSPORT_1"
+                    "value": "PASSPORT"
                   }
                 ],
                 "content": [
@@ -696,9 +759,12 @@
                 "subjectCode": {
                   "value": "IDENTIFIER"
                 },
+                "subject": {
+                  "value": "1"
+                },
                 "contentCode": [
                   {
-                    "value": "TATTOO_1"
+                    "value": "TATTOO"
                   }
                 ],
                 "content": [
@@ -856,7 +922,17 @@
           "value": "C67890"
         }
       }
-    ]
+    ],
+    "exportSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [

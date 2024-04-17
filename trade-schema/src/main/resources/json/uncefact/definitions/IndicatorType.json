@@ -1,35 +1,36 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "IndicatorType.json",
-  "IndicatorType": {
-    "type": "object",
-    "properties": {
-      "indicator": {
-        "type": "boolean"
-      },
-      "indicatorString": {
-        "type": "object",
-        "properties": {
-          "format": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          }
-        }
-      }
+  "$id": "IndicatorType.json",
+  "type": "object",
+  "properties": {
+    "indicator": {
+      "type": "boolean"
     },
-    "oneOf": [
-      {
-        "required": [
-          "indicator"
-        ]
+    "indicatorString": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
       },
-      {
-        "required": [
-          "indicatorString"
-        ]
-      }
-    ]
-  }
+      "required": [
+        "value"
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "indicator"
+      ]
+    },
+    {
+      "required": [
+        "indicatorString"
+      ]
+    }
+  ]
 }

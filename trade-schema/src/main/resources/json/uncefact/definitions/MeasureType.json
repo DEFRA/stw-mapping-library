@@ -1,18 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "MeasureType.json",
-  "MeasureType": {
-    "type": "object",
-    "properties": {
-      "unitCode": {
-        "type": "string"
-      },
-      "unitCodeListVersionID": {
-        "type": "string"
-      },
-      "value": {
-        "type": "number"
-      }
+  "$id": "MeasureType.json",
+  "type": "object",
+  "properties": {
+    "unitCode": {
+      "type": "string"
+    },
+    "unitCodeListVersionID": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
     }
-  }
+  },
+  "required": [
+    "value"
+  ]
 }

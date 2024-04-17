@@ -1,8 +1,8 @@
 {
   "spsConsignment": {
-    "availabilityDueDateTime" : {
-      "dateTime" : {
-        "value" : "2020-01-01T22:30:00Z"
+    "availabilityDueDateTime": {
+      "dateTime": {
+        "value": "2020-01-01T22:30:00Z"
       }
     },
     "carrierSpsParty": {
@@ -48,7 +48,7 @@
         }
       ]
     },
-    "mainCarriageSpsTransportMovement":[
+    "mainCarriageSpsTransportMovement": [
       {
         "id": {
           "schemeAgencyID": "GB",
@@ -68,9 +68,9 @@
         "modeCode": {
           "value": "1"
         },
-        "usedSpsTransportMeans" : {
-          "name" : {
-            "value" : "TESTDOCUMENT"
+        "usedSpsTransportMeans": {
+          "name": {
+            "value": "TESTDOCUMENT"
           }
         }
       }
@@ -119,21 +119,6 @@
                 ],
                 "subjectCode": {
                   "value": "CATCH_CERTIFICATE_WEIGHT_KG"
-                }
-              },
-              {
-                "content": [
-                  {
-                    "value": "Arenareus spp"
-                  }
-                ],
-                "contentCode": [
-                  {
-                    "value": "12345"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "CATCH_CERTIFICATE_SPECIES"
                 }
               }
             ],
@@ -391,27 +376,55 @@
         }
       ]
     },
-    "transitSpsCountry" : [ {
-      "id" : {
-        "value" : "BH"
-      },
-      "subordinateSpsCountrySubDivision" : [ {
-        "activityAuthorizedSpsParty" : [ {
-          "id" : {
-            "value" : "BEBRU"
-          },
-          "roleCode" : {
-            "value" : "CM"
-          }
-        } ],
-        "functionTypeCode" : {
-          "value" : "42"
+    "transitSpsCountry": [
+      {
+        "id": {
+          "value": "BH"
         },
-        "hierarchicalLevelCode" : {
-          "value" : "0"
-        }
-      } ]
-    } ]
+        "subordinateSpsCountrySubDivision": [
+          {
+            "activityAuthorizedSpsParty": [
+              {
+                "id": {
+                  "value": "BEBRU"
+                },
+                "roleCode": {
+                  "value": "CM"
+                },
+                "name": {
+                  "value": ""
+                }
+              }
+            ],
+            "functionTypeCode": {
+              "value": "42"
+            },
+            "hierarchicalLevelCode": {
+              "value": "0"
+            },
+            "name": [
+              {
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "name": [
+          {
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "examinationSpsEvent": {
+      "occurrenceSpsLocation": {
+        "name": [
+          {
+            "value": ""
+          }
+        ]
+      }
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
@@ -443,7 +456,7 @@
       {
         "content": [
           {
-          "value": "TESTDOCUMENT"
+            "value": "TESTDOCUMENT"
           }
         ],
         "subjectCode": {
@@ -453,7 +466,7 @@
       {
         "content": [
           {
-          "value": "TESTDOCUMENT"
+            "value": "TESTDOCUMENT"
           }
         ],
         "subjectCode": {
@@ -461,16 +474,18 @@
         }
       },
       {
-        "content" : [ {
-          "value" : "2020-06-15T21:30:00Z"
-        } ],
-        "subjectCode" : {
-          "value" : "DEPARTURE_FROM_BCP_DATETIME"
+        "content": [
+          {
+            "value": "2020-06-15T21:30:00Z"
+          }
+        ],
+        "subjectCode": {
+          "value": "DEPARTURE_FROM_BCP_DATETIME"
         }
       }
     ],
-    "id" : {
-      "value" : "NZL2020/PPCS2/121580"
+    "id": {
+      "value": "NZL2020/PPCS2/121580"
     },
     "issueDateTime": {
       "dateTime": {
@@ -515,12 +530,30 @@
               "value": "PURPOSE"
             }
           }
-        ]
+        ],
+        "actualDateTime": {
+          "dateTime": {
+            "value": "2020-10-21T14:30:00Z"
+          }
+        },
+        "providerSpsParty": {
+          "name": {
+            "value": ""
+          }
+        }
       }
     ],
     "statusCode": {
       "name": "Draft",
       "value": "47"
+    },
+    "name": [
+      {
+        "value": ""
+      }
+    ],
+    "typeCode": {
+      "value": "636"
     }
   }
 }

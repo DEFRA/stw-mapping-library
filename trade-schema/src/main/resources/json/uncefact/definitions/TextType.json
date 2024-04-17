@@ -1,18 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "TextType.json",
-  "TextType": {
-    "type": "object",
-    "properties": {
-      "languageID": {
-        "type": "string"
-      },
-      "languageLocaleID": {
-        "type": "string"
-      },
-      "value": {
-        "type": "string"
-      }
+  "type": "object",
+  "properties": {
+    "languageID": {
+      "type": "string"
+    },
+    "languageLocaleID": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
     }
-  }
+  },
+  "required": [
+    "value"
+  ]
 }

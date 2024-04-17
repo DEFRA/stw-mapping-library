@@ -38,6 +38,37 @@
         }
       }
     },
+    "deliverySpsParty": {
+      "id": {
+        "value": "GB00092121"
+      },
+      "name": {
+        "value": "Oakfield (Foods) Ltd"
+      },
+      "specifiedSpsAddress": {
+        "cityName": {
+          "value": "Lake Marcellus"
+        },
+        "countryID": {
+          "value": "BR"
+        },
+        "lineOne": {
+          "value": "5953 Francisco Plain"
+        }
+      }
+    },
+    "mainCarriageSpsTransportMovement": [
+      {
+        "id": {
+          "schemeAgencyID": "GB",
+          "schemeID": "ship_imo_number_before_bcp",
+          "value": "035N"
+        },
+        "modeCode": {
+          "value": "1"
+        }
+      }
+    ],
     "examinationSpsEvent": {
       "occurrenceSpsLocation": {
         "name": [
@@ -116,6 +147,19 @@
                 ]
               }
             ],
+            "physicalSpsPackage": [
+              {
+                "itemQuantity": {
+                  "value": 2.0
+                },
+                "levelCode": {
+                  "value": "4"
+                },
+                "typeCode": {
+                  "value": "BG"
+                }
+              }
+            ],
             "scientificName": [
               {
                 "value": "Aegle"
@@ -127,20 +171,21 @@
           }
         ]
       }
-    ]
+    ],
+    "unloadingBaseportSpsLocation": {
+      "id": {
+        "schemeID": "un_locode",
+        "value": "GBLHR1P"
+      },
+      "name": [
+        {
+          "value": "GB"
+        }
+      ]
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
-      {
-        "content": [
-          {
-            "value": "TradePlatform-17A-1.0.0-alpha"
-          }
-        ],
-        "subjectCode": {
-          "value": "TradePlatform UN/CEFACT Mapping Version"
-        }
-      },
       {
         "content": [
           {

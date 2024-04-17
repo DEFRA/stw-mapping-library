@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ApplicableSpsClassification.json",
+  "items": {
+    "properties": {
+      "systemID": {
+        "properties": {
+          "value": {
+            "enum": [
+              "CN",
+              "EPPO"
+            ]
+          }
+        }
+      },
+      "systemName": {
+        "items": {
+          "properties": {
+            "value": {
+              "enum": [
+                "CN Code (Combined Nomenclature)",
+                "European and Mediterranean Plant Protection Organization",
+                "IPAFFS_CCC",
+                "IPAFFS_CCF",
+                "IPAFFS_CCT"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "systemName": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "const": "CN Code (Combined Nomenclature)"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "systemName"
+          ]
+        },
+        "then": {
+          "properties": {
+            "systemID": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "CN"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "systemID",
+            "classCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "systemName": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "const": "European and Mediterranean Plant Protection Organization"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "systemName"
+          ]
+        },
+        "then": {
+          "properties": {
+            "systemID": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "EPPO"
+                  ]
+                }
+              }
+            },
+            "className": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      ""
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "systemID",
+            "classCode"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "systemName": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "IPAFFS_CCT",
+                      "IPAFFS_CCC",
+                      "IPAFFS_CCF"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "systemName"
+          ]
+        },
+        "then": {
+          "properties": {
+            "systemID": false,
+            "classCode": false
+          }
+        }
+      }
+    ]
+  }
+}

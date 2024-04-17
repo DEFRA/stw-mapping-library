@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "IncludedSpsClause.json",
+  "items": {
+    "properties": {
+      "id": {
+        "properties": {
+          "value": {
+            "enum": [
+              "PURPOSE",
+              "GOODS_CERTIFIED_AS",
+              "INTERNAL_MARKET_PURPOSE",
+              "ANIMALS_CERTIFIED_AS"
+            ]
+          }
+        }
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "id": {
+              "properties": {
+                "value": {
+                  "const": "PURPOSE"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "INTERNAL_MARKET",
+                      "RE_ENTRY",
+                      "TRANSHIPMENT",
+                      "DIRECT_TRANSIT",
+                      "TEMPORARY_ADMISSION_HORSES",
+                      "NON_CONFORMING_GOODS",
+                      "PRIVATE_IMPORT",
+                      "TRANSFER",
+                      "RE_CONFORMITY_CHECK"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "id": {
+              "properties": {
+                "value": {
+                  "const": "GOODS_CERTIFIED_AS"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "ANIMAL_FEEDING_STUFF",
+                      "FEEDING_STUFF",
+                      "FURTHER_PROCESS",
+                      "HUMAN_CONSUMPTION",
+                      "OTHER",
+                      "PHARMACEUTICAL_USE",
+                      "TECHNICAL_USE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "id": {
+              "properties": {
+                "value": {
+                  "const": "INTERNAL_MARKET_PURPOSE"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "APPROVED_PREMISES",
+                      "BREEDING",
+                      "COMMERCIAL_SALE_OR_CHANGE_OF_OWNERSHIP",
+                      "COMPANION_ANIMAL",
+                      "FATTENING",
+                      "GAME_RESTOCKING",
+                      "PRODUCTION",
+                      "RACING",
+                      "REGISTERED_HORSES",
+                      "RESCUE",
+                      "RESEARCH",
+                      "SLAUGHTER"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "id": {
+              "properties": {
+                "value": {
+                  "const": "ANIMALS_CERTIFIED_AS"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "APPROVED_BODIES",
+                      "BREEDING",
+                      "CIRCUS",
+                      "FATTENING",
+                      "OTHER",
+                      "PETS",
+                      "QUARANTINE",
+                      "REGISTERED_EQUIDAE",
+                      "RELAYING",
+                      "SLAUGHTER"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

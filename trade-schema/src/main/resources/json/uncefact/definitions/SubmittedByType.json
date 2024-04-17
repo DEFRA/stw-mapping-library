@@ -1,15 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "SubmittedByType.json",
-  "SubmittedByType": {
-    "type": "object",
-    "properties": {
-      "displayName": {
-        "type": "string"
-      },
-      "userId": {
-        "type": "string"
-      }
+  "$id": "SubmittedByType.json",
+  "type": "object",
+  "properties": {
+    "displayName": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
     }
   }
 }

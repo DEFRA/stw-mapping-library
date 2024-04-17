@@ -7,16 +7,28 @@
         "properties": {
           "value": {
             "enum": [
-              "IDENTIFIER",
-              "IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS",
-              "PERMANENT_ADDRESS_TELEPHONE",
-              "PERMANENT_ADDRESS_EMAIL",
-              "CATCH_CERTIFICATE_WEIGHT_KG",
-              "finished_or_propagated",
-              "variety",
-              "class",
-              "container",
-              "quantity"
+              "PRODUCT_TEMPERATURE",
+              "CHED_TYPE",
+              "transport_before_bcp_document",
+              "transport_after_bcp_document",
+              "INCLUDES_NON_ABLACTED_ANIMALS",
+              "DEPARTURE_FROM_BCP_DATETIME",
+              "ESTIMATED_JOURNEY_TIME_IN_MINUTES",
+              "IS_GVMS_ROUTE",
+              "TEMPORARY_ADMISSION_HORSES_EXIT_DATE",
+              "CONFORMS_TO_EU",
+              "NON_CONFORMING_GOODS_DESTINATION_TYPE",
+              "NON_CONFORMING_GOODS_DESTINATION_REGISTERED_NUMBER",
+              "NON_CONFORMING_GOODS_DESTINATION_SHIP_NAME",
+              "NON_CONFORMING_GOODS_DESTINATION_SHIP_PORT",
+              "CONTACT_DETAILS_NAME",
+              "CONTACT_DETAILS_PHONE",
+              "CONTACT_DETAILS_EMAIL",
+              "CONTACT_DETAILS_AGENT",
+              "NOMINATED_CONTACT_NAME",
+              "NOMINATED_CONTACT_PHONE",
+              "NOMINATED_CONTACT_EMAIL",
+              "IDENTIFICATION_DETAIL"
             ]
           }
         }
@@ -32,7 +44,7 @@
             "subjectCode": {
               "properties": {
                 "value": {
-                  "const": "IDENTIFIER"
+                  "const": "PRODUCT_TEMPERATURE"
                 }
               }
             }
@@ -43,63 +55,16 @@
         },
         "then": {
           "properties": {
-            "subject": {
-              "properties": {
-                "value": {
-                  "minLength": 1
-                }
-              }
-            },
             "contentCode": {
               "minItems": 1,
               "items": {
                 "properties": {
                   "value": {
-                    "minLength": 1
-                  }
-                }
-              }
-            },
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1
-                  }
-                }
-              }
-            }
-          },
-          "required": [
-            "contentCode",
-            "subject"
-          ]
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "subjectCode": {
-              "properties": {
-                "value": {
-                  "const": "IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS"
-                }
-              }
-            }
-          },
-          "required": [
-            "subjectCode"
-          ]
-        },
-        "then": {
-          "properties": {
-            "subject": false,
-            "contentCode": {
-              "minItems": 1,
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1
+                    "enum": [
+                      "AMBIENT",
+                      "CHILLED",
+                      "FROZEN"
+                    ]
                   }
                 }
               }
@@ -109,8 +74,7 @@
                 "properties": {
                   "value": {
                     "enum": [
-                      "TRUE",
-                      "FALSE"
+                      ""
                     ]
                   }
                 }
@@ -128,8 +92,52 @@
             "subjectCode": {
               "properties": {
                 "value": {
+                  "const": "CHED_TYPE"
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "enum": [
+                      "CHEDA",
+                      "CHEDP",
+                      "CHEDD",
+                      "CHEDPP"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
                   "enum": [
-                    "PERMANENT_ADDRESS_TELEPHONE"
+                    "transport_before_bcp_document",
+                    "transport_after_bcp_document",
+                    "ESTIMATED_JOURNEY_TIME_IN_MINUTES",
+                    "NON_CONFORMING_GOODS_DESTINATION_TYPE",
+                    "NON_CONFORMING_GOODS_DESTINATION_REGISTERED_NUMBER",
+                    "NON_CONFORMING_GOODS_DESTINATION_SHIP_NAME",
+                    "NON_CONFORMING_GOODS_DESTINATION_SHIP_PORT",
+                    "CONTACT_DETAILS_NAME",
+                    "CONTACT_DETAILS_PHONE",
+                    "CONTACT_DETAILS_AGENT"
                   ]
                 }
               }
@@ -141,30 +149,8 @@
         },
         "then": {
           "properties": {
-            "subject": false,
-            "contentCode": {
-              "minItems": 1,
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1
-                  }
-                }
-              }
-            },
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1
-                  }
-                }
-              }
-            }
-          },
-          "required": [
-            "contentCode"
-          ]
+            "contentCode": false
+          }
         }
       },
       {
@@ -174,7 +160,9 @@
               "properties": {
                 "value": {
                   "enum": [
-                    "CATCH_CERTIFICATE_WEIGHT_KG"
+                    "INCLUDES_NON_ABLACTED_ANIMALS",
+                    "IS_GVMS_ROUTE",
+                    "CONFORMS_TO_EU"
                   ]
                 }
               }
@@ -186,32 +174,20 @@
         },
         "then": {
           "properties": {
-            "subject": false,
-            "contentCode": {
-              "minItems": 1,
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1,
-                    "pattern": "^[0-9]+$"
-                  }
-                }
-              }
-            },
+            "contentCode": false,
             "content": {
               "items": {
                 "properties": {
                   "value": {
-                    "minLength": 1,
-                    "pattern": "^[0-9]+$"
+                    "enum": [
+                      "TRUE",
+                      "FALSE"
+                    ]
                   }
                 }
               }
             }
-          },
-          "required": [
-            "contentCode"
-          ]
+          }
         }
       },
       {
@@ -220,7 +196,9 @@
             "subjectCode": {
               "properties": {
                 "value": {
-                  "const": "PERMANENT_ADDRESS_EMAIL"
+                  "enum": [
+                    "DEPARTURE_FROM_BCP_DATETIME"
+                  ]
                 }
               }
             }
@@ -231,16 +209,104 @@
         },
         "then": {
           "properties": {
-            "subject": false,
-            "contentCode": {
-              "minItems": 1,
+            "contentCode": false,
+            "content": {
               "items": {
                 "properties": {
                   "value": {
-                    "minLength": 1
+                    "format": "date-time"
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "TEMPORARY_ADMISSION_HORSES_EXIT_DATE"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "CONTACT_DETAILS_EMAIL"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": false,
+            "content": {
+              "items": {
+                "properties": {
+                  "value": {
+                    "format": "email"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "subjectCode": {
+              "properties": {
+                "value": {
+                  "enum": [
+                    "NOMINATED_CONTACT_EMAIL"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "subjectCode"
+          ]
+        },
+        "then": {
+          "properties": {
+            "contentCode": {
+              "minItems": 1
             },
             "content": {
               "items": {
@@ -263,43 +329,10 @@
             "subjectCode": {
               "properties": {
                 "value": {
-                  "const": "finished_or_propagated"
-                }
-              }
-            }
-          },
-          "required": [
-            "subjectCode"
-          ]
-        },
-        "then": {
-          "properties": {
-            "subject": false,
-            "contentCode": false,
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "enum": [
-                      "FINISHED",
-                      "PROPAGATED"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "subjectCode": {
-              "properties": {
-                "value": {
                   "enum": [
-                    "variety",
-                    "class"
+                    "IDENTIFICATION_DETAIL",
+                    "NOMINATED_CONTACT_NAME",
+                    "NOMINATED_CONTACT_PHONE"
                   ]
                 }
               }
@@ -311,133 +344,8 @@
         },
         "then": {
           "properties": {
-            "subject": false,
-            "contentCode": false,
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "subjectCode": {
-              "properties": {
-                "value": {
-                  "enum": [
-                    "variety",
-                    "class"
-                  ]
-                }
-              }
-            }
-          },
-          "required": [
-            "subjectCode"
-          ]
-        },
-        "then": {
-          "properties": {
-            "subject": false,
-            "contentCode": false,
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "subjectCode": {
-              "properties": {
-                "value": {
-                  "const": "container"
-                }
-              }
-            }
-          },
-          "required": [
-            "subjectCode"
-          ]
-        },
-        "then": {
-          "properties": {
-            "subject": false,
-            "contentCode": false,
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "enum": [
-                      "TRUE",
-                      "FALSE"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      {
-        "if": {
-          "properties": {
-            "subjectCode": {
-              "properties": {
-                "value": {
-                  "const": "quantity"
-                }
-              }
-            }
-          },
-          "required": [
-            "subjectCode"
-          ]
-        },
-        "then": {
-          "properties": {
-            "subject": false,
             "contentCode": {
-              "minItems": 1,
-              "items": {
-                "properties": {
-                  "value": {
-                    "enum": [
-                      "STM",
-                      "BLB",
-                      "CRZ",
-                      "PTC",
-                      "SDS",
-                      "KGM",
-                      "PCS"
-                    ]
-                  }
-                }
-              }
-            },
-            "content": {
-              "items": {
-                "properties": {
-                  "value": {
-                    "minLength": 1,
-                    "pattern": "^[0-9.]+$"
-                  }
-                }
-              }
+              "minItems": 1
             }
           },
           "required": [

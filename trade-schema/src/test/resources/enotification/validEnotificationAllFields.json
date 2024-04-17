@@ -98,22 +98,22 @@
       },
       "specifiedSpsAddress": {
         "cityName": {
-          "value": "Ashashire"
+          "value": "Lake Marcellus"
         },
         "countryID": {
-          "value": "GB"
+          "value": "BR"
         },
         "lineOne": {
-          "value": "82760 Stoltenberg Oval"
+          "value": "5953 Francisco Plain"
         },
         "lineThree": {
-          "value": "Georgia"
+          "value": "Vermont"
         },
         "lineTwo": {
-          "value": "Apt. 890"
+          "value": "Suite 175"
         },
         "postcodeCode": {
-          "value": "81731"
+          "value": "43348"
         }
       }
     },
@@ -154,7 +154,7 @@
               {
                 "content": [
                   {
-                    "value": "true"
+                    "value": "TRUE"
                   }
                 ],
                 "subjectCode": {
@@ -182,39 +182,6 @@
                 ]
               }
             ],
-            "appliedSpsProcess" : [ {
-              "operatorSpsParty" : {
-                "id" : {
-                  "value" : "81f9a1b2-8ed0-4a2a-a823-3444d6912400"
-                },
-                "name" : {
-                  "value" : "Goldner Goldner and Goldner"
-                },
-                "specifiedSpsAddress" : {
-                  "cityName" : {
-                    "value" : "Ricoshire"
-                  },
-                  "countryID" : {
-                    "value" : "GB"
-                  },
-                  "lineOne" : {
-                    "value" : "2357 Rogers"
-                  },
-                  "lineThree" : {
-                    "value" : "Rhode Island"
-                  },
-                  "lineTwo" : {
-                    "value" : "90771 Patience Cove"
-                  },
-                  "postcodeCode" : {
-                    "value" : "g4t 3RH"
-                  }
-                }
-              },
-              "typeCode" : {
-                "value" : "13"
-              }
-            } ],
             "description": [
               {
                 "value": ""
@@ -238,22 +205,6 @@
                     "value": "New Zealand"
                   }
                 ]
-              }
-            ],
-            "associatedSpsTransportEquipment": [
-              {
-                "affixedSpsSeal": [
-                  {
-                    "id": {
-                      "schemeID": "seal_number",
-                      "value": "S12345 - trade line item"
-                    }
-                  }
-                ],
-                "id": {
-                  "schemeID": "container_number",
-                  "value": "C12345 - trade line item"
-                }
               }
             ],
             "physicalSpsPackage": [
@@ -323,16 +274,6 @@
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
-      {
-        "content": [
-          {
-            "value": "TradePlatform-17A-1.0.0-alpha"
-          }
-        ],
-        "subjectCode": {
-          "value": "TradePlatform UN/CEFACT Mapping Version"
-        }
-      },
       {
         "content": [
           {

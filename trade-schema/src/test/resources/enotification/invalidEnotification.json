@@ -1,38 +1,5 @@
 {
   "spsConsignment": {
-    "availabilityDueDateTime": {
-      "dateTime": {
-        "value": "2020-10-21T14:30:00Z"
-      }
-    },
-    "carrierSpsParty": {
-      "id": {
-        "value": "NS123"
-      },
-      "name": {
-        "value": "Transporter name"
-      },
-      "specifiedSpsAddress": {
-        "cityName": {
-          "value": "Ashashire"
-        },
-        "countryID": {
-          "value": "GB"
-        },
-        "lineOne": {
-          "value": "82760 Stoltenberg Oval"
-        },
-        "lineThree": {
-          "value": "Georgia"
-        },
-        "lineTwo": {
-          "value": "Apt. 890"
-        },
-        "postcodeCode": {
-          "value": "81731"
-        }
-      }
-    },
     "consigneeSpsParty": {
       "id": {
         "value": "GB00092121"
@@ -41,23 +8,8 @@
         "value": "Oakfield (Foods) Ltd"
       },
       "specifiedSpsAddress": {
-        "cityName": {
-          "value": "Ashashire"
-        },
         "countryID": {
           "value": "GB"
-        },
-        "lineOne": {
-          "value": "82760 Stoltenberg Oval"
-        },
-        "lineThree": {
-          "value": "Georgia"
-        },
-        "lineTwo": {
-          "value": "Apt. 890"
-        },
-        "postcodeCode": {
-          "value": "81731"
         }
       }
     },
@@ -69,23 +21,11 @@
         "value": "Oakfield (Foods) Ltd"
       },
       "specifiedSpsAddress": {
-        "cityName": {
-          "value": "Lake Marcellus"
-        },
         "countryID": {
           "value": "BR"
         },
-        "lineOne": {
-          "value": "5953 Francisco Plain"
-        },
-        "lineThree": {
-          "value": "Vermont"
-        },
-        "lineTwo": {
-          "value": "Suite 175"
-        },
         "postcodeCode": {
-          "value": "43348"
+          "value": "5953 Francisco Plain5953 Francisco Plain"
         }
       }
     },
@@ -104,7 +44,7 @@
       },
       "name": [
         {
-          "value": "New Zealand"
+          "value": ""
         }
       ]
     },
@@ -122,18 +62,6 @@
       {
         "includedSpsTradeLineItem": [
           {
-            "additionalInformationSpsNote": [
-              {
-                "content": [
-                  {
-                    "value": "true"
-                  }
-                ],
-                "subjectCode": {
-                  "value": "container"
-                }
-              }
-            ],
             "applicableSpsClassification": [
               {
                 "classCode": {
@@ -145,11 +73,11 @@
                   }
                 ],
                 "systemID": {
-                  "value": "CN"
+                  "value": "AH"
                 },
                 "systemName": [
                   {
-                    "value": "CN Code (Combined Nomenclature)"
+                    "value": ""
                   }
                 ]
               }
@@ -174,7 +102,7 @@
                 },
                 "name": [
                   {
-                    "value": "New Zealand"
+                    "value": ""
                   }
                 ]
               }
@@ -185,10 +113,10 @@
                   "value": 2.0
                 },
                 "levelCode": {
-                  "value": "4"
+                  "value": "0"
                 },
                 "typeCode": {
-                  "value": "BG"
+                  "value": "LR1"
                 }
               }
             ],
@@ -212,7 +140,7 @@
           "value": "035N"
         },
         "modeCode": {
-          "value": "1"
+          "value": "6"
         }
       }
     ],
@@ -226,36 +154,10 @@
           "value": "GB"
         }
       ]
-    },
-    "utilizedSpsTransportEquipment": [
-      {
-        "affixedSpsSeal": [
-          {
-            "id": {
-              "schemeID": "seal_number",
-              "value": "S12345"
-            }
-          }
-        ],
-        "id": {
-          "schemeID": "container_number",
-          "value": "C12345"
-        }
-      }
-    ]
+    }
   },
   "spsExchangedDocument": {
     "includedSpsNote": [
-      {
-        "content": [
-          {
-            "value": "TradePlatform-17A-1.0.0-alpha"
-          }
-        ],
-        "subjectCode": {
-          "value": "TradePlatform UN/CEFACT Mapping Version"
-        }
-      },
       {
         "content": [
           {
@@ -268,12 +170,12 @@
           }
         ],
         "subjectCode": {
-          "value": "PRODUCT_TEMPERATURE"
+          "value": "PROD_TEMPERATURE"
         }
       }
     ],
     "id": {
-      "value": "NZL2020/PPCS2/121580"
+      "value": "NZL2020/PPCS2/121580NZL2020/PPCS2/121580NZL2020/PPCS2/121580NZL2020/PPCS2/121580NZL2020/PPCS2/121580"
     },
     "issueDateTime": {
       "dateTime": {
@@ -325,7 +227,7 @@
       "value": "47"
     },
     "typeCode": {
-      "value": "636"
+      "value": ""
     }
   }
 }

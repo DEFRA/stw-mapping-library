@@ -1,7 +1,6 @@
 package uk.gov.defra.stw.mapping.toipaffs.cheda.commodities;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.List;
 import java.util.Map;
@@ -20,7 +19,6 @@ import uk.gov.defra.stw.mapping.dto.SpecifiedSpsAddress;
 import uk.gov.defra.stw.mapping.dto.SpsNoteType;
 import uk.gov.defra.stw.mapping.dto.SpsPartyType;
 import uk.gov.defra.stw.mapping.dto.TextType;
-import uk.gov.defra.stw.mapping.toipaffs.exceptions.IdentifiersMapperException;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperator;
 import uk.gov.defra.tracesx.notificationschema.representation.EconomicOperatorAddress;
 import uk.gov.defra.tracesx.notificationschema.representation.Identifier;
@@ -39,8 +37,8 @@ class IdentifiersMapperTest {
     IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
         .withScientificName(List.of(new TextType().withValue("Species name")))
         .withAdditionalInformationSpsNote(List.of(
-            note("IDENTIFIER", "MICROCHIP_1", "M-1234"),
-            note("IDENTIFIER", "PASSPORT_1", "P-1234"),
+            noteIdentifier("1", "MICROCHIP", "M-1234"),
+            noteIdentifier("1", "PASSPORT", "P-1234"),
             note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "1", "FALSE"),
             note("PERMANENT_ADDRESS_TELEPHONE", "1", "0123456789"),
             note("PERMANENT_ADDRESS_EMAIL", "1", "me@example.com")
@@ -93,8 +91,8 @@ class IdentifiersMapperTest {
     IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
         .withScientificName(List.of(new TextType().withValue("Species name")))
         .withAdditionalInformationSpsNote(List.of(
-            note("IDENTIFIER", "MICROCHIP_1", "M-1234"),
-            note("IDENTIFIER", "PASSPORT_1", "P-1234"),
+            noteIdentifier("1", "MICROCHIP", "M-1234"),
+            noteIdentifier("1", "PASSPORT", "P-1234"),
             note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "1", "TRUE")
         ));
 
@@ -115,13 +113,13 @@ class IdentifiersMapperTest {
     IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
         .withScientificName(List.of(new TextType().withValue("Species name")))
         .withAdditionalInformationSpsNote(List.of(
-            note("IDENTIFIER", "MICROCHIP_1", "M-1234"),
-            note("IDENTIFIER", "PASSPORT_1", "P-1234"),
+            noteIdentifier("1", "MICROCHIP", "M-1234"),
+            noteIdentifier("1", "PASSPORT", "P-1234"),
             note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "1", "FALSE"),
             note("PERMANENT_ADDRESS_TELEPHONE", "1", "0123456789"),
             note("PERMANENT_ADDRESS_EMAIL", "1", "me@example.com"),
-            note("IDENTIFIER", "MICROCHIP_2", "M-5678"),
-            note("IDENTIFIER", "PASSPORT_2", "P-5678"),
+            noteIdentifier("2", "MICROCHIP", "M-5678"),
+            noteIdentifier("2", "PASSPORT", "P-5678"),
             note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "2", "FALSE"),
             note("PERMANENT_ADDRESS_TELEPHONE", "2", "0987654321"),
             note("PERMANENT_ADDRESS_EMAIL", "2", "joe@example.com")
@@ -214,8 +212,8 @@ class IdentifiersMapperTest {
     IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
         .withScientificName(List.of(new TextType().withValue("Species name")))
         .withAdditionalInformationSpsNote(List.of(
-            note("IDENTIFIER", "MICROCHIP_1", "M-1"),
-            note("IDENTIFIER", "MICROCHIP_2", "M-2"),
+            noteIdentifier("1", "MICROCHIP", "M-1"),
+            noteIdentifier("2", "MICROCHIP", "M-2"),
             note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "1", "FALSE"),
             note("PERMANENT_ADDRESS_TELEPHONE", "1", "0123456789"),
             note("PERMANENT_ADDRESS_EMAIL", "1", "me@example.com")
@@ -270,7 +268,7 @@ class IdentifiersMapperTest {
     IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
         .withScientificName(List.of(new TextType().withValue("Species name")))
         .withAdditionalInformationSpsNote(List.of(
-            note("IDENTIFIER", "MICROCHIP_1", "M-1"),
+            noteIdentifier("1", "MICROCHIP", "M-1"),
             note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "1", "FALSE"),
             note("PERMANENT_ADDRESS_TELEPHONE", "1", "0123456789"),
             note("PERMANENT_ADDRESS_EMAIL", "1", "me@example.com"),
@@ -316,23 +314,17 @@ class IdentifiersMapperTest {
     }
   }
 
-  @Test
-  void map_ThrowsException_WhenIdentifierRegexFailsToMatch() {
-    IncludedSpsTradeLineItem includedSpsTradeLineItem = new IncludedSpsTradeLineItem()
-        .withScientificName(List.of(new TextType().withValue("Species name")))
-        .withAdditionalInformationSpsNote(List.of(
-            note("IDENTIFIER", "MICROCHIP1", "M-1234"),
-            note("IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS", "1", "TRUE")
-        ));
-
-    assertThatThrownBy(() -> mapper.map(includedSpsTradeLineItem))
-        .isInstanceOf(IdentifiersMapperException.class)
-        .hasMessage("Unable to extract index from identifier: MICROCHIP1");
-  }
-
   private SpsNoteType note(String subjectCode, String contentCode, String content) {
     return new SpsNoteType()
         .withSubjectCode(new CodeType().withValue(subjectCode))
+        .withContentCode(List.of(new CodeType().withValue(contentCode)))
+        .withContent(List.of(new TextType().withValue(content)));
+  }
+
+  private SpsNoteType noteIdentifier(String subject, String contentCode, String content) {
+    return new SpsNoteType()
+        .withSubjectCode(new CodeType().withValue("IDENTIFIER"))
+        .withSubject(new TextType().withValue(subject))
         .withContentCode(List.of(new CodeType().withValue(contentCode)))
         .withContent(List.of(new TextType().withValue(content)));
   }
