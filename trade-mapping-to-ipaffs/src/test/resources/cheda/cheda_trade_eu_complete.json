@@ -440,24 +440,6 @@
                 ]
               },
               {
-                "classCode": {
-                  "value": "01061900"
-                },
-                "className": [
-                  {
-                    "value": "Other"
-                  }
-                ],
-                "systemID": {
-                  "value": "CN"
-                },
-                "systemName": [
-                  {
-                    "value": "CN Code (Combined Nomenclature)"
-                  }
-                ]
-              },
-              {
                 "className": [
                   {
                     "value": "Carnivora"

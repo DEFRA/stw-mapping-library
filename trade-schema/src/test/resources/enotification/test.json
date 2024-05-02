@@ -1,0 +1,621 @@
+{
+  "spsExchangedDocument": {
+    "id": {
+      "value": "1234"
+    },
+    "issueDateTime": {
+      "dateTime": {
+        "value": "2024-03-27T16:27:00Z"
+      }
+    },
+    "name": [
+      {
+        "value": ""
+      }
+    ],
+    "signatorySpsAuthentication": [
+      {
+        "actualDateTime": {
+          "dateTime": {
+            "value": "2024-01-01T09:00:00Z"
+          }
+        },
+        "includedSpsClause": [
+          {
+            "id": {
+              "value": "PURPOSE"
+            },
+            "content": [
+              {
+                "value": "INTERNAL_MARKET"
+              }
+            ]
+          },
+          {
+            "id": {
+              "value": "GOODS_CERTIFIED_AS"
+            },
+            "content": [
+              {
+                "value": "HUMAN_CONSUMPTION"
+              }
+            ]
+          },
+          {
+            "id": {
+              "value": "INTERNAL_MARKET_PURPOSE"
+            },
+            "content": [
+              {
+                "value": "BREEDING"
+              }
+            ]
+          },
+          {
+            "id": {
+              "value": "ANIMALS_CERTIFIED_AS"
+            },
+            "content": [
+              {
+                "value": "APPROVED_BODIES"
+              }
+            ]
+          }
+        ],
+        "providerSpsParty": {
+          "name": {
+            "value": ""
+          }
+        }
+      }
+    ],
+    "statusCode": {
+      "value": "47"
+    },
+    "typeCode": {
+      "value": "636"
+    },
+    "includedSpsNote": [
+      {
+        "subjectCode": {
+          "value": "PRODUCT_TEMPERATURE"
+        },
+        "content": [
+          {
+            "value": ""
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "AMBIENT"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CHED_TYPE"
+        },
+        "content": [
+          {
+            "value": "CHEDA"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "transport_before_bcp_document"
+        },
+        "content": [
+          {
+            "value": "Document"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "transport_after_bcp_document"
+        },
+        "content": [
+          {
+            "value": "Document"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "INCLUDES_NON_ABLACTED_ANIMALS"
+        },
+        "content": [
+          {
+            "value": "FALSE"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "DEPARTURE_FROM_BCP_DATETIME"
+        },
+        "content": [
+          {
+            "value": "2024-01-02T21:30:00Z"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "ESTIMATED_JOURNEY_TIME_IN_MINUTES"
+        },
+        "content": [
+          {
+            "value": "320"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "IS_GVMS_ROUTE"
+        },
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "TEMPORARY_ADMISSION_HORSES_EXIT_DATE"
+        },
+        "content": [
+          {
+            "value": "2024-05-04"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONFORMS_TO_EU"
+        },
+        "content": [
+          {
+            "value": "TRUE"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NON_CONFORMING_GOODS_DESTINATION_TYPE"
+        },
+        "content": [
+          {
+            "value": "CUSTOMS_WAREHOUSE"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NON_CONFORMING_GOODS_DESTINATION_REGISTERED_NUMBER"
+        },
+        "content": [
+          {
+            "value": "1234"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NON_CONFORMING_GOODS_DESTINATION_SHIP_NAME"
+        },
+        "content": [
+          {
+            "value": "SS IPAFFS"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NON_CONFORMING_GOODS_DESTINATION_SHIP_PORT"
+        },
+        "content": [
+          {
+            "value": "Belfast"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_NAME"
+        },
+        "content": [
+          {
+            "value": "Joe Bloggs"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_PHONE"
+        },
+        "content": [
+          {
+            "value": "0123456789"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_EMAIL"
+        },
+        "content": [
+          {
+            "value": "joe.bloggs@example.com"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "CONTACT_DETAILS_AGENT"
+        },
+        "content": [
+          {
+            "value": "Jane Doe"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_NAME"
+        },
+        "content": [
+          {
+            "value": "Joe Bloggs"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_PHONE"
+        },
+        "content": [
+          {
+            "value": "0123456789"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "NOMINATED_CONTACT_EMAIL"
+        },
+        "content": [
+          {
+            "value": "joe.bloggs@example.com"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "subjectCode": {
+          "value": "IDENTIFICATION_DETAIL"
+        },
+        "content": [
+          {
+            "value": "Description"
+          }
+        ],
+        "contentCode": [
+          {
+            "value": "1234"
+          }
+        ]
+      }
+    ]
+  },
+  "spsConsignment": {
+    "utilizedSpsTransportEquipment": [
+      {
+        "id": {
+          "schemeID": "container_number",
+          "value": "1234"
+        },
+        "affixedSpsSeal": [
+          {
+            "id": {
+              "schemeID": "seal_number",
+              "value": "1"
+            }
+          }
+        ]
+      }
+    ],
+    "unloadingBaseportSpsLocation": {
+      "name": [
+        {
+          "value": ""
+        }
+      ],
+      "id": {
+        "value": "",
+        "schemeID": "un_locode"
+      }
+    },
+    "consigneeSpsParty": {
+      "name": {
+        "value": ""
+      }
+    },
+    "exportSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    "deliverySpsParty": {
+      "name": {
+        "value": ""
+      },
+      "id": {
+        "value": "some-id"
+      }
+    },
+    "consignorSpsParty": {
+      "name": {
+        "value": ""
+      }
+    },
+    "importSpsCountry": {
+      "id": {
+        "value": ""
+      },
+      "name": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    "examinationSpsEvent": {
+      "occurrenceSpsLocation": {
+        "name": [
+          {
+            "value": ""
+          }
+        ]
+      }
+    },
+    "mainCarriageSpsTransportMovement": [
+      {
+        "id": {
+          "schemeID": "airplane_flight_number_after_bcp",
+          "schemeAgencyID": "GB",
+          "value": "value"
+        },
+        "modeCode": {
+          "value": "1"
+        },
+        "usedSpsTransportMeans": {
+          "name": {
+            "value": "1"
+          }
+        }
+      }
+    ],
+    "includedSpsConsignmentItem": [
+      {
+        "includedSpsTradeLineItem": [
+          {
+            "sequenceNumeric": {
+              "value": 1
+            },
+            "description": [
+              {
+                "value": ""
+              }
+            ],
+            "netWeightMeasure": {
+              "value": 12345678.123,
+              "unitCode": "KGM"
+            },
+            "grossWeightMeasure": {
+              "unitCode": "KGM",
+              "value": 1
+            },
+            "grossVolumeMeasure": {
+              "value": 1,
+              "unitCode": "LTR"
+            },
+            "applicableSpsClassification": [
+              {
+                "classCode": {
+                  "value": "0101"
+                },
+                "className": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "systemID": {
+                  "value": "EPPO"
+                },
+                "systemName": [
+                  {
+                    "value": "European and Mediterranean Plant Protection Organization"
+                  }
+                ]
+              }
+            ],
+            "originSpsCountry": [],
+            "physicalSpsPackage": [
+              {
+                "levelCode": {
+                  "value": "4"
+                },
+                "itemQuantity": {
+                  "value": 1
+                },
+                "typeCode": {
+                  "value": "BG"
+                }
+              }
+            ],
+            "scientificName": [
+              {
+                "value": "Aegle"
+              }
+            ],
+            "additionalInformationSpsNote": [
+              {
+                "subjectCode": {
+                  "value": "IDENTIFIER"
+                },
+                "subject": {
+                  "value": "1"
+                },
+                "contentCode": [
+                  {
+                    "value": "MICROCHIP"
+                  }
+                ],
+                "content": [
+                  {
+                    "value": "M-1"
+                  }
+                ]
+              },
+              {
+                "content": [
+                  {
+                    "value": "TRUE"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "1"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "IS_PLACE_OF_DESTINATION_THE_PERMANENT_ADDRESS"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "0123456789"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "1"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "PERMANENT_ADDRESS_TELEPHONE"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "me@example.com"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "1"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "PERMANENT_ADDRESS_EMAIL"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "100"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "2345"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "CATCH_CERTIFICATE_WEIGHT_KG"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "FINISHED"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "finished_or_propagated"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Braeburn"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "variety"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "Extra Class"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "class"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "TRUE"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "container"
+                }
+              },
+              {
+                "content": [
+                  {
+                    "value": "12.2"
+                  }
+                ],
+                "contentCode": [
+                  {
+                    "value": "STM"
+                  }
+                ],
+                "subjectCode": {
+                  "value": "quantity"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
